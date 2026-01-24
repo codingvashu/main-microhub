@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+	<title>Microhub</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="microhub.com">
+	<meta name="description" content="microhub page">
+
+	<!-- Dark mode -->
+	<script>
+		const storedTheme = localStorage.getItem('theme')
+
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		window.addEventListener('DOMContentLoaded', () => {
+			var el = document.querySelector('.theme-icon-active');
+			if (el != 'undefined' && el != null) {
+				const showActiveTheme = theme => {
+					const activeThemeIcon = document.querySelector('.theme-icon-active use')
+					const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+					const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+					document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+						element.classList.remove('active')
+					})
+
+					btnToActive.classList.add('active')
+					activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+				}
+
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+					if (storedTheme !== 'light' || storedTheme !== 'dark') {
+						setTheme(getPreferredTheme())
+					}
+				})
+
+				showActiveTheme(getPreferredTheme())
+
+				document.querySelectorAll('[data-bs-theme-value]')
+					.forEach(toggle => {
+						toggle.addEventListener('click', () => {
+							const theme = toggle.getAttribute('data-bs-theme-value')
+							localStorage.setItem('theme', theme)
+							setTheme(theme)
+							showActiveTheme(theme)
+						})
+					})
+
+			}
+		})
+
+	</script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/Microhub_logo.png">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+		rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css"
+		href="./assets/vendor/bootstrap-icons/bootstrap-icons.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+</head>
+
+<body>
+
+	<!-- Header START -->
+	<div class="header-absolute">
+		<!-- Top header -->
+		<div class="alert fade show border-0 rounded-0 text-center overflow-hidden z-index-9 py-2 m-0 d-none d-lg-block"
+			style="background-color:#2DA9E1;" role="alert">
+			<div class="container d-flex justify-content-between px-2 px-xl-4">
+				<!-- Contact info -->
+				<ul class="list-inline d-flex flex-wrap gap-3 text-white mb-0">
+					<li class="list-inline-item small fw-light"><i class="bi bi-headset me-2"></i>Call us: <a href="#"
+							class="link-white">+91 7368007363
+
+						</a></li>
+					<li class="list-inline-item small fw-light"><i class="bi bi-envelope me-2"></i>Email: <a href="#"
+							class="link-white">sales@microhub.co.in</a></li>
+				</ul>
+
+				<!-- Social links -->
+				<ul class="list-inline mb-0">
+					<li class="list-inline-item small text-white">Follow us on: </li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-facebook"></i></a>
+					</li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-instagram"></i></a>
+					</li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-twitter-x"></i></a>
+					</li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-linkedin"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Header START -->
+		<header class="header-sticky bg-transparent">
+			<!-- Logo Nav START -->
+			<nav class="navbar navbar-expand-xl">
+				<div class="container">
+					<!-- Logo START -->
+					<a class="navbar-brand me-0" href="index.html">
+						<img class="light-mode-item navbar-brand-item" src="assets/images/Microhub_logo_light.png"
+							alt="logo">
+						<img class="dark-mode-item navbar-brand-item"
+							src="assets/images/microhub-white-logo-BbBXVK-M.svg" alt="logo">
+					</a>
+					<!-- Logo END -->
+
+					<!-- Main navbar START -->
+					<div class="navbar-collapse collapse" id="navbarCollapse">
+						<ul class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto">
+
+
+
+							<!-- Nav item -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
+									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+								<div class="dropdown-menu dropdown-menu-size-md dropdown-menu-center p-xl-3">
+									<div class="row row-cols-1 row-cols-md-1 pt-1">
+										<!-- Doc menu -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3">
+												<div class="d-flex">
+													<!-- Icon -->
+													<div
+														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
+														<i class="bi bi-info-circle fs-6"></i>
+
+													</div>
+													<!-- Content -->
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">About</p>
+														<p class="mb-0 text-body small">Our story, vision, and what
+															drives us</p>
+													</div>
+												</div>
+												<!-- Button -->
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="about-v1.html" target="_blank"><i
+														class="bi bi-chevron-right"></i> </a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+
+
+							<!-- Nav item : SOLUTIONS -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
+									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Solutions
+								</a>
+
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
+									<div class="row row-cols-1 row-cols-md-3 pt-2">
+
+										<!-- CMS SOLUTIONS -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
+														<i class="bi bi-grid-1x2 fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">CMS
+															Solutions</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#475569;
+														    ">
+
+															<li><b>CRM</b></li>
+															<li><b>HR-Payroll</b></li>
+															<li><b>Inventory</b></li>
+															<li><b>Finance</b></li>
+															<li><b>ERP</b></li>
+															<li><b>Automation</b></li>
+
+														</ul>
+
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="services-grid.html">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+										<!-- IT INFRASTRUCTURE -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-info bg-opacity-15 text-info rounded flex-shrink-0">
+														<i class="bi bi-hdd-network fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															IT Infrastructure & Services
+														</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#475569;
+														    ">
+															<li><b>IT Infrastructure</b></li>
+															<li><b>Networking</b></li>
+															<li><b>Servers</b></li>
+															<li><b>Web Development</b></li>
+															<li><b>AMC-Packages</b></li>
+															<li><b>ERP</b></li>
+															<li><b>Cybersecurity</b></li>
+															
+														</ul>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="/services-main.html">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+										<!-- HARDWARE -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
+														<i class="bi bi-laptop fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															Hardware Solutions
+														</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#693aea;
+														    ">
+															<li><b>Laptops</b></li>
+															<li><b>Macs</b></li>
+															<li><b>Printers</b></li>
+															<li><b>Networking & Peripherals</b></li>
+														</ul>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="/hardware">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</li>
+
+
+							<!-- Nav item : EXPLORE -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
+									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Explore
+								</a>
+
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
+									<div class="row row-cols-1 row-cols-md-3 pt-2">
+
+										<!-- ================= -->
+										<!-- PRICING -->
+										<!-- ================= -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
+														<i class="bi bi-currency-rupee fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															Pricing
+														</p>
+														<p class="mb-0 text-body small">
+															Transparent plans for every business size
+														</p>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="pricing-v1.html">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+										<!-- ================= -->
+										<!-- RESOURCES -->
+										<!-- ================= -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-success bg-opacity-15 text-success rounded flex-shrink-0">
+														<i class="bi bi-journal-text fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															Resources
+														</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#693aea;
+														    ">
+															<li><b>Blogs</b></li>
+															<li><b>Case Studies</b></li>
+															<li><b>Videos</b></li>
+															<li><b>Learning Guides</b></li>
+															<li><b>FAQs</b></li>
+														</ul>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="/resources">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+										<!-- ============================== -->
+										<!-- SECURITY & COMPLIANCE -->
+										<!-- ============================== -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
+														<i class="bi bi-shield-check fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															Security & Compliance
+														</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#693aea;
+														    ">
+															<li><b>Data Protection</b></li>
+															<li><b>Privacy</b></li>
+															<li><b>T&C</b></li>
+															<li><b>Security Compliance</b></li>
+														</ul>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="/security-compliance">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</li>
+
+
+
+							<!-- Nav item -->
+							<li class="nav-item"> <a class="nav-link" href="contact-us-v1.html">Contact us</a> </li>
+
+						</ul>
+
+					</div>
+					<!-- Main navbar END -->
+
+					<!-- Buttons -->
+					<ul class="nav align-items-center dropdown-hover ms-sm-2">
+						<!-- Dark mode option START -->
+						<li class="nav-item dropdown dropdown-animation">
+							<button class="btn btn-link mb-0 px-2 lh-1" id="bd-theme" type="button"
+								aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+									class="bi bi-circle-half theme-icon-active fill-mode fa-fw" viewBox="0 0 16 16">
+									<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+									<use href="#"></use>
+								</svg>
+							</button>
+
+							<ul class="dropdown-menu min-w-auto dropdown-menu-end" aria-labelledby="bd-theme">
+								<li class="mb-1">
+									<button type="button" class="dropdown-item d-flex align-items-center"
+										data-bs-theme-value="light">
+										<svg width="16" height="16" fill="currentColor"
+											class="bi bi-brightness-high-fill fa-fw mode-switch me-1"
+											viewBox="0 0 16 16">
+											<path
+												d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+											<use href="#"></use>
+										</svg>Light
+									</button>
+								</li>
+								<li class="mb-1">
+									<button type="button" class="dropdown-item d-flex align-items-center"
+										data-bs-theme-value="dark">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+											fill="currentColor" class="bi bi-moon-stars-fill fa-fw mode-switch me-1"
+											viewBox="0 0 16 16">
+											<path
+												d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+											<path
+												d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+											<use href="#"></use>
+										</svg>Dark
+									</button>
+								</li>
+								<li>
+									<button type="button" class="dropdown-item d-flex align-items-center active"
+										data-bs-theme-value="auto">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+											fill="currentColor" class="bi bi-circle-half fa-fw mode-switch me-1"
+											viewBox="0 0 16 16">
+											<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+											<use href="#"></use>
+										</svg>Auto
+									</button>
+								</li>
+							</ul>
+						</li>
+						<!-- Dark mode option END -->
+
+						<!-- Schedule button -->
+						<li class="nav-item ms-2 d-none d-sm-block">
+							<a href="#" class="btn btn-sm mb-0" data-bs-toggle="offcanvas"
+								data-bs-target="#scheduleCall" aria-controls="scheduleCall" style="
+						      background: linear-gradient(135deg, #3B82F6, #38BDF8);
+						      color:#fff;
+						      border:none;
+						      padding:8px 16px;
+						      font-weight:500;
+						      transition:all 0.3s ease;
+						    " onmouseover="
+						      this.style.boxShadow='0 8px 20px rgba(56,189,248,0.45)';
+						      this.style.transform='translateY(-1px)';
+						    " onmouseout="
+						      this.style.boxShadow='none';
+						      this.style.transform='translateY(0)';
+						    ">
+								<i class="bi bi-calendar-week me-2"></i>
+								Free Demo
+							</a>
+						</li>
+
+
+						<!-- Responsive navbar toggler -->
+						<li class="nav-item">
+							<button class="navbar-toggler ms-sm-3 p-2" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span class="navbar-toggler-animation">
+									<span></span>
+									<span></span>
+									<span></span>
+								</span>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- Logo Nav END -->
+		</header>
+		<!-- Header END -->
+	</div>
+	<!-- Header END -->
+
+	<!-- **************** MAIN CONTENT START **************** -->
+	<main>
+
+		<!-- =======================
+Hero START -->
+		<style>
+			@keyframes floatY {
+
+				0%,
+				100% {
+					transform: translateY(0);
+				}
+
+				50% {
+					transform: translateY(-22px);
+				}
+			}
+
+			@keyframes driftX {
+
+				0%,
+				100% {
+					transform: translateX(0);
+				}
+
+				50% {
+					transform: translateX(26px);
+				}
+			}
+
+			@keyframes slowRotate {
+				from {
+					rotate: 0deg;
+				}
+
+				to {
+					rotate: 360deg;
+				}
+			}
+
+			@keyframes breathe {
+
+				0%,
+				100% {
+					scale: 1;
+				}
+
+				50% {
+					scale: 1.08;
+				}
+			}
+
+			@keyframes waveHand {
+				0% {
+					transform: rotate(0deg);
+				}
+
+				10% {
+					transform: rotate(14deg);
+				}
+
+				20% {
+					transform: rotate(-8deg);
+				}
+
+				30% {
+					transform: rotate(14deg);
+				}
+
+				40% {
+					transform: rotate(-4deg);
+				}
+
+				50% {
+					transform: rotate(10deg);
+				}
+
+				60% {
+					transform: rotate(0deg);
+				}
+
+				100% {
+					transform: rotate(0deg);
+				}
+			}
+
+			.connect-title {
+				font-weight: 800;
+				letter-spacing: -0.02em;
+				background: linear-gradient(90deg,
+						#ffffff 0%,
+						rgba(45, 170, 225, 0.35) 40%,
+						#2DAAE1 60%,
+
+						#ffffff 100%);
+
+				background-size: 200% 100%;
+				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+
+				animation:
+					connectGradient 6s ease-in-out infinite,
+					connectReveal 0.9s ease-out forwards;
+
+				position: relative;
+			}
+
+			@keyframes connectGradient {
+				0% {
+					background-position: 0% 50%;
+				}
+
+				50% {
+					background-position: 100% 50%;
+				}
+
+				100% {
+					background-position: 0% 50%;
+				}
+			}
+
+			@keyframes connectReveal {
+				from {
+					opacity: 0;
+					transform: translateY(14px);
+				}
+
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+		</style>
+
+		<section class="bg-dark position-relative overflow-hidden pt-xl-8" data-bs-theme="dark">
+			<!-- Blur decoration -->
+			<!-- <div class="position-absolute bottom-0 end-0 mb-n9">
+				<img src="assets/images/elements/grad-shape/blur-decoration-2.svg" class="opacity-3 blur-8"
+					alt="Grad shape" style="
+				    position: relative;
+				    animation:
+				      floatY 14s ease-in-out infinite,
+				      driftX 18s ease-in-out infinite,
+				      slowRotate 20s linear infinite,
+				      breathe 5s ease-in-out infinite;
+				    will-change: transform;
+				  ">
+
+			</div> -->
+
+			<div class="container position-relative pt-4 pt-sm-5">
+				<!-- Title and content -->
+				<span class="h2" style="
+				    display:inline-block;
+				    transform-origin: 70% 70%;
+				    animation: waveHand 2.4s ease-in-out infinite;
+				  ">
+					👋
+				</span>
+
+				<h1 class="display-5 mt-3 connect-title ">
+					Let's Connect
+				</h1>
+
+				<p class="mb-1">We’re here to help </p>
+				<p>Support hours: <span class="text-primary fw-bold">24/7</span></p>
+			</div>
+		</section>
+		<!-- =======================
+Hero END -->
+
+		<!-- =======================
+Contact info START -->
+		<style>
+			/* =========================
+   CONTACT CARD INTERACTIONS
+   ========================= */
+
+			.card.bg-secondary {
+				transition:
+					transform 0.35s cubic-bezier(.22, 1, .36, 1),
+					box-shadow 0.35s ease;
+				will-change: transform;
+			}
+
+			/* Hover lift + glow */
+			.card.bg-secondary:hover {
+				transform: translateY(-10px);
+				box-shadow:
+					0 18px 40px rgba(0, 0, 0, 0.25),
+					0 0 0 1px rgba(99, 102, 241, 0.15);
+			}
+
+			/* Subtle depth on hover (mouse feel) */
+			.card.bg-secondary:hover .icon-lg {
+				transform: scale(1.08);
+				transition: transform 0.3s ease;
+			}
+
+			/* Click / tap feedback */
+			.card.bg-secondary:active {
+				transform: translateY(-4px) scale(0.985);
+				box-shadow:
+					0 8px 20px rgba(0, 0, 0, 0.2);
+			}
+
+			/* Smooth icon transition */
+			.icon-lg {
+				transition: transform 0.3s ease;
+			}
+
+			/* Accessibility */
+			@media (prefers-reduced-motion: reduce) {
+				.card.bg-secondary {
+					transition: none;
+				}
+			}
+
+			/* =========================
+   CONTACT CARD – NEON PURPLE
+========================= */
+
+			.card.bg-secondary {
+				position: relative;
+				transition:
+					transform 0.35s cubic-bezier(.22, 1, .36, 1),
+					box-shadow 0.35s ease;
+				will-change: transform;
+			}
+
+			/* Hover: lift + neon purple glow */
+			.card.bg-secondary:hover {
+				transform: translateY(-10px);
+				box-shadow:
+					0 18px 45px rgba(124, 58, 237, 0.35),
+					/* main purple glow */
+					0 0 25px rgba(168, 85, 247, 0.45),
+					/* outer neon aura */
+					inset 0 0 0 1px rgba(168, 85, 247, 0.25);
+			}
+
+			/* Icon reacts with the card */
+			.card.bg-secondary:hover .icon-lg {
+				transform: scale(1.1);
+				box-shadow:
+					0 0 18px rgba(168, 85, 247, 0.6);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			/* Click / tap feedback */
+			.card.bg-secondary:active {
+				transform: translateY(-4px) scale(0.985);
+				box-shadow:
+					0 10px 25px rgba(124, 58, 237, 0.4),
+					0 0 15px rgba(168, 85, 247, 0.35);
+			}
+
+			/* Smooth icon transition */
+			.icon-lg {
+				transition:
+					transform 0.3s ease,
+					box-shadow 0.3s ease;
+			}
+
+			/* Accessibility */
+			@media (prefers-reduced-motion: reduce) {
+				.card.bg-secondary {
+					transition: none;
+				}
+			}
+		</style>
+
+		<section class="pt-0 mt-n6 mt-lg-n7 mt-xl-n8">
+			<div class="container">
+				<!-- Contact detail START -->
+				<div class="row g-4 g-lg-5">
+					<!-- Call us -->
+					<div class="col-md-4">
+						<div class="card bg-secondary rounded-4 p-4 h-100">
+							<!-- Card body -->
+							<div class="card-body p-0">
+								<!-- Icon -->
+								<div class="icon-lg bg-pink text-white rounded-circle mb-3"><i
+										class="bi bi-telephone"></i></div>
+								<h6>Call us</h6>
+								<p class="mb-0">Talk directly with our solution experts to understand how Microhub CMS
+									can streamline your business operations.</p>
+							</div>
+							<!-- Card footer -->
+							<div class="card-footer bg-transparent p-0 pt-3">
+								<a href="#" class="text-primary-grad">+91 7368007363</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Mail us -->
+					<div class="col-md-4">
+						<div class="card bg-secondary rounded-4 p-4 h-100">
+							<!-- Card body -->
+							<div class="card-body p-0">
+								<!-- Icon -->
+								<div class="icon-lg bg-primary text-white rounded-circle mb-3"><i
+										class="bi bi-envelope"></i></div>
+								<h6>Mail us</h6>
+								<p class="mb-0">Reach out for demos, pricing, partnerships, or technical questions.</p>
+							</div>
+							<!-- Card footer -->
+							<div class="card-footer bg-transparent p-0 pt-3">
+								<a href="#" class="text-primary-grad">sales@microhub.co.in</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Support -->
+					<div class="col-md-4">
+						<div class="card bg-secondary rounded-4 p-4 h-100">
+							<!-- Card body -->
+							<div class="card-body p-0">
+								<!-- Icon -->
+								<div class="icon-lg bg-warning text-white rounded-circle mb-3"><i
+										class="bi bi-headset"></i></div>
+								<h6>Support</h6>
+								<p class="mb-0">Check out helpful resources, FAQs and developer tools. </p>
+							</div>
+							<!-- Card footer -->
+							<div class="card-footer bg-transparent p-0 pt-3">
+								<a class="btn btn-sm btn-white-shadow icon-link icon-link-hover" href="#">Chat now<i
+										class="bi bi-arrow-right"></i> </a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Contact detail END -->
+			</div>
+		</section>
+		<!-- =======================
+Contact info END -->
+
+		<!-- =======================
+Contact form START -->
+		<style>
+			/* =========================
+   FLOATING DECORATION
+========================= */
+			.floating-rotate {
+				animation: orbitLeftFast 8s linear infinite;
+				transform-origin: center;
+				will-change: transform;
+			}
+
+			.floating-rotate img {
+				animation: pulseFast 3s ease-in-out infinite;
+			}
+
+			@keyframes orbitLeftFast {
+				0% {
+					transform: translate(0, 0) rotate(0deg);
+				}
+
+				25% {
+					transform: translate(-22px, -18px) rotate(-90deg);
+				}
+
+				50% {
+					transform: translate(0, -40px) rotate(-180deg);
+				}
+
+				75% {
+					transform: translate(22px, -18px) rotate(-270deg);
+				}
+
+				100% {
+					transform: translate(0, 0) rotate(-360deg);
+				}
+			}
+
+			@keyframes pulseFast {
+
+				0%,
+				100% {
+					transform: scale(1);
+				}
+
+				50% {
+					transform: scale(1.04);
+				}
+			}
+
+			/* =========================
+   FORM INPUTS – UNCHANGED
+========================= */
+			.form-control {
+				background: #fff;
+				color: #0f172a;
+				border: 1px solid #e5e7eb;
+				border-radius: 10px;
+				padding: 12px 14px;
+				transition: box-shadow .3s, border-color .3s, transform .25s;
+			}
+
+			.form-control:focus {
+				outline: none;
+				border-color: #8b5cf6;
+				box-shadow:
+					0 0 0 3px rgba(45, 170, 225, 0.28),
+					0 12px 28px rgba(45, 170, 225, 0.35);
+
+				transform: translateY(-2px);
+			}
+
+			textarea.form-control {
+				resize: none;
+			}
+
+			.form-check-input:checked {
+				background: #2daae1;
+				border-color: #2daae1;
+
+			}
+
+			/* =========================
+   SUBMIT OVERLAY (ADDED)
+========================= */
+			.form-wrapper {
+				position: relative;
+			}
+
+			.send-overlay {
+				position: absolute;
+				inset: 0;
+				background: rgba(255, 255, 255, .92);
+				border-radius: 20px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				opacity: 0;
+				pointer-events: none;
+				transition: opacity .3s ease;
+				z-index: 9;
+			}
+
+			.send-overlay.active {
+				opacity: 1;
+				pointer-events: auto;
+			}
+
+			/* =========================
+   ENVELOPE (NO PAPER)
+========================= */
+			.envelope {
+				position: relative;
+				width: 240px;
+				height: 160px;
+				transform: scale(.6);
+				animation: envIn .4s ease forwards;
+			}
+
+			@keyframes envIn {
+				to {
+					transform: scale(1);
+				}
+			}
+
+			.env-body {
+				position: absolute;
+				inset: 0;
+				background: linear-gradient(135deg,
+						#6ec7ee,
+						#2daae1);
+
+				border-radius: 16px;
+				z-index: 1;
+			}
+
+			.env-pocket {
+				position: absolute;
+				inset: 0;
+				background:
+					linear-gradient(to top right, transparent 50%, rgba(255, 255, 255, .18) 50%),
+					linear-gradient(to top left, transparent 50%, rgba(255, 255, 255, .18) 50%);
+				clip-path: polygon(0 100%, 50% 55%, 100% 100%, 100% 0, 0 0);
+				z-index: 2;
+			}
+
+			.env-flap {
+				position: absolute;
+				inset: 0;
+				background: linear-gradient(135deg,
+						#2daae1,
+						#4f8cff);
+
+				clip-path: polygon(0 0, 100% 0, 50% 55%);
+				transform-origin: top;
+				z-index: 3;
+			}
+
+			/* Open + close */
+			.send-overlay.active .env-flap {
+				animation: flapOpen .5s ease forwards .4s;
+			}
+
+			@keyframes flapOpen {
+				to {
+					transform: rotateX(-180deg);
+				}
+			}
+
+			.send-overlay.closing .env-flap {
+				animation: flapClose .4s ease forwards;
+			}
+
+			@keyframes flapClose {
+				to {
+					transform: rotateX(0deg);
+				}
+			}
+
+			.send-overlay.closing .envelope {
+				animation: envOut .6s ease forwards .4s;
+			}
+
+			@keyframes envOut {
+				to {
+					transform: scale(.4) translateY(40px);
+					opacity: 0;
+				}
+			}
+
+			/* FORCE THEME COLOR FOR TYPED TEXT */
+			.cd-headline .typed,
+			.cd-headline .microhub-typed {
+				color: #38BDF8;
+				-webkit-text-fill-color: #38BDF8;
+				/* CRITICAL */
+				background: none;
+				/* disable gradient background */
+			}
+		</style>
+
+		<section class="position-relative pt-0">
+			<!-- Clay decoration -->
+			<!-- <div class="position-absolute top-50 start-0 translate-middle mt-5 floating-rotate">
+				<img src="assets/images/elements/clay-decoration.png" alt="Clay-decoration">
+			</div> -->
+
+			<div class="container bg-secondary-grad rounded-4 p-4 p-md-6 p-xxl-8">
+				<div class="inner-container-small">
+
+					<!-- Title (UNCHANGED) -->
+					<h1 class="fw-bold mb-2 lh-base text-center">
+						<i class="bi bi-emoji-smile me-2"></i>Say
+						<span class="cd-headline clip big-clip is-full-width text-primary-grad mb-0">
+							<span class="typed microhub-typed" data-type-text="Hello&&Hola&&Ciao&&Bonjour"></span>
+
+						</span>
+					</h1>
+
+					<p class="text-center">Have an idea, need advice, or just want to say hello? We’re all ears.</p>
+
+					<!-- WRAPPER -->
+					<div class="form-wrapper">
+
+						<!-- ENVELOPE OVERLAY -->
+						<div class="send-overlay" id="sendOverlay">
+							<div class="envelope">
+								<div class="env-body"></div>
+								<div class="env-pocket"></div>
+								<div class="env-flap"></div>
+							</div>
+						</div>
+
+						<!-- FORM (UNCHANGED) -->
+						<form id="contactForm" class="row form-border-transparent g-3 mt-4">
+							<div class="col-md-6">
+								<label class="form-label">Your name</label>
+								<input type="text" class="form-control">
+							</div>
+
+							<div class="col-md-6">
+								<label class="form-label">Email address</label>
+								<input type="email" class="form-control">
+							</div>
+
+							<div class="col-md-6">
+								<label class="form-label">Mobile number</label>
+								<input type="text" class="form-control">
+							</div>
+
+							<div class="col-md-6">
+								<label class="form-label">Subject</label>
+								<input type="text" class="form-control">
+							</div>
+
+							<div class="col-12">
+								<label class="form-label">Message</label>
+								<textarea class="form-control" style="
+							      height:100px;
+							      border-color:#2daae1;
+							    ">
+							  </textarea>
+							</div>
+
+
+							<div class="col-12">
+								<div class="form-check">
+									<input type="checkbox" class="form-check-input border" id="exampleCheck1">
+									<label class="form-check-label" for="exampleCheck1">
+										I agree that my data is <a href="#"
+											class="hover-underline-animation text-primary-hover">collected and
+											stored</a>.
+									</label>
+								</div>
+							</div>
+
+							<div class="col-12 d-sm-flex justify-content-center align-items-center gap-3 mt-4">
+								<button type="submit" class="btn btn-primary mb-2 mb-md-0" style="background: linear-gradient(135deg, #3B82F6, #38BDF8);
+    								color:#fff;
+    								border:none;
+    								padding:8px 16px;
+    								font-weight:500;
+    								transition:all 0.3s ease;
+  									" onmouseover="
+    								this.style.boxShadow='0 8px 20px rgba(56,189,248,0.45)';
+    								this.style.transform='translateY(-1px)';
+  									" onmouseout="
+    								this.style.boxShadow='none';
+    								this.style.transform='translateY(0)';
+  									">
+									Send a message
+								</button>
+							</div>
+
+					</div>
+					</form>
+
+				</div>
+			</div>
+			</div>
+		</section>
+
+		<script>
+			const form = document.getElementById("contactForm");
+			const overlay = document.getElementById("sendOverlay");
+
+			form.addEventListener("submit", e => {
+				e.preventDefault();
+
+				overlay.classList.add("active");
+
+				setTimeout(() => overlay.classList.add("closing"), 1800);
+				setTimeout(() => {
+					overlay.classList.remove("active", "closing");
+					form.reset();
+				}, 3000);
+			});
+		</script>
+		<!-- =======================
+Contact form END -->
+
+
+		<!-- =======================
+Map and office detail START -->
+		<section class="position-relative pt-0 overflow-hidden">
+			<!-- Decoration -->
+			<div class="position-absolute bottom-0 end-0 mb-n3 me-n7 d-none d-xl-block">
+				<img src="assets/images/elements/relex-slay.png" class="h-400px h-xxl-500px rtl-flip" alt="image">
+			</div>
+
+			<div class="container">
+				<div class="row g-4 align-items-center">
+					<!-- Map -->
+					<div class="col-lg-5">
+						<iframe class="w-100 h-200px h-lg-500px grayscale rounded-4 d-block mb-3 mb-lg-0"
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.8527192160086!2d77.40753162529623!3d28.514078575729606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef9d7efd6b3b%3A0x9c721676b4a90cb9!2sMicrohub%20Technologies%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1766643722159!5m2!1sen!2sin"
+							style="margin-bottom: -5px;" aria-hidden="false" tabindex="0"></iframe>
+					</div>
+					<div class="col-lg-7 ps-lg-6">
+						<!-- Title -->
+						<h2 class="mb-4">Our offices</h2>
+
+						<!-- Office details -->
+						<div class="row g-4 mb-4">
+
+							<!-- Office item -->
+							<div class="col-md-6">
+								<!-- Title and country image -->
+								<div class="d-flex align-items-center gap-2">
+									<div class="avatar avatar-xs flex-shrink-0">
+										<img class="avatar-img rounded-circle" src="assets/images/flags/in.svg"
+											alt="avatar">
+									</div>
+									<h6 class="mb-0">India</h6>
+								</div>
+								<!-- List -->
+								<ul class="mb-0 mt-3">
+									<li class="mb-2">Unit No-484, Tower-C, Bhutani Alphathum, Sector-90, Noida UP-201305
+									</li>
+									<li class="mb-2">Call: +91 7368007363</li>
+									<li class="mb-2">Support time: Monday to Saturday 9:00 am to 5:30 pm</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Button -->
+						<a class="btn btn-secondary icon-link icon-link-hover" href="#">Contact our help center<i
+								class="bi bi-arrow-right"></i> </a>
+					</div>
+				</div> <!-- Row END -->
+			</div>
+		</section>
+		<!-- =======================
+Map and office detail END -->
+
+	</main>
+	<!-- **************** MAIN CONTENT END **************** -->
+
+	<!-- =======================
+Footer START -->
+	<style>
+		/* =========================
+   GRAD SHAPE FLOAT EFFECT
+========================= */
+
+		.grad-float {
+			animation:
+				gradFloat 10s ease-in-out infinite,
+				gradRotate 22s linear infinite;
+			transform-origin: center;
+			opacity: 0.9;
+			filter: blur(0.3px);
+		}
+
+		/* Vertical floating */
+		@keyframes gradFloat {
+			0% {
+				transform: translateY(0);
+			}
+
+			50% {
+				transform: translateY(18px);
+			}
+
+			100% {
+				transform: translateY(0);
+			}
+		}
+
+		/* Very slow rotation */
+		@keyframes gradRotate {
+			from {
+				rotate: 0deg;
+			}
+
+			to {
+				rotate: 360deg;
+			}
+		}
+
+		/* Accessibility */
+		@media (prefers-reduced-motion: reduce) {
+			.grad-float {
+				animation: none;
+			}
+		}
+
+		.grad-float img {
+			filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.25));
+		}
+	</style>
+	<footer class="bg-dark position-relative pt-6 pt-lg-8" data-bs-theme="dark">
+		<div class="container position-relative">
+
+			<!-- Link widgets -->
+			<div class="row g-4">
+
+				<!-- Brand / About -->
+				<div class="col-md-6 col-xl-4">
+					<a href="index.html">
+						<img class="h-40px" src="assets/images/microhub-white-logo-BbBXVK-M.svg" alt="logo">
+					</a>
+
+					<p class="my-3 my-lg-4">
+						Intelligent CMS, IT infrastructure, and enterprise technology solutions.
+					</p>
+
+					<ul class="list-inline mb-0">
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-facebook lh-base"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-instagram lh-base"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-twitter-x lh-base"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-linkedin lh-base"></i></a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Links section -->
+				<div class="col-xl-8">
+					<div class="row g-4">
+
+						<!-- Company -->
+						<div class="col-6 col-lg-4">
+							<h6 class="mb-3 mb-sm-4">Company</h6>
+							<ul class="nav flex-column gap-1">
+								<li class="nav-item"><a class="nav-link pt-0" href="about-v1.html">About Microhub</a>
+								</li>
+								<li class="nav-item"><a class="nav-link" href="service-v1.html">Our Services</a></li>
+								<li class="nav-item"><a class="nav-link" href="pricing-v1.html">Pricing</a></li>
+								<li class="nav-item"><a class="nav-link" href="career.html">Careers</a></li>
+								<li class="nav-item"><a class="nav-link" href="contact-us-v1.html">Contact Us</a></li>
+							</ul>
+						</div>
+
+						<!-- Resources -->
+						<div class="col-6 col-lg-4">
+							<h6 class="mb-3 mb-sm-4">Resources</h6>
+							<ul class="nav flex-column gap-1">
+								<li class="nav-item"><a class="nav-link pt-0" href="#">CMS Features</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">IT Infrastructure</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">Hardware Solutions</a></li>
+								<li class="nav-item"><a class="nav-link" href="blog-minimal.html">Blogs & Insights</a>
+								</li>
+								<li class="nav-item"><a class="nav-link" href="#">Client Success Stories</a></li>
+							</ul>
+						</div>
+
+						<!-- Contact Us -->
+						<div class="col-12 col-lg-4">
+							<h6 class="mb-3 mb-sm-4">Contact Us</h6>
+
+							<ul class="nav flex-column gap-2 small text-body-secondary">
+								<li class="d-flex align-items-start gap-2">
+									<i class="bi bi-geo-alt text-primary-grad mt-1"></i>
+									<span>
+										Unit No-484, Tower-C,<br>
+										Bhutani Alphathum,<br>
+										Sector-90, Noida UP – 201305
+									</span>
+								</li>
+
+								<li class="d-flex align-items-center gap-2">
+									<i class="bi bi-envelope text-primary-grad"></i>
+									<a href="mailto:sales@microhub.co.in" class="nav-link p-0">
+										sales@microhub.co.in
+									</a>
+								</li>
+
+								<li class="d-flex align-items-center gap-2">
+									<i class="bi bi-telephone text-primary-grad"></i>
+									<a href="tel:+917368007363" class="nav-link p-0">
+										+91 73680 07363
+									</a>
+								</li>
+							</ul>
+
+							<ul class="list-inline mt-3 mb-0">
+								<li class="list-inline-item">
+									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+											class="bi bi-facebook lh-base"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+											class="bi bi-linkedin lh-base"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+											class="bi bi-instagram lh-base"></i></a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- Divider -->
+			<hr class="mt-xl-5 mb-0 opacity-1">
+
+			<!-- Bottom footer -->
+			<div class="d-md-flex justify-content-between align-items-center text-center text-lg-start py-4">
+				<div class="text-body small mb-3 mb-md-0">
+					Copyright ©2024 Microhub.
+					Built by <a href="#" class="text-body text-primary-hover hover-underline-animation">Microhub</a>.
+				</div>
+
+				<ul class="nav justify-content-center gap-1 mb-0">
+					<li class="nav-item"><a class="nav-link small py-0" href="#">Privacy policy</a></li>
+					<li class="nav-item"><a class="nav-link small py-0 pe-0" href="#">Terms & conditions</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</footer>
+
+	<!-- =======================
+Footer END -->
+
+	<!-- Back to top -->
+	<div class="back-top"></div>
+
+	<!-- Bootstrap JS -->
+	<script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!--Vendors-->
+	<script src="./assets/vendor/ityped/index.js"></script>
+
+	<!-- Theme Functions -->
+	<script src="./assets/js/functions.js"></script>
+
+</body>
+
+</html>

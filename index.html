@@ -1,0 +1,2122 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+	/* ===========================
+GLOBAL RESPONSIVE RESET
+=========================== */
+
+	/* Prevent horizontal scroll */
+	html,
+	body {
+		overflow-x: hidden;
+	}
+
+	/* Container breathing room on small screens */
+	@media (max-width: 576px) {
+		.container {
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+	}
+
+	/* Headings scale nicely */
+	h1 {
+		font-size: clamp(1.9rem, 5vw, 3.2rem);
+	}
+
+	h2 {
+		font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+	}
+
+	h3 {
+		font-size: clamp(1.4rem, 4vw, 2rem);
+	}
+
+	/* Paragraph readability */
+	p {
+		font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+		line-height: 1.7;
+	}
+
+	/* Buttons scale */
+	.btn {
+		font-size: clamp(0.9rem, 2.8vw, 1rem);
+		padding: 10px 20px;
+	}
+</style>
+
+<head meta name="viewport" content="width=device-width, initial-scale=1">
+	>
+
+	<title>Microhub</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="microhub.com">
+	<meta name="description" content="microhub page">
+
+	<!-- Dark mode -->
+	<script>
+		const storedTheme = localStorage.getItem('theme')
+
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		window.addEventListener('DOMContentLoaded', () => {
+			var el = document.querySelector('.theme-icon-active');
+			if (el != 'undefined' && el != null) {
+				const showActiveTheme = theme => {
+					const activeThemeIcon = document.querySelector('.theme-icon-active use')
+					const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+					const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+					document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+						element.classList.remove('active')
+					})
+
+					btnToActive.classList.add('active')
+					activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+				}
+
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+					if (storedTheme !== 'light' || storedTheme !== 'dark') {
+						setTheme(getPreferredTheme())
+					}
+				})
+
+				showActiveTheme(getPreferredTheme())
+
+				document.querySelectorAll('[data-bs-theme-value]')
+					.forEach(toggle => {
+						toggle.addEventListener('click', () => {
+							const theme = toggle.getAttribute('data-bs-theme-value')
+							localStorage.setItem('theme', theme)
+							setTheme(theme)
+							showActiveTheme(theme)
+						})
+					})
+
+			}
+		})
+
+	</script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/Microhub_logo.png">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+		rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css"
+		href="./assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css"
+		href="./assets/vendor/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" type="text/css"
+		href="./assets/vendor/glightbox/css/glightbox.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+</head>
+
+<body>
+
+	<!-- Header START -->
+	<div class="header-absolute">
+		<!-- Top header -->
+		<div class="alert fade show border-0 rounded-0 text-center overflow-hidden z-index-9 py-2 m-0 d-none d-lg-block"
+			style="background-color:#2DA9E1;" role="alert">
+			<div class="container d-flex justify-content-between px-2 px-xl-4">
+				<!-- Contact info -->
+				<ul class="list-inline d-flex flex-wrap gap-3 text-white mb-0">
+					<li class="list-inline-item small fw-light"><i class="bi bi-headset me-2"></i>Call us: <a href="#"
+							class="link-white">+91 7368007363
+
+						</a></li>
+					<li class="list-inline-item small fw-light"><i class="bi bi-envelope me-2"></i>Email: <a href="#"
+							class="link-white">sales@microhub.co.in</a></li>
+				</ul>
+
+				<!-- Social links -->
+				<ul class="list-inline mb-0">
+					<li class="list-inline-item small text-white">Follow us on: </li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-facebook"></i></a>
+					</li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-instagram"></i></a>
+					</li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-twitter-x"></i></a>
+					</li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-linkedin"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Header START -->
+		<header class="header-sticky bg-transparent">
+			<!-- Logo Nav START -->
+			<nav class="navbar navbar-expand-xl">
+				<div class="container">
+					<!-- Logo START -->
+					<a class="navbar-brand me-0" href="index.html">
+						<img class="light-mode-item navbar-brand-item" src="assets/images/Microhub_logo_light.png"
+							alt="logo">
+						<img class="dark-mode-item navbar-brand-item"
+							src="assets/images/microhub-white-logo-BbBXVK-M.svg" alt="logo">
+					</a>
+					<!-- Logo END -->
+
+					<!-- Main navbar START -->
+					<div class="navbar-collapse collapse" id="navbarCollapse">
+						<ul class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto">
+							<!-- HOME -->
+							 <li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
+								<div class="dropdown-menu dropdown-menu-size-md dropdown-menu-center p-3">
+									<div class="dropdown-card">
+										<div class="icon-md bg-primary bg-opacity-15 text-primary rounded">
+											<i class="bi bi-info-circle"></i>
+										</div>
+										<div class="content">
+											<p class="title">About</p>
+											<p class="desc">Our story, vision, and what drives us</p>
+									    </div>
+										<a href="about-v1.html" class="arrow"><i class="bi bi-chevron-right"></i></a>
+									</div>
+								</div>
+							</li>
+							<!-- SOLUTIONS -->
+							 <li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-3">
+									<div class="row g-3">
+										<!-- CMS -->
+										 <div class="col-md-4">
+											<div class="dropdown-card">
+												<div class="icon-md bg-primary bg-opacity-15 text-primary rounded">
+													<i class="bi bi-grid-1x2"></i>
+												</div>
+												<div class="content">
+													<p class="title">CMS Solutions</p>
+													<ul class="clean-list">
+														<li>CRM</li>
+														<li>HR-Payroll</li>
+														<li>Inventory</li>
+														<li>Finance</li>
+														<li>ERP</li>
+														<li>Automation</li>
+													</ul>
+												</div>
+												<a href="services-grid.html" class="arrow"><i class="bi bi-chevron-right"></i></a>
+											</div>
+										</div>
+										<!-- IT -->
+                                        <div class="col-md-4">
+                                          <div class="dropdown-card">
+                                              <div class="icon-md bg-info bg-opacity-15 text-info rounded">
+                                                  <i class="bi bi-hdd-network"></i>
+                                                </div>
+                                                <div class="content">
+                                                  <p class="title">IT Infrastructure & Services</p>
+                                                    <ul class="clean-list">
+                                                        <li>IT Infrastructure</li>
+                                                        <li>Networking</li>
+                                                        <li>Servers</li>
+                                                        <li>Web Development</li>
+                                                        <li>AMC-Packages</li>
+                                                        <li>ERP</li>
+                                                        <li>Cybersecurity</li>
+                                                    </ul>
+                                                </div>
+                                                    <a href="/services-main.html" class="arrow"><i class="bi bi-chevron-right"></i></a>
+                                            </div>
+                                        </div>
+
+          <!-- HARDWARE -->
+          <div class="col-md-4">
+            <div class="dropdown-card">
+              <div class="icon-md bg-warning bg-opacity-15 text-warning rounded">
+                <i class="bi bi-laptop"></i>
+              </div>
+              <div class="content">
+                <p class="title">Hardware Solutions</p>
+                <ul class="clean-list">
+                  <li>Laptops</li>
+                  <li>Macs</li>
+                  <li>Printers</li>
+                  <li>Networking & Peripherals</li>
+                </ul>
+              </div>
+              <a href="/hardware" class="arrow"><i class="bi bi-chevron-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </li>
+
+             <!-- EXPLORE -->
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Explore</a>
+
+               <div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-3">
+                 <div class="row g-3">
+
+                   <div class="col-md-4">
+                     <div class="dropdown-card">
+                       <div class="icon-md bg-primary bg-opacity-15 text-primary rounded">
+                         <i class="bi bi-currency-rupee"></i>
+                       </div>
+                       <div class="content">
+                         <p class="title">Pricing</p>
+                         <p class="desc">Transparent plans for every business size</p>
+                       </div>
+                       <a href="pricing-v1.html" class="arrow"><i class="bi bi-chevron-right"></i></a>
+                     </div>
+                   </div>
+
+                   <div class="col-md-4">
+                     <div class="dropdown-card">
+                       <div class="icon-md bg-success bg-opacity-15 text-success rounded">
+                         <i class="bi bi-journal-text"></i>
+                       </div>
+                       <div class="content">
+                         <p class="title">Resources</p>
+                         <ul class="clean-list">
+                           <li>Blogs</li>
+                           <li>Case Studies</li>
+                           <li>Videos</li>
+                           <li>Learning Guides</li>
+                           <li>FAQs</li>
+                         </ul>
+                       </div>
+                       <a href="/resources" class="arrow"><i class="bi bi-chevron-right"></i></a>
+                     </div>
+                   </div>
+
+                   <div class="col-md-4">
+                     <div class="dropdown-card">
+                       <div class="icon-md bg-warning bg-opacity-15 text-warning rounded">
+                         <i class="bi bi-shield-check"></i>
+                       </div>
+                       <div class="content">
+                         <p class="title">Security & Compliance</p>
+                         <ul class="clean-list">
+                           <li>Data Protection</li>
+                           <li>Privacy</li>
+                           <li>T&C</li>
+                           <li>Security Compliance</li>
+                         </ul>
+                       </div>
+                       <a href="/security-compliance" class="arrow"><i class="bi bi-chevron-right"></i></a>
+                     </div>
+                   </div>
+
+                 </div>
+               </div>
+            </li>
+			<li class="nav-item">
+
+			</li><a class="nav-link" href="contact-us-v1.html">Contact us</a>
+		</li>
+	</ul>
+</div>
+
+					<!-- Main navbar END -->
+
+					<!-- Buttons -->
+					<ul class="nav align-items-center dropdown-hover ms-sm-2">
+						<!-- Dark mode option START -->
+						<li class="nav-item dropdown dropdown-animation">
+							<button class="btn btn-link mb-0 px-2 lh-1" id="bd-theme" type="button"
+								aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+									class="bi bi-circle-half theme-icon-active fill-mode fa-fw" viewBox="0 0 16 16">
+									<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+									<use href="#"></use>
+								</svg>
+							</button>
+
+							<ul class="dropdown-menu min-w-auto dropdown-menu-end" aria-labelledby="bd-theme">
+								<li class="mb-1">
+									<button type="button" class="dropdown-item d-flex align-items-center"
+										data-bs-theme-value="light">
+										<svg width="16" height="16" fill="currentColor"
+											class="bi bi-brightness-high-fill fa-fw mode-switch me-1"
+											viewBox="0 0 16 16">
+											<path
+												d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+											<use href="#"></use>
+										</svg>Light
+									</button>
+								</li>
+								<li class="mb-1">
+									<button type="button" class="dropdown-item d-flex align-items-center"
+										data-bs-theme-value="dark">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+											fill="currentColor" class="bi bi-moon-stars-fill fa-fw mode-switch me-1"
+											viewBox="0 0 16 16">
+											<path
+												d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+											<path
+												d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+											<use href="#"></use>
+										</svg>Dark
+									</button>
+								</li>
+								<li>
+									<button type="button" class="dropdown-item d-flex align-items-center active"
+										data-bs-theme-value="auto">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+											fill="currentColor" class="bi bi-circle-half fa-fw mode-switch me-1"
+											viewBox="0 0 16 16">
+											<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+											<use href="#"></use>
+										</svg>Auto
+									</button>
+								</li>
+							</ul>
+						</li>
+						<!-- Dark mode option END -->
+
+						<!-- Schedule button -->
+						<li class="nav-item ms-2 d-none d-sm-block">
+							<a href="#" class="btn btn-sm mb-0" data-bs-toggle="offcanvas"
+								data-bs-target="#scheduleCall" aria-controls="scheduleCall" style="
+						      background: linear-gradient(135deg, #3B82F6, #38BDF8);
+						      color:#fff;
+						      border:none;
+						      padding:8px 16px;
+						      font-weight:500;
+						      transition:all 0.3s ease;
+						    " onmouseover="
+						      this.style.boxShadow='0 8px 20px rgba(56,189,248,0.45)';
+						      this.style.transform='translateY(-1px)';
+						    " onmouseout="
+						      this.style.boxShadow='none';
+						      this.style.transform='translateY(0)';
+						    ">
+								<i class="bi bi-calendar-week me-2"></i>
+								Login
+							</a>
+						</li>
+
+
+						<!-- Responsive navbar toggler -->
+						<li class="nav-item">
+							<button class="navbar-toggler ms-sm-3 p-2" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span class="navbar-toggler-animation">
+									<span></span>
+									<span></span>
+									<span></span>
+								</span>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- Logo Nav END -->
+		</header>
+		<!-- Header END -->
+	</div>
+	<!-- Header END -->
+
+	<!-- **************** MAIN CONTENT START **************** -->
+	<main>
+
+		<!-- =======================
+Hero START -->
+		<style>
+			/* ===========================
+HERO RESPONSIVE
+=========================== */
+
+			@media (max-width: 768px) {
+				#hero-shape {
+					display: none !important;
+				}
+
+				.typed {
+					display: block;
+					margin-top: 6px;
+				}
+
+				.hero-buttons {
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 12px;
+				}
+			}
+
+			@keyframes heroDropBounce {
+				0% {
+					opacity: 0;
+					transform: translateY(-140px) scale(0.95);
+				}
+
+				60% {
+					opacity: 1;
+					transform: translateY(30px) scale(1);
+				}
+
+				80% {
+					transform: translateY(-16px);
+				}
+
+				100% {
+					transform: translateY(0);
+				}
+			}
+		</style>
+		<section class="position-relative pt-sm-8 pt-lg-9 pb-4">
+			<!-- Right side svg decoration -->
+			<!-- <div id="hero-shape" class="position-absolute top-0 end-0 z-index-2 d-none d-md-block rtl-flip" style="
+			    opacity: 0;
+			    transform: translateY(-120px) scale(0.95);
+			    animation: heroDropBounce 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+			  ">
+				<img src="assets/images/elements/grad-shape/07.png" alt="">
+			</div> -->
+
+
+			<script>
+				window.addEventListener("load", () => {
+					const shape = document.getElementById("hero-shape");
+
+					/* Phase 1: Emerge */
+					shape.style.opacity = "1";
+					shape.style.transform = "translateX(0) scale(1)";
+
+					/* Phase 2: Shift left */
+					setTimeout(() => {
+						shape.style.transform = "translateX(-18px)";
+					}, 1300);
+
+					/* Phase 3: Shift right */
+					setTimeout(() => {
+						shape.style.transform = "translateX(14px)";
+					}, 1700);
+
+					/* Phase 4: Return to original */
+					setTimeout(() => {
+						shape.style.transform = "translateX(0)";
+					}, 2200);
+				});
+
+			</script>
+
+
+			<div class="container pt-4">
+				<div class="col-md-9 pe-3">
+
+					<!-- Pre title -->
+					<p class="heading-color bg-secondary d-inline-block rounded px-3 py-2 mb-3">
+						<span class="badge bg-dark me-2">Microhub CMS</span>
+						One platform to manage operations, IT, and growth
+					</p>
+					<!-- Title -->
+					<h1 class="display-6 fw-semibold mb-4 lh-base">
+						Simplify, automate, and scale your
+						<span class="mb-0 d-block d-xxl-inline-block" style="color:#2DA9E1;">
+							<span class="typed" data-type-text="business&&operations&&IT ecosystem"></span>
+						</span>
+					</h1>
+
+
+
+					<!-- Button and info -->
+					<div class="d-flex gap-3 gap-sm-4 flex-wrap">
+
+						<!-- Button -->
+						<a href="/free-trial" class="btn" style="
+						    border:1.5px solid #2DA9E1;
+						    color:#2DA9E1;
+						    background:transparent;
+						    padding:8px 16px;
+							justify-content: center;
+						    transition:all 0.3s ease;
+						  " onmouseover="
+						    this.style.background='linear-gradient(135deg, #2DA9E1, #4CB5E8)';
+						    this.style.color='#fff';
+						    this.style.boxShadow='0 6px 18px rgba(45,169,225,0.35)';
+						  " onmouseout="
+						    this.style.background='transparent';
+						    this.style.color='#2DA9E1';
+						    this.style.boxShadow='none';
+						  ">
+							Start Free Trial
+						</a>
+
+
+						<a href="/contact" class="btn btn-link" style="
+    						color:#2DA9E1;
+    						text-decoration:none;
+    						padding-left:0;
+  							" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+							Talk to Sales →
+						</a>
+
+
+						<!-- Info -->
+						<!-- <div class="d-flex gap-2 align-items-center">
+							<ul class="avatar-group mb-0 align-items-center">
+								<li class="avatar">
+									<img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg"
+										alt="avatar">
+								</li>
+								<li class="avatar">
+									<img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg"
+										alt="avatar">
+								</li>
+								<li class="avatar">
+									<img class="avatar-img rounded-circle" src="assets/images/avatar/10.jpg"
+										alt="avatar">
+								</li>
+								<li class="avatar">
+									<img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg"
+										alt="avatar">
+								</li>
+							</ul>
+							<p class="heading-color mb-0">Trusted by 1K+ businesses</p>
+						</div> -->
+
+					</div>
+
+				</div>
+				<!-- Moving Earth -->
+				 <div class="earth-wrapper">
+					<div class="earth"></div>
+				</div>
+
+			</div>
+		</section>
+		<!-- =======================
+Hero END -->
+
+
+		<!-- =======================
+Image and client START -->
+		<section class="bg-secondary position-relative overflow-hidden pt-7">
+			<!-- skewed divider	 -->
+			<!-- <span class="position-absolute top-0 start-0">
+				<svg class="fill-body" width="1920" height="237" viewBox="0 0 1920 237" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M1940.5 0H-9V164C708.2 295.2 1589.5 218.667 1940.5 164V0Z" />
+				</svg>
+			</span> -->
+
+			<div class="container position-relative z-index-9">
+				<!-- Grad blur decoration -->
+				<!-- <div class="position-absolute top-0 start-50 translate-middle-x mt-n3">
+					<img src="assets/images/elements/grad-shape/blur-decoration-2.svg" class="opacity-2 blur-8"
+						alt="Grad shape">
+				</div> -->
+                 
+				<!-- Image -->
+				<!-- <div
+					class="bg-body bg-opacity-10 bg-blur border border-white border-opacity-25 position-relative rounded-4 shadow-primary-lg p-4">
+					 Dots -->
+					<!-- <span class="text-purple">
+						
+					</span> --> 
+
+					<!-- Images content -->
+					<!-- <div class="row rounded-4 overflow-hidden g-0"> -->
+						<!-- Call image -->
+						<!-- <div class="col-sm-5">
+							<div class="card card-body p-0 h-100">
+								
+								<img src="assets/images/bg/02.jpg" alt="">
+
+								<div class="card-img-overlay d-flex flex-column">
+									<ul class="list-inline d-flex gap-3 mb-1 mt-auto mx-auto">
+										<li class="list-inline-item me-0">
+											<button class="btn btn-lg btn-white btn-icon rounded-circle mb-0"
+												type="button"><i class="bi bi-mic fa-sm"></i></button>
+										</li>
+
+										<li class="list-inline-item me-0">
+											<button class="btn btn-lg btn-white btn-icon rounded-circle mb-0"
+												type="button"><i class="bi bi-camera-reels fa-sm"></i></button>
+										</li>
+
+										<li class="list-inline-item me-0">
+											<button class="btn btn-lg btn-danger btn-icon rounded-circle mb-0"
+												type="button"><i class="bi bi-telephone-x fa-sm"></i>
+											</button>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div> -->
+
+						<!-- Code image -->
+						<!-- <div class="col-sm-7">
+							<div class="h-100"
+								style="background:url(assets/images/bg/code.jpg) no-repeat; background-size:cover; background-position:left top;">
+							</div>
+						</div> -->
+					<!-- </div> -->
+				<!-- </div> -->
+
+				<div class="inner-container-small text-center mb-6 mb-lg-7">
+					<h2 id="about-title" class="mb-2 mb-lg-4" style="
+					    font-size:clamp(1.6rem, 2.5vw, 2.2rem);
+					    font-weight:600;
+					    line-height:1.25;
+					    background:linear-gradient(
+					      90deg,
+					      #0f172a 0%,
+					      #2DA9E1 40%,
+					      #0f172a 80%
+					    );
+					    background-size:200% 100%;
+					    background-position:0% 50%;
+					    background-clip:text;
+					    -webkit-background-clip:text;
+					    -webkit-text-fill-color:transparent;
+					    opacity:0;
+					    transform:translateY(12px);
+					    animation:
+					      aboutFadeIn 0.9s ease forwards,
+					      gradientSlide 6s ease-in-out infinite;
+					  ">
+						Our Trusted Partners
+
+					</h2>
+
+				</div>
+
+				<!-- Client slider START -->
+				<div class="swiper mt-6" data-swiper-options='{
+		"slidesPerView": 2, 
+			"spaceBetween": 50,
+			"breakpoints": { 
+				"576": {"slidesPerView": 3}, 
+				"768": {"slidesPerView": 4}, 
+				"1200": {"slidesPerView": 6},
+				"1400": {"slidesPerView": 8}
+			}}'>
+
+					<!-- Slider items -->
+					<div class="swiper-wrapper align-items-center">
+						<!-- Image -->
+						<div class="swiper-slide">
+							<div class="swap-logo">
+								<img src="assets/images/client/logo-dark/JAKSON-T5NSfTH-.png" alt="client-img">
+								<div class="swap-item">
+									<img src="assets/images/client/logo-dark/JAKSON-T5NSfTH-.png" class="dark-mode-item"
+										alt="client logo">
+									<img src="assets/images/client/logo-dark/JAKSON-T5NSfTH-.png"
+										class="light-mode-item" alt="client logo">
+								</div>
+							</div>
+						</div>
+						<!-- Image -->
+						<div class="swiper-slide">
+							<div class="swap-logo">
+								<img src="assets/images/client/logo-dark/VAIDIC-SRIJAN-BSqzRd3g.png" alt="client-img">
+								<div class="swap-item">
+									<img src="assets/images/client/logo-dark/VAIDIC-SRIJAN-BSqzRd3g.png"
+										class="dark-mode-item" alt="client logo">
+									<img src="assets/images/client/logo-dark/VAIDIC-SRIJAN-BSqzRd3g.png"
+										class="light-mode-item" alt="client logo">
+								</div>
+							</div>
+						</div>
+						<!-- Image -->
+						<div class="swiper-slide">
+							<div class="swap-logo">
+								<img src="assets/images/client/logo-dark/wipro-DhgFwhPp.png" alt="client-img">
+								<div class="swap-item">
+									<img src="assets/images/client/logo-dark/wipro-DhgFwhPp.png" class="dark-mode-item"
+										alt="client logo">
+									<img src="assets/images/client/logo-dark/wipro-DhgFwhPp.png" class="light-mode-item"
+										alt="client logo">
+								</div>
+							</div>
+						</div>
+						<!-- Image -->
+						<div class="swiper-slide">
+							<div class="swap-logo">
+								<img src="assets/images/client/logo-dark/axiom-mQS4rbxM.png" alt="client-img">
+								<div class="swap-item">
+									<img src="assets/images/client/logo-dark/axiom-mQS4rbxM.png" class="dark-mode-item"
+										alt="client logo">
+									<img src="assets/images/client/logo-dark/axiom-mQS4rbxM.png" class="light-mode-item"
+										alt="client logo">
+								</div>
+							</div>
+						</div>
+						<!-- Image -->
+						<div class="swiper-slide">
+							<div class="swap-logo">
+								<img src="assets/images/client/logo-dark/almonds-BoaRI-IP.png" alt="client-img">
+								<div class="swap-item">
+									<img src="assets/images/client/logo-dark/almonds-BoaRI-IP.png"
+										class="dark-mode-item" alt="client logo">
+									<img src="assets/images/client/logo-dark/almonds-BoaRI-IP.png"
+										class="light-mode-item" alt="client logo">
+								</div>
+							</div>
+						</div>
+						<!-- Image -->
+						<div class="swiper-slide">
+							<div class="swap-logo">
+								<img src="assets/images/client/logo-dark/Atechnos-logo-B5G0xdh8.png" alt="client-img">
+								<div class="swap-item">
+									<img src="assets/images/client/logo-dark/Atechnos-logo-B5G0xdh8.png"
+										class="dark-mode-item" alt="client logo">
+									<img src="assets/images/client/logo-dark/Atechnos-logo-B5G0xdh8.png"
+										class="light-mode-item" alt="client logo">
+								</div>
+							</div>
+						</div>
+						<!-- Image -->
+						<div class="swiper-slide">
+							<div class="swap-logo">
+								<img src="assets/images/client/logo-dark/narashri-BdKbnVxe.png" alt="client-img">
+								<div class="swap-item">
+									<img src="assets/images/client/logo-dark/narashri-BdKbnVxe.png"
+										class="dark-mode-item" alt="client logo">
+									<img src="assets/images/client/logo-dark/narashri-BdKbnVxe.png"
+										class="light-mode-item" alt="client logo">
+								</div>
+							</div>
+						</div>
+						<!-- Image -->
+						<div class="swiper-slide">
+							<div class="swap-logo">
+								<img src="assets/images/client/logo-dark/ontic-logo.svg" alt="client-img">
+								<div class="swap-item">
+									<img src="assets/images/client/logo-dark/ontic-logo.svg" class="dark-mode-item"
+										alt="client logo">
+									<img src="assets/images/client/logo-light/ontic_light.svg" class="light-mode-item"
+										alt="client logo">
+								</div>
+							</div>
+						</div>
+						<!-- Image -->
+						<div class="swiper-slide">
+							<div class="swap-logo">
+								<img src="assets/images/client/logo-dark/BTG-BK4vfSqE.png" alt="client-img">
+								<div class="swap-item">
+									<img src="assets/images/client/logo-dark/BTG-BK4vfSqE.png" class="dark-mode-item"
+										alt="client logo">
+									<img src="assets/images/client/logo-dark/BTG-BK4vfSqE.png" class="light-mode-item"
+										alt="client logo">
+								</div>
+							</div>
+						</div>
+						<!-- Image -->
+						<div class="swiper-slide">
+							<div class="swap-logo">
+								<img src="assets/images/client/logo-dark/ncc-DMFbuuQm.png" alt="client-img">
+								<div class="swap-item">
+									<img src="assets/images/client/logo-dark/ncc-DMFbuuQm.png" class="dark-mode-item"
+										alt="client logo">
+									<img src="assets/images/client/logo-dark/ncc-DMFbuuQm.png" class="light-mode-item"
+										alt="client logo">
+								</div>
+							</div>
+						</div>
+						<!-- Image -->
+						<div class="swiper-slide">
+							<div class="swap-logo">
+								<img src="assets/images/client/logo-dark/quadrafort-Cc5GNjux.png" alt="client-img">
+								<div class="swap-item">
+									<img src="assets/images/client/logo-dark/quadrafort-Cc5GNjux.png"
+										class="dark-mode-item" alt="client logo">
+									<img src="assets/images/client/logo-dark/quadrafort-Cc5GNjux.png"
+										class="light-mode-item" alt="client logo">
+								</div>
+							</div>
+						</div>
+						<!-- Image -->
+						<div class="swiper-slide">
+							<div class="swap-logo">
+								<img src="assets/images/client/logo-dark/marswell-BOH3Y-if.png" alt="client-img">
+								<div class="swap-item">
+									<img src="assets/images/client/logo-dark/marswell-BOH3Y-if.png"
+										class="dark-mode-item" alt="client logo">
+									<img src="assets/images/client/logo-dark/marswell-BOH3Y-if.png"
+										class="light-mode-item" alt="client logo">
+								</div>
+							</div>
+						</div>
+						<!-- Image -->
+						<div class="swiper-slide">
+							<div class="swap-logo">
+								<img src="assets/images/client/logo-dark/arya-B7TvlRXs.png" alt="client-img">
+								<div class="swap-item">
+									<img src="assets/images/client/logo-dark/arya-B7TvlRXs.png" class="dark-mode-item"
+										alt="client logo">
+									<img src="assets/images/client/logo-dark/arya-B7TvlRXs.png" class="light-mode-item"
+										alt="client logo">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Client slider END -->
+			</div>
+		</section>
+		<!-- =======================
+Image and client END -->
+
+
+		<!-- =======================
+About START -->
+		<section class="bg-secondary pt-0 overflow-hidden">
+			<div class="container">
+				<div class="row g-4 align-items-center">
+
+					<!-- Text Content -->
+					<div class="col-lg-5">
+
+						<!-- Animated Heading -->
+						<h2 id="about-title" class="mb-2 mb-lg-4" style="
+						    font-size:clamp(1.6rem, 2.5vw, 2.2rem);
+							font-family: 'Poppins', sans-serif;
+						    font-weight:600;
+						    line-height:1.25;
+						    background:linear-gradient(
+						      90deg,
+						      #0f172a 0%,
+						      #2DA9E1 40%,
+						      #0f172a 80%
+						    );
+						    background-size:200% 100%;
+						    background-position:0% 50%;
+						    background-clip:text;
+						    -webkit-background-clip:text;
+						    -webkit-text-fill-color:transparent;
+						    opacity:0;
+						    transform:translateY(12px);
+						    animation:
+						      aboutFadeIn 0.9s ease forwards,
+						      gradientSlide 6s ease-in-out infinite;
+						  ">
+							Everything your business needs—connected in one system
+						</h2>
+
+
+
+						<p class="mb-2 mb-lg-4" style="
+            opacity:0;
+            transform:translateY(12px);
+            animation: textReveal 0.8s ease forwards;
+            animation-delay:0.2s;
+          ">
+							Microhub builds a unified CMS that helps businesses manage operations,
+							teams, finances, and IT from one powerful platform. Alongside our
+							software, we deliver enterprise IT services and hardware to support
+							complete business growth.
+						</p>
+
+						<!-- List -->
+						<ul class="list-group list-group-borderless mb-3 mb-lg-4">
+							<li class="list-group-item d-flex heading-color fw-semibold pb-0">
+								<i class="bi bi-check-circle text-primary me-2"></i>
+								Unified CMS for operations, people, and finance
+							</li>
+							<li class="list-group-item d-flex heading-color fw-semibold pb-0">
+								<i class="bi bi-check-circle text-primary me-2"></i>
+								Integrated IT services and infrastructure support
+							</li>
+							<li class="list-group-item d-flex heading-color fw-semibold pb-0">
+								<i class="bi bi-check-circle text-primary me-2"></i>
+								Secure, scalable, enterprise-ready systems
+							</li>
+						</ul>
+
+						<!-- Buttons -->
+						<div class="d-flex gap-3 flex-wrap">
+							<a href="/demo" class="btn btn-sm mb-0" style="background: linear-gradient(135deg, #3B82F6, #38BDF8);
+    								color:#fff;
+    								border:none;
+    								padding:10px 20px;
+    								font-weight:700;
+    								transition:all 0.3s ease;
+  									" onmouseover="
+    								this.style.boxShadow='0 8px 20px rgba(56,189,248,0.45)';
+    								this.style.transform='translateY(-1px)';
+  									" onmouseout="
+    								this.style.boxShadow='none';
+    								this.style.transform='translateY(0)';
+  									">
+								Learn More
+							</a>
+							<a href="/contact" class="btn btn-link" style="
+    						color:#2DA9E1;
+    						text-decoration:none;
+    						padding-left:0;
+  							" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
+								Schedule a Consultation →
+							</a>
+
+						</div>
+					</div>
+
+					<!-- Image Section -->
+					<div class="col-lg-6 position-relative ms-auto ps-lg-4">
+
+						<!-- FLOATING FRONT SHAPE (NOT BACKGROUND) -->
+						<!-- <img src="assets/images/elements/grad-shape/08.png" alt="floating shape" style="
+            position:absolute;
+            top:12%;
+            left:-40px;
+            width:180px;
+            z-index:5;
+            animation: bubbleOrbit 14s linear infinite;
+            pointer-events:none;
+          "> -->
+
+						<!-- Main Image -->
+						<img src="assets/images/about/04.jpg" class="rounded-4 position-relative z-index-2"
+							alt="about image" style="
+            animation: imageFloat 6s ease-in-out infinite;
+          ">
+
+					</div>
+
+				</div>
+			</div>
+
+			<!-- INLINE ANIMATIONS -->
+			<style>
+				@keyframes aboutFadeIn {
+					to {
+						opacity: 1;
+						transform: translateY(0);
+					}
+				}
+
+				@keyframes gradientSlide {
+					0% {
+						background-position: 0% 50%;
+					}
+
+					50% {
+						background-position: 100% 50%;
+					}
+
+					100% {
+						background-position: 0% 50%;
+					}
+				}
+
+				@keyframes textReveal {
+					to {
+						opacity: 1;
+						transform: translateY(0);
+					}
+				}
+
+				/* Clockwise floating bubble motion */
+				@keyframes bubbleOrbit {
+					0% {
+						transform: translate(0, 0) rotate(0deg);
+					}
+
+					25% {
+						transform: translate(12px, -18px) rotate(90deg);
+					}
+
+					50% {
+						transform: translate(22px, 6px) rotate(180deg);
+					}
+
+					75% {
+						transform: translate(8px, 18px) rotate(270deg);
+					}
+
+					100% {
+						transform: translate(0, 0) rotate(360deg);
+					}
+				}
+
+				/* Subtle breathing animation for main image */
+				@keyframes imageFloat {
+					0% {
+						transform: translateY(0) scale(1);
+					}
+
+					50% {
+						transform: translateY(-10px) scale(1.01);
+					}
+
+					100% {
+						transform: translateY(0) scale(1);
+					}
+				}
+			</style>
+		</section>
+
+		<!-- =======================
+About END -->
+
+
+		<!-- =======================
+Services START -->
+		<style>
+			/* Purplish hover effect for Services cards */
+			.row.g-4.g-xl-5>.col-sm-6 .card {
+				transition:
+					background 0.4s ease,
+					box-shadow 0.4s ease,
+					transform 0.3s ease;
+			}
+
+			.row.g-4.g-xl-5>.col-sm-6 .card:hover {
+				background: linear-gradient(135deg,
+						rgba(124, 58, 237, 0.12),
+						rgba(139, 92, 246, 0.18));
+				box-shadow:
+					0 14px 34px rgba(124, 58, 237, 0.28);
+				transform: translateY(-5px);
+			}
+		</style>
+		<section class="bg-secondary position-relative overflow-hidden pt-0 pb-5">
+			<div class="container position-relative">
+				<!-- Title -->
+				<div class="inner-container-small text-center mb-6 mb-lg-7">
+					<h2 id="about-title" class="mb-2 mb-lg-4" style="
+					    font-size:clamp(1.6rem, 2.5vw, 2.2rem);
+					    font-weight:600;
+					    line-height:1.25;
+					    background:linear-gradient(
+					      90deg,
+					      #0f172a 0%,
+					      #2DA9E1 40%,
+					      #0f172a 80%
+					    );
+					    background-size:200% 100%;
+					    background-position:0% 50%;
+					    background-clip:text;
+					    -webkit-background-clip:text;
+					    -webkit-text-fill-color:transparent;
+					    opacity:0;
+					    transform:translateY(12px);
+					    animation:
+					      aboutFadeIn 0.9s ease forwards,
+					      gradientSlide 6s ease-in-out infinite;
+					  ">
+						Technology Services built to run you Entire Business
+					</h2>
+
+				</div>
+
+				<!-- Services START -->
+				<div class="row g-4 g-xl-5">
+					<!-- Service item -->
+					<div class="col-sm-6 col-lg-4 mb-4">
+						<div
+							class="card card-hover-shadow card-icon-transition text-center bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-4">
+							<!-- Icon -->
+							<div
+								class="card-icon icon-xl bg-primary-custom d-flex justify-content-center align-items-center text-white rounded-circle">
+								<i class="bi bi-grid-1x2-fill"></i>
+							</div>
+
+							<!-- Card body -->
+							<div class="card-footer bg-transparent mt-6 p-0">
+								<h6 class="mb-3">Microhub CMS Solutions</h6>
+								<p>Manage operations, teams, finance, and IT with one unified CMS.</p>
+								<a href="service-single.html"
+									class="link-primary-grad icon-link icon-link-hover stretched-link mb-0">Read more <i
+										class="bi bi-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Service item -->
+					<div class="col-sm-6 col-lg-4 mb-4">
+						<div
+							class="card card-hover-shadow card-icon-transition text-center bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-4">
+							<!-- Icon -->
+							<div
+								class="card-icon icon-xl bg-primary-custom d-flex justify-content-center align-items-center text-white rounded-circle">
+								<i class="bi bi-server"></i>
+							</div>
+
+							<!-- Card body -->
+							<div class="card-footer bg-transparent mt-6 p-0">
+								<h6 class="mb-3">IT Infrastructure & Enterprise Services</h6>
+								<p> Build a secure, scalable IT foundation with expert setup and support.</p>
+								<a href="service-single.html"
+									class="link-primary-grad icon-link icon-link-hover stretched-link mb-0">Read more <i
+										class="bi bi-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Service item -->
+					<div class="col-sm-6 col-lg-4 mb-4">
+						<div
+							class="card card-hover-shadow card-icon-transition text-center bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-4">
+							<!-- Icon -->
+							<div
+								class="card-icon icon-xl bg-primary-custom d-flex justify-content-center align-items-center text-white rounded-circle">
+								<i class="bi bi-diagram-3-fill"></i>
+							</div>
+
+							<!-- Card body -->
+							<div class="card-footer bg-transparent mt-6 p-0">
+								<h6 class="mb-3">ERP & Business Applications</h6>
+								<p>Custom ERP solutions tailored to your workflows and growth.</p>
+								<a href="service-single.html"
+									class="link-primary-grad icon-link icon-link-hover stretched-link mb-0">Read more <i
+										class="bi bi-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Service item -->
+					<div class="col-sm-6 col-lg-4 mb-4">
+						<div
+							class="card card-hover-shadow card-icon-transition text-center bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-4">
+							<!-- Icon -->
+							<div
+								class="card-icon icon-xl bg-primary-custom d-flex justify-content-center align-items-center text-white rounded-circle">
+								<i class="bi bi-shield-lock-fill"></i>
+
+							</div>
+
+							<!-- Card body -->
+							<div class="card-footer bg-transparent mt-6 p-0">
+								<h6 class="mb-3">Cloud & Cybersecurity</h6>
+								<p>Protect systems, users, and data with enterprise-grade security.</p>
+								<a href="service-single.html"
+									class="link-primary-grad icon-link icon-link-hover stretched-link mb-0">Read more <i
+										class="bi bi-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Service item -->
+					<div class="col-sm-6 col-lg-4 mb-4">
+						<div
+							class="card card-hover-shadow card-icon-transition text-center bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-4">
+							<!-- Icon -->
+							<div
+								class="card-icon icon-xl bg-primary-custom d-flex justify-content-center align-items-center text-white rounded-circle">
+								<i class="bi bi-window-stack"></i>
+							</div>
+
+							<!-- Card body -->
+							<div class="card-footer bg-transparent mt-6 p-0">
+								<h6 class="mb-3">Website & Digital Solutions</h6>
+								<p>High-performance websites built to convert visitors.</p>
+								<a href="service-single.html"
+									class="link-primary-grad icon-link icon-link-hover stretched-link mb-0">Read more <i
+										class="bi bi-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Service item -->
+					<div class="col-sm-6 col-lg-4 mb-4">
+						<div
+							class="card card-hover-shadow card-icon-transition text-center bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-4">
+							<!-- Icon -->
+							<div
+								class="card-icon icon-xl bg-primary-custom d-flex justify-content-center align-items-center text-white rounded-circle">
+								<i class="bi bi-headset"></i>
+							</div>
+
+							<!-- Card body -->
+							<div class="card-footer bg-transparent mt-6 p-0">
+								<h6 class="mb-3">Maintenance & 24/7 Support</h6>
+								<p>Proactive monitoring and fast issue resolution round the clock.</p>
+								<a href="service-single.html"
+									class="link-primary-grad icon-link icon-link-hover stretched-link mb-0">Read more <i
+										class="bi bi-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+
+					<!-- button -->
+					<div class="col-12 mb-4">
+						<div class="d-flex flex-column justify-content-center align-items-center text-center h-100">
+							<!-- <img src="assets/images/elements/emoji.png" class="mb-3" alt=""> -->
+							<p>Not satisfied yet?</p>
+							<a href="#" class="btn btn-sm mb-0" data-bs-toggle="offcanvas"
+								data-bs-target="#scheduleCall" aria-controls="scheduleCall" style="
+						      background: linear-gradient(135deg, #3B82F6, #38BDF8);
+						      color:#fff;
+						      border:none;
+						      padding:8px 16px;
+						      font-weight:700;
+						      transition:all 0.3s ease;
+						    " onmouseover="
+						      this.style.boxShadow='0 8px 20px rgba(56,189,248,0.45)';
+						      this.style.transform='translateY(-1px)';
+						    " onmouseout="
+						      this.style.boxShadow='none';
+						      this.style.transform='translateY(0)';
+						    ">
+								Explore our Services
+							</a>
+						</div>
+					</div>
+
+				</div>
+				<!-- Services END -->
+			</div>
+		</section>
+		<!-- =======================
+Services END -->
+
+
+		<!-- =======================
+Testimonials START -->
+		<section class="bg-body position-relative pt-0 pb-5 pb-sm-0">
+			<!-- Right side svg decoration -->
+			<!-- <div
+				class="position-absolute top-100 start-0 translate-middle z-index-1 ms-5 ms-xl-9 mt-5 d-none d-sm-block">
+				<img src="assets/images/elements/grad-shape/10.png" class="h-500px h-xl-700px rtl-flip" alt="">
+			</div> -->
+
+			<div class="container position-relative z-index-9">
+				<!-- Title -->
+				<div class="row justify-content-center text-center mb-4 mb-md-5">
+					<div class="col-lg-7">
+						<br />
+						<br />
+						<h2 id="about-title" class="mb-2 mb-lg-4" style="
+						    font-size:clamp(1.6rem, 2.5vw, 2.2rem);
+						    font-weight:600;
+						    line-height:1.25;
+						    background:linear-gradient(
+						      90deg,
+						      #0f172a 0%,
+						      #2DA9E1 40%,
+						      #0f172a 80%
+						    );
+						    background-size:200% 100%;
+						    background-position:0% 50%;
+						    background-clip:text;
+						    -webkit-background-clip:text;
+						    -webkit-text-fill-color:transparent;
+						    opacity:0;
+						    transform:translateY(12px);
+						    animation:
+						      aboutFadeIn 0.9s ease forwards,
+						      gradientSlide 6s ease-in-out infinite;
+						  ">
+							What our clients say
+						</h2>
+
+						<p class="text-muted mb-0">
+							Real stories from businesses that simplified operations, improved IT control,
+							and scaled confidently with Microhub.
+						</p>
+					</div>
+				</div>
+				<div class="col-md-5 ms-sm-auto text-sm-end mt-5 mt-sm-0" style="color:rgba(99, 192, 236, 0.85);">
+
+					<!-- Add pagination and navigation elements here -->
+					<div class="d-flex gap-2 justify-content-sm-end" style="color:rgba(99, 192, 236, 0.85);">
+						<a href="#"
+							class="btn btn-primary-grad btn-icon btn-lg rounded-circle mb-0 swiper-button-prev"><i
+								class="bi bi-arrow-left fa-sm"></i></a>
+						<a href="#"
+							class="btn btn-primary-grad btn-icon btn-lg rounded-circle mb-0 swiper-button-next"><i
+								class="bi bi-arrow-right fa-sm"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Testimonials START -->
+			<div class="swiper" data-swiper-options='{
+				"spaceBetween": 30,
+				"breakpoints": {
+					"576": {"slidesPerView": 1}, 
+					"768": {"slidesPerView": 2}, 
+					"992": {"slidesPerView": 3}
+				},
+				"navigation":{
+					"nextEl":".swiper-button-next",
+					"prevEl":".swiper-button-prev"
+				}}'>
+
+				<div class="swiper-wrapper">
+					<!-- Testimonials item -->
+					<div class="swiper-slide">
+						<div class="card bg-secondary bg-opacity-50 bg-blur rounded-4 p-4 h-100">
+							<!-- Card body -->
+							<div class="card-body p-0 mb-4">
+								<!-- Rating star -->
+								<ul class="list-inline mb-3">
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-half text-warning"></i>
+									</li>
+								</ul>
+								<!-- Testimonials text -->
+								<blockquote>
+									<p class="heading-color mb-0">As CEO & Director of BTGES IT Support, I highly appreciate Mirohub’s dedication and expertise. Their innovative solutions and timely support have played a crucial role in enhancing our IT operations and service delivery. Mirohub’s commitment to quality and partnership makes them an invaluable ally in our business growth.</p>
+								</blockquote>
+							</div>
+							<!-- Card footer -->
+							<div class="card-footer bg-transparent p-0">
+								<!-- Testimonials info -->
+								<div class="d-flex align-items-center">
+									<div class="avatar flex-shrink-0">
+										<img src="assets/images/client/logo-dark/BTG-BK4vfSqE.png"
+											alt="avatar">
+									</div>
+									<div class="ms-3">
+										<p class="lead heading-color fw-semibold mb-0">Mr. Anoop Kumar Sharma</p>
+										<small>CEO & Director</small>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Testimonials item -->
+					<div class="swiper-slide">
+						<div class="card bg-secondary bg-opacity-50 bg-blur rounded-4 p-4 h-100">
+							<!-- Card body -->
+							<div class="card-body p-0 mb-4">
+								<!-- Rating star -->
+								<ul class="list-inline mb-3">
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+								</ul>
+								<!-- Testimonials text -->
+								<blockquote>
+									<p class="heading-color mb-0">As Manager at Arya.ag, I have witnessed firsthand the outstanding support and innovative solutions Mirohub delivers. Their commitment to understanding our unique needs and providing tailored technology solutions has greatly enhanced our operational efficiency and business growth. Mirohub is a reliable partner that consistently goes above and beyond to help us succeed.</p>
+								</blockquote>
+							</div>
+							<!-- Card footer -->
+							<div class="card-footer bg-transparent p-0">
+								<!-- Testimonials info -->
+								<div class="d-flex align-items-center">
+									<div class="avatar flex-shrink-0">
+										<img src="assets/images/client/logo-dark/arya-B7TvlRXs.png"
+											alt="avatar">
+									</div>
+									<div class="ms-3">
+										<p class="lead heading-color fw-semibold mb-0">Sunny Dangi</p>
+										<small>IT Manager</small>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Testimonials item -->
+					<div class="swiper-slide">
+						<div class="card bg-secondary bg-opacity-50 bg-blur rounded-4 p-4 h-100">
+							<!-- Card body -->
+							<div class="card-body p-0 mb-4">
+								<!-- Rating star -->
+								<ul class="list-inline mb-3">
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-half text-warning"></i>
+									</li>
+								</ul>
+								<!-- Testimonials text -->
+								<blockquote>
+									<p class="heading-color mb-0">As Product Manager at Atechno, I have been impressed with Mirohub's innovative solutions and responsive service. Their deep understanding of our product needs and proactive collaboration have significantly contributed to our project success. Mirohub is a trusted partner that delivers consistent value and drives results.</p>
+								</blockquote>
+							</div>
+							<!-- Card footer -->
+							<div class="card-footer bg-transparent p-0">
+								<!-- Testimonials info -->
+								<div class="d-flex align-items-center">
+									<div class="avatar flex-shrink-0">
+										<img src="assets/images/client/logo-dark/Atechnos-logo-B5G0xdh8.png"
+											alt="avatar">
+									</div>
+									<div class="ms-3">
+										<p class="lead heading-color fw-semibold mb-0">Arindam Kumar</p>
+										<small>SEO</small>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Testimonials item -->
+					<div class="swiper-slide">
+						<div class="card bg-secondary bg-opacity-50 bg-blur rounded-4 p-4 h-100">
+							<!-- Card body -->
+							<div class="card-body p-0 mb-4">
+								<!-- Rating star -->
+								<ul class="list-inline mb-3">
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+									</li>
+									<li class="list-inline-item me-0"><i class="bi bi-star-half text-warning"></i>
+									</li>
+								</ul>
+								<!-- Testimonials text -->
+								<blockquote>
+									<p class="heading-color mb-0">Mirohub has been an invaluable partner to Axiom Technologies. Their expertise and proactive approach have consistently helped us streamline operations and deliver exceptional value to our clients. I highly recommend Mirohub for any organization seeking a trusted, results-driven technology partner.</p>
+								</blockquote>
+							</div>
+							<!-- Card footer -->
+							<div class="card-footer bg-transparent p-0">
+								<!-- Testimonials info -->
+								<div class="d-flex align-items-center">
+									<div class="avatar flex-shrink-0">
+										<img src="assets/images/client/logo-dark/axiom-mQS4rbxM.png"
+											alt="avatar">
+									</div>
+									<div class="ms-3">
+										<p class="lead heading-color fw-semibold mb-0">Shashank Kumar Singh</p>
+										<small>Strategic Account Manager</small>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Testimonials END -->
+			</div>
+		</section>
+		<!-- =======================
+Testimonials END -->
+
+		<!-- =======================
+Pricing START -->
+		<section class="bg-secondary position-relative overflow-hidden" id="pricing-section">
+
+			<!-- skewed divider -->
+			<span>
+				<svg class="position-absolute top-0 start-0 mt-lg-n6" viewBox="0 0 1950 237"
+					style="enable-background:new 0 0 1950 237;" xml:space="preserve">
+					<path class="fill-body" d="M1949.5,0H0v164c717.2,131.2,1598.5,54.7,1949.5,0V0z" />
+				</svg>
+			</span>
+
+			<div class="container position-relative z-index-9 pt-5 pt-xxl-8">
+				<div class="row g-4 align-items-center">
+
+					<!-- Title -->
+					<div class="col-lg-4">
+						<h2 class="mb-3 mb-lg-4" style="
+          font-size:clamp(1.6rem, 2.5vw, 2.2rem);
+          font-weight:600;
+          line-height:1.25;
+          background:linear-gradient(
+            90deg,
+            #0f172a 0%,
+            #2DA9E1 40%,
+            #0f172a 80%
+          );
+          background-size:200% 100%;
+          background-position:0% 50%;
+          background-clip:text;
+          -webkit-background-clip:text;
+          -webkit-text-fill-color:transparent;
+          transform:translateY(12px);
+          animation:
+            aboutFadeIn 0.9s ease forwards,
+            gradientSlide 6s ease-in-out infinite;
+        ">
+							Transparent pricing. Built to scale.
+						</h2>
+
+						<p class="mb-4">
+							Explore Microhub pricing plans designed for growing teams,
+							enterprise operations, and fully managed IT ecosystems.
+						</p>
+
+						<a href="#" class="btn btn-sm mb-0" data-bs-toggle="offcanvas" data-bs-target="#scheduleCall"
+							aria-controls="scheduleCall" style="
+            background: linear-gradient(135deg, #3B82F6, #38BDF8);
+            color:#fff;
+            border:none;
+            padding:8px 16px;
+            font-weight:700;
+            font-size:0.95rem;
+            transition:all 0.3s ease;
+          " onmouseover="
+            this.style.boxShadow='0 8px 20px rgba(56,189,248,0.45)';
+            this.style.transform='translateY(-1px)';
+          " onmouseout="
+            this.style.boxShadow='none';
+            this.style.transform='translateY(0)';
+          ">
+							View Pricing Plans →
+						</a>
+					</div>
+
+					<!-- Pricing cards -->
+					<div class="col-lg-8 ms-auto ps-xl-6">
+						<div class="row align-items-center g-0">
+
+							<!-- Basic plan -->
+							<div class="col-md-6 mb-5 mb-md-0">
+								<div class="card bg-body text-center align-items-center p-4 pe-5 me-md-n3 pricing-left"
+									style="transform: translateX(-16px);">
+
+									<div class="card-header bg-transparent d-flex flex-column align-items-center p-0">
+										<div
+											class="icon-xl bg-secondary d-flex justify-content-center align-items-center text-white rounded-circle mb-3">
+											<!-- <img src="assets/images/elements/rocket.png" class="h-40px" alt="rocket"> -->
+										</div>
+
+										<h6 class="mb-3">Basic plan</h6>
+										<span style="
+										  background: linear-gradient(135deg, #2DAAE1, #3BC4F4);
+										  -webkit-background-clip: text;
+										  background-clip: text;
+										  color: transparent;
+										">
+											<span class="h1 fw-bold" style="
+										  background: linear-gradient(135deg, #2DAAE1, #3BC4F4);
+										  -webkit-background-clip: text;
+										  background-clip: text;
+										  color: transparent;
+										">$25</span>/month
+										</span>
+
+									</div>
+
+									<div class="card-body w-100 p-0 mt-3">
+										<ul class="list-group list-group-borderless text-center mb-4">
+											<li class="list-group-item mb-0"><i
+													class="bi bi-check-lg text-success me-1"></i>Customizable features
+											</li>
+											<li class="list-group-item mb-0"><i
+													class="bi bi-check-lg text-success me-1"></i>Basic support</li>
+											<li class="list-group-item mb-0"><i
+													class="bi bi-check-lg text-success me-1"></i>Monthly updates</li>
+											<li class="list-group-item mb-0"><i
+													class="bi bi-check-lg text-success me-1"></i>Up to 50 Users</li>
+										</ul>
+
+										<a href="contact-us-v2.html" class="btn btn-dark w-100 mb-0">Get started</a>
+									</div>
+								</div>
+							</div>
+
+							<!-- Standard plan -->
+							<div class="col-md-6">
+								<div class="card text-center align-items-center p-4 pt-5 pricing-right" style="
+								       transform: translateX(16px);
+								       background: linear-gradient(135deg, #2DAAE1, #3BC4F4);
+								       color: #ffffff;
+								       box-shadow: 0 30px 80px rgba(45, 170, 225, 0.35);
+								     ">
+
+
+									<div
+										class="text-bg-dark rounded position-absolute top-0 start-50 translate-middle px-3 py-1">
+										Most popular
+									</div>
+
+									<div class="card-header bg-transparent d-flex flex-column align-items-center p-0">
+										<div
+											class="icon-xl bg-body d-flex justify-content-center align-items-center text-white rounded-circle mb-3">
+											<!-- <img src="assets/images/elements/thunder.png" class="h-40px" alt="thunder"> -->
+										</div>
+
+										<h6 class="mb-3 text-white">Standard plan</h6>
+										<span class="text-white">
+											<span class="h1 text-white fw-bold">$120</span>/month
+										</span>
+									</div>
+
+									<div class="card-body w-100 p-0 mt-3">
+										<ul class="list-group list-group-borderless text-center opacity-8 mb-4">
+											<li class="list-group-item text-white mb-0"><i
+													class="bi bi-check-lg me-1"></i>All basic plan features</li>
+											<li class="list-group-item text-white mb-0"><i
+													class="bi bi-check-lg me-1"></i>Priority support</li>
+											<li class="list-group-item text-white mb-0"><i
+													class="bi bi-check-lg me-1"></i>Advanced features</li>
+											<li class="list-group-item text-white mb-0"><i
+													class="bi bi-check-lg me-1"></i>Up to 100 Users</li>
+											<li class="list-group-item text-white mb-0"><i
+													class="bi bi-check-lg me-1"></i>Dedicated manager</li>
+										</ul>
+
+										<a href="contact-us-v2.html" class="btn btn-white w-100 mb-0">Get started</a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Inline styles -->
+			<style>
+				@keyframes slideFromLeft {
+					from {
+						transform: translateX(-16px);
+					}
+
+					to {
+						transform: translateX(0);
+					}
+				}
+
+				@keyframes slideFromRight {
+					from {
+						transform: translateX(16px);
+					}
+
+					to {
+						transform: translateX(0);
+					}
+				}
+			</style>
+
+			<!-- Inline script -->
+			<script>
+				const pricingSection = document.getElementById("pricing-section");
+				const leftCard = pricingSection.querySelector(".pricing-left");
+				const rightCard = pricingSection.querySelector(".pricing-right");
+
+				const observer = new IntersectionObserver(entries => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							leftCard.style.animation = "none";
+							rightCard.style.animation = "none";
+
+							void leftCard.offsetWidth;
+							void rightCard.offsetWidth;
+
+							leftCard.style.animation = "slideFromLeft 0.8s ease-out forwards";
+							rightCard.style.animation = "slideFromRight 0.8s ease-out 0.15s forwards";
+						}
+					});
+				}, { threshold: 0.4 });
+
+				observer.observe(pricingSection);
+			</script>
+
+		</section>
+		<!-- =======================
+Pricing END -->
+
+
+
+		<!-- =======================
+<!-- =======================
+FAQ START
+======================= -->
+
+<style>
+  @keyframes floatShape {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(18px, -22px) rotate(2deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+</style>
+
+<section class="bg-secondary position-relative overflow-hidden py-5" style="background:#EEF2FF;">
+
+  <div class="container position-relative" style="z-index:5;">
+    <div class="row align-items-start g-4">
+
+      <!-- ================= FAQ LEFT ================= -->
+      <div class="col-lg-7">
+
+        <div class="mb-4">
+          <h2 style="
+            font-weight:600;
+            background:linear-gradient(90deg,#0f172a,#2DA9E1);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;">
+            Got questions? We’ve got answers.
+          </h2>
+          <p class="text-muted mt-2">
+            Everything you need to know about Microhub CMS, IT services, and hardware solutions.
+          </p>
+        </div>
+
+        <div class="accordion" id="accordionFaq">
+
+          <!-- FAQ ITEM -->
+          <div class="accordion-item mb-3" style="
+            border-radius:14px;
+            border:none;
+            background:#fff;
+            box-shadow:0 6px 20px rgba(15,23,42,0.08);">
+            <h2 class="accordion-header">
+              <button class="accordion-button fw-semibold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#faq1"
+                style="padding:14px 18px;color:#2DAAE1;">
+                How does Microhub CMS help my business?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                Microhub CMS unifies CRM, ticketing, HR & payroll, attendance, inventory,
+                finance, and ERP into one powerful platform.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ ITEM -->
+          <div class="accordion-item mb-3" style="
+            border-radius:14px;
+            border:none;
+            background:#fff;
+            box-shadow:0 6px 20px rgba(15,23,42,0.08);">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed fw-semibold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#faq2"
+                style="padding:14px 18px;color:#2DAAE1;">
+                Can I start with one module and expand later?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Yes. Microhub CMS is modular and scalable as your business grows.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ ITEM -->
+          <div class="accordion-item mb-3" style="
+            border-radius:14px;
+            border:none;
+            background:#fff;
+            box-shadow:0 6px 20px rgba(15,23,42,0.08);">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed fw-semibold" type="button"
+                data-bs-toggle="collapse" data-bs-target="#faq3"
+                style="padding:14px 18px;color:#2DAAE1;">
+                Do you provide IT infrastructure and support?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                Yes, we offer end-to-end IT infrastructure and 24/7 support.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= CTA RIGHT ================= -->
+      <div class="col-lg-5">
+
+        <div class="position-sticky" style="top:100px;">
+          <div class="position-relative" style="
+            background:linear-gradient(135deg,#2DAAE1,#1E40AF);
+            border-radius:20px;
+            padding:36px;
+            box-shadow:0 24px 60px rgba(45,170,225,0.35);
+            overflow:hidden;">
+
+            <div class="text-white">
+              <h3 class="fw-bold mb-3">
+                Stay connected<br>with us
+              </h3>
+
+              <div class="input-group mb-3">
+                <input type="email" class="form-control"
+                  placeholder="Enter your email"
+                  style="border:none;border-radius:10px;padding:12px 16px;">
+                <button class="btn"
+                  onclick="launchRocket()"
+                  style="background:#0F172A;color:#fff;border-radius:10px;">
+                  <i class="bi bi-send-fill"></i>
+                </button>
+              </div>
+
+              <p class="small mb-4">No Spam — We Promise!</p>
+            </div>
+
+            <!-- Rocket -->
+            <div class="text-end d-none d-md-block">
+              <img id="ctaRocket"
+                src="assets/images/elements/rocket-02.png"
+                style="width:160px;animation:rocketFloat 3.5s ease-in-out infinite;">
+              <div id="rocketSmoke" style="display:none;"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+	<!-- =======================
+Footer START -->
+	<style>
+		/* =========================
+   GRAD SHAPE FLOAT EFFECT
+========================= */
+
+		.grad-float {
+			animation:
+				gradFloat 10s ease-in-out infinite,
+				gradRotate 22s linear infinite;
+			transform-origin: center;
+			opacity: 0.9;
+			filter: blur(0.3px);
+		}
+
+		/* Vertical floating */
+		@keyframes gradFloat {
+			0% {
+				transform: translateY(0);
+			}
+
+			50% {
+				transform: translateY(18px);
+			}
+
+			100% {
+				transform: translateY(0);
+			}
+		}
+
+		/* Very slow rotation */
+		@keyframes gradRotate {
+			from {
+				rotate: 0deg;
+			}
+
+			to {
+				rotate: 360deg;
+			}
+		}
+
+		/* Accessibility */
+		@media (prefers-reduced-motion: reduce) {
+			.grad-float {
+				animation: none;
+			}
+		}
+
+		.grad-float img {
+			filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.25));
+		}
+	</style>
+	<footer class="bg-dark position-relative pt-6 pt-lg-8" data-bs-theme="dark">
+		<div class="container position-relative">
+
+			<!-- Link widgets -->
+			<div class="row g-4">
+
+				<!-- Brand / About -->
+				<div class="col-md-6 col-xl-4">
+					<a href="index.html">
+						<img class="h-40px" src="assets/images/microhub-white-logo-BbBXVK-M.svg" alt="logo">
+					</a>
+
+					<p class="my-3 my-lg-4">
+						Intelligent CMS, IT infrastructure, and enterprise technology solutions.
+					</p>
+
+					<ul class="list-inline mb-0">
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-facebook lh-base"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-instagram lh-base"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-twitter-x lh-base"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-linkedin lh-base"></i></a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Links section -->
+				<div class="col-xl-8">
+					<div class="row g-4">
+
+						<!-- Company -->
+						<div class="col-6 col-lg-4">
+							<h6 class="mb-3 mb-sm-4">Company</h6>
+							<ul class="nav flex-column gap-1">
+								<li class="nav-item"><a class="nav-link pt-0" href="about-v1.html">About Microhub</a>
+								</li>
+								<li class="nav-item"><a class="nav-link" href="service-v1.html">Our Services</a></li>
+								<li class="nav-item"><a class="nav-link" href="pricing-v1.html">Pricing</a></li>
+								<li class="nav-item"><a class="nav-link" href="career.html">Careers</a></li>
+								<li class="nav-item"><a class="nav-link" href="contact-us-v1.html">Contact Us</a></li>
+							</ul>
+						</div>
+
+						<!-- Resources -->
+						<div class="col-6 col-lg-4">
+							<h6 class="mb-3 mb-sm-4">Resources</h6>
+							<ul class="nav flex-column gap-1">
+								<li class="nav-item"><a class="nav-link pt-0" href="#">CMS Features</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">IT Infrastructure</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">Hardware Solutions</a></li>
+								<li class="nav-item"><a class="nav-link" href="blog-minimal.html">Blogs & Insights</a>
+								</li>
+								<li class="nav-item"><a class="nav-link" href="#">Client Success Stories</a></li>
+							</ul>
+						</div>
+
+						<!-- Contact Us -->
+						<div class="col-12 col-lg-4">
+							<h6 class="mb-3 mb-sm-4">Contact Us</h6>
+
+							<ul class="nav flex-column gap-2 small text-body-secondary">
+								<li class="d-flex align-items-start gap-2">
+									<i class="bi bi-geo-alt text-primary-grad mt-1"></i>
+									<span>
+										Unit No-484, Tower-C,<br>
+										Bhutani Alphathum,<br>
+										Sector-90, Noida UP – 201305
+									</span>
+								</li>
+
+								<li class="d-flex align-items-center gap-2">
+									<i class="bi bi-envelope text-primary-grad"></i>
+									<a href="mailto:sales@microhub.co.in" class="nav-link p-0">
+										sales@microhub.co.in
+									</a>
+								</li>
+
+								<li class="d-flex align-items-center gap-2">
+									<i class="bi bi-telephone text-primary-grad"></i>
+									<a href="tel:+917368007363" class="nav-link p-0">
+										+91 73680 07363
+									</a>
+								</li>
+							</ul>
+
+							<ul class="list-inline mt-3 mb-0">
+								<li class="list-inline-item">
+									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+											class="bi bi-facebook lh-base"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+											class="bi bi-linkedin lh-base"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+											class="bi bi-instagram lh-base"></i></a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- Divider -->
+			<hr class="mt-xl-5 mb-0 opacity-1">
+
+			<!-- Bottom footer -->
+			<div class="d-md-flex justify-content-between align-items-center text-center text-lg-start py-4">
+				<div class="text-body small mb-3 mb-md-0">
+					Copyright ©2024 Microhub.
+					Built by <a href="#" class="text-body text-primary-hover hover-underline-animation">Microhub</a>.
+				</div>
+
+				<ul class="nav justify-content-center gap-1 mb-0">
+					<li class="nav-item"><a class="nav-link small py-0" href="#">Privacy policy</a></li>
+					<li class="nav-item"><a class="nav-link small py-0 pe-0" href="#">Terms & conditions</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</footer>
+
+	<!-- =======================
+Footer END -->
+
+	<!-- =======================
+Footer END -->
+	<!-- Cookie message -->
+	<div class="alert alert-secondary alert-dismissible fade show position-fixed bottom-0 start-50 translate-middle-x z-index-99 rounded-3 d-none d-md-flex justify-content-between align-items-center shadow px-3 py-2"
+		role="alert">
+		<p class="heading-color fw-semibold mb-md-0">🍪 The website uses cookies to improve your web experience.</p>
+		<a href="#" class="bg-success text-success bg-opacity-10 rounded-pill py-1 px-3 mb-0 ms-md-2"
+			data-bs-dismiss="alert" aria-label="Close">Accept
+		</a>
+	</div>
+
+	<!-- Back to top -->
+	<div class="back-top"></div>
+
+	<!-- Bootstrap JS -->
+	<script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!--Vendors-->
+	<script src="./assets/vendor/ityped/index.js"></script>
+	<script src="./assets/vendor/jarallax/jarallax.min.js"></script>
+	<script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="./assets/vendor/glightbox/js/glightbox.js"></script>
+	<script src="./assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+
+	<!-- Theme Functions -->
+	<script src="./assets/js/functions.js"></script>
+
+</body>
+
+
+</html>

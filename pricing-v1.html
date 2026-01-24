@@ -1,0 +1,2232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+	<title>Microhub</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="webestica.com">
+	<meta name="description" content="multipurpose bootstrap theme">
+
+	<!-- Dark mode -->
+	<script>
+		const storedTheme = localStorage.getItem('theme')
+
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		window.addEventListener('DOMContentLoaded', () => {
+			var el = document.querySelector('.theme-icon-active');
+			if (el != 'undefined' && el != null) {
+				const showActiveTheme = theme => {
+					const activeThemeIcon = document.querySelector('.theme-icon-active use')
+					const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+					const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+					document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+						element.classList.remove('active')
+					})
+
+					btnToActive.classList.add('active')
+					activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+				}
+
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+					if (storedTheme !== 'light' || storedTheme !== 'dark') {
+						setTheme(getPreferredTheme())
+					}
+				})
+
+				showActiveTheme(getPreferredTheme())
+
+				document.querySelectorAll('[data-bs-theme-value]')
+					.forEach(toggle => {
+						toggle.addEventListener('click', () => {
+							const theme = toggle.getAttribute('data-bs-theme-value')
+							localStorage.setItem('theme', theme)
+							setTheme(theme)
+							showActiveTheme(theme)
+						})
+					})
+
+			}
+		})
+
+	</script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/Microhub_logo.png">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+		rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css"
+		href="./assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css"
+		href="./assets/vendor/swiper/swiper-bundle.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+</head>
+
+<body>
+
+	<!-- Header START -->
+	<div class="header-absolute">
+		<!-- Top header -->
+		<div class="alert fade show border-0 rounded-0 text-center overflow-hidden z-index-9 py-2 m-0 d-none d-lg-block"
+			style="background-color:#2DA9E1;" role="alert">
+			<div class="container d-flex justify-content-between px-2 px-xl-4">
+				<!-- Contact info -->
+				<ul class="list-inline d-flex flex-wrap gap-3 text-white mb-0">
+					<li class="list-inline-item small fw-light"><i class="bi bi-headset me-2"></i>Call us: <a href="#"
+							class="link-white">+91 7368007363
+
+						</a></li>
+					<li class="list-inline-item small fw-light"><i class="bi bi-envelope me-2"></i>Email: <a href="#"
+							class="link-white">sales@microhub.co.in</a></li>
+				</ul>
+
+				<!-- Social links -->
+				<ul class="list-inline mb-0">
+					<li class="list-inline-item small text-white">Follow us on: </li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-facebook"></i></a>
+					</li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-instagram"></i></a>
+					</li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-twitter-x"></i></a>
+					</li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-linkedin"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Header START -->
+		<header class="header-sticky bg-transparent">
+			<!-- Logo Nav START -->
+			<nav class="navbar navbar-expand-xl">
+				<div class="container">
+					<!-- Logo START -->
+					<a class="navbar-brand me-0" href="index.html">
+						<img class="light-mode-item navbar-brand-item" src="assets/images/Microhub_logo_light.png"
+							alt="logo">
+						<img class="dark-mode-item navbar-brand-item"
+							src="assets/images/microhub-white-logo-BbBXVK-M.svg" alt="logo">
+					</a>
+					<!-- Logo END -->
+
+					<!-- Main navbar START -->
+					<div class="navbar-collapse collapse" id="navbarCollapse">
+						<ul class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto">
+
+
+
+							<!-- Nav item -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
+									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+								<div class="dropdown-menu dropdown-menu-size-md dropdown-menu-center p-xl-3">
+									<div class="row row-cols-1 row-cols-md-1 pt-1">
+										<!-- Doc menu -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3">
+												<div class="d-flex">
+													<!-- Icon -->
+													<div
+														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
+														<i class="bi bi-info-circle fs-6"></i>
+
+													</div>
+													<!-- Content -->
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">About</p>
+														<p class="mb-0 text-body small">Our story, vision, and what
+															drives us</p>
+													</div>
+												</div>
+												<!-- Button -->
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="about-v1.html" target="_blank"><i
+														class="bi bi-chevron-right"></i> </a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+
+
+							<!-- Nav item : SOLUTIONS -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
+									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Solutions
+								</a>
+
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
+									<div class="row row-cols-1 row-cols-md-3 pt-2">
+
+										<!-- CMS SOLUTIONS -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
+														<i class="bi bi-grid-1x2 fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">CMS
+															Solutions</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#475569;
+														    ">
+
+															<li><b>CRM</b></li>
+															<li><b>HR-Payroll</b></li>
+															<li><b>Inventory</b></li>
+															<li><b>Finance</b></li>
+															<li><b>ERP</b></li>
+															<li><b>Automation</b></li>
+
+														</ul>
+
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="services-grid.html">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+										<!-- IT INFRASTRUCTURE -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-info bg-opacity-15 text-info rounded flex-shrink-0">
+														<i class="bi bi-hdd-network fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															IT Infrastructure & Services
+														</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#475569;
+														    ">
+															<li><b>IT Infrastructure</b></li>
+															<li><b>Networking</b></li>
+															<li><b>Servers</b></li>
+															<li><b>Web Development</b></li>
+															<li><b>AMC-Packages</b></li>
+															<li><b>ERP</b></li>
+															<li><b>Cybersecurity</b></li>
+															
+														</ul>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="/services-main.html">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+										<!-- HARDWARE -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
+														<i class="bi bi-laptop fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															Hardware Solutions
+														</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#693aea;
+														    ">
+															<li><b>Laptops</b></li>
+															<li><b>Macs</b></li>
+															<li><b>Printers</b></li>
+															<li><b>Networking & Peripherals</b></li>
+														</ul>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="/hardware">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</li>
+
+
+							<!-- Nav item : EXPLORE -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
+									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Explore
+								</a>
+
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
+									<div class="row row-cols-1 row-cols-md-3 pt-2">
+
+										<!-- ================= -->
+										<!-- PRICING -->
+										<!-- ================= -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
+														<i class="bi bi-currency-rupee fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															Pricing
+														</p>
+														<p class="mb-0 text-body small">
+															Transparent plans for every business size
+														</p>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="pricing-v1.html">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+										<!-- ================= -->
+										<!-- RESOURCES -->
+										<!-- ================= -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-success bg-opacity-15 text-success rounded flex-shrink-0">
+														<i class="bi bi-journal-text fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															Resources
+														</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#693aea;
+														    ">
+															<li><b>Blogs</b></li>
+															<li><b>Case Studies</b></li>
+															<li><b>Videos</b></li>
+															<li><b>Learning Guides</b></li>
+															<li><b>FAQs</b></li>
+														</ul>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="/resources">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+										<!-- ============================== -->
+										<!-- SECURITY & COMPLIANCE -->
+										<!-- ============================== -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
+														<i class="bi bi-shield-check fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															Security & Compliance
+														</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#693aea;
+														    ">
+															<li><b>Data Protection</b></li>
+															<li><b>Privacy</b></li>
+															<li><b>T&C</b></li>
+															<li><b>Security Compliance</b></li>
+														</ul>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="/security-compliance">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</li>
+
+
+
+							<!-- Nav item -->
+							<li class="nav-item"> <a class="nav-link" href="contact-us-v1.html">Contact us</a> </li>
+
+						</ul>
+
+					</div>
+					<!-- Main navbar END -->
+
+					<!-- Buttons -->
+					<ul class="nav align-items-center dropdown-hover ms-sm-2">
+						<!-- Dark mode option START -->
+						<li class="nav-item dropdown dropdown-animation">
+							<button class="btn btn-link mb-0 px-2 lh-1" id="bd-theme" type="button"
+								aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+									class="bi bi-circle-half theme-icon-active fill-mode fa-fw" viewBox="0 0 16 16">
+									<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+									<use href="#"></use>
+								</svg>
+							</button>
+
+							<ul class="dropdown-menu min-w-auto dropdown-menu-end" aria-labelledby="bd-theme">
+								<li class="mb-1">
+									<button type="button" class="dropdown-item d-flex align-items-center"
+										data-bs-theme-value="light">
+										<svg width="16" height="16" fill="currentColor"
+											class="bi bi-brightness-high-fill fa-fw mode-switch me-1"
+											viewBox="0 0 16 16">
+											<path
+												d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+											<use href="#"></use>
+										</svg>Light
+									</button>
+								</li>
+								<li class="mb-1">
+									<button type="button" class="dropdown-item d-flex align-items-center"
+										data-bs-theme-value="dark">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+											fill="currentColor" class="bi bi-moon-stars-fill fa-fw mode-switch me-1"
+											viewBox="0 0 16 16">
+											<path
+												d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+											<path
+												d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+											<use href="#"></use>
+										</svg>Dark
+									</button>
+								</li>
+								<li>
+									<button type="button" class="dropdown-item d-flex align-items-center active"
+										data-bs-theme-value="auto">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+											fill="currentColor" class="bi bi-circle-half fa-fw mode-switch me-1"
+											viewBox="0 0 16 16">
+											<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+											<use href="#"></use>
+										</svg>Auto
+									</button>
+								</li>
+							</ul>
+						</li>
+						<!-- Dark mode option END -->
+
+						<!-- Schedule button -->
+						<li class="nav-item ms-2 d-none d-sm-block">
+							<a href="#" class="btn btn-sm mb-0" data-bs-toggle="offcanvas"
+								data-bs-target="#scheduleCall" aria-controls="scheduleCall" style="
+						      background: linear-gradient(135deg, #3B82F6, #38BDF8);
+						      color:#fff;
+						      border:none;
+						      padding:8px 16px;
+						      font-weight:500;
+						      transition:all 0.3s ease;
+						    " onmouseover="
+						      this.style.boxShadow='0 8px 20px rgba(56,189,248,0.45)';
+						      this.style.transform='translateY(-1px)';
+						    " onmouseout="
+						      this.style.boxShadow='none';
+						      this.style.transform='translateY(0)';
+						    ">
+								<i class="bi bi-calendar-week me-2"></i>
+								Free Demo
+							</a>
+						</li>
+
+
+						<!-- Responsive navbar toggler -->
+						<li class="nav-item">
+							<button class="navbar-toggler ms-sm-3 p-2" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span class="navbar-toggler-animation">
+									<span></span>
+									<span></span>
+									<span></span>
+								</span>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- Logo Nav END -->
+		</header>
+		<!-- Header END -->
+	</div>
+	<!-- Header END -->
+	<!-- **************** MAIN CONTENT START **************** -->
+	<main>
+
+		<!-- =======================
+Hero START -->
+		<style>
+			/* ===== Pricing Heading Animation ===== */
+
+			.pricing-sub {
+				opacity: 0;
+				transform: translateY(10px);
+				animation: fadeUp 0.6s ease forwards;
+			}
+
+			.pricing-title {
+				overflow: hidden;
+			}
+
+			.pricing-title .word {
+				display: inline-block;
+				opacity: 0;
+				transform: translateY(40px);
+				animation: wordReveal 0.7s cubic-bezier(.22, .61, .36, 1) forwards;
+			}
+
+			/* Stagger timing */
+			.pricing-title .word-1 {
+				animation-delay: 0.25s;
+			}
+
+			.pricing-title .word-2 {
+				animation-delay: 0.45s;
+			}
+
+			.pricing-title .word-3 {
+				animation-delay: 0.65s;
+			}
+
+			/* Extra glow for Business */
+			.pricing-title .word-2 {
+				position: relative;
+				animation:
+					wordReveal 0.7s cubic-bezier(.22, .61, .36, 1) forwards,
+					businessGlow 2.8s ease-in-out infinite 1.2s;
+			}
+
+			/* Animations */
+			@keyframes fadeUp {
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes wordReveal {
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes businessGlow {
+
+				0%,
+				100% {
+					filter: drop-shadow(0 0 0 rgba(139, 92, 246, 0));
+				}
+
+				50% {
+					filter: drop-shadow(0 0 12px rgba(45, 170, 225, 0.45));
+
+				}
+			}
+
+			/* Accessibility */
+			@media (prefers-reduced-motion: reduce) {
+
+				.pricing-sub,
+				.pricing-title .word {
+					animation: none;
+					opacity: 1;
+					transform: none;
+				}
+			}
+
+			/* =========================
+   PRICING TOGGLE – PREMIUM HOVER
+========================= */
+
+			.price-toggle-wrap,
+			form.bg-body.shadow-primary {
+				transition:
+					transform 0.35s cubic-bezier(.22, .61, .36, 1),
+					box-shadow 0.35s ease,
+					border-color 0.35s ease;
+			}
+
+			/* Hover / focus state */
+			form.bg-body.shadow-primary:hover,
+			form.bg-body.shadow-primary:focus-within {
+				transform: translateY(-4px) scale(1.02);
+				border-color: rgba(45, 170, 225, 0.45);
+				box-shadow:
+					0 12px 30px rgba(45, 170, 225, 0.25),
+					0 0 0 1px rgba(45, 170, 225, 0.25);
+
+			}
+
+			/* Labels react subtly */
+			form.bg-body.shadow-primary span.fw-semibold {
+				transition: color 0.3s ease;
+			}
+
+			form.bg-body.shadow-primary:hover span.fw-semibold {
+				color: #1f8fc3;
+
+			}
+
+			/* Switch track */
+			.form-switch .form-check-input {
+				transition:
+					background-color 0.3s ease,
+					box-shadow 0.3s ease,
+					transform 0.25s ease;
+			}
+
+			/* Switch hover */
+			form.bg-body.shadow-primary:hover .form-check-input {
+				box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.15);
+			}
+
+			/* Switch active (Yearly) */
+			.form-check-input:checked {
+				background-color: #2daae1;
+				border-color: #2daae1;
+
+			}
+
+			/* Knob micro-bounce */
+			.form-check-input:checked {
+				animation: togglePop 0.35s ease;
+			}
+
+			@keyframes togglePop {
+				0% {
+					transform: scale(1);
+				}
+
+				50% {
+					transform: scale(1.15);
+				}
+
+				100% {
+					transform: scale(1);
+				}
+			}
+
+			/* Badge pulse on hover */
+			form.bg-body.shadow-primary:hover .badge {
+				animation: badgePulse 1.8s ease-in-out infinite;
+			}
+
+			@keyframes badgePulse {
+
+				0%,
+				100% {
+					box-shadow: 0 0 0 rgba(34, 197, 94, 0);
+				}
+
+				50% {
+					box-shadow: 0 0 14px rgba(34, 197, 94, 0.55);
+				}
+			}
+
+			/* Accessibility */
+			@media (prefers-reduced-motion: reduce) {
+
+				form.bg-body.shadow-primary,
+				.form-check-input {
+					animation: none;
+					transition: none;
+				}
+			}
+
+			/* ================================
+   PRICING CARD – PREMIUM ANIMATION
+================================ */
+
+			/* Base card enhancement */
+			.card {
+				position: relative;
+				border-radius: 18px;
+				transition:
+					transform 0.5s cubic-bezier(.22, .61, .36, 1),
+					box-shadow 0.5s ease;
+				will-change: transform;
+			}
+
+			/* Scroll reveal (initial) */
+			.card.reveal {
+				opacity: 0;
+				transform: translateY(40px) scale(0.98);
+			}
+
+			/* When visible */
+			.card.reveal.visible {
+				opacity: 1;
+				transform: translateY(0) scale(1);
+				transition:
+					opacity 0.7s ease,
+					transform 0.7s cubic-bezier(.22, .61, .36, 1);
+			}
+
+			/* Hover lift (desktop only) */
+			@media (hover: hover) {
+				.card:hover {
+					transform: translateY(-14px) scale(1.015);
+					box-shadow:
+						0 30px 60px rgba(0, 0, 0, 0.18),
+						0 0 0 1px rgba(45, 170, 225, 0.15);
+
+				}
+			}
+
+			/* Neon gradient border glow */
+			.card::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				border-radius: inherit;
+				background: linear-gradient(120deg,
+						transparent 20%,
+						rgba(45, 170, 225, 0.45),
+						rgba(64, 155, 210, 0.45),
+						transparent 80%);
+
+				opacity: 0;
+				filter: blur(12px);
+				transition: opacity 0.4s ease;
+				z-index: -1;
+			}
+
+			.card:hover::before {
+				opacity: 1;
+			}
+
+			/* Icon pulse */
+			.icon-lg {
+				transition: transform 0.4s ease, box-shadow 0.4s ease;
+			}
+
+			.card:hover .icon-lg {
+				transform: scale(1.15) rotate(-6deg);
+				box-shadow:
+					0 0 0 6px rgba(45, 170, 225, 0.15),
+					0 10px 25px rgba(45, 170, 225, 0.35);
+
+			}
+
+			/* Price emphasis */
+			.plan-price {
+				display: inline-block;
+				transition: transform 0.4s ease;
+			}
+
+			.card:hover .plan-price {
+				transform: scale(1.08);
+			}
+
+			/* CTA button glow sweep */
+			.btn-transition {
+				position: relative;
+				overflow: hidden;
+			}
+
+			.btn-transition::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background: linear-gradient(120deg,
+						transparent,
+						rgba(255, 255, 255, 0.35),
+						transparent);
+				transform: translateX(-120%);
+			}
+
+			.card:hover .btn-transition::after {
+				animation: btnSweep 0.9s ease forwards;
+			}
+
+			@keyframes btnSweep {
+				to {
+					transform: translateX(120%);
+				}
+			}
+
+			/* Reduced motion */
+			@media (prefers-reduced-motion: reduce) {
+
+				.card,
+				.card::before,
+				.icon-lg,
+				.plan-price,
+				.btn-transition::after {
+					animation: none !important;
+					transition: none !important;
+					transform: none !important;
+				}
+			}
+
+			:root {
+				--theme-primary: #03a5ea;
+			}
+
+			.text-theme {
+				color: var(--theme-primary);
+			}
+		</style>
+		<section class="price-wrap position-relative overflow-hidden pt-xl-8">
+			<!-- Grad blur -->
+			<div
+				class="bg-primary-grad blur-9 h-300px w-100 opacity-2 position-absolute top-0 start-50 translate-middle-x mt-n7">
+			</div>
+			<!-- Title and switch -->
+			<div class="container position-relative z-index-2 pt-4 pb-6 pb-xl-8">
+				<!-- Breadcrumb -->
+				<nav class="mb-2" aria-label="breadcrumb">
+					<ol class="breadcrumb pt-0">
+						<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+						<li class="breadcrumb-item active" aria-current="page" style="color: #38BDF8;">Pricing</li>
+					</ol>
+				</nav>
+
+				<!-- Title -->
+				<h3 class="pricing-sub">Pricing Plan For</h3>
+
+				<h1 class="fw-bold mb-4 pricing-title">
+					<span class="word word-1">Every</span>
+					<span class="word word-2 text-theme">Business</span>
+					<span class="word word-3">Needs</span>
+				</h1>
+
+
+				<!-- Switch -->
+				<form
+					class="bg-body shadow-primary border border-primary d-inline-flex align-items-center rounded-3 p-3 px-sm-4 py-sm-3"
+					style="--bs-border-opacity: 0.20;">
+					<!-- Label -->
+					<span class="fw-semibold heading-color">Monthly</span>
+					<!-- Switch -->
+					<div class="form-check form-switch form-check-lg mx-2 mb-0">
+						<input class="form-check-input mt-0 price-toggle" type="checkbox" id="flexSwitchCheckDefault">
+					</div>
+					<!-- Label -->
+					<span class="fw-semibold heading-color">Yearly</span>
+					<span class="badge bg-success ms-2">20% save</span>
+				</form>
+			</div>
+
+			<!-- Pricing box START -->
+			<div class="container-fluid">
+				<div class="max-width-1550">
+					<div class="row">
+						<!-- Pricing item -->
+						<div class="col-md-6 col-xl-3 mb-5 mb-xl-0">
+							<div class="card shadow overflow-hidden p-1">
+								<!-- Card header -->
+								<div class="card-header bg-secondary bg-opacity-50 p-4 pb-0">
+									<!-- Icon -->
+									<div class="icon-lg bg-body shadow-primary rounded-circle mb-3">
+										<i class="bi bi-lightning-charge-fill fa-lg lh-1 heading-color"></i>
+									</div>
+									<!-- Title and price -->
+									<h6 class="mb-3">Basic plan</h6>
+									<p class="mb-0"> <span class="h2 mb-0 plan-price" data-monthly-price="$25"
+											data-annual-price="$20">$25</span> /month</p>
+									<small>Basic feature for up to 10 users</small>
+									<!-- Button -->
+									<a href="#" class="btn btn-dark btn-transition w-100 mt-4">Get started</a>
+								</div>
+
+								<!-- Card footer -->
+								<div class="card-footer bg-secondary bg-opacity-50 p-4">
+									<!-- List -->
+									<ul class="list-group list-group-borderless mb-0">
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Up to 05 users monthly</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Free 5 host domain</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Google docs style editors
+										</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Support for 30+ languages
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- Pricing item -->
+						<div class="col-md-6 col-xl-3 mb-5 mb-xl-0">
+							<div class="card shadow overflow-hidden p-1">
+								<!-- Card header -->
+								<div class="card-header bg-secondary bg-opacity-50 p-4 pb-0">
+									<!-- Icon -->
+									<div class="icon-lg bg-body shadow-primary rounded-circle mb-3">
+										<i class="bi bi-send-fill fa-lg lh-1 heading-color"></i>
+									</div>
+									<!-- Title and price -->
+									<h6 class="mb-3">Standard plan</h6>
+									<p class="mb-0"> <span class="h2 mb-0 plan-price" data-monthly-price="$59"
+											data-annual-price="$45">$59</span> /month</p>
+									<small>Basic feature for up to 50 users</small>
+									<!-- Button -->
+									<a href="#" class="btn btn-dark btn-transition w-100 mt-4">Get started</a>
+								</div>
+
+								<!-- Card footer -->
+								<div class="card-footer bg-secondary bg-opacity-50 p-4">
+									<!-- List -->
+									<ul class="list-group list-group-borderless mb-0">
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Up to 20 users monthly</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Free 12 host domain</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Google docs style editors
+										</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Support for 30+ languages
+										</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Landing pages Web widgets
+										</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Customizable features</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- Pricing item -->
+						<div class="col-md-6 col-xl-3 mb-5 mb-xl-0">
+							<div class="card shadow p-1">
+								<!-- Badge -->
+								<div
+									class="bg-primary-grad small text-white rounded position-absolute top-0 start-50 translate-middle px-3 py-1">
+									Recommended</div>
+
+								<!-- Card header -->
+								<div class="card-header bg-secondary-grad rounded-top p-4 pb-0">
+									<!-- Icon -->
+									<div class="icon-lg bg-pink rounded-circle mb-3">
+										<i class="bi bi-rocket-takeoff-fill fa-lg lh-1 text-white"></i>
+									</div>
+									<!-- Title and price -->
+									<h6 class="mb-3">Enterprise plan</h6>
+									<p class="mb-0"> <span class="h2 mb-0 plan-price" data-monthly-price="$99"
+											data-annual-price="$75">$99</span> /month</p>
+									<small>Basic feature for up to 80 users</small>
+									<!-- Button -->
+									<a href="#" class="btn btn-white-shadow w-100 mt-4">Get started</a>
+								</div>
+
+								<!-- Card footer -->
+								<div class="card-footer bg-secondary-grad p-4">
+									<!-- List -->
+									<ul class="list-group list-group-borderless mb-0">
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Up to 50 users monthly</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Free 25 host domain</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Google docs style editors
+										</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Support for 30+ languages
+										</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Landing pages Web widgets
+										</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Customizable features</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>24/7 dedicated Support</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<!-- Pricing item -->
+						<div class="col-md-6 col-xl-3 mb-5 mb-xl-0">
+							<div class="card shadow overflow-hidden p-1">
+								<!-- Card header -->
+								<div
+									class="card-header bg-secondary bg-opacity-50 position-relative overflow-hidden p-4 pb-0">
+									<!-- Blur decoration -->
+									<div class="position-absolute top-0 end-0 mt-n8 me-n5">
+										<img src="assets/images/elements/grad-shape/blur-decoration-2.svg"
+											class="opacity-3 blur-8" alt="Grad shape" style="
+				    position: relative;
+				    animation:
+				      floatY 14s ease-in-out infinite,
+				      driftX 18s ease-in-out infinite,
+				      slowRotate 20s linear infinite,
+				      breathe 5s ease-in-out infinite;
+				    will-change: transform;
+				  ">
+
+									</div>
+									<!-- Icon -->
+									<div class="icon-lg bg-body shadow-primary rounded-circle mb-3">
+										<i class="bi bi-headset fa-lg lh-1 heading-color"></i>
+									</div>
+									<!-- Title and price -->
+									<h6 class="mb-3">Business plan</h6>
+									<h2>Custom</h2>
+									<small>Customize feature according to users</small>
+									<!-- Button -->
+									<a href="#" class="btn btn-dark btn-transition w-100 mt-4">Request pricing</a>
+								</div>
+
+								<!-- Card footer -->
+								<div class="card-footer bg-secondary bg-opacity-50 p-4">
+									<!-- List -->
+									<ul class="list-group list-group-borderless mb-0">
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Unlimited projects</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Custom reporting and
+											analytics</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Dedicated account manager
+										</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Tailored support and
+											consulting</li>
+										<li class="list-group-item d-flex heading-color mb-0"><i
+												class="bi bi-check-lg text-primary me-1"></i>Customizable features</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				/* Scroll reveal for pricing cards */
+				const cards = document.querySelectorAll(".card");
+
+				const observer = new IntersectionObserver(
+					entries => {
+						entries.forEach(entry => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add("visible");
+								observer.unobserve(entry.target);
+							}
+						});
+					},
+					{ threshold: 0.25 }
+				);
+
+				cards.forEach(card => {
+					card.classList.add("reveal");
+					observer.observe(card);
+				});
+			</script>
+
+			<!-- Pricing box END -->
+		</section>
+		<!-- =======================
+Hero END -->
+
+		<!-- =======================
+Compare table START -->
+		<style>
+			/* ==========================
+   IMPROVED ROCKET SMOKE
+========================== */
+
+			.rocket-wrapper {
+				position: relative;
+			}
+
+			/* Rocket subtle float */
+			.rocket-img {
+				position: relative;
+				z-index: 3;
+				animation: rocketFloat 3.5s ease-in-out infinite;
+			}
+
+			/* Smoke particle */
+			.smoke {
+				position: absolute;
+				bottom: -12px;
+				right: 50%;
+				width: 26px;
+				height: 26px;
+				background: radial-gradient(circle,
+						rgba(120, 120, 120, 0.55) 0%,
+						rgba(160, 160, 160, 0.35) 35%,
+						rgba(200, 200, 200, 0.15) 55%,
+						rgba(255, 255, 255, 0) 70%);
+				border-radius: 50%;
+				filter: blur(2px);
+				opacity: 0;
+				z-index: 1;
+				animation: smokeUp 4.5s infinite ease-out;
+			}
+
+			/* Staggered particles */
+			.smoke.s1 {
+				animation-delay: 0s;
+			}
+
+			.smoke.s2 {
+				animation-delay: 1.1s;
+				width: 30px;
+				height: 30px;
+			}
+
+			.smoke.s3 {
+				animation-delay: 2.2s;
+				width: 22px;
+				height: 22px;
+			}
+
+			.smoke.s4 {
+				animation-delay: 3.3s;
+				width: 34px;
+				height: 34px;
+			}
+
+			/* Smoke motion */
+			@keyframes smokeUp {
+				0% {
+					transform: translate(-50%, 0) scale(0.4);
+					opacity: 0;
+				}
+
+				10% {
+					opacity: 0.6;
+				}
+
+				40% {
+					opacity: 0.45;
+				}
+
+				70% {
+					opacity: 0.25;
+				}
+
+				100% {
+					transform: translate(-90px, 140px) scale(2.8);
+					opacity: 0;
+				}
+			}
+
+			/* Rocket float */
+			@keyframes rocketFloat {
+
+				0%,
+				100% {
+					transform: translateY(0);
+				}
+
+				50% {
+					transform: translateY(-10px);
+				}
+			}
+
+			/* ==========================
+   ACCESSIBILITY & MOBILE
+========================== */
+
+			@media (prefers-reduced-motion: reduce) {
+
+				.smoke,
+				.rocket-img {
+					animation: none;
+				}
+			}
+
+			@media (max-width: 767px) {
+				.smoke {
+					display: none;
+				}
+			}
+
+			/* =========================
+   COMPARE TABLE PREMIUM UI
+========================= */
+
+			/* Wrapper glow */
+			.table-responsive-xl {
+				position: relative;
+				border-radius: 16px;
+				background: linear-gradient(180deg,
+						rgba(45, 170, 225, 0.05),
+						rgba(64, 155, 210, 0.03));
+
+				padding: 12px;
+			}
+
+			/* Table base */
+			.table {
+				border-radius: 14px;
+				overflow: hidden;
+				background: #fff;
+			}
+
+			/* Head cells */
+			.table thead th {
+				background: linear-gradient(135deg,
+						rgba(45, 170, 225, 0.08),
+						rgba(64, 155, 210, 0.06));
+				border-bottom: 1px solid rgba(45, 170, 225, 0.15);
+
+			}
+
+			/* Sticky header (desktop only) */
+			@media (min-width: 992px) {
+				.table thead th {
+					position: sticky;
+					top: 0;
+					z-index: 5;
+				}
+			}
+
+			/* Row hover highlight */
+			.table tbody tr {
+				transition: background 0.35s ease, transform 0.25s ease;
+			}
+
+			.table tbody tr:hover {
+				background: linear-gradient(90deg,
+						rgba(45, 170, 225, 0.08),
+						rgba(255, 255, 255, 0));
+
+				transform: scale(1.004);
+			}
+
+			/* First column emphasis */
+			.table tbody th {
+				font-weight: 500;
+			}
+
+			/* Column hover glow */
+			.table td:hover,
+			.table th:hover {
+				background-color: rgba(45, 170, 225, 0.06);
+
+			}
+
+			/* Buttons in header */
+			.table thead .btn {
+				transition: transform 0.25s ease, box-shadow 0.25s ease;
+			}
+
+			.table thead .btn:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 8px 24px rgba(45, 170, 225, 0.25);
+
+			}
+
+			/* =========================
+   ICON ANIMATIONS
+========================= */
+			.table i {
+				animation: iconPop 0.6s ease forwards;
+			}
+
+			@keyframes iconPop {
+				from {
+					transform: scale(0.6);
+					opacity: 0;
+				}
+
+				to {
+					transform: scale(1);
+					opacity: 1;
+				}
+			}
+
+			/* Green check pulse */
+			.text-success i {
+				animation: successPulse 2.2s ease-in-out infinite;
+			}
+
+			@keyframes successPulse {
+
+				0%,
+				100% {
+					transform: scale(1);
+				}
+
+				50% {
+					transform: scale(1.15);
+				}
+			}
+
+			/* Red cross subtle shake */
+			.text-danger i {
+				animation: dangerShake 2.8s ease-in-out infinite;
+			}
+
+			@keyframes dangerShake {
+
+				0%,
+				100% {
+					transform: rotate(0);
+				}
+
+				50% {
+					transform: rotate(-6deg);
+				}
+			}
+
+			/* =========================
+   SCROLL REVEAL
+========================= */
+			.compare-reveal {
+				opacity: 0;
+				transform: translateY(30px);
+				transition: all 0.8s cubic-bezier(.22, .61, .36, 1);
+			}
+
+			.compare-reveal.show {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+			@media (max-width: 768px) {
+				.table-responsive-xl {
+					padding: 0;
+				}
+
+				.table thead th {
+					position: static;
+				}
+
+				.table tbody tr:hover {
+					transform: none;
+				}
+			}
+
+			/* Reduced motion */
+			@media (prefers-reduced-motion: reduce) {
+				* {
+					animation: none !important;
+					transition: none !important;
+				}
+			}
+
+			/* =========================
+   DARK MODE FIX – COMPARE TABLE
+========================= */
+
+			[data-bs-theme="dark"] .table-responsive-xl {
+				background: linear-gradient(135deg,
+						rgba(45, 170, 225, 0.18),
+						rgba(64, 155, 210, 0.12));
+
+			}
+
+			[data-bs-theme="dark"] .table {
+				background: transparent;
+				color: #e5e7eb;
+			}
+
+			/* Header cells */
+			[data-bs-theme="dark"] .table thead th {
+				background: linear-gradient(90deg,
+						rgba(45, 170, 225, 0.18),
+						rgba(0, 0, 0, 0));
+
+				color: #f9fafb;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+			}
+
+			/* Body rows */
+			[data-bs-theme="dark"] .table tbody tr {
+				background: rgba(255, 255, 255, 0.02);
+			}
+
+			[data-bs-theme="dark"] .table tbody tr:nth-child(even) {
+				background: rgba(255, 255, 255, 0.04);
+			}
+
+			/* Feature names */
+			[data-bs-theme="dark"] .table tbody th,
+			[data-bs-theme="dark"] .table td {
+				color: #e5e7eb;
+			}
+
+			/* Hover highlight */
+			[data-bs-theme="dark"] .table tbody tr:hover {
+				background: linear-gradient(90deg,
+						rgba(45, 170, 225, 0.18),
+						rgba(0, 0, 0, 0));
+
+			}
+
+			/* Buttons */
+			[data-bs-theme="dark"] .table thead .btn-outline-primary {
+				color: #9fdcff;
+				border-color: rgba(45, 170, 225, 0.5);
+
+			}
+
+			[data-bs-theme="dark"] .table thead .btn-outline-primary:hover {
+				background: rgba(45, 170, 225, 0.25);
+				color: #ffffff;
+
+			}
+		</style>
+
+		<section class="pt-0 position-relative">
+			<!-- Rocket decoration -->
+			<div class="position-absolute end-0 top-0 mt-n7 me-6 d-none d-md-block rocket-wrapper">
+				<img src="assets/images/elements/rocket-03.png" class="h-200px rocket-img" alt="rocket image">
+
+				<!-- Smoke particles -->
+				<span class="smoke s1"></span>
+				<span class="smoke s2"></span>
+				<span class="smoke s3"></span>
+				<span class="smoke s4"></span>
+			</div>
+
+
+			<div class="container">
+				<!-- Title -->
+				<h2 class="text-center mb-0">Compare plan</h2>
+				<!-- Compare table START -->
+				<div class="table-responsive-xl mt-2 mt-md-5">
+					<table class="table table-striped table-borderless align-middle">
+						<!-- Head START -->
+						<thead class="align-middle">
+							<tr>
+								<th scope="col">
+									<p class="mb-0 fs-5 heading-color">Features</p>
+								</th>
+
+								<th scope="col">
+									<div class="text-center p-3">
+										<p class="mb-3 heading-color">Basic plan</p>
+										<a href="#" class="btn btn-sm btn-outline-primary mb-0">Get started</a>
+									</div>
+								</th>
+
+								<th scope="col">
+									<div class="text-center p-3">
+										<p class="mb-3 heading-color">Standard plan</p>
+										<a href="#" class="btn btn-sm btn-outline-primary mb-0">Get started</a>
+									</div>
+								</th>
+
+								<th scope="col">
+									<div class="text-center p-3">
+										<p class="mb-3 heading-color">Enterprise plan</p>
+										<a href="#" class="btn btn-sm btn-outline-primary mb-0">Get started</a>
+									</div>
+								</th>
+							</tr>
+						</thead>
+						<!-- Head END -->
+
+						<!-- Body START -->
+						<tbody class="border-top-0">
+							<!-- Item -->
+							<tr>
+								<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Storage space</span>
+								</th>
+								<td class="text-center"> 40GB </td>
+								<td class="text-center"> 60GB </td>
+								<td class="text-center"> Unlimited </td>
+							</tr>
+
+							<!-- Item -->
+							<tr>
+								<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Cloud
+										connected</span></th>
+								<td class="text-center"> Yes </td>
+								<td class="text-center"> Yes </td>
+								<td class="text-center"> Yes </td>
+							</tr>
+
+							<!-- Item -->
+							<tr>
+								<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Coding tools</span>
+								</th>
+								<td class="text-center text-success"> <i class="bi bi-check-circle fa-lg"></i> </td>
+								<td class="text-center text-success"> <i class="bi bi-check-circle fa-lg"></i> </td>
+								<td class="text-center text-success"> <i class="bi bi-check-circle fa-lg"></i> </td>
+							</tr>
+
+							<!-- Item -->
+							<tr>
+								<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Advance
+										debugging</span></th>
+								<td class="text-center text-success"> <i class="bi bi-check-circle fa-lg"></i> </td>
+								<td class="text-center text-success"> <i class="bi bi-check-circle fa-lg"></i> </td>
+								<td class="text-center text-success"> <i class="bi bi-check-circle fa-lg"></i> </td>
+							</tr>
+
+							<!-- Item -->
+							<tr>
+								<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Mobile apps</span>
+								</th>
+								<td class="text-center text-danger"> <i class="bi bi-x-circle fa-lg"></i> </td>
+								<td class="text-center text-success"> <i class="bi bi-check-circle fa-lg"></i> </td>
+								<td class="text-center text-success"> <i class="bi bi-check-circle fa-lg"></i></td>
+							</tr>
+
+							<!-- Item -->
+							<tr>
+								<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Web tools</span></th>
+								<td class="text-center text-danger"> <i class="bi bi-x-circle fa-lg"></i> </td>
+								<td class="text-center text-success"> <i class="bi bi-check-circle fa-lg"></i> </td>
+								<td class="text-center text-success"> <i class="bi bi-check-circle fa-lg"></i></td>
+							</tr>
+
+							<!-- Item -->
+							<tr>
+								<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Version
+										control</span></th>
+								<td class="text-center text-danger"> <i class="bi bi-x-circle fa-lg"></i> </td>
+								<td class="text-center text-success"> <i class="bi bi-check-circle fa-lg"></i> </td>
+								<td class="text-center text-success"> <i class="bi bi-check-circle fa-lg"></i> </td>
+							</tr>
+
+							<!-- Item -->
+							<tr>
+								<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Security</span></th>
+								<td class="text-center text-danger"> <i class="bi bi-x-circle fa-lg"></i> </td>
+								<td class="text-center text-danger"> <i class="bi bi-x-circle fa-lg"></i> </td>
+								<td class="text-center text-success"> <i class="bi bi-check-circle fa-lg"></i> </td>
+							</tr>
+
+							<!-- Item -->
+							<tr>
+								<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Team access</span>
+								</th>
+								<td class="text-center text-danger"> <i class="bi bi-x-circle fa-lg"></i> </td>
+								<td class="text-center text-danger"> <i class="bi bi-x-circle fa-lg"></i> </td>
+								<td class="text-center text-success"> <i class="bi bi-check-circle fa-lg"></i> </td>
+							</tr>
+
+						</tbody>
+						<!-- Body END -->
+					</table>
+				</div>
+				<!-- Compare table END -->
+
+				<!-- Clients START -->
+				<div class="row g-4 align-items-center mt-6">
+					<!-- Title -->
+					<div class="col-lg-3">
+						<div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+							<h6 class="mb-0">Trusted by leading companies</h6>
+							<div class="vr bg-primary-grad opacity-1 d-none d-lg-block"></div>
+						</div>
+					</div>
+
+					<!-- Logos -->
+					<div class="col-lg-9">
+						<!-- Slider START -->
+						<div class="swiper" data-swiper-options='{
+					"slidesPerView": 2, 
+					"spaceBetween": 50,
+					"breakpoints": { 
+						"576": {"slidesPerView": 3}, 
+						"768": {"slidesPerView": 4}, 
+						"1200": {"slidesPerView": 5}
+					}}'>
+
+							<!-- Slider items -->
+							<div class="swiper-wrapper align-items-center">
+								<!-- Image -->
+								<div class="swiper-slide">
+									<div class="swap-logo">
+										<img src="assets/images/client/logo-dark/almonds-BoaRI-IP.png"
+											class="p-2 p-lg-3" alt="client-img">
+										<div class="swap-item">
+											<img src="assets/images/client/logo-dark/almonds-BoaRI-IP.png"
+												class="dark-mode-item p-2 p-lg-3" alt="client logo">
+											<img src="assets/images/client/logo-dark/almonds-BoaRI-IP.png"
+												class="light-mode-item p-2 p-lg-3" alt="client logo">
+										</div>
+									</div>
+								</div>
+								<!-- Image -->
+								<div class="swiper-slide">
+									<div class="swap-logo">
+										<img src="assets/images/client/logo-dark/arya-B7TvlRXs.png" class="p-2 p-lg-3"
+											alt="client-img">
+										<div class="swap-item">
+											<img src="assets/images/client/logo-dark/arya-B7TvlRXs.png"
+												class="dark-mode-item p-2 p-lg-3" alt="client logo">
+											<img src="assets/images/client/logo-dark/arya-B7TvlRXs.png"
+												class="light-mode-item p-2 p-lg-3" alt="client logo">
+										</div>
+									</div>
+								</div>
+								<!-- Image -->
+								<div class="swiper-slide">
+									<div class="swap-logo">
+										<img src="assets/images/client/logo-dark/Atechnos-logo-B5G0xdh8.png"
+											class="p-2 p-lg-3" alt="client-img">
+										<div class="swap-item">
+											<img src="assets/images/client/logo-dark/Atechnos-logo-B5G0xdh8.png"
+												class="dark-mode-item p-2 p-lg-3" alt="client logo">
+											<img src="assets/images/client/logo-dark/Atechnos-logo-B5G0xdh8.png"
+												class="light-mode-item p-2 p-lg-3" alt="client logo">
+										</div>
+									</div>
+								</div>
+								<!-- Image -->
+								<div class="swiper-slide">
+									<div class="swap-logo">
+										<img src="assets/images/client/logo-dark/axiom-mQS4rbxM.png" class="p-2 p-lg-3"
+											alt="client-img">
+										<div class="swap-item">
+											<img src="assets/images/client/logo-dark/axiom-mQS4rbxM.png"
+												class="dark-mode-item p-2 p-lg-3" alt="client logo">
+											<img src="assets/images/client/logo-dark/axiom-mQS4rbxM.png"
+												class="light-mode-item p-2 p-lg-3" alt="client logo">
+										</div>
+									</div>
+								</div>
+								<!-- Image -->
+								<div class="swiper-slide">
+									<div class="swap-logo">
+										<img src="assets/images/client/logo-dark/BTG-BK4vfSqE.png" class="p-2 p-lg-3"
+											alt="client-img">
+										<div class="swap-item">
+											<img src="assets/images/client/logo-dark/BTG-BK4vfSqE.png"
+												class="dark-mode-item p-2 p-lg-3" alt="client logo">
+											<img src="assets/images/client/logo-dark/BTG-BK4vfSqE.png"
+												class="light-mode-item p-2 p-lg-3" alt="client logo">
+										</div>
+									</div>
+								</div>
+								<!-- Image -->
+								<div class="swiper-slide">
+									<div class="swap-logo">
+										<img src="assets/images/client/logo-dark/JAKSON-T5NSfTH-.png" class="p-2 p-lg-3"
+											alt="client-img">
+										<div class="swap-item">
+											<img src="assets/images/client/logo-dark/JAKSON-T5NSfTH-.png"
+												class="dark-mode-item p-2 p-lg-3" alt="client logo">
+											<img src="assets/images/client/logo-dark/JAKSON-T5NSfTH-.png"
+												class="light-mode-item p-2 p-lg-3" alt="client logo">
+										</div>
+									</div>
+								</div>
+								<!-- Image -->
+								<div class="swiper-slide">
+									<div class="swap-logo">
+										<img src="assets/images/client/logo-dark/marswell-BOH3Y-if.png"
+											class="p-2 p-lg-3" alt="client-img">
+										<div class="swap-item">
+											<img src="assets/images/client/logo-dark/marswell-BOH3Y-if.png"
+												class="dark-mode-item p-2 p-lg-3" alt="client logo">
+											<img src="assets/images/client/logo-dark/marswell-BOH3Y-if.png"
+												class="light-mode-item p-2 p-lg-3" alt="client logo">
+										</div>
+									</div>
+								</div>
+								<!-- Image -->
+								<div class="swiper-slide">
+									<div class="swap-logo">
+										<img src="assets/images/client/logo-dark/narashri-BdKbnVxe.png"
+											class="p-2 p-lg-3" alt="client-img">
+										<div class="swap-item">
+											<img src="assets/images/client/logo-dark/narashri-BdKbnVxe.png"
+												class="dark-mode-item p-2 p-lg-3" alt="client logo">
+											<img src="assets/images/client/logo-dark/narashri-BdKbnVxe.png"
+												class="light-mode-item p-2 p-lg-3" alt="client logo">
+										</div>
+									</div>
+								</div>
+								<!-- Image -->
+								<div class="swiper-slide">
+									<div class="swap-logo">
+										<img src="assets/images/client/logo-dark/comtel-BQ3Rjopw.png" class="p-2 p-lg-3"
+											alt="client-img">
+										<div class="swap-item">
+											<img src="assets/images/client/logo-dark/comtel-BQ3Rjopw.png"
+												class="dark-mode-item p-2 p-lg-3" alt="client logo">
+											<img src="assets/images/client/logo-dark/comtel-BQ3Rjopw.png"
+												class="light-mode-item p-2 p-lg-3" alt="client logo">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Slider END -->
+					</div>
+				</div>
+				<!-- Clients END -->
+			</div>
+			<script>
+				const compareTable = document.querySelector('.table-responsive-xl');
+
+				if (compareTable) {
+					const compareObserver = new IntersectionObserver(entries => {
+						entries.forEach(entry => {
+							if (entry.isIntersecting) {
+								compareTable.classList.add('compare-reveal', 'show');
+								compareObserver.unobserve(compareTable); // run once only
+							}
+						});
+					}, { threshold: 0.2 });
+
+					compareObserver.observe(compareTable);
+				}
+			</script>
+
+		</section>
+		<!-- =======================
+Compare table END -->
+
+		<!-- =======================
+ Faq START -->
+		<style>
+			/* =========================
+   FAQ TITLE – SCROLL ANIMATION
+========================= */
+			.faq-title-animate {
+				opacity: 0;
+				transform: translateY(40px);
+				transition: opacity 0.8s ease, transform 0.8s ease;
+			}
+
+			.faq-title-animate.in-view {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			/* =========================
+   CLAY FLOAT (LEFT)
+========================= */
+			.floating-rotate {
+				animation: floatY 6s ease-in-out infinite;
+				will-change: transform;
+			}
+
+			@keyframes floatY {
+
+				0%,
+				100% {
+					transform: translateY(0);
+				}
+
+				50% {
+					transform: translateY(16px);
+				}
+			}
+
+			/* Accessibility */
+			@media (prefers-reduced-motion: reduce) {
+
+				.faq-title-animate,
+				.floating-rotate {
+					transition: none;
+					animation: none;
+					transform: none;
+					opacity: 1;
+				}
+			}
+
+			/* =========================
+   CLAY DECORATION – PREMIUM FLOAT
+========================= */
+			.floating-rotate {
+				animation:
+					clayFloat 7s ease-in-out infinite,
+					clayRotate 18s linear infinite;
+				will-change: transform;
+			}
+
+			.floating-rotate img {
+				animation: clayPulse 4.5s ease-in-out infinite;
+				filter: drop-shadow(0 0 28px rgba(139, 92, 246, 0.25));
+			}
+
+			/* Vertical floating */
+			@keyframes clayFloat {
+
+				0%,
+				100% {
+					transform: translateY(0);
+				}
+
+				50% {
+					transform: translateY(18px);
+				}
+			}
+
+			/* Very slow rotation */
+			@keyframes clayRotate {
+				from {
+					rotate: 0deg;
+				}
+
+				to {
+					rotate: 360deg;
+				}
+			}
+
+			/* Soft breathing pulse */
+			@keyframes clayPulse {
+
+				0%,
+				100% {
+					transform: scale(1);
+					opacity: 0.95;
+				}
+
+				50% {
+					transform: scale(1.05);
+					opacity: 1;
+				}
+			}
+
+			/* =========================
+   ACCESSIBILITY
+========================= */
+			@media (prefers-reduced-motion: reduce) {
+
+				.floating-rotate,
+				.floating-rotate img {
+					animation: none;
+					transform: none;
+				}
+			}
+		</style>
+		<section class="bg-secondary bg-opacity-75 position-relative">
+			<!-- Clay decoration LEFT -->
+			<div class="position-absolute top-50 start-0 translate-middle mt-5 floating-rotate d-none d-lg-block">
+				<img src="assets/images/elements/clay-decoration.png" alt="Clay-decoration">
+			</div>
+
+			<div class="container">
+
+				<!-- Title -->
+				<div class="inner-container position-relative text-center mb-4 mb-md-5">
+					<h2 class="mb-0 faq-title-animate">Have questions? (FAQs)</h2>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-8 mx-auto">
+						<!-- Accordion START -->
+						<div class="accordion accordion-bg-body-light" id="accordionFaq">
+							<!-- Item -->
+							<div class="accordion-item mb-4">
+								<div class="accordion-header font-base" id="heading-1">
+									<button class="accordion-button fw-semibold rounded" type="button"
+										data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true"
+										aria-controls="collapse-1">
+										What payment methods do you accept?
+									</button>
+								</div>
+								<!-- Body -->
+								<div id="collapse-1" class="accordion-collapse collapse show"
+									aria-labelledby="heading-1" data-bs-parent="#accordionFaq">
+									<div class="accordion-body pt-0 pt-0">
+										We accept all major credit cards, PayPal, and bank transfers for custom plans.
+										Our expert team will turn your concept into a working prototype within 24 hours,
+										ensuring rapid progress and immediate feedback.
+									</div>
+								</div>
+							</div>
+
+							<!-- Item -->
+							<div class="accordion-item mb-4">
+								<div class="accordion-header font-base" id="heading-2">
+									<button class="accordion-button fw-semibold rounded collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false"
+										aria-controls="collapse-2">
+										Can I change my plan later?
+									</button>
+								</div>
+								<!-- Body -->
+								<div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2"
+									data-bs-parent="#accordionFaq">
+									<div class="accordion-body pt-0">
+										Yes, you can upgrade or downgrade your plan at any time from your account
+										settings. We provide a range of tools, guides, and best practices to help you
+										create designs, websites.
+									</div>
+								</div>
+							</div>
+
+							<!-- Item -->
+							<div class="accordion-item mb-4">
+								<div class="accordion-header font-base" id="heading-3">
+									<button class="accordion-button fw-semibold collapsed rounded" type="button"
+										data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false"
+										aria-controls="collapse-3">
+										Is there a free trial available?
+									</button>
+								</div>
+								<!-- Body -->
+								<div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3"
+									data-bs-parent="#accordionFaq">
+									<div class="accordion-body pt-0">
+										Yes, we offer a 14-day free trial for our Basic and Standard plans. No credit
+										card required.
+									</div>
+								</div>
+							</div>
+
+							<!-- Item -->
+							<div class="accordion-item mb-4">
+								<div class="accordion-header font-base" id="heading-4">
+									<button class="accordion-button fw-semibold collapsed rounded" type="button"
+										data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false"
+										aria-controls="collapse-4">
+										How does customer support work?
+									</button>
+								</div>
+								<!-- Body -->
+								<div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-4"
+									data-bs-parent="#accordionFaq">
+									<div class="accordion-body pt-0">
+										Our Basic plan includes email support, while the Standard and Custom plans offer
+										priority email and dedicated account manager support, respectively.
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Accordion END -->
+
+						<!-- CTA text -->
+						<p class="heading-color text-center">Need help? Our team is ready to assist you. Start a chat
+							for quick support. <a href="assets/contact-us-v1.html" style="
+						              color:#2DA9E1;
+						              font-weight:600;
+						              text-decoration:none;
+						              border-bottom:2px solid transparent;
+						              transition:all 0.3s ease;
+						            " onmouseover="this.style.borderBottomColor='#2DA9E1'"
+								onmouseout="this.style.borderBottomColor='transparent'">
+								Talk to us →
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<script>
+				(() => {
+					const faqTitle = document.querySelector('.faq-title-animate');
+					if (!faqTitle) return;
+
+					const faqObserver = new IntersectionObserver(
+						([entry]) => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add('in-view');
+								faqObserver.unobserve(entry.target);
+							}
+						},
+						{ threshold: 0.4 }
+					);
+
+					faqObserver.observe(faqTitle);
+				})();
+			</script>
+
+		</section>
+		<!-- =======================
+ Faq END -->
+
+	</main>
+	<!-- **************** MAIN CONTENT END **************** -->
+
+	<!-- =======================
+Footer START -->
+	<style>
+		/* =========================
+   GRAD SHAPE FLOAT EFFECT
+========================= */
+
+		.grad-float {
+			animation:
+				gradFloat 10s ease-in-out infinite,
+				gradRotate 22s linear infinite;
+			transform-origin: center;
+			opacity: 0.9;
+			filter: blur(0.3px);
+		}
+
+		/* Vertical floating */
+		@keyframes gradFloat {
+			0% {
+				transform: translateY(0);
+			}
+
+			50% {
+				transform: translateY(18px);
+			}
+
+			100% {
+				transform: translateY(0);
+			}
+		}
+
+		/* Very slow rotation */
+		@keyframes gradRotate {
+			from {
+				rotate: 0deg;
+			}
+
+			to {
+				rotate: 360deg;
+			}
+		}
+
+		/* Accessibility */
+		@media (prefers-reduced-motion: reduce) {
+			.grad-float {
+				animation: none;
+			}
+		}
+
+		.grad-float img {
+			filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.25));
+		}
+	</style>
+	<footer class="bg-dark position-relative pt-6 pt-lg-8" data-bs-theme="dark">
+		<div class="container position-relative">
+
+			<!-- Link widgets -->
+			<div class="row g-4">
+
+				<!-- Brand / About -->
+				<div class="col-md-6 col-xl-4">
+					<a href="index.html">
+						<img class="h-40px" src="assets/images/microhub-white-logo-BbBXVK-M.svg" alt="logo">
+					</a>
+
+					<p class="my-3 my-lg-4">
+						Intelligent CMS, IT infrastructure, and enterprise technology solutions.
+					</p>
+
+					<ul class="list-inline mb-0">
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-facebook lh-base"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-instagram lh-base"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-twitter-x lh-base"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-linkedin lh-base"></i></a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Links section -->
+				<div class="col-xl-8">
+					<div class="row g-4">
+
+						<!-- Company -->
+						<div class="col-6 col-lg-4">
+							<h6 class="mb-3 mb-sm-4">Company</h6>
+							<ul class="nav flex-column gap-1">
+								<li class="nav-item"><a class="nav-link pt-0" href="about-v1.html">About Microhub</a>
+								</li>
+								<li class="nav-item"><a class="nav-link" href="service-v1.html">Our Services</a></li>
+								<li class="nav-item"><a class="nav-link" href="pricing-v1.html">Pricing</a></li>
+								<li class="nav-item"><a class="nav-link" href="career.html">Careers</a></li>
+								<li class="nav-item"><a class="nav-link" href="contact-us-v1.html">Contact Us</a></li>
+							</ul>
+						</div>
+
+						<!-- Resources -->
+						<div class="col-6 col-lg-4">
+							<h6 class="mb-3 mb-sm-4">Resources</h6>
+							<ul class="nav flex-column gap-1">
+								<li class="nav-item"><a class="nav-link pt-0" href="#">CMS Features</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">IT Infrastructure</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">Hardware Solutions</a></li>
+								<li class="nav-item"><a class="nav-link" href="blog-minimal.html">Blogs & Insights</a>
+								</li>
+								<li class="nav-item"><a class="nav-link" href="#">Client Success Stories</a></li>
+							</ul>
+						</div>
+
+						<!-- Contact Us -->
+						<div class="col-12 col-lg-4">
+							<h6 class="mb-3 mb-sm-4">Contact Us</h6>
+
+							<ul class="nav flex-column gap-2 small text-body-secondary">
+								<li class="d-flex align-items-start gap-2">
+									<i class="bi bi-geo-alt text-primary-grad mt-1"></i>
+									<span>
+										Unit No-484, Tower-C,<br>
+										Bhutani Alphathum,<br>
+										Sector-90, Noida UP – 201305
+									</span>
+								</li>
+
+								<li class="d-flex align-items-center gap-2">
+									<i class="bi bi-envelope text-primary-grad"></i>
+									<a href="mailto:sales@microhub.co.in" class="nav-link p-0">
+										sales@microhub.co.in
+									</a>
+								</li>
+
+								<li class="d-flex align-items-center gap-2">
+									<i class="bi bi-telephone text-primary-grad"></i>
+									<a href="tel:+917368007363" class="nav-link p-0">
+										+91 73680 07363
+									</a>
+								</li>
+							</ul>
+
+							<ul class="list-inline mt-3 mb-0">
+								<li class="list-inline-item">
+									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+											class="bi bi-facebook lh-base"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+											class="bi bi-linkedin lh-base"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+											class="bi bi-instagram lh-base"></i></a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- Divider -->
+			<hr class="mt-xl-5 mb-0 opacity-1">
+
+			<!-- Bottom footer -->
+			<div class="d-md-flex justify-content-between align-items-center text-center text-lg-start py-4">
+				<div class="text-body small mb-3 mb-md-0">
+					Copyright ©2024 Microhub.
+					Built by <a href="#" class="text-body text-primary-hover hover-underline-animation">Microhub</a>.
+				</div>
+
+				<ul class="nav justify-content-center gap-1 mb-0">
+					<li class="nav-item"><a class="nav-link small py-0" href="#">Privacy policy</a></li>
+					<li class="nav-item"><a class="nav-link small py-0 pe-0" href="#">Terms & conditions</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</footer>
+
+	<!-- =======================
+Footer END -->
+
+	<!-- Back to top -->
+	<div class="back-top"></div>
+
+	<!-- Bootstrap JS -->
+	<script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!--Vendors-->
+	<script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+	<!-- Theme Functions -->
+	<script src="./assets/js/functions.js"></script>
+
+</body>
+
+
+</html>

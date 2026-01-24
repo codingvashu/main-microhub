@@ -1,0 +1,2160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+	<title>Microhub</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="microhub.com">
+	<meta name="description" content="microhub page">
+
+	<!-- Dark mode -->
+	<script>
+		const storedTheme = localStorage.getItem('theme')
+
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		window.addEventListener('DOMContentLoaded', () => {
+			var el = document.querySelector('.theme-icon-active');
+			if (el != 'undefined' && el != null) {
+				const showActiveTheme = theme => {
+					const activeThemeIcon = document.querySelector('.theme-icon-active use')
+					const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+					const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+					document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+						element.classList.remove('active')
+					})
+
+					btnToActive.classList.add('active')
+					activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+				}
+
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+					if (storedTheme !== 'light' || storedTheme !== 'dark') {
+						setTheme(getPreferredTheme())
+					}
+				})
+
+				showActiveTheme(getPreferredTheme())
+
+				document.querySelectorAll('[data-bs-theme-value]')
+					.forEach(toggle => {
+						toggle.addEventListener('click', () => {
+							const theme = toggle.getAttribute('data-bs-theme-value')
+							localStorage.setItem('theme', theme)
+							setTheme(theme)
+							showActiveTheme(theme)
+						})
+					})
+
+			}
+		})
+
+	</script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/Microhub_logo.png">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+		rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css"
+		href="./assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css"
+		href="./assets/vendor/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" type="text/css"
+		href="./assets/vendor/glightbox/css/glightbox.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+</head>
+
+<body>
+	<!-- Header START -->
+	<div class="header-absolute">
+		<!-- Top header -->
+		<div class="alert fade show border-0 rounded-0 text-center overflow-hidden z-index-9 py-2 m-0 d-none d-lg-block"
+			style="background-color:#2DA9E1;" role="alert">
+			<div class="container d-flex justify-content-between px-2 px-xl-4">
+				<!-- Contact info -->
+				<ul class="list-inline d-flex flex-wrap gap-3 text-white mb-0">
+					<li class="list-inline-item small fw-light"><i class="bi bi-headset me-2"></i>Call us: <a href="#"
+							class="link-white">+91 7368007363
+
+						</a></li>
+					<li class="list-inline-item small fw-light"><i class="bi bi-envelope me-2"></i>Email: <a href="#"
+							class="link-white">sales@microhub.co.in</a></li>
+				</ul>
+
+				<!-- Social links -->
+				<ul class="list-inline mb-0">
+					<li class="list-inline-item small text-white">Follow us on: </li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-facebook"></i></a>
+					</li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-instagram"></i></a>
+					</li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-twitter-x"></i></a>
+					</li>
+					<li class="list-inline-item"> <a href="#" class="link-white"><i class="bi bi-linkedin"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Header START -->
+		<header class="header-sticky bg-transparent">
+			<!-- Logo Nav START -->
+			<nav class="navbar navbar-expand-xl">
+				<div class="container">
+					<!-- Logo START -->
+					<a class="navbar-brand me-0" href="index.html">
+						<img class="light-mode-item navbar-brand-item" src="assets/images/Microhub_logo_light.png"
+							alt="logo">
+						<img class="dark-mode-item navbar-brand-item"
+							src="assets/images/microhub-white-logo-BbBXVK-M.svg" alt="logo">
+					</a>
+					<!-- Logo END -->
+
+					<!-- Main navbar START -->
+					<div class="navbar-collapse collapse" id="navbarCollapse">
+						<ul class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto">
+
+
+
+							<!-- Nav item -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
+									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+								<div class="dropdown-menu dropdown-menu-size-md dropdown-menu-center p-xl-3">
+									<div class="row row-cols-1 row-cols-md-1 pt-1">
+										<!-- Doc menu -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3">
+												<div class="d-flex">
+													<!-- Icon -->
+													<div
+														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
+														<i class="bi bi-info-circle fs-6"></i>
+
+													</div>
+													<!-- Content -->
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">About</p>
+														<p class="mb-0 text-body small">Our story, vision, and what
+															drives us</p>
+													</div>
+												</div>
+												<!-- Button -->
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="about-v1.html" target="_blank"><i
+														class="bi bi-chevron-right"></i> </a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+
+
+							<!-- Nav item : SOLUTIONS -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
+									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Solutions
+								</a>
+
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
+									<div class="row row-cols-1 row-cols-md-3 pt-2">
+
+										<!-- CMS SOLUTIONS -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
+														<i class="bi bi-grid-1x2 fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">CMS
+															Solutions</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#2DA9E1;
+														    ">
+
+															<li><b>CRM</b></li>
+															<li><b>HR-Payroll</b></li>
+															<li><b>Inventory</b></li>
+															<li><b>Finance</b></li>
+															<li><b>ERP</b></li>
+															<li><b>Automation</b></li>
+
+														</ul>
+
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="services-grid.html">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+										<!-- IT INFRASTRUCTURE -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-info bg-opacity-15 text-info rounded flex-shrink-0">
+														<i class="bi bi-hdd-network fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															IT Infrastructure & Services
+														</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#2DA9E1;
+														    ">
+															<li><b>IT Infrastructure</b></li>
+															<li><b>Networking</b></li>
+															<li><b>Servers</b></li>
+															<li><b>Web Development</b></li>
+															<li><b>AMC-Packages</b></li>
+															<li><b>ERP</b></li>
+															<li><b>Cybersecurity</b></li>
+															
+														</ul>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="/services-main.html">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+										<!-- HARDWARE -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
+														<i class="bi bi-laptop fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															Hardware Solutions
+														</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#2DA9E1;
+														    ">
+															<li><b>Laptops</b></li>
+															<li><b>Macs</b></li>
+															<li><b>Printers</b></li>
+															<li><b>Networking & Peripherals</b></li>
+														</ul>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="/hardware">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</li>
+
+
+							<!-- Nav item : EXPLORE -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
+									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Explore
+								</a>
+
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
+									<div class="row row-cols-1 row-cols-md-3 pt-2">
+
+										<!-- ================= -->
+										<!-- PRICING -->
+										<!-- ================= -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
+														<i class="bi bi-currency-rupee fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															Pricing
+														</p>
+														<p class="mb-0 text-body small">
+															Transparent plans for every business size
+														</p>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="pricing-v1.html">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+										<!-- ================= -->
+										<!-- RESOURCES -->
+										<!-- ================= -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-success bg-opacity-15 text-success rounded flex-shrink-0">
+														<i class="bi bi-journal-text fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															Resources
+														</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#2DA9E1;
+														    ">
+															<li><b>Blogs</b></li>
+															<li><b>Case Studies</b></li>
+															<li><b>Videos</b></li>
+															<li><b>Learning Guides</b></li>
+															<li><b>FAQs</b></li>
+														</ul>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="/resources">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+										<!-- ============================== -->
+										<!-- SECURITY & COMPLIANCE -->
+										<!-- ============================== -->
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
+														<i class="bi bi-shield-check fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															Security & Compliance
+														</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#2DA9E1;
+														    ">
+															<li><b>Data Protection</b></li>
+															<li><b>Privacy</b></li>
+															<li><b>T&C</b></li>
+															<li><b>Security Compliance</b></li>
+														</ul>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="/security-compliance">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</li>
+
+
+
+							<!-- Nav item -->
+							<li class="nav-item"> <a class="nav-link" href="contact-us-v1.html">Contact us</a> </li>
+
+						</ul>
+
+					</div>
+					<!-- Main navbar END -->
+
+					<!-- Buttons -->
+					<ul class="nav align-items-center dropdown-hover ms-sm-2">
+						<!-- Dark mode option START -->
+						<li class="nav-item dropdown dropdown-animation">
+							<button class="btn btn-link mb-0 px-2 lh-1" id="bd-theme" type="button"
+								aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static">
+								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+									class="bi bi-circle-half theme-icon-active fill-mode fa-fw" viewBox="0 0 16 16">
+									<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+									<use href="#"></use>
+								</svg>
+							</button>
+
+							<ul class="dropdown-menu min-w-auto dropdown-menu-end" aria-labelledby="bd-theme">
+								<li class="mb-1">
+									<button type="button" class="dropdown-item d-flex align-items-center"
+										data-bs-theme-value="light">
+										<svg width="16" height="16" fill="currentColor"
+											class="bi bi-brightness-high-fill fa-fw mode-switch me-1"
+											viewBox="0 0 16 16">
+											<path
+												d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+											<use href="#"></use>
+										</svg>Light
+									</button>
+								</li>
+								<li class="mb-1">
+									<button type="button" class="dropdown-item d-flex align-items-center"
+										data-bs-theme-value="dark">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+											fill="currentColor" class="bi bi-moon-stars-fill fa-fw mode-switch me-1"
+											viewBox="0 0 16 16">
+											<path
+												d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+											<path
+												d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+											<use href="#"></use>
+										</svg>Dark
+									</button>
+								</li>
+								<li>
+									<button type="button" class="dropdown-item d-flex align-items-center active"
+										data-bs-theme-value="auto">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+											fill="currentColor" class="bi bi-circle-half fa-fw mode-switch me-1"
+											viewBox="0 0 16 16">
+											<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+											<use href="#"></use>
+										</svg>Auto
+									</button>
+								</li>
+							</ul>
+						</li>
+						<!-- Dark mode option END -->
+
+						<!-- Schedule button -->
+						<li class="nav-item ms-2 d-none d-sm-block">
+							<a href="#" class="btn btn-sm mb-0" data-bs-toggle="offcanvas"
+								data-bs-target="#scheduleCall" aria-controls="scheduleCall" style="
+						      background: linear-gradient(135deg, #2DA9E1, #2DA9E1);
+						      color:#fff;
+						      border:none;
+						      padding:8px 16px;
+						      font-weight:500;
+						      transition:all 0.3s ease;
+						    " onmouseover="
+						      this.style.boxShadow='0 8px 20px rgba(56,189,248,0.45)';
+						      this.style.transform='translateY(-1px)';
+						    " onmouseout="
+						      this.style.boxShadow='none';
+						      this.style.transform='translateY(0)';
+						    ">
+								<i class="bi bi-calendar-week me-2"></i>
+								Free Demo
+							</a>
+						</li>
+
+
+						<!-- Responsive navbar toggler -->
+						<li class="nav-item">
+							<button class="navbar-toggler ms-sm-3 p-2" type="button" data-bs-toggle="collapse"
+								data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span class="navbar-toggler-animation">
+									<span></span>
+									<span></span>
+									<span></span>
+								</span>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!-- Logo Nav END -->
+		</header>
+		<!-- Header END -->
+	</div>
+	<!-- Header END -->
+	<!-- **************** MAIN CONTENT START **************** -->
+	<main>
+
+		<!-- =======================
+Hero START -->
+		<style>
+			/* =========================
+   LEFT SIDE – FAST ORBIT
+   ========================= */
+
+			.floating-rotate {
+				animation: orbitLeftFast 8s linear infinite;
+				transform-origin: center;
+				will-change: transform;
+			}
+
+			.floating-rotate img {
+				animation: pulseFast 3s ease-in-out infinite;
+			}
+
+			/* 🔥 Fast circular orbit (anti-clockwise) */
+			@keyframes orbitLeftFast {
+				0% {
+					transform: translate(0, 0) rotate(0deg);
+				}
+
+				25% {
+					transform: translate(-22px, -18px) rotate(-90deg);
+				}
+
+				50% {
+					transform: translate(0, -40px) rotate(-180deg);
+				}
+
+				75% {
+					transform: translate(22px, -18px) rotate(-270deg);
+				}
+
+				100% {
+					transform: translate(0, 0) rotate(-360deg);
+				}
+			}
+
+			/* Faster, subtle pulse (no heartbeat feel) */
+			@keyframes pulseFast {
+
+				0%,
+				100% {
+					transform: scale(1);
+				}
+
+				50% {
+					transform: scale(1.04);
+				}
+			}
+
+			/* =========================
+   RIGHT SIDE – FASTER + WIDER
+   ========================= */
+
+			.floating-rotate-right {
+				animation: orbitRightFast 10s linear infinite;
+				transform-origin: center;
+				will-change: transform;
+			}
+
+			.floating-rotate-right img {
+				animation: pulseFastRight 3.5s ease-in-out infinite;
+				transform: scaleX(-1);
+			}
+
+			/* 🔥 Wider, energetic orbit */
+			@keyframes orbitRightFast {
+				0% {
+					transform: translate(0, 0) rotate(0deg);
+				}
+
+				25% {
+					transform: translate(28px, 22px) rotate(-90deg);
+				}
+
+				50% {
+					transform: translate(0, 46px) rotate(-180deg);
+				}
+
+				75% {
+					transform: translate(-28px, 22px) rotate(-270deg);
+				}
+
+				100% {
+					transform: translate(0, 0) rotate(-360deg);
+				}
+			}
+
+			@keyframes pulseFastRight {
+
+				0%,
+				100% {
+					transform: scale(1) scaleX(-1);
+				}
+
+				50% {
+					transform: scale(1.03) scaleX(-1);
+				}
+			}
+
+			/* =========================
+   MOBILE SAFETY
+   ========================= */
+			@media (max-width: 768px) {
+
+				.floating-rotate,
+				.floating-rotate-right {
+					display: none;
+				}
+			}
+
+			/* Purplish hover effect for skill cards */
+			.row.position-relative .card {
+				transition:
+					background 0.4s ease,
+					box-shadow 0.4s ease,
+					transform 0.3s ease;
+			}
+
+			.row.position-relative .card:hover {
+				background: linear-gradient(135deg,
+						rgba(124, 58, 237, 0.12),
+						rgba(139, 92, 246, 0.18));
+				box-shadow:
+					0 12px 30px rgba(124, 58, 237, 0.25);
+				transform: translateY(-4px);
+			}
+
+			.text-brand-blue {
+				color: #2DAAE1;
+			}
+		</style>
+
+		<section class="bg-secondary position-relative pt-xl-8">
+			<!-- Decoration START -->
+			<!-- Grad blur -->
+			<!-- <div class="position-absolute top-0 start-0 mt-n9 ms-n5">
+				<img src="assets/images/elements/grad-shape/blur-decoration.svg" class="blur-7 opacity-2"
+					alt="Grad shape">
+			</div> -->
+
+			<!-- Grad blur -->
+			<!-- <div class="position-absolute top-0 start-50 mt-n9 ms-n9">
+				<img src="assets/images/elements/grad-shape/blur-decoration.svg" class="blur-8 opacity-1"
+					alt="Grad shape">
+			</div> -->
+			<!-- Decoration START -->
+
+			<div class="container position-relative pt-4 pt-sm-5">
+
+				<!-- Clay decoration LEFT -->
+				<!-- <div class="position-absolute top-50 start-0 translate-middle mt-5 floating-rotate">
+					<img src="assets/images/elements/clay-decoration.png" alt="Clay-decoration">
+				</div> -->
+
+				<!-- Clay decoration RIGHT -->
+				<!-- <div class="position-absolute top-60 end-0 translate-middle-y mt-5 floating-rotate-right">
+					<img src="assets/images/elements/clay-decoration.png" alt="Clay-decoration">
+				</div> -->
+
+				<!-- Title and buttons START -->
+				
+				 
+				<div class="inner-container mb-5 mb-md-7">
+  
+  <!-- Title -->
+  <h1 class="display-9 mb-4 text-start">
+    Powering Businesses with
+    <span class="text-brand-blue">Microhub CMS</span>
+    & Complete IT Ecosystems
+  </h1>
+
+  <!-- Buttons -->
+  <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-4">
+
+    <!-- Explore button -->
+    <a href="services-grid.html" class="btn btn-white-shadow">
+      Explore our services
+    </a>
+
+    <!-- Video section -->
+    <div class="d-flex align-items-center text-start">
+      <a data-glightbox data-gallery="office-tour"
+         href="https://www.youtube.com/embed/tXHviS-4ygo"
+         class="btn btn-lg btn-round btn-dark flex-shrink-0 position-relative">
+        <i class="bi bi-play-fill fs-5"></i>
+      </a>
+
+      <p class="mb-0 ms-3 heading-color" style="max-width: 14rem;">
+        See how businesses automate operations with Microhub
+      </p>
+    </div>
+
+  </div>
+</div>
+
+				
+				
+				<!-- Title and buttons END -->
+
+				<!-- Skill sets START --
+				<div class="row position-relative g-4 g-lg-5">
+					<!-- Item --
+					<div class="col-sm-6 col-xl-3">
+						<div class="card bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-3">
+							<!-- Card header --
+							<div class="card-header bg-transparent mb-4 mb-sm-6">
+								<p class="heading-color">Businesses actively running operations on Microhub CMS</p>
+							</div>
+							<!-- Card footer --
+							<div class="card-footer bg-transparent d-flex mt-auto">
+								<h4 class="purecounter h2 mb-0" data-purecounter-start="0" data-purecounter-end="3500"
+									data-purecounter-delay="300">0</h4>
+								<span class="h2 text-primary mb-0">+</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Item --
+					<div class="col-sm-6 col-xl-3">
+						<div class="card bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-3">
+							<!-- Card header --
+							<div class="card-header bg-transparent mb-4 mb-sm-6">
+								<p class="heading-color">Client retention through long-term AMC & IT support</p>
+							</div>
+							<!-- Card footer --
+							<div class="card-footer bg-transparent d-flex mt-auto">
+								<span class="text-success mb-0"><i class="bi bi-arrow-up"></i></span>
+								<h4 class="purecounter h2 mb-0" data-purecounter-start="0" data-purecounter-end="105"
+									data-purecounter-delay="300">0</h4>
+								<span class="h2 text-primary mb-0">+</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Item --
+					<div class="col-sm-6 col-xl-3">
+						<div class="card bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-3">
+							<!-- Card header --
+							<div class="card-header bg-transparent mb-4 mb-sm-6">
+								<p class="heading-color">Business modules deployed across CRM, ERP, HR & Finance</p>
+							</div>
+							<!-- Card footer --
+							<div class="card-footer bg-transparent d-flex mt-auto">
+								<h4 class="purecounter h2 mb-0" data-purecounter-start="0" data-purecounter-end="97"
+									data-purecounter-delay="300">0</h4>
+								<span class="h2 text-primary mb-0">%</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- Item --
+					<div class="col-sm-6 col-xl-3">
+						<div class="card bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-3">
+							<!-- Card header --
+							<div class="card-header bg-transparent mb-4 mb-sm-6">
+								<p class="heading-color">Operational efficiency improvement through automation</p>
+							</div>
+							<!-- Card footer --
+							<div class="card-footer bg-transparent d-flex mt-auto">
+								<h4 class="purecounter h2 mb-0" data-purecounter-start="0" data-purecounter-end="68"
+									data-purecounter-delay="300">0</h4>
+								<span class="h2 text-primary mb-0">%</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Skill sets END -->
+			</div>
+
+		</section>
+		<!-- =======================
+Hero END -->
+
+		<!-- =======================
+About START -->
+		<style>
+			/* =========================
+		   FLOATING BUBBLE ANIMATION
+		   ========================= */
+
+			.bubble-float {
+				animation: bubbleUp 18s linear infinite;
+				pointer-events: none;
+				will-change: transform, opacity;
+			}
+
+			.bubble-float img {
+				animation: bubbleDrift 6s ease-in-out infinite;
+				opacity: 0.6;
+			}
+
+			/* 🚀 Vertical floating (page traversal) */
+			@keyframes bubbleUp {
+				0% {
+					transform: translate(-50%, 50) translateY(10) scale(0.9);
+					opacity: 1;
+				}
+
+				10% {
+					opacity: 0.6;
+				}
+
+				50% {
+					opacity: 0.8;
+				}
+
+				90% {
+					opacity: 0.4;
+				}
+
+				100% {
+					transform: translate(-50%, 50) translateY(-120vh) scale(1.15);
+					opacity: 0;
+				}
+			}
+
+			/* 🌊 Side-to-side organic drift */
+			@keyframes bubbleDrift {
+				0% {
+					transform: translateX(0);
+				}
+
+				25% {
+					transform: translateX(-38px);
+				}
+
+				50% {
+					transform: translateX(38px);
+				}
+
+				75% {
+					transform: translateX(-30px);
+				}
+
+				100% {
+					transform: translateX(0);
+				}
+			}
+
+			.bubble-float img {
+				filter: blur(2px) brightness(1.2);
+			}
+
+			.bubble-float {
+				animation: bubbleUp 12s linear infinite;
+			}
+
+			/* =========================
+		   CONTINUOUS IMAGE PRESENTATION
+		   (CSS-only, no hover)
+		========================= */
+
+			.row.position-relative img.rounded-4 {
+				position: relative;
+				animation: imageFloat 3s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+				will-change: transform, filter;
+				z-index: 1;
+			}
+
+			/* Blurred aura clone */
+			.row.position-relative img.rounded-4::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background-image: inherit;
+				background-size: cover;
+				background-position: center;
+				filter: blur(35px) saturate(0%);
+				opacity: 0;
+				transform: scale(0.6);
+				animation: auraPulse 3s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+				z-index: -1;
+			}
+
+			/* Stagger second image for organic feel */
+			.row.position-relative .col-sm-6:nth-child(2) img.rounded-4 {
+				animation-delay: 4s;
+			}
+
+			.row.position-relative .col-sm-6:nth-child(2) img.rounded-4::after {
+				animation-delay: 4s;
+			}
+
+			/* =========================
+		   KEYFRAMES
+		========================= */
+
+			@keyframes imageFloat {
+				0% {
+					transform: translateY(0) scale(1) rotate(0deg);
+					filter: brightness(1) saturate(1);
+				}
+
+				25% {
+					transform: translateY(-10px) scale(1.05) rotate(-1deg);
+					filter: brightness(1.05) saturate(1.15);
+				}
+
+				50% {
+					transform: translateY(0) scale(1.02) rotate(0deg);
+				}
+
+				75% {
+					transform: translateY(-8px) scale(1.04) rotate(1deg);
+				}
+
+				100% {
+					transform: translateY(0) scale(1) rotate(0deg);
+					filter: brightness(1) saturate(1);
+				}
+			}
+
+			@keyframes auraPulse {
+				0% {
+					opacity: 0;
+					transform: scale(0.6);
+					filter: blur(35px) saturate(0%);
+				}
+
+				25% {
+					opacity: 0.25;
+					transform: scale(2);
+					filter: blur(14px) saturate(120%);
+				}
+
+				50% {
+					opacity: 0.15;
+					transform: scale(1.6);
+				}
+
+				75% {
+					opacity: 0.22;
+					transform: scale(1.9);
+				}
+
+				100% {
+					opacity: 0;
+					transform: scale(0.6);
+					filter: blur(35px) saturate(0%);
+				}
+			}
+
+			.animate-lineup-on-scroll {
+				opacity: 0;
+				transform: translateY(12px);
+			}
+
+			.animate-lineup-on-scroll.is-visible {
+				animation: lineUp 0.9s ease-out forwards;
+			}
+
+			@keyframes lineUp {
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			/* Accessibility */
+			@media (prefers-reduced-motion: reduce) {
+				.animate-lineup-on-scroll {
+					opacity: 1;
+					transform: none;
+					animation: none;
+				}
+			}
+
+			/* =========================
+   LINE REVEAL TITLE EFFECT
+========================= */
+			/* =========================
+   SCROLL WIPE TITLE EFFECT
+========================= */
+
+			.home-title span {
+				position: relative;
+				display: block;
+				overflow: hidden;
+				line-height: 1.25;
+			}
+
+			/* Reset state */
+			.home-title span::before,
+			.home-title span::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				pointer-events: none;
+				transform: translateX(0);
+			}
+
+			/* White reveal layer */
+			.home-title span::after {
+				background: #ffffff;
+				transform: translateX(-101%);
+			}
+
+			/* Background cover layer */
+			.home-title span::before {
+				background: var(--bs-secondary, #f5f7fb);
+			}
+
+			/* Active animation */
+			.scroll-reveal.is-visible span::after {
+				animation: wipeAfter 1.6s cubic-bezier(.77, 0, .18, 1) forwards;
+			}
+
+			.scroll-reveal.is-visible span::before {
+				animation: wipeBefore 1.6s cubic-bezier(.77, 0, .18, 1) forwards;
+			}
+
+			/* Stagger lines */
+			.scroll-reveal.is-visible span:nth-of-type(1)::before,
+			.scroll-reveal.is-visible span:nth-of-type(1)::after {
+				animation-delay: 0.4s;
+			}
+
+			.scroll-reveal.is-visible span:nth-of-type(2)::before,
+			.scroll-reveal.is-visible span:nth-of-type(2)::after {
+				animation-delay: 0.75s;
+			}
+
+			/* Keyframes */
+			@keyframes wipeAfter {
+				from {
+					transform: translateX(-100%);
+				}
+
+				to {
+					transform: translateX(101%);
+				}
+			}
+
+			@keyframes wipeBefore {
+				from {
+					transform: translateX(0);
+				}
+
+				to {
+					transform: translateX(200%);
+				}
+			}
+
+			/* Accessibility */
+			@media (prefers-reduced-motion: reduce) {
+
+				.home-title span::before,
+				.home-title span::after {
+					animation: none;
+					transform: none;
+				}
+			}
+		</style>
+		<section class="bg-secondary pt-0">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-10 mx-auto">
+						<!-- About content START -->
+						<div class="row align-items-center g-4 g-lg-6 mb-3 mb-md-4">
+
+  <!-- Images -->
+  <div class="col-md-7 position-relative">
+
+    <!-- Blur decoration -->
+    <div class="position-absolute top-0 start-50 translate-middle-x ms-7 d-none d-md-block">
+      <img src="assets/images/elements/grad-shape/blur-decoration.svg"
+           class="opacity-3 blur-8" alt="Grad shape">
+    </div>
+
+    <!-- Image grid -->
+    <div class="row g-4 position-relative">
+      <div class="col-sm-6">
+        <div class="overflow-hidden rounded-4 shadow-sm">
+          <img src="assets/images/about/08.jpg" class="img-fluid" alt="">
+        </div>
+      </div>
+
+      <div class="col-sm-6 mt-sm-6">
+        <div class="overflow-hidden rounded-4 shadow-sm">
+          <img src="assets/images/about/09.jpg" class="img-fluid" alt="">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Content -->
+  <div class="col-md-5 mt-0">
+
+    <h2 class="mb-4 home-title scroll-reveal">
+      <span class="d-block">Building Intelligent</span>
+      <span class="d-block">Systems</span>
+    </h2>
+
+    <p class="mb-3 text-justify">
+      Microhub is a technology solutions company focused on building intelligent,
+      scalable, and secure business systems through our in-house developed
+      <b>Microhub CMS</b>
+    </p>
+
+    <p class="mb-3 text-justify">
+      Our CMS integrates <b>CRM, ERP, HR, Payroll, Inventory, Finance, POS, and IT
+      workflows,</b> reducing manual effort and improving visibility across teams.
+    </p>
+
+    <p class="mb-4 text-justify">
+      We also deliver <b>IT infrastructure, cybersecurity, enterprise hardware,
+      and 24/7 support</b>, ensuring reliable and secure operations at every stage
+      of growth.
+    </p>
+
+    <a href="services-grid.html"
+       class="btn btn-sm mb-0"
+       data-bs-toggle="offcanvas"
+       data-bs-target="#scheduleCall"
+       aria-controls="scheduleCall"
+       style="
+        background: linear-gradient(135deg, #2DA9E1, #2DA9E1);
+        color:#fff;
+        border:none;
+        padding:10px 18px;
+        font-weight:500;
+        font-size: medium;
+        transition:all 0.3s ease;
+       "
+       onmouseover="
+        this.style.boxShadow='0 8px 20px rgba(56,189,248,0.45)';
+        this.style.transform='translateY(-1px)';
+       "
+       onmouseout="
+        this.style.boxShadow='none';
+        this.style.transform='translateY(0)';
+       ">
+      Explore our work <i class="bi bi-arrow-right ms-1"></i>
+    </a>
+
+  </div>
+</div>
+
+
+						<!-- Features START -->
+						<div class="row g-4 g-lg-5">
+							<!-- Feature item -->
+							<div class="col-md-4">
+								<h6 class="mb-2 animate-lineup-on-scroll"><i
+										class="bi bi-lightning-charge-fill text-success me-2"></i>Our
+									mission</h6>
+								<p class="animate-lineup-on-scroll">Simplify business operations through one unified
+									platform powered by
+									Microhub CMS.</p>
+							</div>
+
+							<!-- Feature item -->
+							<div class="col-md-4">
+								<h6 class="mb-2 animate-lineup-on-scroll"><i
+										class="bi bi-rocket-takeoff-fill text-pink me-2"></i>Our vision</h6>
+								<p class="animate-lineup-on-scroll">To be a trusted technology partner delivering
+									scalable, integrated
+									business systems.
+								</p>
+							</div>
+
+							<!-- Feature item -->
+							<div class="col-md-4">
+								<h6 class="mb-2 animate-lineup-on-scroll"><i
+										class="bi bi-bullseye text-warning me-2"></i>Our goal</h6>
+								<p class="animate-lineup-on-scroll">Help businesses grow faster by replacing multiple
+									tools with one
+									intelligent CMS.</p>
+							</div>
+						</div>
+						<script>
+							const animatedHeadings = document.querySelectorAll(
+								".animate-lineup-on-scroll"
+							);
+
+							const observer = new IntersectionObserver(
+								entries => {
+									entries.forEach(entry => {
+										if (entry.isIntersecting) {
+											// Reset animation
+											entry.target.classList.remove("is-visible");
+											void entry.target.offsetWidth; // force reflow
+											entry.target.classList.add("is-visible");
+										}
+									});
+								},
+								{
+									threshold: 0.6
+								}
+							);
+
+							animatedHeadings.forEach(el => observer.observe(el));
+							const revealTitles = document.querySelectorAll(".scroll-reveal");
+
+							const revealObserver = new IntersectionObserver(
+								entries => {
+									entries.forEach(entry => {
+										if (entry.isIntersecting) {
+											// Reset animation
+											entry.target.classList.remove("is-visible");
+											void entry.target.offsetWidth; // force reflow
+											entry.target.classList.add("is-visible");
+										}
+									});
+								},
+								{ threshold: 0.6 }
+							);
+
+							revealTitles.forEach(el => revealObserver.observe(el));
+						</script>
+
+						<!-- Features END -->
+					</div>
+				</div> <!-- Row END -->
+			</div>
+		</section>
+		<!-- =======================
+About END -->
+
+		<!-- =======================
+Team START -->
+		<style>
+			/* =========================
+   TEAM CARD HOVER + FLOAT
+   (NO INNER BOX VERSION)
+========================= */
+
+			/* Base card floating animation */
+			.card.card-body.bg-transparent {
+				transition:
+					transform 0.35s ease,
+					box-shadow 0.35s ease,
+					background-color 0.35s ease;
+				animation: teamFloat 6s ease-in-out infinite;
+				border-radius: 14px;
+			}
+
+			/* Natural stagger for floating */
+			.col:nth-child(2) .card {
+				animation-delay: 0.8s;
+			}
+
+			.col:nth-child(3) .card {
+				animation-delay: 1.6s;
+			}
+
+			.col:nth-child(4) .card {
+				animation-delay: 2.4s;
+			}
+
+			.col:nth-child(5) .card {
+				animation-delay: 3.2s;
+			}
+
+			/* Card hover effect (bluish SaaS glow) */
+			.card.card-body.bg-transparent:hover {
+				transform: translateY(-10px) scale(1.03);
+				background: linear-gradient(180deg,
+						rgba(59, 130, 246, 0.08),
+						rgba(59, 130, 246, 0.02));
+				box-shadow:
+					0 14px 34px rgba(59, 130, 246, 0.28),
+					0 0 0 1px rgba(59, 130, 246, 0.14);
+			}
+
+			/* =========================
+   AVATAR — CLEAN CIRCLE ONLY
+========================= */
+
+			/* Remove any inner frame / square */
+			.card.card-body .avatar {
+				background: none !important;
+				box-shadow: none !important;
+				border: none !important;
+			}
+
+			/* Ensure image stays purely circular */
+			.card.card-body .avatar-img {
+				border-radius: 50%;
+				background: none !important;
+				box-shadow: none !important;
+				transition: box-shadow 0.3s ease, transform 0.3s ease;
+			}
+
+			/* Circular glow ONLY on hover */
+			.card.card-body.bg-transparent:hover .avatar-img {
+				box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.18);
+				transform: scale(1.04);
+			}
+
+			/* Kill any pseudo-elements added by theme */
+			.card.card-body .avatar::before,
+			.card.card-body .avatar::after {
+				content: none !important;
+			}
+
+			/* =========================
+   FLOATING KEYFRAMES
+========================= */
+
+			@keyframes teamFloat {
+				0% {
+					transform: translateY(0);
+				}
+
+				50% {
+					transform: translateY(-6px);
+				}
+
+				100% {
+					transform: translateY(0);
+				}
+			}
+
+			/* =========================
+   ACCESSIBILITY
+========================= */
+
+			@media (prefers-reduced-motion: reduce) {
+				.card.card-body.bg-transparent {
+					animation: none;
+				}
+			}
+		</style>
+		<section class="bg-secondary position-relative overflow-hidden py-0">
+
+  <!-- Curve bg -->
+  <span class="position-absolute start-0 bottom-0 mb-n1">
+    <svg class="fill-body" width="1950" height="237" viewBox="0 0 1950 237" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 236.442H1949.5V72.4424C1232.3 -58.7576 351 17.7757 0 72.4424V236.442Z" />
+    </svg>
+  </span>
+
+  <div class="container-fluid position-relative">
+
+    <!-- Rocket vector -->
+    <div class="position-absolute end-0 bottom-0 me-6 z-index-9 d-none d-lg-block">
+      <img src="assets/images/elements/rocket-03.png" class="h-200px" alt="rocket image">
+    </div>
+
+    <div
+      class="max-width-1550 bg-brand-primary position-relative rounded-4 overflow-hidden pt-4 pt-lg-5 pb-5 pb-lg-6"
+      data-bs-theme="dark">
+
+      <!-- Blur decorations -->
+      <div class="position-absolute top-0 start-50 translate-middle">
+        <img src="assets/images/elements/grad-shape/blur-decoration-2.svg"
+          class="opacity-2 blur-9" alt="Grad shape">
+      </div>
+
+      <div class="position-absolute bottom-0 start-0 mb-n8 ms-n5">
+        <img src="assets/images/elements/grad-shape/blur-decoration.svg"
+          class="blur-7 opacity-2" alt="Grad shape">
+      </div>
+
+      <div class="container position-relative">
+
+        <!-- Title -->
+        <h2 class="text-center mb-5 mb-md-6 fill-title">
+          Our Leadership & Experts
+        </h2>
+
+        <!-- Team Grid -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4 g-lg-5 justify-content-center">
+
+          <!-- Team Card -->
+          <div class="col">
+            <div class="card bg-transparent border-0 text-center h-100 team-card">
+              <div class="card-body p-0">
+
+                <div class="avatar avatar-xxl mx-auto mb-3">
+                  <img class="avatar-img rounded-circle" src="assets/images/team/01.jpg" alt="avatar">
+                </div>
+
+                <h6 class="mb-1"><a href="#">Priyanka Dixit</a></h6>
+                <small class="text-muted">Marketing Manager</small>
+
+                <!--<ul class="list-inline mb-0 mt-3">
+                  <li class="list-inline-item">
+                    <a class="btn btn-icon w-auto lead text-facebook" href="#"><i class="bi bi-facebook"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="btn btn-icon w-auto lead text-white" href="#"><i class="bi bi-twitter-x"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="btn btn-icon w-auto lead text-instagram-gradient" href="#"><i class="bi bi-instagram"></i></a>
+                  </li>
+                </ul>-->
+
+              </div>
+            </div>
+          </div>
+
+          <!-- COPY SAME CARD STRUCTURE BELOW (CONTENT UNCHANGED) -->
+
+          <!-- Abhishek Sahani -->
+          <div class="col">
+            <div class="card bg-transparent border-0 text-center h-100 team-card">
+              <div class="card-body p-0">
+                <div class="avatar avatar-xxl mx-auto mb-3">
+                  <img class="avatar-img rounded-circle" src="assets/images/team/02.jpg" alt="avatar">
+                </div>
+                <h6 class="mb-1"><a href="#">Abhishek Sahani</a></h6>
+                <small class="text-muted">Digital Marketing Expert</small>
+                <!--<ul class="list-inline mb-0 mt-3">
+                  <li class="list-inline-item"><a class="btn btn-icon lead text-facebook" href="#"><i class="bi bi-facebook"></i></a></li>
+                  <li class="list-inline-item"><a class="btn btn-icon lead text-white" href="#"><i class="bi bi-twitter-x"></i></a></li>
+                  <li class="list-inline-item"><a class="btn btn-icon lead text-instagram-gradient" href="#"><i class="bi bi-instagram"></i></a></li>
+                </ul>-->
+              </div>
+            </div>
+          </div>
+
+          <!-- Remaining cards SAME CONTENT, SAME STRUCTURE -->
+
+		  <div class="col">
+            <div class="card bg-transparent border-0 text-center h-100 team-card">
+              <div class="card-body p-0">
+                <div class="avatar avatar-xxl mx-auto mb-3">
+                  <img class="avatar-img rounded-circle" src="assets/images/team/04.jpg" alt="avatar">
+                </div>
+                <h6 class="mb-1"><a href="#">Srikant</a></h6>
+                <small class="text-muted">Finance Manager</small>
+			  </div>
+			</div>
+				</div>
+
+				<div class="col">
+            <div class="card bg-transparent border-0 text-center h-100 team-card">
+              <div class="card-body p-0">
+                <div class="avatar avatar-xxl mx-auto mb-3">
+                  <img class="avatar-img rounded-circle" src="assets/images/team/03.jpg" alt="avatar">
+                </div>
+                <h6 class="mb-1"><a href="#">Supriya Mishra</a></h6>
+                <small class="text-muted">Software Engineer</small>
+			  </div>
+			</div>
+				</div>
+
+				<div class="col">
+            <div class="card bg-transparent border-0 text-center h-100 team-card">
+              <div class="card-body p-0">
+                <div class="avatar avatar-xxl mx-auto mb-3">
+                  <img class="avatar-img rounded-circle" src="assets/images/team/02.jpg" alt="avatar">
+                </div>
+                <h6 class="mb-1"><a href="#">Abhishek Mishra</a></h6>
+                <small class="text-muted">Sales and Marketing</small>
+			  </div>
+			</div>
+				</div>
+
+        </div>
+
+        <!-- CTA Button -->
+        <div class="text-center mt-5">
+          <a href="/demo" class="btn btn-sm"
+            style="
+              background: linear-gradient(135deg, #000000, #000000);
+              color:#fff;
+              border:none;
+              padding:10px 20px;
+              font-weight:500;
+              font-size: medium;
+              transition:all 0.3s ease;
+            "
+            onmouseover="this.style.boxShadow='0 8px 20px rgba(56,189,248,0.45)'; this.style.transform='translateY(-1px)';"
+            onmouseout="this.style.boxShadow='none'; this.style.transform='translateY(0)';">
+            Connect with our Team
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+		<!-- =======================
+Team END -->
+
+		<!-- =======================
+Clients START -->
+		<section>
+			<div class="container">
+				<div class="row g-4 align-items-center">
+					<!-- Title -->
+					<div class="col-md-3">
+						<h6 class="text-center text-md-start mb-0">Join the 1,000+ companies using Microhub</h6>
+					</div>
+
+					<!-- Clients -->
+					<div class="col-md-9 col-xxl-7 ms-auto">
+						<ul
+							class="list-inline d-flex justify-content-center justify-content-md-end flex-wrap gap-3 gap-lg-5">
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/axiom-favicon-32x32.png" class="h-40px"
+										alt="icon">
+								</a>
+							</li>
+
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/cropped-loader-icon-32x32.png" class="h-40px"
+										alt="icon">
+								</a>
+							</li>
+
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/favicon.ico" class="h-40px" alt="icon">
+								</a>
+							</li>
+
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/jakson-100x100.png" class="h-40px" alt="icon">
+								</a>
+							</li>
+
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/cropped-Atechnos-logo-1-1-1-32x32.png"
+										class="h-40px" alt="icon">
+								</a>
+							</li>
+
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/NCC.ico" class="h-40px" alt="icon">
+								</a>
+							</li>
+
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/Ontic.ico" class="h-40px" alt="icon">
+								</a>
+							</li>
+
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/BTG.png" class="h-40px" alt="icon">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- =======================
+Clients END -->
+
+		<!-- =======================
+Gallery START -->
+		<style>
+			/* =========================
+   PROFESSIONAL IMAGE ZOOM
+========================= */
+
+			.zoom-pro {
+				display: block;
+				width: 100%;
+				height: auto;
+
+				transform-origin: center center;
+				will-change: transform, filter;
+
+				animation: proZoom 5s ease-in-out infinite;
+				transition: transform 0.3s ease, filter 0.3s ease;
+
+				/* Subtle clarity */
+				filter: saturate(1.02) contrast(1.03);
+			}
+
+			/* Slight delays for natural flow */
+			.zoom-delay {
+				animation-delay: 1.0s;
+			}
+
+			.zoom-delay-2 {
+				animation-delay: 3.0s;
+			}
+
+			/* Hover polish (desktop only) */
+			@media (hover: hover) {
+				.zoom-pro:hover {
+					transform: scale(1.04);
+					filter: saturate(1.05) contrast(1.05);
+				}
+			}
+
+			/* Zoom animation */
+			@keyframes proZoom {
+				0% {
+					transform: scale(1);
+				}
+
+				40% {
+					transform: scale(1.04);
+				}
+
+				70% {
+					transform: scale(1.02);
+				}
+
+				100% {
+					transform: scale(1);
+				}
+			}
+
+			/* Accessibility */
+			@media (prefers-reduced-motion: reduce) {
+				.zoom-pro {
+					animation: none;
+				}
+			}
+		</style>
+		<section class="pt-0">
+			<div class="container">
+				<div class="row g-lg-5">
+					<!-- Image item -->
+					<div class="col-md-7 mb-5 mb-md-0 image-stack">
+						<img src="assets/images/about/10.jpg" class="rounded-4 mb-5 zoom-pro" alt="office image">
+
+						<img src="assets/images/about/11.jpg"
+							class="rounded-4 w-75 d-flex ms-auto me-md-5 zoom-pro zoom-delay" alt="office image">
+					</div>
+
+					<div class="col-md-4 ms-auto">
+						<!-- Year text -->
+						<div class="text-end mb-5 mb-md-6">
+							<h6 class="mb-0">Since</h6>
+							<style>
+								.year-animate {
+									position: relative;
+									display: inline-block;
+									font-weight: 800;
+									letter-spacing: 0.08em;
+
+									/* Purple SaaS gradient */
+									background: linear-gradient(135deg,
+											#38BDF8,
+											/* soft cyan highlight */
+											#2DAAE1,
+											/* Microhub primary blue */
+											#3B82F6
+											/* deeper blue for depth */
+										);
+
+									background-size: 200% 200%;
+
+									-webkit-background-clip: text;
+									background-clip: text;
+									color: transparent;
+
+									/* Soft premium blue glow */
+									text-shadow:
+										0 0 12px rgba(45, 170, 225, 0.35);
+
+									/* Animation */
+									animation:
+										yearGradientMove 6s ease-in-out infinite,
+										yearFloat 4s ease-in-out infinite;
+								}
+
+								/* Slow gradient drift */
+								@keyframes yearGradientMove {
+									0% {
+										background-position: 0% 50%;
+									}
+
+									50% {
+										background-position: 100% 50%;
+									}
+
+									100% {
+										background-position: 0% 50%;
+									}
+								}
+
+								/* Gentle floating (very subtle) */
+								@keyframes yearFloat {
+
+									0%,
+									100% {
+										transform: translateY(0);
+									}
+
+									50% {
+										transform: translateY(-6px);
+									}
+								}
+
+								/* Accessibility */
+								@media (prefers-reduced-motion: reduce) {
+									.year-animate {
+										animation: none;
+									}
+								}
+							</style>
+							<span class="display-2 text-primary-grad year-animate">2002</span>
+						</div>
+						<!-- Image -->
+						<img src="assets/images/about/12.jpg" class="rounded-4 zoom-pro zoom-delay-2"
+							alt="office image">
+					</div>
+				</div> <!-- Row END -->
+			</div>
+		</section>
+		<!-- =======================
+Gallery END -->
+
+		<!-- =======================
+		CTA START -->
+		<style>
+			.stay-wrap {
+				display: inline-flex;
+				overflow: hidden;
+				white-space: nowrap;
+			}
+
+			/* "Stay" */
+			.stay-static {
+				margin-right: 10px;
+				color: #0f172a;
+				/* same dark heading color */
+				animation: stayShow 6s infinite;
+			}
+
+			/* Reveal container */
+			.stay-reveal {
+				overflow: hidden;
+				width: 0;
+				animation: stayReveal 6s infinite;
+			}
+
+			/* Animated text – THEME MATCHED */
+			.stay-slide {
+				display: inline-block;
+				margin-left: -420px;
+				background: linear-gradient(90deg,
+						#38BDF8,
+						/* light cyan highlight */
+						#2DAAE1,
+						/* Microhub primary blue */
+						#3B82F6
+						/* deep confident blue */
+					);
+
+				-webkit-background-clip: text;
+				background-clip: text;
+				color: transparent;
+				animation: staySlide 5s infinite;
+			}
+
+			/* Animations */
+			@keyframes stayShow {
+				0% {
+					opacity: 0
+				}
+
+				20% {
+					opacity: 1
+				}
+
+				80% {
+					opacity: 1
+				}
+
+				100% {
+					opacity: 0
+				}
+			}
+
+			@keyframes staySlide {
+				0% {
+					margin-left: -420px
+				}
+
+				25% {
+					margin-left: -420px
+				}
+
+				40% {
+					margin-left: 0
+				}
+
+				100% {
+					margin-left: 0
+				}
+			}
+
+			@keyframes stayReveal {
+				0% {
+					width: 0;
+					opacity: 0
+				}
+
+				20% {
+					width: 0;
+					opacity: 1
+				}
+
+				35% {
+					width: 420px
+				}
+
+				80% {
+					opacity: 1
+				}
+
+				100% {
+					width: 420px;
+					opacity: 0
+				}
+			}
+		</style>
+
+		<section class="bg-secondary position-relative overflow-hidden">
+			<!-- Curve decoration -->
+			<span class="position-absolute top-0 start-0 mt-n5">
+				<svg class="fill-body" width="1930" height="137" viewBox="0 0 1930 137" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M464.909 117.12C228.685 132.607 108.971 82.5335 0 51.0476V1.5L1930 0V26.649V132.607C1873.32 98.4636 1645.24 119.618 1488.21 132.607C1319.34 146.576 1149.46 119.696 1051.95 103.318C837.339 67.2694 668.231 103.79 464.909 117.12Z">
+					</path>
+				</svg>
+			</span>
+
+			<div class="container pt-5">
+				<div class="row g-4 align-items-center">
+					<!-- Title and content -->
+					<div class="col-md-5">
+						<h2 class="mb-3 stay-wrap">
+							<span class="stay-static">Stay&nbsp;</span>
+							<span class="stay-reveal">
+								<span class="stay-slide">connected with us</span>
+							</span>
+						</h2>
+
+						<p class="mb-0">Smart insights on automation, IT, cybersecurity, and scalable business
+							operations with Microhub CMS.</p>
+					</div>
+
+					<!-- Input -->
+					<div class="col-md-6 col-xl-5 ms-auto">
+						<div class="bg-body rounded-2 position-relative z-index-2 p-2 mb-2">
+							<form class="input-group">
+								<input class="form-control bg-transparent border-0 me-1" type="email"
+									placeholder="Enter your business email">
+								<button type="button" class="btn rounded-2 mb-0" style="
+										    background: linear-gradient(135deg, #2DA9E1, #38BDF8);
+										    color: #ffffff;
+										    border: none;
+										    padding: 10px 18px;
+										    font-weight: 700;
+										    font-size: 0.9rem;
+										    position: relative;
+										    overflow: hidden;
+										    transition: 
+										      transform 0.25s ease,
+										      box-shadow 0.25s ease,
+										      background-position 0.4s ease;
+										    background-size: 200% 200%;
+										  " onmouseover="
+										    this.style.transform='translateY(-2px)';
+										    this.style.boxShadow='0 12px 30px rgba(56,189,248,0.45)';
+										    this.style.backgroundPosition='100% 50%';
+										  " onmouseout="
+										    this.style.transform='translateY(0)';
+										    this.style.boxShadow='none';
+										    this.style.backgroundPosition='0% 50%';
+										  ">
+									Get CMS Insights
+								</button>
+
+							</form>
+						</div>
+						<div class="form-text">✌️ No Spam — We Promise!</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- =======================
+		CTA END -->
+
+	</main>
+	<!-- **************** MAIN CONTENT END **************** -->
+
+
+	<!-- =======================
+Footer START -->
+	<style>
+		/* =========================
+   GRAD SHAPE FLOAT EFFECT
+========================= */
+
+		.grad-float {
+			animation:
+				gradFloat 10s ease-in-out infinite,
+				gradRotate 22s linear infinite;
+			transform-origin: center;
+			opacity: 0.9;
+			filter: blur(0.3px);
+		}
+
+		/* Vertical floating */
+		@keyframes gradFloat {
+			0% {
+				transform: translateY(0);
+			}
+
+			50% {
+				transform: translateY(18px);
+			}
+
+			100% {
+				transform: translateY(0);
+			}
+		}
+
+		/* Very slow rotation */
+		@keyframes gradRotate {
+			from {
+				rotate: 0deg;
+			}
+
+			to {
+				rotate: 360deg;
+			}
+		}
+
+		/* Accessibility */
+		@media (prefers-reduced-motion: reduce) {
+			.grad-float {
+				animation: none;
+			}
+		}
+
+		.grad-float img {
+			filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.25));
+		}
+	</style>
+	<footer class="bg-dark position-relative pt-6 pt-lg-8" data-bs-theme="dark">
+		<div class="container position-relative">
+
+			<!-- Link widgets -->
+			<div class="row g-4">
+
+				<!-- Brand / About -->
+				<div class="col-md-6 col-xl-4">
+					<a href="index.html">
+						<img class="h-40px" src="assets/images/microhub-white-logo-BbBXVK-M.svg" alt="logo">
+					</a>
+
+					<p class="my-3 my-lg-4">
+						Intelligent CMS, IT infrastructure, and enterprise technology solutions.
+					</p>
+
+					<ul class="list-inline mb-0">
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-facebook lh-base"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-instagram lh-base"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-twitter-x lh-base"></i></a>
+						</li>
+						<li class="list-inline-item">
+							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									class="bi bi-linkedin lh-base"></i></a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Links section -->
+				<div class="col-xl-8">
+					<div class="row g-4">
+
+						<!-- Company -->
+						<div class="col-6 col-lg-4">
+							<h6 class="mb-3 mb-sm-4">Company</h6>
+							<ul class="nav flex-column gap-1">
+								<li class="nav-item"><a class="nav-link pt-0" href="about-v1.html">About Microhub</a>
+								</li>
+								<li class="nav-item"><a class="nav-link" href="service-v1.html">Our Services</a></li>
+								<li class="nav-item"><a class="nav-link" href="pricing-v1.html">Pricing</a></li>
+								<li class="nav-item"><a class="nav-link" href="career.html">Careers</a></li>
+								<li class="nav-item"><a class="nav-link" href="contact-us-v1.html">Contact Us</a></li>
+							</ul>
+						</div>
+
+						<!-- Resources -->
+						<div class="col-6 col-lg-4">
+							<h6 class="mb-3 mb-sm-4">Resources</h6>
+							<ul class="nav flex-column gap-1">
+								<li class="nav-item"><a class="nav-link pt-0" href="#">CMS Features</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">IT Infrastructure</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">Hardware Solutions</a></li>
+								<li class="nav-item"><a class="nav-link" href="blog-minimal.html">Blogs & Insights</a>
+								</li>
+								<li class="nav-item"><a class="nav-link" href="#">Client Success Stories</a></li>
+							</ul>
+						</div>
+
+						<!-- Contact Us -->
+						<div class="col-12 col-lg-4">
+							<h6 class="mb-3 mb-sm-4">Contact Us</h6>
+
+							<ul class="nav flex-column gap-2 small text-body-secondary">
+								<li class="d-flex align-items-start gap-2">
+									<i class="bi bi-geo-alt text-primary-grad mt-1"></i>
+									<span>
+										Unit No-484, Tower-C,<br>
+										Bhutani Alphathum,<br>
+										Sector-90, Noida UP – 201305
+									</span>
+								</li>
+
+								<li class="d-flex align-items-center gap-2">
+									<i class="bi bi-envelope text-primary-grad"></i>
+									<a href="mailto:sales@microhub.co.in" class="nav-link p-0">
+										sales@microhub.co.in
+									</a>
+								</li>
+
+								<li class="d-flex align-items-center gap-2">
+									<i class="bi bi-telephone text-primary-grad"></i>
+									<a href="tel:+917368007363" class="nav-link p-0">
+										+91 73680 07363
+									</a>
+								</li>
+							</ul>
+
+							<ul class="list-inline mt-3 mb-0">
+								<li class="list-inline-item">
+									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+											class="bi bi-facebook lh-base"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+											class="bi bi-linkedin lh-base"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+											class="bi bi-instagram lh-base"></i></a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- Divider -->
+			<hr class="mt-xl-5 mb-0 opacity-1">
+
+			<!-- Bottom footer -->
+			<div class="d-md-flex justify-content-between align-items-center text-center text-lg-start py-4">
+				<div class="text-body small mb-3 mb-md-0">
+					Copyright ©2024 Microhub.
+					Built by <a href="#" class="text-body text-primary-hover hover-underline-animation">Microhub</a>.
+				</div>
+
+				<ul class="nav justify-content-center gap-1 mb-0">
+					<li class="nav-item"><a class="nav-link small py-0" href="#">Privacy policy</a></li>
+					<li class="nav-item"><a class="nav-link small py-0 pe-0" href="#">Terms & conditions</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</footer>
+
+	<!-- =======================
+Footer END -->
+
+
+	<!-- Back to top -->
+	<div class="back-top"></div>
+
+	<!-- Bootstrap JS -->
+	<script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!--Vendors-->
+	<script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<script src="./assets/vendor/glightbox/js/glightbox.js"></script>
+	<script src="./assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+
+	<!-- Theme Functions -->
+	<script src="./assets/js/functions.js"></script>
+
+</body>
+
+</html>
