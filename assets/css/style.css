@@ -1682,7 +1682,7 @@ progress {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
-    width: 41.66666667%;
+    width: 35%;
   }
   .col-lg-6 {
     -webkit-box-flex: 0;
@@ -3673,6 +3673,22 @@ textarea.form-control-lg {
   --bs-btn-disabled-bg: #EBEEFF;
   --bs-btn-disabled-border-color: #EBEEFF;
 }
+.btn-teritary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #48afdf;
+  --bs-btn-border-color: #2DA9E1;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #08a8f3;
+  --bs-btn-hover-border-color: #04acf9;
+  --bs-btn-focus-shadow-rgb: 119, 94, 252;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #2DA9E1;
+  --bs-btn-active-border-color: #2DA9E1;
+  --bs-btn-active-shadow: none;
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #2DA9E1;
+  --bs-btn-disabled-border-color: #2DA9E1;
+}
 
 .btn-success {
   --bs-btn-color: #fff;
@@ -5463,7 +5479,7 @@ textarea.form-control-lg {
 }
 .accordion-button:not(.collapsed) {
   color: var(--bs-accordion-active-color);
-  background-color: var(--bs-accordion-active-bg);
+  background-color: #fff;
   -webkit-box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
           box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
 }
@@ -5536,6 +5552,7 @@ textarea.form-control-lg {
 
 .accordion-body {
   padding: var(--bs-accordion-body-padding-y) var(--bs-accordion-body-padding-x);
+  
 }
 
 .accordion-flush > .accordion-item {
@@ -10451,7 +10468,7 @@ textarea.form-control-lg {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #fff !important;
+  color: var(--para-color);
 }
 
 .text-black-50 {
@@ -17145,10 +17162,13 @@ textarea.form-control-lg {
     height: 600px !important;
   }
   .h-lg-700px {
-    height: 700px !important;
+    height: 850px !important;
   }
   .h-lg-750px {
     height: 750px !important;
+  }
+  .w-lg-100px{
+    width: 700px;
   }
   .w-lg-50vw {
     width: 50vw !important;
@@ -17885,8 +17905,8 @@ textarea.form-control-lg {
   background: #fff !important;
   border-color: #fff !important;
   color: #141727;
-  -webkit-box-shadow: 0 0.3rem 0.25rem rgba(var(--bs-primary-rgb), 0.3);
-          box-shadow: 0 0.3rem 0.25rem rgba(var(--bs-primary-rgb), 0.3);
+  -webkit-box-shadow: #2DA9E1;
+          box-shadow: #2DA9E1;
   -webkit-transform: translateY(-0.1875rem);
           transform: translateY(-0.1875rem);
 }
@@ -18080,8 +18100,13 @@ a.badge:hover {
   z-index: 2;
 }
 
+.card-content-hover {
+  overflow: visible;
+}
+
+
 .card-content-hover .hover-content {
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
   z-index: 9;
@@ -18099,6 +18124,21 @@ a.badge:hover {
   transition: all 0.6s ease-in-out;
   bottom: 0;
 }
+
+.card-content-hover .card-footer {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+
+.card-content-hover:hover .card-footer {
+  opacity: 1;
+  transform: translateY(-6px); /* ya jo effect chaho */
+}
+
+
+
 
 .card.card-img-scale .card-img-scale-wrapper {
   -webkit-transform: translateZ(0);
@@ -18146,6 +18186,7 @@ a.badge:hover {
 .card.card-hover-shadow:hover {
   -webkit-box-shadow: 0px 10px 20px rgba(var(--bs-primary-rgb), 0.15);
           box-shadow: 0px 10px 20px rgba(var(--bs-primary-rgb), 0.15);
+          
 }
 
 .card.card-hover-transition {
@@ -18186,12 +18227,12 @@ a.badge:hover {
   right: 0;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background: -webkit-gradient(linear, left top, left bottom, from(#543DE7), to(#7F39F8));
-  background: linear-gradient(180deg, #543DE7 0%, #7F39F8 100%);
 }
 .card-bg-grad-hover:hover:after {
   opacity: 1;
 }
+
+
 
 .dropdown {
   outline: none;
@@ -21071,6 +21112,39 @@ a.text-primary-hover:hover, button.text-primary-hover:hover {
   transition: all 0.3s ease;
 }
 
+/* LIGHT MODE → dark background */
+.light-mode .swap-logo {
+  background: #0f172a;
+}
+
+/* DARK MODE → light background */
+.dark-mode .swap-logo {
+  background: #ffffff;
+}
+
+.swap-logo:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Default hide */
+.dark-mode-item,
+.light-mode-item {
+  display: none;
+}
+
+/* Light mode → show light logo */
+.light-mode .light-mode-item {
+  display: block;
+}
+
+/* Dark mode → show dark logo */
+.dark-mode .dark-mode-item {
+  display: block;
+}
+
+
+
 /* Hover effect */
 .swap-logo:hover {
   background: rgba(255, 255, 255, 0.16);
@@ -21083,7 +21157,32 @@ a.text-primary-hover:hover, button.text-primary-hover:hover {
   max-width: 120px;
   object-fit: contain;
   opacity: 0.9;
+  display: block !important;
+  visibility: visible !important;
 }
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  .swap-logo {
+    background: #0f172a;
+  }
+
+  .swap-logo img {
+    filter: brightness(0) invert(1); /* white logo */
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .swap-logo {
+    background: #ffffff;
+  }
+
+  .swap-logo img {
+    filter: none; /* original logo */
+  }
+}
+
 
 @media (prefers-color-scheme: light) {
   .swap-logo {
@@ -21506,55 +21605,33 @@ a.text-primary-hover:hover, button.text-primary-hover:hover {
 /* ===========================
 MOVING EARTH
 =========================== */
-.earth-wrapper {
-  position: absolute;
-  right: 60px;
-  top: 50%;
+
+
+.earth-right {
+  position: absolute;   /* section ke andar chipak jayega */
+  right: 40px;          /* right se gap */
+  top: 60%;
   transform: translateY(-50%);
-  width: 260px;
-  height: 260px;
-  z-index: 1;
+  width: 400px;         /* 👈 size limit (change kar sakte ho) */
+  height: 400px;
+  overflow: hidden;
+  pointer-events: none; /* click block na kare */
 }
 
-.earth {
+.earth-right video {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  background: url("https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg");
-  background-size: cover;
-  animation: earthRotate 30s linear infinite;
-  box-shadow:
-    inset -25px 0 40px rgba(0,0,0,0.6),
-    0 20px 40px rgba(45,169,225,0.35);
+  object-fit: contain;  /* earth cut nahi hogi */
 }
 
-@keyframes earthRotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width: 1110px) {
+  .earth-right,
+  .earth-right-video,
+  .earth img {
+    display: none !important;
   }
 }
 
-/* Mobile hide */
-@media (max-width: 992px) {
-  .earth-wrapper {
-    display: none;
-  }
-}
-.earth {
-  animation:
-    earthRotate 30s linear infinite,
-    floatEarth 6s ease-in-out infinite;
-    filter: drop-shadow(0 20px 40px rgba(45,169,225,0.35));
-}
-
-@keyframes floatEarth {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
-}
 
 .dropdown-card {
   display: flex;
@@ -21567,7 +21644,7 @@ MOVING EARTH
 }
 
 .dropdown-card:hover {
-  background: #2DA9E1;
+  background: #ffffff;
 }
 
 .dropdown-card .icon-md {
@@ -21591,6 +21668,13 @@ MOVING EARTH
   font-size: 13px;
   color: #6b7280;
   margin: 0;
+}
+.dropdown-card .desc:hover{
+  color: #2DA9E1
+}
+
+.dropdown-card .clean-list:hover{
+  color: #2DA9E1
 }
 
 .clean-list {
@@ -21625,6 +21709,165 @@ MOVING EARTH
   color: #fff;              /* hover pe bhi same rahe */
   text-decoration: none;
 }
+
+.card-hover-shadow:hover,
+.card-hover-shadow:focus,
+.card-hover-shadow:active {
+  background: none !important;
+  background-color: inherit !important;
+  box-shadow: 0 0 0 0 transparent !important;
+  filter: drop-shadow(0 0 0 transparent) !important;
+  transform: translateY(-6px);
+}
+
+/* IT Infrastructure and services*/
+.hero-section {
+  background-color: #a2dae3;
+}
+
+.hover-lift {
+  display: inline-flex;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hover-lift:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.hover-lift:hover i {
+  transform: translateX(4px);
+  transition: transform 0.25s ease;
+}
+
+
+.cta-card {
+  max-width: 1000px;
+  padding: 40px;
+  border-radius: 24px;
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+  box-shadow: 0 30px 80px rgba(30, 60, 114, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.15), transparent 60%);
+}
+
+.cta-input {
+  border-radius: 14px;
+  border: none;
+  padding: 14px 16px;
+}
+
+.cta-input:focus {
+  box-shadow: none;
+}
+
+.cta-btn {
+  background: #0f172a;
+  color: #fff;
+  border-radius: 14px;
+  padding: 0 18px;
+}
+
+.cta-btn:hover {
+  background: #020617;
+}
+
+.cta-rocket {
+  width: 150px;
+  animation: floatRocket 4s ease-in-out infinite;
+}
+
+@keyframes floatRocket {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+
+/* Mega menu container */
+.mega-menu {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 30px 80px rgba(15,23,42,0.15);
+}
+
+/* Card */
+.mega-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 24px;
+  height: 100%;
+  transition: all .35s ease;
+}
+
+.mega-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(45,170,225,0.25);
+}
+
+/* Icon */
+.mega-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+/* Soft icon backgrounds */
+.bg-primary-soft { background: rgba(45,170,225,.15); color:#2DA9E1; }
+.bg-info-soft { background: rgba(13,202,240,.15); color:#0dcaf0; }
+.bg-warning-soft { background: rgba(255,193,7,.18); color:#ffc107; }
+
+/* Headings */
+.mega-card h6 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* List */
+.mega-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+}
+
+.mega-card ul li {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Link */
+.mega-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2DA9E1;
+  text-decoration: none;
+}
+
+.mega-link:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
 
 
 

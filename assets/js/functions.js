@@ -581,19 +581,19 @@ var e = {
 e.init();
 
 // // Add Buy Now Button dynamically
-document.addEventListener("DOMContentLoaded", function () {
-    var wrapper = document.createElement("div");
-    wrapper.className = "position-fixed";
-    wrapper.style.zIndex = "99999";
+//document.addEventListener("DOMContentLoaded", function () {
+   // var wrapper = document.createElement("div");
+  //  wrapper.className = "position-fixed";
+  //  wrapper.style.zIndex = "99999";
 
-    var button = document.createElement("a");
-    button.href = "https://www.webestica.com/bootstrap-themes/folio-creative-agency-portfolio-theme";
-    button.className = "btn btn-sm btn-danger mb-0";
-    button.target = "_blank";
-    button.innerHTML = '<i class="bi bi-cart-fill me-2"></i>Buy Template';
+   // var button = document.createElement("a");
+   // button.href = "https://www.webestica.com/bootstrap-themes/folio-creative-agency-portfolio-theme";
+   // button.className = "btn btn-sm btn-danger mb-0";
+  //  button.target = "_blank";
+   // button.innerHTML = '<i class="bi bi-cart-fill me-2"></i>Buy Template';
 
-    wrapper.appendChild(button);
-    document.body.appendChild(wrapper);
+   // wrapper.appendChild(button);
+   // document.body.appendChild(wrapper);
 
     // function to update button position based on screen width
     function updatePosition() {
@@ -617,4 +617,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Run again on window resize
     window.addEventListener("resize", updatePosition);
-});

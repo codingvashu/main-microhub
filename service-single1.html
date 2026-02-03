@@ -83,10 +83,8 @@
 		rel="stylesheet">
 
 	<!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/css"
-		href="./assets/vendor/bootstrap-icons/bootstrap-icons.css">
-	<link rel="stylesheet" type="text/css"
-		href="./assets/vendor/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" type="text/css" href="./assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="./assets/vendor/swiper/swiper-bundle.min.css">
 
 	<!-- Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
@@ -144,33 +142,35 @@
 					<div class="navbar-collapse collapse" id="navbarCollapse">
 						<ul class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto">
 
+							<li class="nav-item"> <a class="nav-link" href="index.html">Home</a> </li>
 
 
-							<!-- Nav item -->
+
+							<!-- Nav item --
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
 									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
 								<div class="dropdown-menu dropdown-menu-size-md dropdown-menu-center p-xl-3">
 									<div class="row row-cols-1 row-cols-md-1 pt-1">
-										<!-- Doc menu -->
+										<!-- Doc menu --
 										<div class="col">
 											<div
 												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3">
 												<div class="d-flex">
-													<!-- Icon -->
+													<!-- Icon --
 													<div
 														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
 														<i class="bi bi-info-circle fs-6"></i>
 
 													</div>
-													<!-- Content -->
+													<!-- Content --
 													<div class="mx-3">
 														<p class="stretched-link heading-color fw-bold mb-0">About</p>
 														<p class="mb-0 text-body small">Our story, vision, and what
 															drives us</p>
 													</div>
 												</div>
-												<!-- Button -->
+												<!-- Button --
 												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
 													href="about-v1.html" target="_blank"><i
 														class="bi bi-chevron-right"></i> </a>
@@ -188,133 +188,69 @@
 									Solutions
 								</a>
 
-								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
-									<div class="row row-cols-1 row-cols-md-3 pt-2">
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-4 mega-menu">
+									<div class="row g-4">
 
 										<!-- CMS SOLUTIONS -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
-														<i class="bi bi-grid-1x2 fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">CMS
-															Solutions</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#475569;
-														    ">
-
-															<li><b>CRM</b></li>
-															<li><b>HR-Payroll</b></li>
-															<li><b>Inventory</b></li>
-															<li><b>Finance</b></li>
-															<li><b>ERP</b></li>
-															<li><b>Automation</b></li>
-
-														</ul>
-
-													</div>
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-primary-soft">
+													<i class="bi bi-grid-1x2"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="services-grid.html">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>CMS Solutions</h6>
+												<ul>
+													<li>CRM</li>
+													<li>HR-Payroll</li>
+													<li>Inventory</li>
+													<li>Finance</li>
+													<li>ERP</li>
+													<li>Automation</li>
+												</ul>
+												<a href="services-grid.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
-										<!-- IT INFRASTRUCTURE -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-info bg-opacity-15 text-info rounded flex-shrink-0">
-														<i class="bi bi-hdd-network fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															IT Infrastructure & Services
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#475569;
-														    ">
-															<li><b>IT Infrastructure</b></li>
-															<li><b>Networking</b></li>
-															<li><b>Servers</b></li>
-															<li><b>Web Development</b></li>
-															<li><b>AMC-Packages</b></li>
-															<li><b>ERP</b></li>
-															<li><b>Cybersecurity</b></li>
-															
-														</ul>
-													</div>
+										<!-- IT INFRA -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-info-soft">
+													<i class="bi bi-hdd-network"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/services-main.html">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>IT Infrastructure & Services</h6>
+												<ul>
+													<li>IT Infrastructure</li>
+													<li>Networking</li>
+													<li>Servers</li>
+													<li>Web Development</li>
+													<li>AMC-Packages</li>
+													<li>ERP</li>
+													<li>Cybersecurity</li>
+												</ul>
+												<a href="/services-main.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
 										<!-- HARDWARE -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
-														<i class="bi bi-laptop fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Hardware Solutions
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#693aea;
-														    ">
-															<li><b>Laptops</b></li>
-															<li><b>Macs</b></li>
-															<li><b>Printers</b></li>
-															<li><b>Networking & Peripherals</b></li>
-														</ul>
-													</div>
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-warning-soft">
+													<i class="bi bi-laptop"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/hardware">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Hardware Solutions</h6>
+												<ul>
+													<li>Laptops</li>
+													<li>Macs</li>
+													<li>Printers</li>
+													<li>Networking & Peripherals</li>
+												</ul>
+												<a href="/hardware-service-single.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
 									</div>
 								</div>
+
 							</li>
-
-
 							<!-- Nav item : EXPLORE -->
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
@@ -322,120 +258,65 @@
 									Explore
 								</a>
 
-								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
-									<div class="row row-cols-1 row-cols-md-3 pt-2">
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-4 mega-menu">
+									<div class="row g-4">
 
-										<!-- ================= -->
 										<!-- PRICING -->
-										<!-- ================= -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
-														<i class="bi bi-currency-rupee fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Pricing
-														</p>
-														<p class="mb-0 text-body small">
-															Transparent plans for every business size
-														</p>
-													</div>
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-primary-soft">
+													<i class="bi bi-grid-1x2"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="pricing-v1.html">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Pricing</h6>
+												<p class="mb-0 text-body small">
+													Transparent plans for every business size
+												</p>
+												<a href="services-grid.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
-										<!-- ================= -->
-										<!-- RESOURCES -->
-										<!-- ================= -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-success bg-opacity-15 text-success rounded flex-shrink-0">
-														<i class="bi bi-journal-text fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Resources
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#693aea;
-														    ">
-															<li><b>Blogs</b></li>
-															<li><b>Case Studies</b></li>
-															<li><b>Videos</b></li>
-															<li><b>Learning Guides</b></li>
-															<li><b>FAQs</b></li>
-														</ul>
-													</div>
+										<!-- RESOUCES -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-info-soft">
+													<i class="bi bi-hdd-network"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/resources">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Resources</h6>
+												<ul>
+													<li>Blogs</li>
+													<li>Case Studies</li>
+													<li>Videos</li>
+													<li>Learning Guides</li>
+													<li>FAQs</li>
+
+												</ul>
+												<a href="/services-main.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
-										<!-- ============================== -->
-										<!-- SECURITY & COMPLIANCE -->
-										<!-- ============================== -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
-														<i class="bi bi-shield-check fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Security & Compliance
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#693aea;
-														    ">
-															<li><b>Data Protection</b></li>
-															<li><b>Privacy</b></li>
-															<li><b>T&C</b></li>
-															<li><b>Security Compliance</b></li>
-														</ul>
-													</div>
+										<!-- SECURITY AND COMPLIANCE -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-warning-soft">
+													<i class="bi bi-laptop"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/security-compliance">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Security & Compliance</h6>
+												<ul>
+													<li>Data Protection</li>
+													<li>Privacy</li>
+													<li>T&C</li>
+													<li>Security Compliance</li>
+												</ul>
+												<a href="/hardware-service-single.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
 									</div>
 								</div>
+
 							</li>
 
-
+							<li class="nav-item"> <a class="nav-link" href="about-v1.html">About</a> </li>
 
 							<!-- Nav item -->
 							<li class="nav-item"> <a class="nav-link" href="contact-us-v1.html">Contact us</a> </li>

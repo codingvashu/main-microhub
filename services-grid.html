@@ -82,8 +82,7 @@
 		rel="stylesheet">
 
 	<!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/css"
-		href="./assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="./assets/vendor/bootstrap-icons/bootstrap-icons.css">
 
 	<!-- Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
@@ -141,41 +140,43 @@
 					<div class="navbar-collapse collapse" id="navbarCollapse">
 						<ul class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto">
 
+							<li class="nav-item"> <a class="nav-link" href="index.html">Home</a> </li>
 
 
-							<!-- Nav item -->
+
+							<!-- Nav item --
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
 									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
 								<div class="dropdown-menu dropdown-menu-size-md dropdown-menu-center p-xl-3">
 									<div class="row row-cols-1 row-cols-md-1 pt-1">
 										<!-- Doc menu -->
-										<div class="col">
+							<!--<div class="col">
 											<div
 												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3">
 												<div class="d-flex">
-													<!-- Icon -->
+													<!-- Icon 
 													<div
 														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
 														<i class="bi bi-info-circle fs-6"></i>
 
 													</div>
-													<!-- Content -->
+													<!-- Content --
 													<div class="mx-3">
 														<p class="stretched-link heading-color fw-bold mb-0">About</p>
 														<p class="mb-0 text-body small">Our story, vision, and what
 															drives us</p>
 													</div>
 												</div>
-												<!-- Button -->
+												<!-- Button 
 												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
 													href="about-v1.html" target="_blank"><i
 														class="bi bi-chevron-right"></i> </a>
 											</div>
-										</div>
+										</div>--
 									</div>
 								</div>
-							</li>
+							</li>-->
 
 
 							<!-- Nav item : SOLUTIONS -->
@@ -185,133 +186,69 @@
 									Solutions
 								</a>
 
-								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
-									<div class="row row-cols-1 row-cols-md-3 pt-2">
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-4 mega-menu">
+									<div class="row g-4">
 
 										<!-- CMS SOLUTIONS -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
-														<i class="bi bi-grid-1x2 fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">CMS
-															Solutions</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#475569;
-														    ">
-
-															<li><b>CRM</b></li>
-															<li><b>HR-Payroll</b></li>
-															<li><b>Inventory</b></li>
-															<li><b>Finance</b></li>
-															<li><b>ERP</b></li>
-															<li><b>Automation</b></li>
-
-														</ul>
-
-													</div>
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-primary-soft">
+													<i class="bi bi-grid-1x2"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="services-grid.html">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>CMS Solutions</h6>
+												<ul>
+													<li>CRM</li>
+													<li>HR-Payroll</li>
+													<li>Inventory</li>
+													<li>Finance</li>
+													<li>ERP</li>
+													<li>Automation</li>
+												</ul>
+												<a href="services-grid.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
-										<!-- IT INFRASTRUCTURE -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-info bg-opacity-15 text-info rounded flex-shrink-0">
-														<i class="bi bi-hdd-network fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															IT Infrastructure & Services
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#475569;
-														    ">
-															<li><b>IT Infrastructure</b></li>
-															<li><b>Networking</b></li>
-															<li><b>Servers</b></li>
-															<li><b>Web Development</b></li>
-															<li><b>AMC-Packages</b></li>
-															<li><b>ERP</b></li>
-															<li><b>Cybersecurity</b></li>
-															
-														</ul>
-													</div>
+										<!-- IT INFRA -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-info-soft">
+													<i class="bi bi-hdd-network"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/services-main.html">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>IT Infrastructure & Services</h6>
+												<ul>
+													<li>IT Infrastructure</li>
+													<li>Networking</li>
+													<li>Servers</li>
+													<li>Web Development</li>
+													<li>AMC-Packages</li>
+													<li>ERP</li>
+													<li>Cybersecurity</li>
+												</ul>
+												<a href="/services-main.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
 										<!-- HARDWARE -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
-														<i class="bi bi-laptop fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Hardware Solutions
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#693aea;
-														    ">
-															<li><b>Laptops</b></li>
-															<li><b>Macs</b></li>
-															<li><b>Printers</b></li>
-															<li><b>Networking & Peripherals</b></li>
-														</ul>
-													</div>
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-warning-soft">
+													<i class="bi bi-laptop"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/hardware">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Hardware Solutions</h6>
+												<ul>
+													<li>Laptops</li>
+													<li>Macs</li>
+													<li>Printers</li>
+													<li>Networking & Peripherals</li>
+												</ul>
+												<a href="/hardware-service-single.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
 									</div>
 								</div>
+
 							</li>
-
-
 							<!-- Nav item : EXPLORE -->
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
@@ -319,118 +256,66 @@
 									Explore
 								</a>
 
-								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
-									<div class="row row-cols-1 row-cols-md-3 pt-2">
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-4 mega-menu">
+									<div class="row g-4">
 
-										<!-- ================= -->
 										<!-- PRICING -->
-										<!-- ================= -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
-														<i class="bi bi-currency-rupee fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Pricing
-														</p>
-														<p class="mb-0 text-body small">
-															Transparent plans for every business size
-														</p>
-													</div>
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-primary-soft">
+													<i class="bi bi-grid-1x2"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="pricing-v1.html">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Pricing</h6>
+												<p class="mb-0 text-body small">
+													Transparent plans for every business size
+												</p>
+												<a href="services-grid.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
-										<!-- ================= -->
-										<!-- RESOURCES -->
-										<!-- ================= -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-success bg-opacity-15 text-success rounded flex-shrink-0">
-														<i class="bi bi-journal-text fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Resources
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#693aea;
-														    ">
-															<li><b>Blogs</b></li>
-															<li><b>Case Studies</b></li>
-															<li><b>Videos</b></li>
-															<li><b>Learning Guides</b></li>
-															<li><b>FAQs</b></li>
-														</ul>
-													</div>
+										<!-- RESOUCES -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-info-soft">
+													<i class="bi bi-hdd-network"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/resources">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Resources</h6>
+												<ul>
+													<li>Blogs</li>
+													<li>Case Studies</li>
+													<li>Videos</li>
+													<li>Learning Guides</li>
+													<li>FAQs</li>
+
+												</ul>
+												<a href="/services-main.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
-										<!-- ============================== -->
-										<!-- SECURITY & COMPLIANCE -->
-										<!-- ============================== -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
-														<i class="bi bi-shield-check fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Security & Compliance
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#693aea;
-														    ">
-															<li><b>Data Protection</b></li>
-															<li><b>Privacy</b></li>
-															<li><b>T&C</b></li>
-															<li><b>Security Compliance</b></li>
-														</ul>
-													</div>
+										<!-- SECURITY AND COMPLIANCE -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-warning-soft">
+													<i class="bi bi-laptop"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/security-compliance">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Security & Compliance</h6>
+												<ul>
+													<li>Data Protection</li>
+													<li>Privacy</li>
+													<li>T&C</li>
+													<li>Security Compliance</li>
+												</ul>
+												<a href="/hardware-service-single.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
 									</div>
 								</div>
+
 							</li>
+
+							<!-- Nav item -->
+							<li class="nav-item"> <a class="nav-link" href="about-v1.html">About</a> </li>
 
 
 
@@ -441,6 +326,7 @@
 
 					</div>
 					<!-- Main navbar END -->
+
 
 					<!-- Buttons -->
 					<ul class="nav align-items-center dropdown-hover ms-sm-2">
@@ -501,16 +387,18 @@
 						<li class="nav-item ms-2 d-none d-sm-block">
 							<a href="#" class="btn btn-sm mb-0" data-bs-toggle="offcanvas"
 								data-bs-target="#scheduleCall" aria-controls="scheduleCall" style="
-						      background: linear-gradient(135deg, #3B82F6, #38BDF8);
+						      background-color: #2DA9E1;
 						      color:#fff;
 						      border:none;
 						      padding:8px 16px;
 						      font-weight:500;
 						      transition:all 0.3s ease;
 						    " onmouseover="
-						      this.style.boxShadow='0 8px 20px rgba(56,189,248,0.45)';
+						      this.style.backgroundColor='#FF7B00';
+						      this.style.boxShadow='0 8px 20px rgba(255, 123, 0, 0.35)';
 						      this.style.transform='translateY(-1px)';
 						    " onmouseout="
+						      this.style.backgroundColor='#2DA9E1';
 						      this.style.boxShadow='none';
 						      this.style.transform='translateY(0)';
 						    ">
@@ -607,7 +495,7 @@ Hero START -->
 				right: 20%;
 				width: 10px;
 				height: 10px;
-				background: #facc15;
+				background: #FF7B00;
 				border-radius: 50%;
 				animation: ideaPop 2.5s ease-in-out infinite;
 			}
@@ -630,7 +518,7 @@ Hero START -->
 			}
 
 			.microhub-cta {
-				background: linear-gradient(135deg, #2DA9E1, #4F8DFD);
+				background-color: #2DA9E1;
 				color: #fff;
 				padding: 14px 26px;
 				border-radius: 12px;
@@ -649,8 +537,9 @@ Hero START -->
 
 			/* HOVER EFFECT */
 			.microhub-cta:hover {
+				background-color: #FF7B00;
 				transform: translateY(-4px);
-				box-shadow: 0 18px 40px rgba(79, 141, 253, 0.45);
+				box-shadow: 0 18px 40px rgba(255, 123, 0, 0.45);
 				color: #fff;
 			}
 
@@ -722,17 +611,18 @@ Hero START -->
 				<div class="row">
 					<!-- Title and content -->
 					<div class="col-md-7 col-lg-5 text-center text-md-start">
-						<!-- Breadcrumb -->
+						<!-- Breadcrumb 
 						<nav class="mb-2 d-flex justify-content-center justify-content-md-start"
 							aria-label="breadcrumb">
 							<ol class="breadcrumb pt-0">
 								<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-								<li class="breadcrumb-item active" aria-current="page" style="color:#38BDF8;">Services
+								<li class="breadcrumb-item active" aria-current="page" style="color:#2DA9E1;">Services
 								</li>
 							</ol>
 						</nav>
+					-->
 						<!-- Title -->
-						<h1 class="mb-4">One CMS to<span style="color: #38BDF8;">
+						<h1 class="mb-4">One CMS to<span style="color: #2DA9E1;">
 								Manage, Automate, Scale </span>your entire system
 						</h1>
 						<!-- Button -->
@@ -764,21 +654,136 @@ Hero END -->
 		<!-- =======================
 Services START -->
 		<section class="position-relative pt-6 pt-xxl-0">
+			<style>
+				/* Card styles for light/dark mode */
+				[data-bs-theme="light"] .service-card {
+					background-color: #ffffff;
+					border: 1px solid #e5e7eb;
+					box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+				}
+
+				[data-bs-theme="dark"] .service-card {
+					background-color: #1e293b;
+					border: 1px solid #334155;
+					box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+				}
+
+				.service-card {
+					height: 100%;
+					padding: 2rem;
+					border-radius: 12px;
+					transition: all 0.3s ease;
+					position: relative;
+					overflow: hidden;
+				}
+
+				.service-card:hover {
+					transform: translateY(-5px);
+					border-color: #2DA9E1;
+					box-shadow: 0 10px 30px rgba(45, 169, 225, 0.15);
+				}
+
+				[data-bs-theme="dark"] .service-card:hover {
+					box-shadow: 0 10px 30px rgba(45, 169, 225, 0.25);
+				}
+
+				.service-card-header {
+					padding: 0 0 2rem 0;
+					background: transparent;
+				}
+
+				.service-card-footer {
+					padding: 1.5rem 0 0 0;
+					background: transparent;
+				}
+
+				[data-bs-theme="light"] .service-card h6 {
+					color: #1e293b;
+				}
+
+				[data-bs-theme="dark"] .service-card h6 {
+					color: #f8fafc;
+				}
+
+				[data-bs-theme="light"] .service-card ul li {
+					color: #475569;
+				}
+
+				[data-bs-theme="dark"] .service-card ul li {
+					color: #cbd5e1;
+				}
+
+				.explore-btn {
+					background-color: #2DA9E1;
+					color: white;
+					border: none;
+					padding: 10px 20px;
+					border-radius: 8px;
+					font-weight: 500;
+					transition: all 0.3s ease;
+					display: inline-flex;
+					align-items: center;
+					gap: 8px;
+					text-decoration: none;
+				}
+
+				.explore-btn:hover {
+					background-color: #FF7B00;
+					color: white;
+					/*transform: translateY(-2px);*/
+					box-shadow: 0 6px 20px rgba(255, 123, 0, 0.25);
+				}
+
+				.explore-btn i {
+					transition: transform 0.3s ease;
+				}
+
+				.explore-btn:hover i {
+					transform: translateX(4px);
+				}
+
+				.service-card .explore-btn-container {
+					margin-top: 1.5rem;
+					padding-top: 1.5rem;
+					border-top: 1px solid;
+				}
+
+				[data-bs-theme="light"] .service-card .explore-btn-container {
+					border-top-color: #e5e7eb;
+				}
+
+				[data-bs-theme="dark"] .service-card .explore-btn-container {
+					border-top-color: #334155;
+				}
+
+				/* Badge style */
+				.service-badge {
+					position: absolute;
+					top: 1rem;
+					right: 1rem;
+					background-color: #FF7B00;
+					color: white;
+					padding: 4px 12px;
+					border-radius: 20px;
+					font-size: 0.75rem;
+					font-weight: 600;
+				}
+			</style>
+
 			<div class="container">
 				<div class="row g-4 g-lg-5">
 					<!-- Service item -->
 					<div class="col-md-6 col-xl-4">
-						<div
-							class="card card-bg-grad-hover card-content-hover bg-secondary bg-opacity-75 h-100 p-4 p-sm-5">
+						<div class="service-card">
 							<!-- Card header -->
-							<div class="card-header bg-transparent p-0 pb-5">
+							<div class="service-card-header">
 								<!-- Icon -->
 								<img src="assets/images/services/3d-icon/icons8-customer-insights-manager-96.png"
 									class="h-70px" alt="icon">
 							</div>
 
 							<!-- Card body -->
-							<div class="card-footer bg-transparent mt-auto p-0">
+							<div class="service-card-footer">
 								<h6 class="mb-3">CRM System Development</h6>
 								<!-- List -->
 								<ul class="ps-3 mb-0">
@@ -786,29 +791,29 @@ Services START -->
 									<li class="mb-2">Sales pipeline & follow-up automation</li>
 									<li class="mb-2">Customer insights & performance tracking</li>
 								</ul>
-							</div>
-							<!-- Hover button -->
-							<div
-								class="hover-content d-flex justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
-								<a class="btn btn-white icon-link icon-link-hover mb-0 stretched-link"
-									href="service-single2.html">Explore service<i class="bi bi-arrow-right"></i> </a>
+								<!-- Button -->
+								<div class="explore-btn-container">
+									<a class="explore-btn stretched-link" href="service-single2.html">
+										Explore service
+										<i class="bi bi-arrow-right"></i>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<!-- Service item -->
 					<div class="col-md-6 col-xl-4">
-						<div
-							class="card card-bg-grad-hover card-content-hover bg-secondary bg-opacity-75 h-100 p-4 p-sm-5">
+						<div class="service-card">
 							<!-- Card header -->
-							<div class="card-header bg-transparent p-0 pb-5">
+							<div class="service-card-header">
 								<!-- Icon -->
 								<img src="assets/images/services/3d-icon/icons8-support-94.png" class="h-70px"
 									alt="icon">
 							</div>
 
 							<!-- Card body -->
-							<div class="card-footer bg-transparent mt-auto p-0">
+							<div class="service-card-footer">
 								<h6 class="mb-3">Ticketing & Support Automation</h6>
 								<!-- List -->
 								<ul class="ps-3 mb-0">
@@ -816,32 +821,32 @@ Services START -->
 									<li class="mb-2">SLA tracking & priority handling</li>
 									<li class="mb-2">Centralized support dashboard</li>
 								</ul>
-							</div>
-							<!-- Hover button -->
-							<div
-								class="hover-content d-flex justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
-								<a class="btn btn-white icon-link icon-link-hover mb-0 stretched-link"
-									href="service-single3.html">Explore service<i class="bi bi-arrow-right"></i> </a>
+								<!-- Button -->
+								<div class="explore-btn-container">
+									<a class="explore-btn stretched-link" href="service-single3.html">
+										Explore service
+										<i class="bi bi-arrow-right"></i>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<!-- Service item -->
 					<div class="col-md-6 col-xl-4">
-						<div
-							class="card card-bg-grad-hover card-content-hover bg-secondary bg-opacity-75 h-100 p-4 p-sm-5">
+						<div class="service-card">
 							<!-- badge -->
-							<div class="badge bg-dark position-absolute top-0 end-0 m-4">New</div>
+							<div class="service-badge">New</div>
 
 							<!-- Card header -->
-							<div class="card-header bg-transparent p-0 pb-5">
+							<div class="service-card-header">
 								<!-- Icon -->
 								<img src="assets/images/services/3d-icon/icons8-human-resources-96.png" class="h-70px"
 									alt="icon">
 							</div>
 
 							<!-- Card body -->
-							<div class="card-footer bg-transparent mt-auto p-0">
+							<div class="service-card-footer">
 								<h6 class="mb-3">HR, Payroll & Attendance</h6>
 								<!-- List -->
 								<ul class="ps-3 mb-0">
@@ -849,28 +854,28 @@ Services START -->
 									<li class="mb-2">Automated payroll & compliance</li>
 									<li class="mb-2">Leave & employee lifecycle management</li>
 								</ul>
-							</div>
-							<!-- Hover button -->
-							<div
-								class="hover-content d-flex justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
-								<a class="btn btn-white icon-link icon-link-hover mb-0 stretched-link"
-									href="service-single1.html">Explore service<i class="bi bi-arrow-right"></i> </a>
+								<!-- Button -->
+								<div class="explore-btn-container">
+									<a class="explore-btn stretched-link" href="service-single1.html">
+										Explore service
+										<i class="bi bi-arrow-right"></i>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<!-- Service item -->
 					<div class="col-md-6 col-xl-4">
-						<div
-							class="card card-bg-grad-hover card-content-hover bg-secondary bg-opacity-75 h-100 p-4 p-sm-5">
+						<div class="service-card">
 							<!-- Card header -->
-							<div class="card-header bg-transparent p-0 pb-5">
+							<div class="service-card-header">
 								<!-- Icon -->
 								<img src="assets/images/services/3d-icon/database.png" class="h-70px" alt="icon">
 							</div>
 
 							<!-- Card body -->
-							<div class="card-footer bg-transparent mt-auto p-0">
+							<div class="service-card-footer">
 								<h6 class="mb-3">Inventory Management</h6>
 								<!-- List -->
 								<ul class="ps-3 mb-0">
@@ -878,29 +883,29 @@ Services START -->
 									<li class="mb-2">Real-time inventory visibility</li>
 									<li class="mb-2">Purchase, sales & stock reports</li>
 								</ul>
-							</div>
-							<!-- Hover button -->
-							<div
-								class="hover-content d-flex justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
-								<a class="btn btn-white icon-link icon-link-hover mb-0 stretched-link"
-									href="services-single4.html">Explore service<i class="bi bi-arrow-right"></i> </a>
+								<!-- Button -->
+								<div class="explore-btn-container">
+									<a class="explore-btn stretched-link" href="services-single4.html">
+										Explore service
+										<i class="bi bi-arrow-right"></i>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<!-- Service item -->
 					<div class="col-md-6 col-xl-4">
-						<div
-							class="card card-bg-grad-hover card-content-hover bg-secondary bg-opacity-75 h-100 p-4 p-sm-5">
+						<div class="service-card">
 							<!-- Card header -->
-							<div class="card-header bg-transparent p-0 pb-5">
+							<div class="service-card-header">
 								<!-- Icon -->
 								<img src="assets/images/services/3d-icon/icons8-dollar-bag-96.png" class="h-70px"
 									alt="icon">
 							</div>
 
 							<!-- Card body -->
-							<div class="card-footer bg-transparent mt-auto p-0">
+							<div class="service-card-footer">
 								<h6 class="mb-3">Financial Management</h6>
 								<!-- List -->
 								<ul class="ps-3 mb-0">
@@ -908,29 +913,29 @@ Services START -->
 									<li class="mb-2">POS & sales system integration</li>
 									<li class="mb-2">Business-ready financial reports</li>
 								</ul>
-							</div>
-							<!-- Hover button -->
-							<div
-								class="hover-content d-flex justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
-								<a class="btn btn-white icon-link icon-link-hover mb-0 stretched-link"
-									href="services-single5.html">Explore service<i class="bi bi-arrow-right"></i> </a>
+								<!-- Button -->
+								<div class="explore-btn-container">
+									<a class="explore-btn stretched-link" href="services-single5.html">
+										Explore service
+										<i class="bi bi-arrow-right"></i>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<!-- Service item -->
 					<div class="col-md-6 col-xl-4">
-						<div
-							class="card card-bg-grad-hover card-content-hover bg-secondary bg-opacity-75 h-100 p-4 p-sm-5">
+						<div class="service-card">
 							<!-- Card header -->
-							<div class="card-header bg-transparent p-0 pb-5">
+							<div class="service-card-header">
 								<!-- Icon -->
 								<img src="assets/images/services/3d-icon/icons8-choice-96.png" class="h-70px"
 									alt="icon">
 							</div>
 
 							<!-- Card body -->
-							<div class="card-footer bg-transparent mt-auto p-0">
+							<div class="service-card-footer">
 								<h6 class="mb-3">ERP & Task Management</h6>
 								<!-- List -->
 								<ul class="ps-3 mb-0">
@@ -938,19 +943,20 @@ Services START -->
 									<li class="mb-2">Task assignment & progress tracking</li>
 									<li class="mb-2">Cross-department process integration</li>
 								</ul>
-							</div>
-							<!-- Hover button -->
-							<div
-								class="hover-content d-flex justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
-								<a class="btn btn-white icon-link icon-link-hover mb-0 stretched-link"
-									href="services-single6.html">Explore service<i class="bi bi-arrow-right"></i> </a>
+								<!-- Button -->
+								<div class="explore-btn-container">
+									<a class="explore-btn stretched-link" href="services-single6.html">
+										Explore service
+										<i class="bi bi-arrow-right"></i>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div> <!-- Row END -->
 
 				<!-- CTA -->
-				<p class="mb-0 mt-5 text-center heading-color">🔥 Let’s create something great work together.
+				<p class="mb-0 mt-5 text-center heading-color">🔥 Let's create something great work together.
 					<a href="contact-us.html" class="fw-bold hover-underline-animation heading-color">Got a project in
 						mind?</a>
 				</p>
@@ -1093,7 +1099,7 @@ Why choose us START -->
 					<!-- Image and rating -->
 					<div class="col-md-6 position-relative overflow-visible">
 						<!-- Rocket image -->
-						
+
 
 
 						<div class="row ps-xl-7">
@@ -1102,7 +1108,7 @@ Why choose us START -->
 								<img src="assets/images/about/13.jpg" class="rounded-pill" alt="image">
 							</div>
 							<!-- Trsutpilot rating -->
-							
+
 						</div>
 					</div>
 
@@ -1192,8 +1198,8 @@ Contact us START-->
 
 			/* Focus glow */
 			.form-control:focus {
-				border-color: #38BDF8;
-				box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.25);
+				border-color: #2DA9E1;
+				box-shadow: 0 0 0 4px rgba(45, 169, 225, 0.25);
 				transform: translateY(-1px);
 			}
 
@@ -1206,25 +1212,26 @@ Contact us START-->
    BUTTON EFFECT
 ===================== */
 			.btn-primary {
-				background: linear-gradient(135deg, #38BDF8, #2DA9E1);
+				background-color: #2DA9E1;
 				border: none;
 				border-radius: 12px;
 				padding: 12px 26px;
 				font-weight: 600;
-				box-shadow: 0 12px 25px rgba(56, 189, 248, 0.35);
+				box-shadow: 0 12px 25px rgba(45, 169, 225, 0.35);
 				transition: all 0.35s ease;
 			}
 
 			/* Hover */
 			.btn-primary:hover {
+				background-color: #FF7B00;
 				transform: translateY(-3px);
-				box-shadow: 0 18px 40px rgba(45, 169, 225, 0.45);
+				box-shadow: 0 18px 40px rgba(255, 123, 0, 0.45);
 			}
 
 			/* Click */
 			.btn-primary:active {
 				transform: translateY(0);
-				box-shadow: 0 10px 20px rgba(45, 169, 225, 0.35);
+				box-shadow: 0 10px 20px rgba(255, 123, 0, 0.35);
 			}
 
 			/* =====================
@@ -1236,9 +1243,9 @@ Contact us START-->
 			}
 
 			.form-check-input:checked {
-				background-color: #38BDF8;
-				border-color: #38BDF8;
-				box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+				background-color: #2DA9E1;
+				border-color: #2DA9E1;
+				box-shadow: 0 0 0 3px rgba(45, 169, 225, 0.25);
 			}
 
 			/* =====================
@@ -1250,7 +1257,7 @@ Contact us START-->
 			}
 
 			.form-control:focus+.form-label {
-				color: #38BDF8;
+				color: #2DA9E1;
 			}
 
 			/* =====================
@@ -1356,7 +1363,7 @@ Contact us START-->
 		<section class="bg-secondary-grad position-relative overflow-hidden">
 
 			<!-- Shape decoration -->
-		
+
 
 			<div class="container position-relative">
 				<div class="row g-4">
@@ -1366,24 +1373,12 @@ Contact us START-->
 						    font-size: clamp(2.1rem, 4vw, 3.1rem);
 						    font-weight:700;
 						    line-height:1.25;
-						    background:linear-gradient(
-						      90deg,
-						      #0f172a 0%,
-						      #2DA9E1 40%,
-						      #0f172a 80%
-						    );
-						    background-size:200% 100%;
-						    background-position:0% 50%;
-						    background-clip:text;
-						    -webkit-background-clip:text;
-						    -webkit-text-fill-color:transparent;
+						    color: #0f172a;
 						    opacity:1;
 						    transform:translateY(12px);
-						    animation:
-						      aboutFadeIn 0.9s ease forwards,
-						      gradientSlide 6s ease-in-out infinite;
+						    animation: aboutFadeIn 0.9s ease forwards;
 						  ">Let's level up your brand, together</h1>
-						<p>Reach us anytime at <a href="#" style="color: #38BDF8;">sales@microhub.co.in</a></p>
+						<p>Reach us anytime at <a href="#" style="color: #2DA9E1;">sales@microhub.co.in</a></p>
 					</div>
 
 					<!-- Contact form -->
@@ -1414,12 +1409,13 @@ Contact us START-->
 							<div class="col-12 d-xl-flex align-items-center gap-3 mt-4">
 								<!-- Button -->
 								<button class="btn btn-primary text-nowrap mb-2 mb-xl-0"
-									style="background-color: #38BDF8;">Send a message</button>
+									style="background-color: #2DA9E1;">Send a message</button>
 								<!-- Check box -->
 								<div class="form-check">
 									<input type="checkbox" class="form-check-input border" id="exampleCheck1">
 									<label class="form-check-label" for="exampleCheck1">I agree that my data is <a
-											href="#" class=" hover-underline-animation text-primary-hover">collected and
+											href="#" class=" hover-underline-animation"
+											style="color: #2DA9E1;">collected and
 											stored</a>.</label>
 								</div>
 							</div>
@@ -1484,7 +1480,49 @@ Footer START -->
 		}
 
 		.grad-float img {
-			filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.25));
+			filter: drop-shadow(0 0 30px rgba(45, 169, 225, 0.25));
+		}
+
+		/* Footer hover effects */
+		.footer-nav-link {
+			color: #cbd5e1;
+			transition: all 0.3s ease;
+		}
+
+		.footer-nav-link:hover {
+			color: #2DA9E1;
+			transform: translateX(3px);
+		}
+
+		[data-bs-theme="light"] .footer-nav-link {
+			color: #475569;
+		}
+
+		[data-bs-theme="light"] .footer-nav-link:hover {
+			color: #2DA9E1;
+		}
+
+		.footer-social-btn {
+			transition: all 0.3s ease;
+		}
+
+		.footer-social-btn:hover {
+			background-color: #2DA9E1 !important;
+			transform: translateY(-3px);
+		}
+
+		.footer-social-btn:hover i {
+			color: white !important;
+		}
+
+		/* Navbar top-level links only */
+		.navbar-nav>.nav-item>.nav-link {
+			color: white !important;
+		}
+
+		.navbar-nav>.nav-item>.nav-link:hover {
+			color: white !important;
+			opacity: 0.85;
 		}
 	</style>
 	<footer class="bg-dark position-relative pt-6 pt-lg-8" data-bs-theme="dark">
@@ -1505,19 +1543,19 @@ Footer START -->
 
 					<ul class="list-inline mb-0">
 						<li class="list-inline-item">
-							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+							<a class="btn btn-xs btn-icon btn-secondary footer-social-btn" href="#"><i
 									class="bi bi-facebook lh-base"></i></a>
 						</li>
 						<li class="list-inline-item">
-							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+							<a class="btn btn-xs btn-icon btn-secondary footer-social-btn" href="#"><i
 									class="bi bi-instagram lh-base"></i></a>
 						</li>
 						<li class="list-inline-item">
-							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+							<a class="btn btn-xs btn-icon btn-secondary footer-social-btn" href="#"><i
 									class="bi bi-twitter-x lh-base"></i></a>
 						</li>
 						<li class="list-inline-item">
-							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+							<a class="btn btn-xs btn-icon btn-secondary footer-social-btn" href="#"><i
 									class="bi bi-linkedin lh-base"></i></a>
 						</li>
 					</ul>
@@ -1531,12 +1569,17 @@ Footer START -->
 						<div class="col-6 col-lg-4">
 							<h6 class="mb-3 mb-sm-4">Company</h6>
 							<ul class="nav flex-column gap-1">
-								<li class="nav-item"><a class="nav-link pt-0" href="about-v1.html">About Microhub</a>
+								<li class="nav-item"><a class="nav-link pt-0 footer-nav-link" href="about-v1.html">About
+										Microhub</a>
 								</li>
-								<li class="nav-item"><a class="nav-link" href="service-v1.html">Our Services</a></li>
-								<li class="nav-item"><a class="nav-link" href="pricing-v1.html">Pricing</a></li>
-								<li class="nav-item"><a class="nav-link" href="career.html">Careers</a></li>
-								<li class="nav-item"><a class="nav-link" href="contact-us-v1.html">Contact Us</a></li>
+								<li class="nav-item"><a class="nav-link footer-nav-link" href="service-v1.html">Our
+										Services</a></li>
+								<li class="nav-item"><a class="nav-link footer-nav-link"
+										href="pricing-v1.html">Pricing</a></li>
+								<li class="nav-item"><a class="nav-link footer-nav-link" href="career.html">Careers</a>
+								</li>
+								<li class="nav-item"><a class="nav-link footer-nav-link"
+										href="contact-us-v1.html">Contact Us</a></li>
 							</ul>
 						</div>
 
@@ -1544,12 +1587,17 @@ Footer START -->
 						<div class="col-6 col-lg-4">
 							<h6 class="mb-3 mb-sm-4">Resources</h6>
 							<ul class="nav flex-column gap-1">
-								<li class="nav-item"><a class="nav-link pt-0" href="#">CMS Features</a></li>
-								<li class="nav-item"><a class="nav-link" href="#">IT Infrastructure</a></li>
-								<li class="nav-item"><a class="nav-link" href="#">Hardware Solutions</a></li>
-								<li class="nav-item"><a class="nav-link" href="blog-minimal.html">Blogs & Insights</a>
+								<li class="nav-item"><a class="nav-link pt-0 footer-nav-link" href="#">CMS Features</a>
 								</li>
-								<li class="nav-item"><a class="nav-link" href="#">Client Success Stories</a></li>
+								<li class="nav-item"><a class="nav-link footer-nav-link" href="#">IT Infrastructure</a>
+								</li>
+								<li class="nav-item"><a class="nav-link footer-nav-link" href="#">Hardware Solutions</a>
+								</li>
+								<li class="nav-item"><a class="nav-link footer-nav-link" href="blog-minimal.html">Blogs
+										& Insights</a>
+								</li>
+								<li class="nav-item"><a class="nav-link footer-nav-link" href="#">Client Success
+										Stories</a></li>
 							</ul>
 						</div>
 
@@ -1557,9 +1605,9 @@ Footer START -->
 						<div class="col-12 col-lg-4">
 							<h6 class="mb-3 mb-sm-4">Contact Us</h6>
 
-							<ul class="nav flex-column gap-2 small text-body-secondary">
+							<ul class="nav flex-column gap-2 small">
 								<li class="d-flex align-items-start gap-2">
-									<i class="bi bi-geo-alt text-primary-grad mt-1"></i>
+									<i class="bi bi-geo-alt" style="color: #2DA9E1; margin-top: 2px;"></i>
 									<span>
 										Unit No-484, Tower-C,<br>
 										Bhutani Alphathum,<br>
@@ -1568,15 +1616,15 @@ Footer START -->
 								</li>
 
 								<li class="d-flex align-items-center gap-2">
-									<i class="bi bi-envelope text-primary-grad"></i>
-									<a href="mailto:sales@microhub.co.in" class="nav-link p-0">
+									<i class="bi bi-envelope" style="color: #2DA9E1;"></i>
+									<a href="mailto:sales@microhub.co.in" class="nav-link p-0 footer-nav-link">
 										sales@microhub.co.in
 									</a>
 								</li>
 
 								<li class="d-flex align-items-center gap-2">
-									<i class="bi bi-telephone text-primary-grad"></i>
-									<a href="tel:+917368007363" class="nav-link p-0">
+									<i class="bi bi-telephone" style="color: #2DA9E1;"></i>
+									<a href="tel:+917368007363" class="nav-link p-0 footer-nav-link">
 										+91 73680 07363
 									</a>
 								</li>
@@ -1584,15 +1632,15 @@ Footer START -->
 
 							<ul class="list-inline mt-3 mb-0">
 								<li class="list-inline-item">
-									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									<a class="btn btn-xs btn-icon btn-secondary footer-social-btn" href="#"><i
 											class="bi bi-facebook lh-base"></i></a>
 								</li>
 								<li class="list-inline-item">
-									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									<a class="btn btn-xs btn-icon btn-secondary footer-social-btn" href="#"><i
 											class="bi bi-linkedin lh-base"></i></a>
 								</li>
 								<li class="list-inline-item">
-									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+									<a class="btn btn-xs btn-icon btn-secondary footer-social-btn" href="#"><i
 											class="bi bi-instagram lh-base"></i></a>
 								</li>
 							</ul>
@@ -1609,12 +1657,13 @@ Footer START -->
 			<div class="d-md-flex justify-content-between align-items-center text-center text-lg-start py-4">
 				<div class="text-body small mb-3 mb-md-0">
 					Copyright ©2024 Microhub.
-					Built by <a href="#" class="text-body text-primary-hover hover-underline-animation">Microhub</a>.
+					Built by <a href="#" class="text-body" style="color: #2DA9E1 !important;">Microhub</a>.
 				</div>
 
 				<ul class="nav justify-content-center gap-1 mb-0">
-					<li class="nav-item"><a class="nav-link small py-0" href="#">Privacy policy</a></li>
-					<li class="nav-item"><a class="nav-link small py-0 pe-0" href="#">Terms & conditions</a></li>
+					<li class="nav-item"><a class="nav-link small py-0 footer-nav-link" href="#">Privacy policy</a></li>
+					<li class="nav-item"><a class="nav-link small py-0 pe-0 footer-nav-link" href="#">Terms &
+							conditions</a></li>
 				</ul>
 			</div>
 
@@ -1626,7 +1675,7 @@ Footer END -->
 
 
 	<!-- Back to top -->
-	<div class="back-top"></div>
+	<div style="background-color: rgb(8, 83, 112);" class="back-top"></div>
 
 	<!-- Bootstrap JS -->
 	<script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

@@ -3,7 +3,7 @@
 
 
 <head>
-	
+
 	<title>Folio - Multipurpose Bootstrap Theme</title>
 
 	<!-- Meta Tags -->
@@ -15,7 +15,7 @@
 	<!-- Dark mode -->
 	<script>
 		const storedTheme = localStorage.getItem('theme')
- 
+
 		const getPreferredTheme = () => {
 			if (storedTheme) {
 				return storedTheme
@@ -34,42 +34,42 @@
 		setTheme(getPreferredTheme())
 
 		window.addEventListener('DOMContentLoaded', () => {
-		    var el = document.querySelector('.theme-icon-active');
-			if(el != 'undefined' && el != null) {
+			var el = document.querySelector('.theme-icon-active');
+			if (el != 'undefined' && el != null) {
 				const showActiveTheme = theme => {
-				const activeThemeIcon = document.querySelector('.theme-icon-active use')
-				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+					const activeThemeIcon = document.querySelector('.theme-icon-active use')
+					const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+					const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
 
-				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-					element.classList.remove('active')
-				})
-
-				btnToActive.classList.add('active')
-				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-			}
-
-			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-				if (storedTheme !== 'light' || storedTheme !== 'dark') {
-					setTheme(getPreferredTheme())
-				}
-			})
-
-			showActiveTheme(getPreferredTheme())
-
-			document.querySelectorAll('[data-bs-theme-value]')
-				.forEach(toggle => {
-					toggle.addEventListener('click', () => {
-						const theme = toggle.getAttribute('data-bs-theme-value')
-						localStorage.setItem('theme', theme)
-						setTheme(theme)
-						showActiveTheme(theme)
+					document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+						element.classList.remove('active')
 					})
+
+					btnToActive.classList.add('active')
+					activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+				}
+
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+					if (storedTheme !== 'light' || storedTheme !== 'dark') {
+						setTheme(getPreferredTheme())
+					}
 				})
+
+				showActiveTheme(getPreferredTheme())
+
+				document.querySelectorAll('[data-bs-theme-value]')
+					.forEach(toggle => {
+						toggle.addEventListener('click', () => {
+							const theme = toggle.getAttribute('data-bs-theme-value')
+							localStorage.setItem('theme', theme)
+							setTheme(theme)
+							showActiveTheme(theme)
+						})
+					})
 
 			}
 		})
-		
+
 	</script>
 
 	<!-- Favicon -->
@@ -78,20 +78,22 @@
 	<!-- Google Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
 	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+		rel="stylesheet">
 
 	<!-- Plugins CSS -->
 	<link rel="stylesheet" type="text/css" href="./assets/vendor/bootstrap-icons/bootstrap-icons.css">
 	<link rel="stylesheet" type="text/css" href="./assets/vendor/swiper/swiper-bundle.min.css">
-	
+
 	<!-- Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 
 </head>
 
 <body>
-	
-<!-- Header START -->
+
+	<!-- Header START -->
 	<div class="header-absolute">
 		<!-- Top header -->
 		<div class="alert fade show border-0 rounded-0 text-center overflow-hidden z-index-9 py-2 m-0 d-none d-lg-block"
@@ -140,41 +142,43 @@
 					<div class="navbar-collapse collapse" id="navbarCollapse">
 						<ul class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto">
 
+							<li class="nav-item"> <a class="nav-link" href="index.html">Home</a> </li>
 
 
-							<!-- Nav item -->
+
+							<!-- Nav item --
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
 									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
 								<div class="dropdown-menu dropdown-menu-size-md dropdown-menu-center p-xl-3">
 									<div class="row row-cols-1 row-cols-md-1 pt-1">
 										<!-- Doc menu -->
-										<div class="col">
+							<!--<div class="col">
 											<div
 												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3">
 												<div class="d-flex">
-													<!-- Icon -->
+													<!-- Icon 
 													<div
 														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
 														<i class="bi bi-info-circle fs-6"></i>
 
 													</div>
-													<!-- Content -->
+													<!-- Content --
 													<div class="mx-3">
 														<p class="stretched-link heading-color fw-bold mb-0">About</p>
 														<p class="mb-0 text-body small">Our story, vision, and what
 															drives us</p>
 													</div>
 												</div>
-												<!-- Button -->
+												<!-- Button 
 												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
 													href="about-v1.html" target="_blank"><i
 														class="bi bi-chevron-right"></i> </a>
 											</div>
-										</div>
+										</div>--
 									</div>
 								</div>
-							</li>
+							</li>-->
 
 
 							<!-- Nav item : SOLUTIONS -->
@@ -184,133 +188,69 @@
 									Solutions
 								</a>
 
-								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
-									<div class="row row-cols-1 row-cols-md-3 pt-2">
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-4 mega-menu">
+									<div class="row g-4">
 
 										<!-- CMS SOLUTIONS -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
-														<i class="bi bi-grid-1x2 fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">CMS
-															Solutions</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#475569;
-														    ">
-
-															<li><b>CRM</b></li>
-															<li><b>HR-Payroll</b></li>
-															<li><b>Inventory</b></li>
-															<li><b>Finance</b></li>
-															<li><b>ERP</b></li>
-															<li><b>Automation</b></li>
-
-														</ul>
-
-													</div>
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-primary-soft">
+													<i class="bi bi-grid-1x2"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="services-grid.html">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>CMS Solutions</h6>
+												<ul>
+													<li>CRM</li>
+													<li>HR-Payroll</li>
+													<li>Inventory</li>
+													<li>Finance</li>
+													<li>ERP</li>
+													<li>Automation</li>
+												</ul>
+												<a href="services-grid.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
-										<!-- IT INFRASTRUCTURE -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-info bg-opacity-15 text-info rounded flex-shrink-0">
-														<i class="bi bi-hdd-network fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															IT Infrastructure & Services
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#475569;
-														    ">
-															<li><b>IT Infrastructure</b></li>
-															<li><b>Networking</b></li>
-															<li><b>Servers</b></li>
-															<li><b>Web Development</b></li>
-															<li><b>AMC-Packages</b></li>
-															<li><b>ERP</b></li>
-															<li><b>Cybersecurity</b></li>
-															
-														</ul>
-													</div>
+										<!-- IT INFRA -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-info-soft">
+													<i class="bi bi-hdd-network"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/services-main.html">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>IT Infrastructure & Services</h6>
+												<ul>
+													<li>IT Infrastructure</li>
+													<li>Networking</li>
+													<li>Servers</li>
+													<li>Web Development</li>
+													<li>AMC-Packages</li>
+													<li>ERP</li>
+													<li>Cybersecurity</li>
+												</ul>
+												<a href="/services-main.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
 										<!-- HARDWARE -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
-														<i class="bi bi-laptop fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Hardware Solutions
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#693aea;
-														    ">
-															<li><b>Laptops</b></li>
-															<li><b>Macs</b></li>
-															<li><b>Printers</b></li>
-															<li><b>Networking & Peripherals</b></li>
-														</ul>
-													</div>
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-warning-soft">
+													<i class="bi bi-laptop"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/hardware">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Hardware Solutions</h6>
+												<ul>
+													<li>Laptops</li>
+													<li>Macs</li>
+													<li>Printers</li>
+													<li>Networking & Peripherals</li>
+												</ul>
+												<a href="/hardware-service-single.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
 									</div>
 								</div>
+
 							</li>
-
-
 							<!-- Nav item : EXPLORE -->
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
@@ -318,118 +258,66 @@
 									Explore
 								</a>
 
-								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
-									<div class="row row-cols-1 row-cols-md-3 pt-2">
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-4 mega-menu">
+									<div class="row g-4">
 
-										<!-- ================= -->
 										<!-- PRICING -->
-										<!-- ================= -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
-														<i class="bi bi-currency-rupee fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Pricing
-														</p>
-														<p class="mb-0 text-body small">
-															Transparent plans for every business size
-														</p>
-													</div>
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-primary-soft">
+													<i class="bi bi-grid-1x2"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="pricing-v1.html">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Pricing</h6>
+												<p class="mb-0 text-body small">
+													Transparent plans for every business size
+												</p>
+												<a href="services-grid.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
-										<!-- ================= -->
-										<!-- RESOURCES -->
-										<!-- ================= -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-success bg-opacity-15 text-success rounded flex-shrink-0">
-														<i class="bi bi-journal-text fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Resources
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#693aea;
-														    ">
-															<li><b>Blogs</b></li>
-															<li><b>Case Studies</b></li>
-															<li><b>Videos</b></li>
-															<li><b>Learning Guides</b></li>
-															<li><b>FAQs</b></li>
-														</ul>
-													</div>
+										<!-- RESOUCES -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-info-soft">
+													<i class="bi bi-hdd-network"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/resources">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Resources</h6>
+												<ul>
+													<li>Blogs</li>
+													<li>Case Studies</li>
+													<li>Videos</li>
+													<li>Learning Guides</li>
+													<li>FAQs</li>
+
+												</ul>
+												<a href="/services-main.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
-										<!-- ============================== -->
-										<!-- SECURITY & COMPLIANCE -->
-										<!-- ============================== -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
-														<i class="bi bi-shield-check fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Security & Compliance
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#693aea;
-														    ">
-															<li><b>Data Protection</b></li>
-															<li><b>Privacy</b></li>
-															<li><b>T&C</b></li>
-															<li><b>Security Compliance</b></li>
-														</ul>
-													</div>
+										<!-- SECURITY AND COMPLIANCE -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-warning-soft">
+													<i class="bi bi-laptop"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/security-compliance">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Security & Compliance</h6>
+												<ul>
+													<li>Data Protection</li>
+													<li>Privacy</li>
+													<li>T&C</li>
+													<li>Security Compliance</li>
+												</ul>
+												<a href="/hardware-service-single.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
 									</div>
 								</div>
+
 							</li>
+
+							<!-- Nav item -->
+							<li class="nav-item"> <a class="nav-link" href="about-v1.html">About</a> </li>
 
 
 
@@ -440,6 +328,7 @@
 
 					</div>
 					<!-- Main navbar END -->
+
 
 					<!-- Buttons -->
 					<ul class="nav align-items-center dropdown-hover ms-sm-2">
@@ -500,7 +389,7 @@
 						<li class="nav-item ms-2 d-none d-sm-block">
 							<a href="#" class="btn btn-sm mb-0" data-bs-toggle="offcanvas"
 								data-bs-target="#scheduleCall" aria-controls="scheduleCall" style="
-						      background: linear-gradient(135deg, #3B82F6, #38BDF8);
+						      background: linear-gradient(135deg, #2DA9E1, #38BDF8);
 						      color:#fff;
 						      border:none;
 						      padding:8px 16px;
@@ -540,324 +429,369 @@
 	</div>
 	<!-- Header END -->
 
-<!-- **************** MAIN CONTENT START **************** -->
-<main>
+	<!-- **************** MAIN CONTENT START **************** -->
+	<main>
 
-<!-- =======================
+		<!-- =======================
 Content START -->
-<section class="position-relative pt-8 pt-xl-9 pb-0 overflow-hidden mb-n6">
-	<!-- Bg and curve -->
-	<div class="bg-secondary-grad h-500px w-100 position-absolute bottom-0 start-0">
-		<!-- Curve decoration -->
-		<span>
-			<svg class="mt-n2" viewBox="0 0 1950 135" style="enable-background:new 0 0 1950 135;" xml:space="preserve">
-				<path class="fill-body" d="M1480.3,110.5c238.7,18.9,359.6-42.2,469.7-80.7V1.7L0,0v129.4c57.3-41.7,287.7-15.9,446.4,0 c170.6,17.1,342.3-15.8,440.8-35.8C1104,49.6,1274.8,94.2,1480.3,110.5z"/>
-			</svg>
-		</span>
-	</div>
-
-	<!-- Main hero -->
-	<div class="container position-relative" data-sticky-container>
-		<div class="row">
-			<!-- Title and contents -->
-			<div class="col-md-6">
-
-				<!-- Title -->
-				<h1 class="display-5 mb-5">IT Hardware Solutions</h1>
-
-				<!-- Button -->
-				<a class="btn btn-dark icon-link icon-link-hover" href="#">
-					Get Hardware Consultation <i class="bi bi-arrow-right"></i>
-				</a>
-
-				<!-- Overview START -->
-				<div class="mt-5 mt-md-9">
-					<h5>Overview</h5>
-					<p>
-						Microhub offers a complete range of <b>enterprise-grade IT hardware solutions</b> to power modern workplaces, data centers, and business operations across India.
-					</p>
-					<p>
-						We supply and deploy <b>laptops, desktops, smartphones, Mac devices, printers, networking hardware, modems, and connectivity solutions</b> from leading global brands.
-					</p>
-					<p>
-						Whether you are equipping a new office, upgrading existing systems, or scaling your IT infrastructure, Microhub ensures <b>genuine products, competitive pricing, seamless deployment, and long-term support</b>—fully aligned with your IT and infrastructure needs.
-					</p>
-				</div>
-				<!-- Overview END -->
-
+		<section class="position-relative pt-8 pt-xl-9 pb-0 overflow-hidden mb-n6">
+			<!-- Bg and curve -->
+			<div class="bg-secondary-grad h-500px w-100 position-absolute bottom-0 start-0">
+				<!-- Curve decoration -->
+				<span>
+					<svg class="mt-n2" viewBox="0 0 1950 135" style="enable-background:new 0 0 1950 135;"
+						xml:space="preserve">
+						<path class="fill-body"
+							d="M1480.3,110.5c238.7,18.9,359.6-42.2,469.7-80.7V1.7L0,0v129.4c57.3-41.7,287.7-15.9,446.4,0 c170.6,17.1,342.3-15.8,440.8-35.8C1104,49.6,1274.8,94.2,1480.3,110.5z" />
+					</svg>
+				</span>
 			</div>
 
-			<!-- Image -->
-			<div class="col-md-5 ms-auto">
-				<div data-sticky data-margin-top="100" data-sticky-for="576">
-					<div class="rounded-4 h-400px h-lg-500px" style="background:url(assets/images/services/4by3/03.jpg) no-repeat; background-size:cover; background-position:center;"></div>
+			<!-- Main hero -->
+			<div class="container position-relative" data-sticky-container>
+				<div class="row">
+					<!-- Title and contents -->
+					<div class="col-md-6">
+
+						<!-- Title -->
+						<h1 class="display-5 mb-5">IT Hardware Solutions</h1>
+
+						<!-- Button -->
+						<a class="btn btn-dark icon-link icon-link-hover" href="#">
+							Get Hardware Consultation <i class="bi bi-arrow-right"></i>
+						</a>
+
+						<!-- Overview START -->
+						<div class="mt-5 mt-md-9">
+							<h5>Overview</h5>
+							<p>
+								Microhub offers a complete range of <b>enterprise-grade IT hardware solutions</b> to
+								power modern workplaces, data centers, and business operations across India.
+							</p>
+							<p>
+								We supply and deploy <b>laptops, desktops, smartphones, Mac devices, printers,
+									networking hardware, modems, and connectivity solutions</b> from leading global
+								brands.
+							</p>
+							<p>
+								Whether you are equipping a new office, upgrading existing systems, or scaling your IT
+								infrastructure, Microhub ensures <b>genuine products, competitive pricing, seamless
+									deployment, and long-term support</b>—fully aligned with your IT and infrastructure
+								needs.
+							</p>
+						</div>
+						<!-- Overview END -->
+
+					</div>
+
+					<!-- Image -->
+					<div class="col-md-5 ms-auto">
+						<div data-sticky data-margin-top="100" data-sticky-for="576">
+							<div class="rounded-4 h-400px h-lg-500px"
+								style="background:url(assets/images/services/4by3/03.jpg) no-repeat; background-size:cover; background-position:center;">
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-</section>
+		</section>
 
-<!-- =======================
+		<!-- =======================
 Content END -->
 
-<!-- =======================
+		<!-- =======================
 Detail START -->
-<section class="bg-secondary-grad overflow-hidden mt-6 pt-7">
-	<div class="container pb-8">
+		<section class="bg-secondary-grad overflow-hidden mt-6 pt-7">
+			<div class="container pb-8">
 
-		<!-- Title -->
-		<h5 class="mb-4">Key benefits</h5>
+				<!-- Title -->
+				<h5 class="mb-4">Key benefits</h5>
 
-		<!-- Benefits START -->
-		<div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4">
-			<!-- Item -->
-			<div class="col">
-				<div class="card card-body h-100 rounded-3 p-4">
-					<h6 class="mb-3">Genuine Enterprise Hardware</h6>
-					<p class="mb-0">
-						We supply authentic hardware from trusted global brands, ensuring reliability and long-term performance.
-					</p>
-				</div>
-			</div>
-
-			<!-- Item -->
-			<div class="col">
-				<div class="card card-body h-100 rounded-3 p-4">
-					<h6 class="mb-3">Scalable for Growth</h6>
-					<p class="mb-0">
-						Our hardware solutions scale seamlessly as your business expands or upgrades its IT infrastructure.
-					</p>
-				</div>
-			</div>
-
-			<!-- Item -->
-			<div class="col">
-				<div class="card card-body h-100 rounded-3 p-4">
-					<h6 class="mb-3">Optimized Performance</h6>
-					<p class="mb-0">
-						High-performance devices designed to support demanding workloads and business applications.
-					</p>
-				</div>
-			</div>
-
-			<!-- Item -->
-			<div class="col">
-				<div class="card card-body h-100 rounded-3 p-4">
-					<h6 class="mb-3">End-to-End Support</h6>
-					<p class="mb-0">
-						From procurement to installation and AMC, we handle everything for a hassle-free experience.
-					</p>
-				</div>
-			</div>
-		</div>
-		<!-- Benefits END -->
-
-		<!-- Whats included START -->
-		<div class="row g-4 mt-5 mt-md-7">
-			<!-- Image -->
-			<div class="col-lg-6 pe-lg-6">
-				<img src="assets/images/services/hardwARE1.png" class="rounded-4" alt="IT hardware solutions">
-			</div>
-
-			<!-- Content -->
-			<div class="col-lg-6">
-				<h2>What's included in IT hardware solutions?</h2>
-
-				<!-- Accordion START -->
-				<div class="accordion accordion-icon accordion-icon-start mt-4" id="accordionExample2">
-					
-					<!-- Accordion item -->
-					<div class="accordion-item mb-2">
-						<h6 class="accordion-header" id="heading-1">
-							<button class="accordion-button py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
-								<span class="lead fw-bold">Laptops & desktops</span>
-							</button>
-						</h6>
-						<div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="heading-1" data-bs-parent="#accordionExample2">
-							<div class="accordion-body">
-								Business-grade laptops and desktops for offices, enterprises, and remote teams, configured to meet your performance requirements.
-							</div>
+				<!-- Benefits START -->
+				<div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4">
+					<!-- Item -->
+					<div class="col">
+						<div class="card card-body h-100 rounded-3 p-4">
+							<h6 class="mb-3">Genuine Enterprise Hardware</h6>
+							<p class="mb-0">
+								We supply authentic hardware from trusted global brands, ensuring reliability and
+								long-term performance.
+							</p>
 						</div>
 					</div>
 
-					<!-- Accordion item -->
-					<div class="accordion-item mb-2">
-						<h6 class="accordion-header" id="heading-2">
-							<button class="accordion-button py-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
-								<span class="lead fw-bold">Smartphones & mobility devices</span>
-							</button>
-						</h6>
-						<div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#accordionExample2">
-							<div class="accordion-body">
-								Enterprise-ready smartphones and mobile devices that enable secure communication and workforce mobility.
-							</div>
+					<!-- Item -->
+					<div class="col">
+						<div class="card card-body h-100 rounded-3 p-4">
+							<h6 class="mb-3">Scalable for Growth</h6>
+							<p class="mb-0">
+								Our hardware solutions scale seamlessly as your business expands or upgrades its IT
+								infrastructure.
+							</p>
 						</div>
 					</div>
 
-					<!-- Accordion item -->
-					<div class="accordion-item mb-2">
-						<h6 class="accordion-header" id="heading-3">
-							<button class="accordion-button py-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
-								<span class="lead fw-bold">Mac & Apple devices</span>
-							</button>
-						</h6>
-						<div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3" data-bs-parent="#accordionExample2">
-							<div class="accordion-body">
-								MacBooks, iMacs, and Apple devices supplied with enterprise configuration and professional deployment support.
-							</div>
+					<!-- Item -->
+					<div class="col">
+						<div class="card card-body h-100 rounded-3 p-4">
+							<h6 class="mb-3">Optimized Performance</h6>
+							<p class="mb-0">
+								High-performance devices designed to support demanding workloads and business
+								applications.
+							</p>
 						</div>
 					</div>
 
-					<!-- Accordion item -->
-					<div class="accordion-item mb-2">
-						<h6 class="accordion-header" id="heading-4">
-							<button class="accordion-button py-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
-								<span class="lead fw-bold">Printers & networking hardware</span>
-							</button>
-						</h6>
-						<div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-4" data-bs-parent="#accordionExample2">
-							<div class="accordion-body">
-								Printers, routers, switches, and networking equipment designed for secure and efficient office connectivity.
-							</div>
+					<!-- Item -->
+					<div class="col">
+						<div class="card card-body h-100 rounded-3 p-4">
+							<h6 class="mb-3">End-to-End Support</h6>
+							<p class="mb-0">
+								From procurement to installation and AMC, we handle everything for a hassle-free
+								experience.
+							</p>
 						</div>
 					</div>
-
-					<!-- Accordion item -->
-					<div class="accordion-item mb-2">
-						<h6 class="accordion-header" id="heading-5">
-							<button class="accordion-button py-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
-								<span class="lead fw-bold">Modems, connectivity & accessories</span>
-							</button>
-						</h6>
-						<div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="heading-5" data-bs-parent="#accordionExample2">
-							<div class="accordion-body">
-								Connectivity devices, power solutions, peripherals, and accessories to complete your IT setup.
-							</div>
-						</div>
-					</div>
-
 				</div>
-				<!-- Accordion END -->
+				<!-- Benefits END -->
+
+				<!-- Whats included START -->
+				<div class="row g-4 mt-5 mt-md-7">
+					<!-- Image -->
+					<div class="col-lg-6 pe-lg-6">
+						<img src="assets/images/services/hardwARE1.png" class="rounded-4" alt="IT hardware solutions">
+					</div>
+
+					<!-- Content -->
+					<div class="col-lg-6">
+						<h2>What's included in IT hardware solutions?</h2>
+
+						<!-- Accordion START -->
+						<div class="accordion accordion-icon accordion-icon-start mt-4" id="accordionExample2">
+
+							<!-- Accordion item -->
+							<div class="accordion-item mb-2">
+								<h6 class="accordion-header" id="heading-1">
+									<button class="accordion-button py-2" type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+										<span class="lead fw-bold">Laptops & desktops</span>
+									</button>
+								</h6>
+								<div id="collapse-1" class="accordion-collapse collapse show"
+									aria-labelledby="heading-1" data-bs-parent="#accordionExample2">
+									<div class="accordion-body">
+										Business-grade laptops and desktops for offices, enterprises, and remote teams,
+										configured to meet your performance requirements.
+									</div>
+								</div>
+							</div>
+
+							<!-- Accordion item -->
+							<div class="accordion-item mb-2">
+								<h6 class="accordion-header" id="heading-2">
+									<button class="accordion-button py-2 collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false"
+										aria-controls="collapse-2">
+										<span class="lead fw-bold">Smartphones & mobility devices</span>
+									</button>
+								</h6>
+								<div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2"
+									data-bs-parent="#accordionExample2">
+									<div class="accordion-body">
+										Enterprise-ready smartphones and mobile devices that enable secure communication
+										and workforce mobility.
+									</div>
+								</div>
+							</div>
+
+							<!-- Accordion item -->
+							<div class="accordion-item mb-2">
+								<h6 class="accordion-header" id="heading-3">
+									<button class="accordion-button py-2 collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false"
+										aria-controls="collapse-3">
+										<span class="lead fw-bold">Mac & Apple devices</span>
+									</button>
+								</h6>
+								<div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3"
+									data-bs-parent="#accordionExample2">
+									<div class="accordion-body">
+										MacBooks, iMacs, and Apple devices supplied with enterprise configuration and
+										professional deployment support.
+									</div>
+								</div>
+							</div>
+
+							<!-- Accordion item -->
+							<div class="accordion-item mb-2">
+								<h6 class="accordion-header" id="heading-4">
+									<button class="accordion-button py-2 collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false"
+										aria-controls="collapse-4">
+										<span class="lead fw-bold">Printers & networking hardware</span>
+									</button>
+								</h6>
+								<div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-4"
+									data-bs-parent="#accordionExample2">
+									<div class="accordion-body">
+										Printers, routers, switches, and networking equipment designed for secure and
+										efficient office connectivity.
+									</div>
+								</div>
+							</div>
+
+							<!-- Accordion item -->
+							<div class="accordion-item mb-2">
+								<h6 class="accordion-header" id="heading-5">
+									<button class="accordion-button py-2 collapsed" type="button"
+										data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false"
+										aria-controls="collapse-5">
+										<span class="lead fw-bold">Modems, connectivity & accessories</span>
+									</button>
+								</h6>
+								<div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="heading-5"
+									data-bs-parent="#accordionExample2">
+									<div class="accordion-body">
+										Connectivity devices, power solutions, peripherals, and accessories to complete
+										your IT setup.
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- Accordion END -->
+					</div>
+				</div>
+				<!-- Whats included END -->
+
+				<!-- Technology used START -->
+				<div class="inner-container text-center mt-7">
+					<h4>Brands & technologies we support</h4>
+					<ul class="list-inline d-flex justify-content-center flex-wrap gap-4 mt-4">
+						<li class="list-inline-item me-0">
+							<a href="#"
+								class="icon-xl btn-transition bg-body d-flex justify-content-center align-items-center rounded-2">
+								<img src="assets/images/client/icons/08.svg" class="h-40px" alt="hardware brand">
+							</a>
+						</li>
+						<li class="list-inline-item me-0">
+							<a href="#"
+								class="icon-xl btn-transition bg-body d-flex justify-content-center align-items-center rounded-2">
+								<img src="assets/images/client/icons/04.svg" class="h-40px" alt="hardware brand">
+							</a>
+						</li>
+						<li class="list-inline-item me-0">
+							<a href="#"
+								class="icon-xl btn-transition bg-body d-flex justify-content-center align-items-center rounded-2">
+								<img src="assets/images/client/icons/12.svg" class="h-40px" alt="hardware brand">
+							</a>
+						</li>
+						<li class="list-inline-item me-0">
+							<a href="#"
+								class="icon-xl btn-transition bg-body d-flex justify-content-center align-items-center rounded-2">
+								<img src="assets/images/client/icons/09.svg" class="h-40px" alt="hardware brand">
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- Technology used END -->
 			</div>
-		</div>
-		<!-- Whats included END -->
+		</section>
 
-		<!-- Technology used START -->
-		<div class="inner-container text-center mt-7">
-			<h4>Brands & technologies we support</h4>
-			<ul class="list-inline d-flex justify-content-center flex-wrap gap-4 mt-4">
-				<li class="list-inline-item me-0">
-					<a href="#" class="icon-xl btn-transition bg-body d-flex justify-content-center align-items-center rounded-2">
-						<img src="assets/images/client/icons/08.svg" class="h-40px" alt="hardware brand">
-					</a>
-				</li>
-				<li class="list-inline-item me-0">
-					<a href="#" class="icon-xl btn-transition bg-body d-flex justify-content-center align-items-center rounded-2">
-						<img src="assets/images/client/icons/04.svg" class="h-40px" alt="hardware brand">
-					</a>
-				</li>
-				<li class="list-inline-item me-0">
-					<a href="#" class="icon-xl btn-transition bg-body d-flex justify-content-center align-items-center rounded-2">
-						<img src="assets/images/client/icons/12.svg" class="h-40px" alt="hardware brand">
-					</a>
-				</li>
-				<li class="list-inline-item me-0">
-					<a href="#" class="icon-xl btn-transition bg-body d-flex justify-content-center align-items-center rounded-2">
-						<img src="assets/images/client/icons/09.svg" class="h-40px" alt="hardware brand">
-					</a>
-				</li>
-			</ul>
-		</div>
-		<!-- Technology used END -->
-	</div>
-</section>
-
-<!-- =======================
+		<!-- =======================
 Detail END -->
 
-<!-- =======================
+		<!-- =======================
 Process START -->
-<section class="pt-0 mt-n9">
-	<div class="container-fluid position-relative">
-		<div class="max-width-1550 bg-dark position-relative rounded-4 overflow-hidden py-5 py-sm-6 py-lg-8" data-bs-theme="dark">
-			<div class="container position-relative">
-				<!-- Title -->
-				<h2 class="mb-4 mb-lg-6">Our Hardware Procurement Process</h2>
+		<section class="pt-0 mt-n9">
+			<div class="container-fluid position-relative">
+				<div class="max-width-1550 bg-dark position-relative rounded-4 overflow-hidden py-5 py-sm-6 py-lg-8"
+					data-bs-theme="dark">
+					<div class="container position-relative">
+						<!-- Title -->
+						<h2 class="mb-4 mb-lg-6">Our Hardware Procurement Process</h2>
 
-				<!-- Steps START -->
-				<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-					<!-- Step item -->
-					<div class="col">
-						<h4 class="text-primary-grad">01</h4>
-						<h6>Requirement Analysis</h6>
-						<p class="mb-0">
-							We understand your business needs, workload requirements, and IT environment to recommend the right hardware.
-						</p>
-					</div>
+						<!-- Steps START -->
+						<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+							<!-- Step item -->
+							<div class="col">
+								<h4 class="text-primary-grad">01</h4>
+								<h6>Requirement Analysis</h6>
+								<p class="mb-0">
+									We understand your business needs, workload requirements, and IT environment to
+									recommend the right hardware.
+								</p>
+							</div>
 
-					<!-- Step item -->
-					<div class="col">
-						<h4 class="text-primary-grad">02</h4>
-						<h6>Product Selection & Quotation</h6>
-						<p class="mb-0">
-							Our experts suggest suitable brands and configurations with transparent pricing and enterprise-grade options.
-						</p>
-					</div>
+							<!-- Step item -->
+							<div class="col">
+								<h4 class="text-primary-grad">02</h4>
+								<h6>Product Selection & Quotation</h6>
+								<p class="mb-0">
+									Our experts suggest suitable brands and configurations with transparent pricing and
+									enterprise-grade options.
+								</p>
+							</div>
 
-					<!-- Step item -->
-					<div class="col">
-						<h4 class="text-primary-grad">03</h4>
-						<h6>Procurement & Deployment</h6>
-						<p class="mb-0">
-							We handle procurement, delivery, and professional installation to ensure seamless deployment.
-						</p>
-					</div>
+							<!-- Step item -->
+							<div class="col">
+								<h4 class="text-primary-grad">03</h4>
+								<h6>Procurement & Deployment</h6>
+								<p class="mb-0">
+									We handle procurement, delivery, and professional installation to ensure seamless
+									deployment.
+								</p>
+							</div>
 
-					<!-- Step item -->
-					<div class="col">
-						<h4 class="text-primary-grad">04</h4>
-						<h6>Support & AMC</h6>
-						<p class="mb-0">
-							Ongoing support, warranty management, and AMC services ensure long-term performance and reliability.
-						</p>
+							<!-- Step item -->
+							<div class="col">
+								<h4 class="text-primary-grad">04</h4>
+								<h6>Support & AMC</h6>
+								<p class="mb-0">
+									Ongoing support, warranty management, and AMC services ensure long-term performance
+									and reliability.
+								</p>
+							</div>
+						</div>
+						<!-- Steps END -->
 					</div>
 				</div>
-				<!-- Steps END -->
 			</div>
-		</div>
-	</div>
-</section>
+		</section>
 
-<!-- =======================
+		<!-- =======================
 Process END -->
 
-<!-- =======================
+		<!-- =======================
 Showcase START -->
-<!-- =======================
+		<!-- =======================
 Showcase END -->
 
-<!-- =======================
+		<!-- =======================
 Testimonials START -->
-<section class="bg-body position-relative py-0">
-	<div class="container position-relative z-index-9">
-		<!-- Title -->
-		<div class="row align-items-center mb-4 mb-md-5">
-			<div class="col-md-7 col-xl-5">
-				<h2 class="mb-0">Hear from our happy customers</h2>
-			</div>
+		<section class="bg-body position-relative py-0">
+			<div class="container position-relative z-index-9">
+				<!-- Title -->
+				<div class="row align-items-center mb-4 mb-md-5">
+					<div class="col-md-7 col-xl-5">
+						<h2 class="mb-0">Hear from our happy customers</h2>
+					</div>
 
-			<div class="col-md-5 ms-sm-auto text-sm-end mt-5 mt-sm-0">
-				<!-- Add pagination and navigation elements here -->
-				<div class="d-flex gap-2 justify-content-sm-end">
-					<a href="#" class="btn btn-primary-grad btn-icon btn-lg rounded-circle mb-0 swiper-button-prev"><i class="bi bi-arrow-left fa-sm"></i></a>
-					<a href="#" class="btn btn-primary-grad btn-icon btn-lg rounded-circle mb-0 swiper-button-next"><i class="bi bi-arrow-right fa-sm"></i></a>
+					<div class="col-md-5 ms-sm-auto text-sm-end mt-5 mt-sm-0">
+						<!-- Add pagination and navigation elements here -->
+						<div class="d-flex gap-2 justify-content-sm-end">
+							<a href="#"
+								class="btn btn-primary-grad btn-icon btn-lg rounded-circle mb-0 swiper-button-prev"><i
+									class="bi bi-arrow-left fa-sm"></i></a>
+							<a href="#"
+								class="btn btn-primary-grad btn-icon btn-lg rounded-circle mb-0 swiper-button-next"><i
+									class="bi bi-arrow-right fa-sm"></i></a>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
 
-		<!-- Testimonials START -->
-		<div class="swiper"
-		data-swiper-options='{
+				<!-- Testimonials START -->
+				<div class="swiper" data-swiper-options='{
 				"spaceBetween": 30,
 				"breakpoints": {
 					"576": {"slidesPerView": 1}, 
@@ -869,275 +803,317 @@ Testimonials START -->
 					"prevEl":".swiper-button-prev"
 				}}'>
 
-			<div class="swiper-wrapper">
-				<!-- Testimonials item -->
-				<div class="swiper-slide">
-					<div class="card bg-secondary bg-opacity-50 bg-blur rounded-4 p-4 h-100">
-						<!-- Card body -->
-						<div class="card-body p-0 mb-4">
-							<!-- Rating star -->
-							<ul class="list-inline mb-3">
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-half text-warning"></i></li>
-							</ul>
-							<!-- Testimonials text -->
-							<blockquote>
-								<p class="heading-color mb-0">Their team went above and beyond to understand our needs and deliver a solution that exceeded our expectations. They demonstrated throughout the process was truly impressive.</p>
-							</blockquote>	
-						</div>
-						<!-- Card footer -->
-						<div class="card-footer bg-transparent p-0">
-							<!-- Testimonials info -->
-							<div class="d-flex align-items-center">
-								<div class="avatar flex-shrink-0">
-									<img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg" alt="avatar">
-								</div> 
-								<div class="ms-3">
-									<p class="lead heading-color fw-semibold mb-0">Jacqueline Miller</p>
-									<small>Product designer</small>
+					<div class="swiper-wrapper">
+						<!-- Testimonials item -->
+						<div class="swiper-slide">
+							<div class="card bg-secondary bg-opacity-50 bg-blur rounded-4 p-4 h-100">
+								<!-- Card body -->
+								<div class="card-body p-0 mb-4">
+									<!-- Rating star -->
+									<ul class="list-inline mb-3">
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-half text-warning"></i>
+										</li>
+									</ul>
+									<!-- Testimonials text -->
+									<blockquote>
+										<p class="heading-color mb-0">Their team went above and beyond to understand our
+											needs and deliver a solution that exceeded our expectations. They
+											demonstrated throughout the process was truly impressive.</p>
+									</blockquote>
+								</div>
+								<!-- Card footer -->
+								<div class="card-footer bg-transparent p-0">
+									<!-- Testimonials info -->
+									<div class="d-flex align-items-center">
+										<div class="avatar flex-shrink-0">
+											<img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg"
+												alt="avatar">
+										</div>
+										<div class="ms-3">
+											<p class="lead heading-color fw-semibold mb-0">Jacqueline Miller</p>
+											<small>Product designer</small>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
 
-				<!-- Testimonials item -->
-				<div class="swiper-slide">
-					<div class="card bg-secondary bg-opacity-50 bg-blur rounded-4 p-4 h-100">
-						<!-- Card body -->
-						<div class="card-body p-0 mb-4">
-							<!-- Rating star -->
-							<ul class="list-inline mb-3">
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-							</ul>
-							<!-- Testimonials text -->
-							<blockquote>
-								<p class="heading-color mb-0">Frequently partiality possession resolution at or appearance unaffected me. Ye goodness felicity do disposal dwelling no.</p>
-							</blockquote>	
-						</div>
-						<!-- Card footer -->
-						<div class="card-footer bg-transparent p-0">
-							<!-- Testimonials info -->
-							<div class="d-flex align-items-center">
-								<div class="avatar flex-shrink-0">
-									<img class="avatar-img rounded-circle" src="assets/images/avatar/10.jpg" alt="avatar">
-								</div> 
-								<div class="ms-3">
-									<p class="lead heading-color fw-semibold mb-0">Louis Ferguson</p>
-									<small>Web Developer</small>
+						<!-- Testimonials item -->
+						<div class="swiper-slide">
+							<div class="card bg-secondary bg-opacity-50 bg-blur rounded-4 p-4 h-100">
+								<!-- Card body -->
+								<div class="card-body p-0 mb-4">
+									<!-- Rating star -->
+									<ul class="list-inline mb-3">
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+									</ul>
+									<!-- Testimonials text -->
+									<blockquote>
+										<p class="heading-color mb-0">Frequently partiality possession resolution at or
+											appearance unaffected me. Ye goodness felicity do disposal dwelling no.</p>
+									</blockquote>
+								</div>
+								<!-- Card footer -->
+								<div class="card-footer bg-transparent p-0">
+									<!-- Testimonials info -->
+									<div class="d-flex align-items-center">
+										<div class="avatar flex-shrink-0">
+											<img class="avatar-img rounded-circle" src="assets/images/avatar/10.jpg"
+												alt="avatar">
+										</div>
+										<div class="ms-3">
+											<p class="lead heading-color fw-semibold mb-0">Louis Ferguson</p>
+											<small>Web Developer</small>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-		
-				<!-- Testimonials item -->
-				<div class="swiper-slide">
-					<div class="card bg-secondary bg-opacity-50 bg-blur rounded-4 p-4 h-100">
-						<!-- Card body -->
-						<div class="card-body p-0 mb-4">
-							<!-- Rating star -->
-							<ul class="list-inline mb-3">
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-half text-warning"></i></li>
-							</ul>
-							<!-- Testimonials text -->
-							<blockquote>
-								<p class="heading-color mb-0">Was out laughter raptures returned outweigh. Luckily cheered colonel I do we attack highest enabled. Tried law yet style child. The bore of true of no be deal.</p>
-							</blockquote>	
-						</div>
-						<!-- Card footer -->
-						<div class="card-footer bg-transparent p-0">
-							<!-- Testimonials info -->
-							<div class="d-flex align-items-center">
-								<div class="avatar flex-shrink-0">
-									<img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg" alt="avatar">
-								</div> 
-								<div class="ms-3">
-									<p class="lead heading-color fw-semibold mb-0">Emma Watson</p>
-									<small>UI/UX designer</small>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 
-				<!-- Testimonials item -->
-				<div class="swiper-slide">
-					<div class="card bg-secondary bg-opacity-50 bg-blur rounded-4 p-4 h-100">
-						<!-- Card body -->
-						<div class="card-body p-0 mb-4">
-							<!-- Rating star -->
-							<ul class="list-inline mb-3">
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-half text-warning"></i></li>
-							</ul>
-							<!-- Testimonials text -->
-							<blockquote>
-								<p class="heading-color mb-0">Our passion for customer excellence is just one reason why we are the market leader. We've always worked very hard to give our customers the best experience.</p>
-							</blockquote>	
-						</div>
-						<!-- Card footer -->
-						<div class="card-footer bg-transparent p-0">
-							<!-- Testimonials info -->
-							<div class="d-flex align-items-center">
-								<div class="avatar flex-shrink-0">
-									<img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg" alt="avatar">
-								</div> 
-								<div class="ms-3">
-									<p class="lead heading-color fw-semibold mb-0">Allen Smith</p>
-									<small>Manager</small>
+						<!-- Testimonials item -->
+						<div class="swiper-slide">
+							<div class="card bg-secondary bg-opacity-50 bg-blur rounded-4 p-4 h-100">
+								<!-- Card body -->
+								<div class="card-body p-0 mb-4">
+									<!-- Rating star -->
+									<ul class="list-inline mb-3">
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-half text-warning"></i>
+										</li>
+									</ul>
+									<!-- Testimonials text -->
+									<blockquote>
+										<p class="heading-color mb-0">Was out laughter raptures returned outweigh.
+											Luckily cheered colonel I do we attack highest enabled. Tried law yet style
+											child. The bore of true of no be deal.</p>
+									</blockquote>
+								</div>
+								<!-- Card footer -->
+								<div class="card-footer bg-transparent p-0">
+									<!-- Testimonials info -->
+									<div class="d-flex align-items-center">
+										<div class="avatar flex-shrink-0">
+											<img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg"
+												alt="avatar">
+										</div>
+										<div class="ms-3">
+											<p class="lead heading-color fw-semibold mb-0">Emma Watson</p>
+											<small>UI/UX designer</small>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
 
-				<!-- Testimonials item -->
-				<div class="swiper-slide">
-					<div class="card bg-secondary bg-opacity-50 bg-blur rounded-4 p-4 h-100">
-						<!-- Card body -->
-						<div class="card-body p-0 mb-4">
-							<!-- Rating star -->
-							<ul class="list-inline mb-3">
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-								<li class="list-inline-item me-0"><i class="bi bi-star-half text-warning"></i></li>
-							</ul>
-							<!-- Testimonials text -->
-							<blockquote>
-								<p class="heading-color mb-0">Was out laughter raptures returned outweigh. Luckily cheered colonel I do we attack highest enabled. Tried law yet style child. The bore of true of no be deal.</p>
-							</blockquote>	
+						<!-- Testimonials item -->
+						<div class="swiper-slide">
+							<div class="card bg-secondary bg-opacity-50 bg-blur rounded-4 p-4 h-100">
+								<!-- Card body -->
+								<div class="card-body p-0 mb-4">
+									<!-- Rating star -->
+									<ul class="list-inline mb-3">
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-half text-warning"></i>
+										</li>
+									</ul>
+									<!-- Testimonials text -->
+									<blockquote>
+										<p class="heading-color mb-0">Our passion for customer excellence is just one
+											reason why we are the market leader. We've always worked very hard to give
+											our customers the best experience.</p>
+									</blockquote>
+								</div>
+								<!-- Card footer -->
+								<div class="card-footer bg-transparent p-0">
+									<!-- Testimonials info -->
+									<div class="d-flex align-items-center">
+										<div class="avatar flex-shrink-0">
+											<img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg"
+												alt="avatar">
+										</div>
+										<div class="ms-3">
+											<p class="lead heading-color fw-semibold mb-0">Allen Smith</p>
+											<small>Manager</small>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-						<!-- Card footer -->
-						<div class="card-footer bg-transparent p-0">
-							<!-- Testimonials info -->
-							<div class="d-flex align-items-center">
-								<div class="avatar flex-shrink-0">
-									<img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg" alt="avatar">
-								</div> 
-								<div class="ms-3">
-									<p class="lead heading-color fw-semibold mb-0">Emma Watson</p>
-									<small>UI/UX designer</small>
+
+						<!-- Testimonials item -->
+						<div class="swiper-slide">
+							<div class="card bg-secondary bg-opacity-50 bg-blur rounded-4 p-4 h-100">
+								<!-- Card body -->
+								<div class="card-body p-0 mb-4">
+									<!-- Rating star -->
+									<ul class="list-inline mb-3">
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i>
+										</li>
+										<li class="list-inline-item me-0"><i class="bi bi-star-half text-warning"></i>
+										</li>
+									</ul>
+									<!-- Testimonials text -->
+									<blockquote>
+										<p class="heading-color mb-0">Was out laughter raptures returned outweigh.
+											Luckily cheered colonel I do we attack highest enabled. Tried law yet style
+											child. The bore of true of no be deal.</p>
+									</blockquote>
+								</div>
+								<!-- Card footer -->
+								<div class="card-footer bg-transparent p-0">
+									<!-- Testimonials info -->
+									<div class="d-flex align-items-center">
+										<div class="avatar flex-shrink-0">
+											<img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg"
+												alt="avatar">
+										</div>
+										<div class="ms-3">
+											<p class="lead heading-color fw-semibold mb-0">Emma Watson</p>
+											<small>UI/UX designer</small>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				<!-- Testimonials END -->
 			</div>
-		</div>
-		<!-- Testimonials END -->
-	</div>
-</section>
-<!-- =======================
+		</section>
+		<!-- =======================
 Testimonials END -->
 
-<!-- =======================
+		<!-- =======================
 Contact us START-->
-<section class="pb-0 overflow-hidden">
-	<div class="bg-secondary-grad position-relative pb-8">
-		<!-- Skew bg decoration -->
-		<span>
-			<svg class="position-abslolute top-0 start-0 mt-n3 mt-sm-n1" viewBox="0 0 1920 108" style="enable-background:new 0 0 1920 108;" xml:space="preserve">
-				<path class="fill-body" d="M0,0l1920,1.5V108L0,0z"/>
-			</svg>
-		</span>
+		<section class="pb-0 overflow-hidden">
+			<div class="bg-secondary-grad position-relative pb-8">
+				<!-- Skew bg decoration -->
+				<span>
+					<svg class="position-abslolute top-0 start-0 mt-n3 mt-sm-n1" viewBox="0 0 1920 108"
+						style="enable-background:new 0 0 1920 108;" xml:space="preserve">
+						<path class="fill-body" d="M0,0l1920,1.5V108L0,0z" />
+					</svg>
+				</span>
 
-		<div class="container position-relative pt-5 pt-lg-0">
-			<div class="row align-items-center g-4">
-				<!-- Content -->
-				<div class="col-lg-5">
-					<span class="hand-wave-animate h2">🖐️</span>
-					<h2 class="mb-3 h1">Say Hello</h2>
-					<p>Our friendly team is ready to assist you with whatever you need.</p>
+				<div class="container position-relative pt-5 pt-lg-0">
+					<div class="row align-items-center g-4">
+						<!-- Content -->
+						<div class="col-lg-5">
+							<!--<span class="hand-wave-animate h2">🖐️</span>-->
+							<h2 class="mb-3 h1">Say Hello</h2>
+							<p>Our friendly team is ready to assist you with whatever you need.</p>
 
-					<!-- Contact info -->
-					<div class="row row-cols-1 row-cols-sm-2 g-4 mt-3 mt-md-5">
-						<!-- Call us -->
-						<div class="col">
-							<span class="fs-3 text-primary-grad"><i class="bi bi-headset"></i></span>
-							<h6 class="my-2 my-sm-3">Call us</h6>
-							<p class="mb-2">Let's work together towards a common goal - get in touch!</p>
-							<a href="#" class="heading-color hover-underline-animation">+91 222 555 666</a>
+							<!-- Contact info -->
+							<div class="row row-cols-1 row-cols-sm-2 g-4 mt-3 mt-md-5">
+								<!-- Call us -->
+								<div class="col">
+									<span class="fs-3 text-primary-grad"><i class="bi bi-headset"></i></span>
+									<h6 class="my-2 my-sm-3">Call us</h6>
+									<p class="mb-2">Let's work together towards a common goal - get in touch!</p>
+									<a href="#" class="heading-color hover-underline-animation">+91 222 555 666</a>
+								</div>
+
+								<!-- Email us -->
+								<div class="col">
+									<span class="fs-3 text-primary-grad"><i class="bi bi-envelope"></i></span>
+									<h6 class="my-2 my-sm-3">Email us</h6>
+									<p class="mb-2">We respond to all inquiries within 24 hours.</p>
+									<a href="#" class="heading-color hover-underline-animation">example@gmail.com</a>
+								</div>
+							</div>
 						</div>
 
-						<!-- Email us -->
-						<div class="col">
-							<span class="fs-3 text-primary-grad"><i class="bi bi-envelope"></i></span>
-							<h6 class="my-2 my-sm-3">Email us</h6>
-							<p class="mb-2">We respond to all inquiries within 24 hours.</p>
-							<a href="#" class="heading-color hover-underline-animation">example@gmail.com</a>
+						<!-- Contact form -->
+						<div class="col-lg-6 ms-auto mt-5 mt-lg-n7">
+							<div class="card card-body rounded-4 shadow-primary-lg p-4">
+								<form class="row form-border-transparent g-3">
+									<div class="col-md-6">
+										<label class="form-label">First name</label>
+										<input type="text" class="form-control bg-secondary">
+									</div>
+
+									<div class="col-md-6">
+										<label class="form-label">Last name</label>
+										<input type="text" class="form-control bg-secondary">
+									</div>
+
+									<div class="col-md-6">
+										<label class="form-label">Email address</label>
+										<input type="email" class="form-control bg-secondary" id="floatingInput"
+											placeholder="name@example.com">
+									</div>
+
+									<div class="col-md-6">
+										<label class="form-label">Mobile number</label>
+										<input type="text" class="form-control bg-secondary">
+									</div>
+
+									<div class="col-12">
+										<label class="form-label">Subject</label>
+										<input type="text" class="form-control bg-secondary">
+									</div>
+
+									<div class="col-12">
+										<label class="form-label">Message</label>
+										<textarea class="form-control bg-secondary" id="floatingTextarea2"
+											style="height: 150px"></textarea>
+									</div>
+
+									<div class="col-12 mt-4">
+										<!-- Button -->
+										<button class="btn btn-teritary mb-2 mb-md-0">Send a message</button>
+									</div>
+								</form>
+							</div>
 						</div>
-					</div>
-				</div>
-
-				<!-- Contact form -->
-				<div class="col-lg-6 ms-auto mt-5 mt-lg-n7">
-					<div class="card card-body rounded-4 shadow-primary-lg p-4">
-						<form class="row form-border-transparent g-3">
-							<div class="col-md-6">
-								<label class="form-label">First name</label>
-								<input type="text" class="form-control bg-secondary">
-							</div>
-
-							<div class="col-md-6">
-								<label class="form-label">Last name</label>
-								<input type="text" class="form-control bg-secondary">
-							</div>
-
-							<div class="col-md-6">
-								<label class="form-label">Email address</label>
-								<input type="email" class="form-control bg-secondary" id="floatingInput" placeholder="name@example.com">
-							</div>
-
-							<div class="col-md-6">
-								<label class="form-label">Mobile number</label>
-								<input type="text" class="form-control bg-secondary">
-							</div>
-				
-							<div class="col-12">
-								<label class="form-label">Subject</label>
-								<input type="text" class="form-control bg-secondary">
-							</div>
-				
-							<div class="col-12">
-								<label class="form-label">Message</label>
-								<textarea class="form-control bg-secondary" id="floatingTextarea2" style="height: 150px"></textarea>
-							</div>
-
-							<div class="col-12 mt-4">
-								<!-- Button -->
-								<button class="btn btn-primary mb-2 mb-md-0">Send a message</button>
-							</div>
-						</form>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>	
-</section>
-<!-- =======================
+		</section>
+		<!-- =======================
 Contact us END-->
 
-</main>
-<!-- **************** MAIN CONTENT END **************** -->
+	</main>
+	<!-- **************** MAIN CONTENT END **************** -->
 
-<!-- =======================
+	<!-- =======================
 Footer START -->
 	<style>
 		/* =========================
@@ -1328,17 +1304,17 @@ Footer START -->
 Footer END -->
 
 
-<!-- Back to top -->
-<div class="back-top"></div>
+	<!-- Back to top -->
+	<div class="back-top"></div>
 
-<!-- Bootstrap JS -->
-<script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Vendor -->
-<script src="./assets/vendor/sticky-js/sticky.min.js"></script>
-<script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+	<!-- Vendor -->
+	<script src="./assets/vendor/sticky-js/sticky.min.js"></script>
+	<script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-<!-- Theme Functions -->
+	<!-- Theme Functions -->
 
 </body>
 

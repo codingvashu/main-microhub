@@ -83,12 +83,348 @@
 		rel="stylesheet">
 
 	<!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/css"
-		href="./assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="./assets/vendor/bootstrap-icons/bootstrap-icons.css">
 
 	<!-- Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 
+	<style>
+		/* New Color Theme Variables */
+		:root {
+			--primary-sky: #0ea5e9;
+			--primary-sky-dark: #0284c7;
+			--accent-orange: #f97316;
+			--accent-orange-dark: #ea580c;
+			--card-bg-light: #f0f9ff;
+			--card-bg-dark: #1e293b;
+			--text-light: #1e293b;
+			--text-dark: #f1f5f9;
+		}
+
+		[data-bs-theme="dark"] {
+			--card-bg: var(--card-bg-dark);
+			--text-color: var(--text-dark);
+			--hero-bg: #5c6a96;
+			--form-bg: #1e293b;
+		}
+
+		[data-bs-theme="light"] {
+			--card-bg: var(--card-bg-light);
+			--text-color: var(--text-light);
+			--hero-bg: linear-gradient(135deg, #0ea5e9, #38bdf8);
+			--form-bg: #ffffff;
+		}
+
+		/* Contact Cards Styling */
+		.contact-card {
+			background: var(--card-bg);
+			border: 1px solid rgba(14, 165, 233, 0.1);
+			border-radius: 16px;
+			padding: 2rem;
+			height: 100%;
+			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.contact-card::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 4px;
+			background: linear-gradient(90deg, var(--primary-sky), var(--accent-orange));
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		.contact-card:hover {
+			transform: translateY(-8px);
+			border-color: var(--primary-sky);
+			box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+		}
+
+		.contact-card:hover::before {
+			opacity: 1;
+		}
+
+		.contact-card .icon-wrapper {
+			width: 64px;
+			height: 64px;
+			border-radius: 16px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 1.5rem;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.contact-card .icon-wrapper::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+			border-radius: 16px;
+		}
+
+		.contact-card:nth-child(1) .icon-wrapper {
+			background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+		}
+
+		.contact-card:nth-child(2) .icon-wrapper {
+			background: linear-gradient(135deg, #f97316, #fb923c);
+		}
+
+		.contact-card:nth-child(3) .icon-wrapper {
+			background: linear-gradient(135deg, #10b981, #34d399);
+		}
+
+		.contact-card i {
+			font-size: 1.5rem;
+			color: white;
+			z-index: 1;
+		}
+
+		.contact-card h6 {
+			color: var(--text-color);
+			font-weight: 600;
+			margin-bottom: 0.75rem;
+		}
+
+		.contact-card p {
+			color: var(--text-color);
+			opacity: 0.8;
+			line-height: 1.6;
+		}
+
+		.contact-card a {
+			color: var(white);
+			text-decoration: none;
+			font-weight: 500;
+			transition: all 0.3s ease;
+			position: relative;
+		}
+
+		.contact-card a:hover {
+			color: var(white);
+		}
+
+		/* Form Styling */
+		.form-section {
+			background: var(--form-bg);
+			border-radius: 24px;
+			padding: 3rem;
+			box-shadow: 0 20px 60px rgba(14, 165, 233, 0.1);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.form-section::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 4px;
+			background: linear-gradient(90deg, var(--primary-sky), var(--accent-orange));
+		}
+
+		.form-label {
+			color: var(--text-color);
+			font-weight: 500;
+			margin-bottom: 0.5rem;
+			opacity: 0.9;
+		}
+
+		.form-control {
+			background: rgba(14, 165, 233, 0.05);
+			border: 2px solid rgba(14, 165, 233, 0.1);
+			border-radius: 12px;
+			padding: 0.875rem 1rem;
+			color: var(--text-color);
+			transition: all 0.3s ease;
+		}
+
+		.form-control:focus {
+			background: rgba(14, 165, 233, 0.08);
+			border-color: var(--primary-sky);
+			box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+			transform: translateY(-2px);
+		}
+
+		textarea.form-control {
+			min-height: 120px;
+			resize: vertical;
+		}
+
+		.btn-primary {
+			background: linear-gradient(135deg, var(--primary-sky), var(--primary-sky));
+			border: none;
+			border-radius: 12px;
+			padding: 0.875rem 2rem;
+			font-weight: 600;
+			transition: all 0.3s ease;
+		}
+
+		.btn-primary:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 10px 30px rgba(249, 115, 22, 0.3);
+		}
+
+		/* Hero Section */
+		.hero-contact {
+			background: var(--hero-bg);
+			position: relative;
+			overflow: hidden;
+			padding: 6rem 0 4rem;
+		}
+
+		.hero-contact::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: radial-gradient(circle at 20% 80%, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
+		}
+
+		.hero-title {
+			font-size: 3.5rem;
+			font-weight: 800;
+			background: linear-gradient(135deg, #ffffff, #38bdf8);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			margin-bottom: 1rem;
+		}
+
+		[data-bs-theme="dark"] .hero-title {
+			background: linear-gradient(135deg, #ffffff, #0ea5e9);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+
+		.hero-subtitle {
+			color: rgba(255, 255, 255, 0.9);
+			font-size: 1.25rem;
+			line-height: 1.6;
+		}
+
+		/* Map Section */
+		.map-container {
+			border-radius: 20px;
+			overflow: hidden;
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+			position: relative;
+		}
+
+		.map-container iframe {
+			width: 100%;
+			height: 400px;
+			border: none;
+			filter: grayscale(0%) contrast(1.1) saturate(1.2);
+			transition: filter 0.3s ease;
+		}
+
+		.map-container:hover iframe {
+			filter: grayscale(0%) contrast(1.2) saturate(1.3);
+		}
+
+		.map-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(to bottom, transparent 80%, var(--hero-bg));
+			pointer-events: none;
+		}
+
+		/* Footer Links */
+		footer .nav-link {
+			color: rgba(255, 255, 255, 0.7);
+			transition: all 0.3s ease;
+			position: relative;
+			padding: 0.25rem 0;
+		}
+
+		footer .nav-link::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background: linear-gradient(90deg, var(--primary-sky), var(--accent-orange));
+			transition: width 0.3s ease;
+		}
+
+		footer .nav-link:hover {
+			color: var(--primary-sky);
+			transform: translateX(5px);
+		}
+
+		footer .nav-link:hover::after {
+			width: 100%;
+		}
+
+		/* Responsive Design */
+		@media (max-width: 768px) {
+			.hero-title {
+				font-size: 2.5rem;
+			}
+
+			.form-section {
+				padding: 2rem;
+			}
+
+			.contact-card {
+				padding: 1.5rem;
+			}
+		}
+
+		/* Animation for form submission */
+		@keyframes successPulse {
+			0% {
+				transform: scale(1);
+			}
+
+			50% {
+				transform: scale(1.05);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+
+		.form-success {
+			animation: successPulse 0.6s ease;
+		}
+
+		/* Removed purple gradient class */
+		.text-primary-grad {
+			background: linear-gradient(135deg, var(--primary-sky), #38bdf8);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+
+		/* Fix for the privacy policy link color */
+		.form-check-label a.text-primary {
+			color: var(--primary-sky) !important;
+			text-decoration: none;
+			transition: color 0.3s ease;
+		}
+
+		.form-check-label a.text-primary:hover {
+			color: var(--primary-sky-dark) !important;
+		}
+	</style>
 </head>
 
 <body>
@@ -142,41 +478,43 @@
 					<div class="navbar-collapse collapse" id="navbarCollapse">
 						<ul class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto">
 
+							<li class="nav-item"> <a class="nav-link" href="index.html">Home</a> </li>
 
 
-							<!-- Nav item -->
+
+							<!-- Nav item --
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
 									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
 								<div class="dropdown-menu dropdown-menu-size-md dropdown-menu-center p-xl-3">
 									<div class="row row-cols-1 row-cols-md-1 pt-1">
 										<!-- Doc menu -->
-										<div class="col">
+							<!--<div class="col">
 											<div
 												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3">
 												<div class="d-flex">
-													<!-- Icon -->
+													<!-- Icon 
 													<div
 														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
 														<i class="bi bi-info-circle fs-6"></i>
 
 													</div>
-													<!-- Content -->
+													<!-- Content --
 													<div class="mx-3">
 														<p class="stretched-link heading-color fw-bold mb-0">About</p>
 														<p class="mb-0 text-body small">Our story, vision, and what
 															drives us</p>
 													</div>
 												</div>
-												<!-- Button -->
+												<!-- Button 
 												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
 													href="about-v1.html" target="_blank"><i
 														class="bi bi-chevron-right"></i> </a>
 											</div>
-										</div>
+										</div>--
 									</div>
 								</div>
-							</li>
+							</li>-->
 
 
 							<!-- Nav item : SOLUTIONS -->
@@ -186,133 +524,69 @@
 									Solutions
 								</a>
 
-								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
-									<div class="row row-cols-1 row-cols-md-3 pt-2">
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-4 mega-menu">
+									<div class="row g-4">
 
 										<!-- CMS SOLUTIONS -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
-														<i class="bi bi-grid-1x2 fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">CMS
-															Solutions</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#475569;
-														    ">
-
-															<li><b>CRM</b></li>
-															<li><b>HR-Payroll</b></li>
-															<li><b>Inventory</b></li>
-															<li><b>Finance</b></li>
-															<li><b>ERP</b></li>
-															<li><b>Automation</b></li>
-
-														</ul>
-
-													</div>
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-primary-soft">
+													<i class="bi bi-grid-1x2"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="services-grid.html">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>CMS Solutions</h6>
+												<ul>
+													<li>CRM</li>
+													<li>HR-Payroll</li>
+													<li>Inventory</li>
+													<li>Finance</li>
+													<li>ERP</li>
+													<li>Automation</li>
+												</ul>
+												<a href="services-grid.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
-										<!-- IT INFRASTRUCTURE -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-info bg-opacity-15 text-info rounded flex-shrink-0">
-														<i class="bi bi-hdd-network fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															IT Infrastructure & Services
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#475569;
-														    ">
-															<li><b>IT Infrastructure</b></li>
-															<li><b>Networking</b></li>
-															<li><b>Servers</b></li>
-															<li><b>Web Development</b></li>
-															<li><b>AMC-Packages</b></li>
-															<li><b>ERP</b></li>
-															<li><b>Cybersecurity</b></li>
-															
-														</ul>
-													</div>
+										<!-- IT INFRA -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-info-soft">
+													<i class="bi bi-hdd-network"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/services-main.html">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>IT Infrastructure & Services</h6>
+												<ul>
+													<li>IT Infrastructure</li>
+													<li>Networking</li>
+													<li>Servers</li>
+													<li>Web Development</li>
+													<li>AMC-Packages</li>
+													<li>ERP</li>
+													<li>Cybersecurity</li>
+												</ul>
+												<a href="/services-main.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
 										<!-- HARDWARE -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
-														<i class="bi bi-laptop fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Hardware Solutions
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#693aea;
-														    ">
-															<li><b>Laptops</b></li>
-															<li><b>Macs</b></li>
-															<li><b>Printers</b></li>
-															<li><b>Networking & Peripherals</b></li>
-														</ul>
-													</div>
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-warning-soft">
+													<i class="bi bi-laptop"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/hardware">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Hardware Solutions</h6>
+												<ul>
+													<li>Laptops</li>
+													<li>Macs</li>
+													<li>Printers</li>
+													<li>Networking & Peripherals</li>
+												</ul>
+												<a href="/hardware-service-single.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
 									</div>
 								</div>
+
 							</li>
-
-
 							<!-- Nav item : EXPLORE -->
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
@@ -320,118 +594,65 @@
 									Explore
 								</a>
 
-								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
-									<div class="row row-cols-1 row-cols-md-3 pt-2">
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-4 mega-menu">
+									<div class="row g-4">
 
-										<!-- ================= -->
 										<!-- PRICING -->
-										<!-- ================= -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
-														<i class="bi bi-currency-rupee fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Pricing
-														</p>
-														<p class="mb-0 text-body small">
-															Transparent plans for every business size
-														</p>
-													</div>
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-primary-soft">
+													<i class="bi bi-grid-1x2"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="pricing-v1.html">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Pricing</h6>
+												<p class="mb-0 text-body small">
+													Transparent plans for every business size
+												</p>
+												<a href="services-grid.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
-										<!-- ================= -->
-										<!-- RESOURCES -->
-										<!-- ================= -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-success bg-opacity-15 text-success rounded flex-shrink-0">
-														<i class="bi bi-journal-text fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Resources
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#693aea;
-														    ">
-															<li><b>Blogs</b></li>
-															<li><b>Case Studies</b></li>
-															<li><b>Videos</b></li>
-															<li><b>Learning Guides</b></li>
-															<li><b>FAQs</b></li>
-														</ul>
-													</div>
+										<!-- RESOUCES -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-info-soft">
+													<i class="bi bi-hdd-network"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/resources">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Resources</h6>
+												<ul>
+													<li>Blogs</li>
+													<li>Case Studies</li>
+													<li>Videos</li>
+													<li>Learning Guides</li>
+													<li>FAQs</li>
+
+												</ul>
+												<a href="/services-main.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
-										<!-- ============================== -->
-										<!-- SECURITY & COMPLIANCE -->
-										<!-- ============================== -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
-														<i class="bi bi-shield-check fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Security & Compliance
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#693aea;
-														    ">
-															<li><b>Data Protection</b></li>
-															<li><b>Privacy</b></li>
-															<li><b>T&C</b></li>
-															<li><b>Security Compliance</b></li>
-														</ul>
-													</div>
+										<!-- SECURITY AND COMPLIANCE -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-warning-soft">
+													<i class="bi bi-laptop"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/security-compliance">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Security & Compliance</h6>
+												<ul>
+													<li>Data Protection</li>
+													<li>Privacy</li>
+													<li>T&C</li>
+													<li>Security Compliance</li>
+												</ul>
+												<a href="/hardware-service-single.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
 									</div>
 								</div>
+
 							</li>
+							<!-- Nav item -->
+							<li class="nav-item"> <a class="nav-link" href="about-v1.html">About</a> </li>
 
 
 
@@ -547,168 +768,17 @@
 
 		<!-- =======================
 Hero START -->
-		<style>
-			@keyframes floatY {
-
-				0%,
-				100% {
-					transform: translateY(0);
-				}
-
-				50% {
-					transform: translateY(-22px);
-				}
-			}
-
-			@keyframes driftX {
-
-				0%,
-				100% {
-					transform: translateX(0);
-				}
-
-				50% {
-					transform: translateX(26px);
-				}
-			}
-
-			@keyframes slowRotate {
-				from {
-					rotate: 0deg;
-				}
-
-				to {
-					rotate: 360deg;
-				}
-			}
-
-			@keyframes breathe {
-
-				0%,
-				100% {
-					scale: 1;
-				}
-
-				50% {
-					scale: 1.08;
-				}
-			}
-
-			@keyframes waveHand {
-				0% {
-					transform: rotate(0deg);
-				}
-
-				10% {
-					transform: rotate(14deg);
-				}
-
-				20% {
-					transform: rotate(-8deg);
-				}
-
-				30% {
-					transform: rotate(14deg);
-				}
-
-				40% {
-					transform: rotate(-4deg);
-				}
-
-				50% {
-					transform: rotate(10deg);
-				}
-
-				60% {
-					transform: rotate(0deg);
-				}
-
-				100% {
-					transform: rotate(0deg);
-				}
-			}
-
-			.connect-title {
-				font-weight: 800;
-				letter-spacing: -0.02em;
-				background: linear-gradient(90deg,
-						#ffffff 0%,
-						rgba(45, 170, 225, 0.35) 40%,
-						#2DAAE1 60%,
-
-						#ffffff 100%);
-
-				background-size: 200% 100%;
-				background-clip: text;
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-
-				animation:
-					connectGradient 6s ease-in-out infinite,
-					connectReveal 0.9s ease-out forwards;
-
-				position: relative;
-			}
-
-			@keyframes connectGradient {
-				0% {
-					background-position: 0% 50%;
-				}
-
-				50% {
-					background-position: 100% 50%;
-				}
-
-				100% {
-					background-position: 0% 50%;
-				}
-			}
-
-			@keyframes connectReveal {
-				from {
-					opacity: 0;
-					transform: translateY(14px);
-				}
-
-				to {
-					opacity: 1;
-					transform: translateY(0);
-				}
-			}
-		</style>
-
-		<section class="bg-dark position-relative overflow-hidden pt-xl-8" data-bs-theme="dark">
-			<!-- Blur decoration -->
-			<!-- <div class="position-absolute bottom-0 end-0 mb-n9">
-				<img src="assets/images/elements/grad-shape/blur-decoration-2.svg" class="opacity-3 blur-8"
-					alt="Grad shape" style="
-				    position: relative;
-				    animation:
-				      floatY 14s ease-in-out infinite,
-				      driftX 18s ease-in-out infinite,
-				      slowRotate 20s linear infinite,
-				      breathe 5s ease-in-out infinite;
-				    will-change: transform;
-				  ">
-
-			</div> -->
-
+		<section class="hero-contact" data-bs-theme="dark">
 			<div class="container position-relative pt-4 pt-sm-5">
 				<!-- Title and content -->
-				<span class="h2" style="
-				    display:inline-block;
-				    transform-origin: 70% 70%;
-				    animation: waveHand 2.4s ease-in-out infinite;
-				  ">
-					👋
-				</span>
-
-				<h1 class="display-5 mt-3 connect-title ">
+				<h1 class="hero-title">
 					Let's Connect
 				</h1>
 
-				<p class="mb-1">We’re here to help </p>
-				<p>Support hours: <span class="text-primary fw-bold">24/7</span></p>
+				<p class="hero-subtitle mb-1">We're here to help you succeed with intelligent business solutions</p>
+				<br>
+				<br>
+				<p class="hero-subtitle"> <span class="fw-bold" style="color:#38bdf8;"></span></p>
 			</div>
 		</section>
 		<!-- =======================
@@ -716,161 +786,65 @@ Hero END -->
 
 		<!-- =======================
 Contact info START -->
-		<style>
-			/* =========================
-   CONTACT CARD INTERACTIONS
-   ========================= */
-
-			.card.bg-secondary {
-				transition:
-					transform 0.35s cubic-bezier(.22, 1, .36, 1),
-					box-shadow 0.35s ease;
-				will-change: transform;
-			}
-
-			/* Hover lift + glow */
-			.card.bg-secondary:hover {
-				transform: translateY(-10px);
-				box-shadow:
-					0 18px 40px rgba(0, 0, 0, 0.25),
-					0 0 0 1px rgba(99, 102, 241, 0.15);
-			}
-
-			/* Subtle depth on hover (mouse feel) */
-			.card.bg-secondary:hover .icon-lg {
-				transform: scale(1.08);
-				transition: transform 0.3s ease;
-			}
-
-			/* Click / tap feedback */
-			.card.bg-secondary:active {
-				transform: translateY(-4px) scale(0.985);
-				box-shadow:
-					0 8px 20px rgba(0, 0, 0, 0.2);
-			}
-
-			/* Smooth icon transition */
-			.icon-lg {
-				transition: transform 0.3s ease;
-			}
-
-			/* Accessibility */
-			@media (prefers-reduced-motion: reduce) {
-				.card.bg-secondary {
-					transition: none;
-				}
-			}
-
-			/* =========================
-   CONTACT CARD – NEON PURPLE
-========================= */
-
-			.card.bg-secondary {
-				position: relative;
-				transition:
-					transform 0.35s cubic-bezier(.22, 1, .36, 1),
-					box-shadow 0.35s ease;
-				will-change: transform;
-			}
-
-			/* Hover: lift + neon purple glow */
-			.card.bg-secondary:hover {
-				transform: translateY(-10px);
-				box-shadow:
-					0 18px 45px rgba(124, 58, 237, 0.35),
-					/* main purple glow */
-					0 0 25px rgba(168, 85, 247, 0.45),
-					/* outer neon aura */
-					inset 0 0 0 1px rgba(168, 85, 247, 0.25);
-			}
-
-			/* Icon reacts with the card */
-			.card.bg-secondary:hover .icon-lg {
-				transform: scale(1.1);
-				box-shadow:
-					0 0 18px rgba(168, 85, 247, 0.6);
-				transition: transform 0.3s ease, box-shadow 0.3s ease;
-			}
-
-			/* Click / tap feedback */
-			.card.bg-secondary:active {
-				transform: translateY(-4px) scale(0.985);
-				box-shadow:
-					0 10px 25px rgba(124, 58, 237, 0.4),
-					0 0 15px rgba(168, 85, 247, 0.35);
-			}
-
-			/* Smooth icon transition */
-			.icon-lg {
-				transition:
-					transform 0.3s ease,
-					box-shadow 0.3s ease;
-			}
-
-			/* Accessibility */
-			@media (prefers-reduced-motion: reduce) {
-				.card.bg-secondary {
-					transition: none;
-				}
-			}
-		</style>
-
 		<section class="pt-0 mt-n6 mt-lg-n7 mt-xl-n8">
 			<div class="container">
 				<!-- Contact detail START -->
 				<div class="row g-4 g-lg-5">
 					<!-- Call us -->
 					<div class="col-md-4">
-						<div class="card bg-secondary rounded-4 p-4 h-100">
-							<!-- Card body -->
+						<div class="contact-card">
 							<div class="card-body p-0">
 								<!-- Icon -->
-								<div class="icon-lg bg-pink text-white rounded-circle mb-3"><i
-										class="bi bi-telephone"></i></div>
+								<div class="icon-wrapper">
+									<i class="bi bi-telephone"></i>
+								</div>
 								<h6>Call us</h6>
 								<p class="mb-0">Talk directly with our solution experts to understand how Microhub CMS
 									can streamline your business operations.</p>
 							</div>
 							<!-- Card footer -->
 							<div class="card-footer bg-transparent p-0 pt-3">
-								<a href="#" class="text-primary-grad">+91 7368007363</a>
+								<a style="color: var(--primary-sky);" href="tel:+917368007363">+91 7368007363</a>
 							</div>
 						</div>
 					</div>
 
 					<!-- Mail us -->
 					<div class="col-md-4">
-						<div class="card bg-secondary rounded-4 p-4 h-100">
-							<!-- Card body -->
+						<div class="contact-card">
 							<div class="card-body p-0">
 								<!-- Icon -->
-								<div class="icon-lg bg-primary text-white rounded-circle mb-3"><i
-										class="bi bi-envelope"></i></div>
+								<div class="icon-wrapper">
+									<i class="bi bi-envelope"></i>
+								</div>
 								<h6>Mail us</h6>
 								<p class="mb-0">Reach out for demos, pricing, partnerships, or technical questions.</p>
 							</div>
 							<!-- Card footer -->
 							<div class="card-footer bg-transparent p-0 pt-3">
-								<a href="#" class="text-primary-grad">sales@microhub.co.in</a>
+								<a style="color: var(--primary-sky);"
+									href="mailto:sales@microhub.co.in">sales@microhub.co.in</a>
 							</div>
 						</div>
 					</div>
 
 					<!-- Support -->
 					<div class="col-md-4">
-						<div class="card bg-secondary rounded-4 p-4 h-100">
-							<!-- Card body -->
+						<div class="contact-card">
 							<div class="card-body p-0">
 								<!-- Icon -->
-								<div class="icon-lg bg-warning text-white rounded-circle mb-3"><i
-										class="bi bi-headset"></i></div>
+								<div class="icon-wrapper">
+									<i class="bi bi-headset"></i>
+								</div>
 								<h6>Support</h6>
 								<p class="mb-0">Check out helpful resources, FAQs and developer tools. </p>
 							</div>
 							<!-- Card footer -->
 							<div class="card-footer bg-transparent p-0 pt-3">
-								<a class="btn btn-sm btn-white-shadow icon-link icon-link-hover" href="#">Chat now<i
-										class="bi bi-arrow-right"></i> </a>
+								<a class="btn btn-sm btn-primary icon-link icon-link-hover" href="#">
+									Chat now
+									<i class="bi bi-arrow-right ms-1"></i>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -883,319 +857,86 @@ Contact info END -->
 
 		<!-- =======================
 Contact form START -->
-		<style>
-			/* =========================
-   FLOATING DECORATION
-========================= */
-			.floating-rotate {
-				animation: orbitLeftFast 8s linear infinite;
-				transform-origin: center;
-				will-change: transform;
-			}
+		<section class="pt-6">
+			<div class="container">
+				<div class="form-section">
+					<div class="inner-container-small">
+						<!-- Title -->
+						<h1 class="fw-bold mb-2 lh-base text-center">
+							<i class="bi bi-emoji-smile me-2"></i>Say
+							<span class="text-primary-grad mb-0">
+								Hello
+							</span>
+						</h1>
 
-			.floating-rotate img {
-				animation: pulseFast 3s ease-in-out infinite;
-			}
+						<p class="text-center" style="color:var(--text-color); opacity:0.8;">
+							Have an idea, need advice, or just want to say hello? We're all ears.
+						</p>
 
-			@keyframes orbitLeftFast {
-				0% {
-					transform: translate(0, 0) rotate(0deg);
-				}
-
-				25% {
-					transform: translate(-22px, -18px) rotate(-90deg);
-				}
-
-				50% {
-					transform: translate(0, -40px) rotate(-180deg);
-				}
-
-				75% {
-					transform: translate(22px, -18px) rotate(-270deg);
-				}
-
-				100% {
-					transform: translate(0, 0) rotate(-360deg);
-				}
-			}
-
-			@keyframes pulseFast {
-
-				0%,
-				100% {
-					transform: scale(1);
-				}
-
-				50% {
-					transform: scale(1.04);
-				}
-			}
-
-			/* =========================
-   FORM INPUTS – UNCHANGED
-========================= */
-			.form-control {
-				background: #fff;
-				color: #0f172a;
-				border: 1px solid #e5e7eb;
-				border-radius: 10px;
-				padding: 12px 14px;
-				transition: box-shadow .3s, border-color .3s, transform .25s;
-			}
-
-			.form-control:focus {
-				outline: none;
-				border-color: #8b5cf6;
-				box-shadow:
-					0 0 0 3px rgba(45, 170, 225, 0.28),
-					0 12px 28px rgba(45, 170, 225, 0.35);
-
-				transform: translateY(-2px);
-			}
-
-			textarea.form-control {
-				resize: none;
-			}
-
-			.form-check-input:checked {
-				background: #2daae1;
-				border-color: #2daae1;
-
-			}
-
-			/* =========================
-   SUBMIT OVERLAY (ADDED)
-========================= */
-			.form-wrapper {
-				position: relative;
-			}
-
-			.send-overlay {
-				position: absolute;
-				inset: 0;
-				background: rgba(255, 255, 255, .92);
-				border-radius: 20px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				opacity: 0;
-				pointer-events: none;
-				transition: opacity .3s ease;
-				z-index: 9;
-			}
-
-			.send-overlay.active {
-				opacity: 1;
-				pointer-events: auto;
-			}
-
-			/* =========================
-   ENVELOPE (NO PAPER)
-========================= */
-			.envelope {
-				position: relative;
-				width: 240px;
-				height: 160px;
-				transform: scale(.6);
-				animation: envIn .4s ease forwards;
-			}
-
-			@keyframes envIn {
-				to {
-					transform: scale(1);
-				}
-			}
-
-			.env-body {
-				position: absolute;
-				inset: 0;
-				background: linear-gradient(135deg,
-						#6ec7ee,
-						#2daae1);
-
-				border-radius: 16px;
-				z-index: 1;
-			}
-
-			.env-pocket {
-				position: absolute;
-				inset: 0;
-				background:
-					linear-gradient(to top right, transparent 50%, rgba(255, 255, 255, .18) 50%),
-					linear-gradient(to top left, transparent 50%, rgba(255, 255, 255, .18) 50%);
-				clip-path: polygon(0 100%, 50% 55%, 100% 100%, 100% 0, 0 0);
-				z-index: 2;
-			}
-
-			.env-flap {
-				position: absolute;
-				inset: 0;
-				background: linear-gradient(135deg,
-						#2daae1,
-						#4f8cff);
-
-				clip-path: polygon(0 0, 100% 0, 50% 55%);
-				transform-origin: top;
-				z-index: 3;
-			}
-
-			/* Open + close */
-			.send-overlay.active .env-flap {
-				animation: flapOpen .5s ease forwards .4s;
-			}
-
-			@keyframes flapOpen {
-				to {
-					transform: rotateX(-180deg);
-				}
-			}
-
-			.send-overlay.closing .env-flap {
-				animation: flapClose .4s ease forwards;
-			}
-
-			@keyframes flapClose {
-				to {
-					transform: rotateX(0deg);
-				}
-			}
-
-			.send-overlay.closing .envelope {
-				animation: envOut .6s ease forwards .4s;
-			}
-
-			@keyframes envOut {
-				to {
-					transform: scale(.4) translateY(40px);
-					opacity: 0;
-				}
-			}
-
-			/* FORCE THEME COLOR FOR TYPED TEXT */
-			.cd-headline .typed,
-			.cd-headline .microhub-typed {
-				color: #38BDF8;
-				-webkit-text-fill-color: #38BDF8;
-				/* CRITICAL */
-				background: none;
-				/* disable gradient background */
-			}
-		</style>
-
-		<section class="position-relative pt-0">
-			<!-- Clay decoration -->
-			<!-- <div class="position-absolute top-50 start-0 translate-middle mt-5 floating-rotate">
-				<img src="assets/images/elements/clay-decoration.png" alt="Clay-decoration">
-			</div> -->
-
-			<div class="container bg-secondary-grad rounded-4 p-4 p-md-6 p-xxl-8">
-				<div class="inner-container-small">
-
-					<!-- Title (UNCHANGED) -->
-					<h1 class="fw-bold mb-2 lh-base text-center">
-						<i class="bi bi-emoji-smile me-2"></i>Say
-						<span class="cd-headline clip big-clip is-full-width text-primary-grad mb-0">
-							<span class="typed microhub-typed" data-type-text="Hello&&Hola&&Ciao&&Bonjour"></span>
-
-						</span>
-					</h1>
-
-					<p class="text-center">Have an idea, need advice, or just want to say hello? We’re all ears.</p>
-
-					<!-- WRAPPER -->
-					<div class="form-wrapper">
-
-						<!-- ENVELOPE OVERLAY -->
-						<div class="send-overlay" id="sendOverlay">
-							<div class="envelope">
-								<div class="env-body"></div>
-								<div class="env-pocket"></div>
-								<div class="env-flap"></div>
-							</div>
-						</div>
-
-						<!-- FORM (UNCHANGED) -->
-						<form id="contactForm" class="row form-border-transparent g-3 mt-4">
+						<!-- FORM -->
+						<form id="contactForm" class="row g-3 mt-4">
 							<div class="col-md-6">
 								<label class="form-label">Your name</label>
-								<input type="text" class="form-control">
+								<input type="text" class="form-control" placeholder="Enter your name">
 							</div>
 
 							<div class="col-md-6">
 								<label class="form-label">Email address</label>
-								<input type="email" class="form-control">
+								<input type="email" class="form-control" placeholder="Enter your email">
 							</div>
 
 							<div class="col-md-6">
 								<label class="form-label">Mobile number</label>
-								<input type="text" class="form-control">
+								<input type="tel" class="form-control" placeholder="Enter your mobile number">
 							</div>
 
 							<div class="col-md-6">
 								<label class="form-label">Subject</label>
-								<input type="text" class="form-control">
+								<input type="text" class="form-control" placeholder="What is this regarding?">
 							</div>
 
 							<div class="col-12">
 								<label class="form-label">Message</label>
-								<textarea class="form-control" style="
-							      height:100px;
-							      border-color:#2daae1;
-							    ">
-							  </textarea>
+								<textarea class="form-control" placeholder="Tell us how we can help you..."
+									rows="4"></textarea>
 							</div>
-
 
 							<div class="col-12">
 								<div class="form-check">
-									<input type="checkbox" class="form-check-input border" id="exampleCheck1">
-									<label class="form-check-label" for="exampleCheck1">
-										I agree that my data is <a href="#"
-											class="hover-underline-animation text-primary-hover">collected and
+									<input type="checkbox" class="form-check-input" id="privacyCheck">
+									<label class="form-check-label" for="privacyCheck"
+										style="color:var(--text-color); opacity:0.8;">
+										I agree that my data is <a href="#" class="text-primary">collected and
 											stored</a>.
 									</label>
 								</div>
 							</div>
 
 							<div class="col-12 d-sm-flex justify-content-center align-items-center gap-3 mt-4">
-								<button type="submit" class="btn btn-primary mb-2 mb-md-0" style="background: linear-gradient(135deg, #3B82F6, #38BDF8);
-    								color:#fff;
-    								border:none;
-    								padding:8px 16px;
-    								font-weight:500;
-    								transition:all 0.3s ease;
-  									" onmouseover="
-    								this.style.boxShadow='0 8px 20px rgba(56,189,248,0.45)';
-    								this.style.transform='translateY(-1px)';
-  									" onmouseout="
-    								this.style.boxShadow='none';
-    								this.style.transform='translateY(0)';
-  									">
+								<button type="submit" class="btn btn-primary">
+									<i class="bi bi-send me-2"></i>
 									Send a message
 								</button>
 							</div>
-
+						</form>
 					</div>
-					</form>
-
 				</div>
-			</div>
 			</div>
 		</section>
 
 		<script>
-			const form = document.getElementById("contactForm");
-			const overlay = document.getElementById("sendOverlay");
-
-			form.addEventListener("submit", e => {
+			document.getElementById('contactForm').addEventListener('submit', function (e) {
 				e.preventDefault();
+				const submitBtn = this.querySelector('button[type="submit"]');
+				const originalText = submitBtn.innerHTML;
 
-				overlay.classList.add("active");
+				submitBtn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Message Sent!';
+				submitBtn.classList.add('form-success');
 
-				setTimeout(() => overlay.classList.add("closing"), 1800);
 				setTimeout(() => {
-					overlay.classList.remove("active", "closing");
-					form.reset();
+					submitBtn.innerHTML = originalText;
+					submitBtn.classList.remove('form-success');
+					this.reset();
 				}, 3000);
 			});
 		</script>
@@ -1205,52 +946,60 @@ Contact form END -->
 
 		<!-- =======================
 Map and office detail START -->
-		<section class="position-relative pt-0 overflow-hidden">
-			<!-- Decoration -->
-			<div class="position-absolute bottom-0 end-0 mb-n3 me-n7 d-none d-xl-block">
-				<img src="assets/images/elements/relex-slay.png" class="h-400px h-xxl-500px rtl-flip" alt="image">
-			</div>
-
+		<section class="pt-6">
 			<div class="container">
 				<div class="row g-4 align-items-center">
 					<!-- Map -->
 					<div class="col-lg-5">
-						<iframe class="w-100 h-200px h-lg-500px grayscale rounded-4 d-block mb-3 mb-lg-0"
-							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.8527192160086!2d77.40753162529623!3d28.514078575729606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef9d7efd6b3b%3A0x9c721676b4a90cb9!2sMicrohub%20Technologies%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1766643722159!5m2!1sen!2sin"
-							style="margin-bottom: -5px;" aria-hidden="false" tabindex="0"></iframe>
+						<div class="map-container">
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.8527192160086!2d77.40753162529623!3d28.514078575729606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef9d7efd6b3b%3A0x9c721676b4a90cb9!2sMicrohub%20Technologies%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1766643722159!5m2!1sen!2sin"
+								allowfullscreen="" loading="lazy"></iframe>
+							<div class="map-overlay"></div>
+						</div>
 					</div>
 					<div class="col-lg-7 ps-lg-6">
 						<!-- Title -->
-						<h2 class="mb-4">Our offices</h2>
+						<h2 class="mb-4" style="color:var(--text-color);">Our offices</h2>
 
 						<!-- Office details -->
 						<div class="row g-4 mb-4">
 
 							<!-- Office item -->
-							<div class="col-md-6">
+							<div class="col-md-12">
 								<!-- Title and country image -->
-								<div class="d-flex align-items-center gap-2">
+								<div class="d-flex align-items-center gap-2 mb-3">
 									<div class="avatar avatar-xs flex-shrink-0">
 										<img class="avatar-img rounded-circle" src="assets/images/flags/in.svg"
 											alt="avatar">
 									</div>
-									<h6 class="mb-0">India</h6>
+									<h6 class="mb-0" style="color:var(--text-color);">India Headquarters</h6>
 								</div>
 								<!-- List -->
-								<ul class="mb-0 mt-3">
-									<li class="mb-2">Unit No-484, Tower-C, Bhutani Alphathum, Sector-90, Noida UP-201305
+								<ul class="mb-0" style="color:var(--text-color); opacity:0.8;">
+									<li class="mb-2 d-flex align-items-start gap-2">
+										<i class="bi bi-geo-alt text-primary mt-1"></i>
+										<span>Unit No-484, Tower-C, Bhutani Alphathum, Sector-90, Noida UP-201305</span>
 									</li>
-									<li class="mb-2">Call: +91 7368007363</li>
-									<li class="mb-2">Support time: Monday to Saturday 9:00 am to 5:30 pm</li>
+									<li class="mb-2 d-flex align-items-center gap-2">
+										<i class="bi bi-telephone text-primary"></i>
+										<span>Call: +91 7368007363</span>
+									</li>
+									<li class="mb-2 d-flex align-items-center gap-2">
+										<i class="bi bi-clock text-primary"></i>
+										<span>Support time: Monday to Saturday 9:00 am to 5:30 pm</span>
+									</li>
 								</ul>
 							</div>
 						</div>
 
 						<!-- Button -->
-						<a class="btn btn-secondary icon-link icon-link-hover" href="#">Contact our help center<i
-								class="bi bi-arrow-right"></i> </a>
+						<a class="btn btn-secondary icon-link icon-link-hover" href="#">
+							Contact our help center
+							<i class="bi bi-arrow-right ms-1"></i>
+						</a>
 					</div>
-				</div> <!-- Row END -->
+				</div>
 			</div>
 		</section>
 		<!-- =======================
@@ -1261,57 +1010,6 @@ Map and office detail END -->
 
 	<!-- =======================
 Footer START -->
-	<style>
-		/* =========================
-   GRAD SHAPE FLOAT EFFECT
-========================= */
-
-		.grad-float {
-			animation:
-				gradFloat 10s ease-in-out infinite,
-				gradRotate 22s linear infinite;
-			transform-origin: center;
-			opacity: 0.9;
-			filter: blur(0.3px);
-		}
-
-		/* Vertical floating */
-		@keyframes gradFloat {
-			0% {
-				transform: translateY(0);
-			}
-
-			50% {
-				transform: translateY(18px);
-			}
-
-			100% {
-				transform: translateY(0);
-			}
-		}
-
-		/* Very slow rotation */
-		@keyframes gradRotate {
-			from {
-				rotate: 0deg;
-			}
-
-			to {
-				rotate: 360deg;
-			}
-		}
-
-		/* Accessibility */
-		@media (prefers-reduced-motion: reduce) {
-			.grad-float {
-				animation: none;
-			}
-		}
-
-		.grad-float img {
-			filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.25));
-		}
-	</style>
 	<footer class="bg-dark position-relative pt-6 pt-lg-8" data-bs-theme="dark">
 		<div class="container position-relative">
 
@@ -1324,7 +1022,7 @@ Footer START -->
 						<img class="h-40px" src="assets/images/microhub-white-logo-BbBXVK-M.svg" alt="logo">
 					</a>
 
-					<p class="my-3 my-lg-4">
+					<p class="my-3 my-lg-4" style="color:rgba(255,255,255,0.7);">
 						Intelligent CMS, IT infrastructure, and enterprise technology solutions.
 					</p>
 
@@ -1354,7 +1052,7 @@ Footer START -->
 
 						<!-- Company -->
 						<div class="col-6 col-lg-4">
-							<h6 class="mb-3 mb-sm-4">Company</h6>
+							<h6 class="mb-3 mb-sm-4" style="color:#fff;">Company</h6>
 							<ul class="nav flex-column gap-1">
 								<li class="nav-item"><a class="nav-link pt-0" href="about-v1.html">About Microhub</a>
 								</li>
@@ -1367,7 +1065,7 @@ Footer START -->
 
 						<!-- Resources -->
 						<div class="col-6 col-lg-4">
-							<h6 class="mb-3 mb-sm-4">Resources</h6>
+							<h6 class="mb-3 mb-sm-4" style="color:#fff;">Resources</h6>
 							<ul class="nav flex-column gap-1">
 								<li class="nav-item"><a class="nav-link pt-0" href="#">CMS Features</a></li>
 								<li class="nav-item"><a class="nav-link" href="#">IT Infrastructure</a></li>
@@ -1380,11 +1078,11 @@ Footer START -->
 
 						<!-- Contact Us -->
 						<div class="col-12 col-lg-4">
-							<h6 class="mb-3 mb-sm-4">Contact Us</h6>
+							<h6 class="mb-3 mb-sm-4" style="color:#fff;">Contact Us</h6>
 
-							<ul class="nav flex-column gap-2 small text-body-secondary">
+							<ul class="nav flex-column gap-2 small" style="color:rgba(255,255,255,0.7);">
 								<li class="d-flex align-items-start gap-2">
-									<i class="bi bi-geo-alt text-primary-grad mt-1"></i>
+									<i class="bi bi-geo-alt mt-1" style="color:#0ea5e9;"></i>
 									<span>
 										Unit No-484, Tower-C,<br>
 										Bhutani Alphathum,<br>
@@ -1393,14 +1091,14 @@ Footer START -->
 								</li>
 
 								<li class="d-flex align-items-center gap-2">
-									<i class="bi bi-envelope text-primary-grad"></i>
+									<i class="bi bi-envelope" style="color:#0ea5e9;"></i>
 									<a href="mailto:sales@microhub.co.in" class="nav-link p-0">
 										sales@microhub.co.in
 									</a>
 								</li>
 
 								<li class="d-flex align-items-center gap-2">
-									<i class="bi bi-telephone text-primary-grad"></i>
+									<i class="bi bi-telephone" style="color:#0ea5e9;"></i>
 									<a href="tel:+917368007363" class="nav-link p-0">
 										+91 73680 07363
 									</a>
@@ -1432,9 +1130,9 @@ Footer START -->
 
 			<!-- Bottom footer -->
 			<div class="d-md-flex justify-content-between align-items-center text-center text-lg-start py-4">
-				<div class="text-body small mb-3 mb-md-0">
+				<div class="small mb-3 mb-md-0" style="color:rgba(255,255,255,0.7);">
 					Copyright ©2024 Microhub.
-					Built by <a href="#" class="text-body text-primary-hover hover-underline-animation">Microhub</a>.
+					Built by <a href="#" class="text-primary-hover hover-underline-animation">Microhub</a>.
 				</div>
 
 				<ul class="nav justify-content-center gap-1 mb-0">

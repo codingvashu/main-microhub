@@ -127,12 +127,9 @@ GLOBAL RESPONSIVE RESET
 		rel="stylesheet">
 
 	<!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/css"
-		href="./assets/vendor/bootstrap-icons/bootstrap-icons.css">
-	<link rel="stylesheet" type="text/css"
-		href="./assets/vendor/swiper/swiper-bundle.min.css">
-	<link rel="stylesheet" type="text/css"
-		href="./assets/vendor/glightbox/css/glightbox.css">
+	<link rel="stylesheet" type="text/css" href="./assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="./assets/vendor/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" type="text/css" href="./assets/vendor/glightbox/css/glightbox.css">
 
 	<!-- Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
@@ -189,160 +186,315 @@ GLOBAL RESPONSIVE RESET
 					<!-- Main navbar START -->
 					<div class="navbar-collapse collapse" id="navbarCollapse">
 						<ul class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto">
-							<!-- HOME -->
-							 <li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Home</a>
-								<div class="dropdown-menu dropdown-menu-size-md dropdown-menu-center p-3">
-									<div class="dropdown-card">
-										<div class="icon-md bg-primary bg-opacity-15 text-primary rounded">
-											<i class="bi bi-info-circle"></i>
+
+							<li class="nav-item"> <a class="nav-link" href="index.html">Home</a> </li>
+
+
+
+							<!-- Nav item --
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
+									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+								<div class="dropdown-menu dropdown-menu-size-md dropdown-menu-center p-xl-3">
+									<div class="row row-cols-1 row-cols-md-1 pt-1">
+										<!-- Doc menu -->
+							<!--<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3">
+												<div class="d-flex">
+													<!-- Icon 
+													<div
+														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
+														<i class="bi bi-info-circle fs-6"></i>
+
+													</div>
+													<!-- Content --
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">About</p>
+														<p class="mb-0 text-body small">Our story, vision, and what
+															drives us</p>
+													</div>
+												</div>
+												<!-- Button 
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="about-v1.html" target="_blank"><i
+														class="bi bi-chevron-right"></i> </a>
+											</div>
+										</div>--
+									</div>
+								</div>
+							</li>-->
+
+
+							<!-- Nav item : SOLUTIONS -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
+									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Solutions
+								</a>
+
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-4 mega-menu">
+									<div class="row g-4">
+
+										<!-- CMS SOLUTIONS -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-primary-soft">
+													<i class="bi bi-grid-1x2"></i>
+												</div>
+												<h6>CMS Solutions</h6>
+												<ul>
+													<li>CRM</li>
+													<li>HR-Payroll</li>
+													<li>Inventory</li>
+													<li>Finance</li>
+													<li>ERP</li>
+													<li>Automation</li>
+												</ul>
+												<a href="services-grid.html" class="mega-link">Explore →</a>
+											</div>
 										</div>
-										<div class="content">
-											<p class="title">About</p>
-											<p class="desc">Our story, vision, and what drives us</p>
-									    </div>
-										<a href="about-v1.html" class="arrow"><i class="bi bi-chevron-right"></i></a>
+
+										<!-- IT INFRA -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-info-soft">
+													<i class="bi bi-hdd-network"></i>
+												</div>
+												<h6>IT Infrastructure & Services</h6>
+												<ul>
+													<li>IT Infrastructure</li>
+													<li>Networking</li>
+													<li>Servers</li>
+													<li>Web Development</li>
+													<li>AMC-Packages</li>
+													<li>ERP</li>
+													<li>Cybersecurity</li>
+												</ul>
+												<a href="/services-main.html" class="mega-link">Explore →</a>
+											</div>
+										</div>
+
+										<!-- HARDWARE -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-warning-soft">
+													<i class="bi bi-laptop"></i>
+												</div>
+												<h6>Hardware Solutions</h6>
+												<ul>
+													<li>Laptops</li>
+													<li>Macs</li>
+													<li>Printers</li>
+													<li>Networking & Peripherals</li>
+												</ul>
+												<a href="/hardware-service-single.html" class="mega-link">Explore →</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+							</li>
+							<!-- Nav item : EXPLORE -->
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
+									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Explore
+								</a>
+
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-4 mega-menu">
+									<div class="row g-4">
+
+										<!-- PRICING -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-primary-soft">
+													<i class="bi bi-grid-1x2"></i>
+												</div>
+												<h6>Pricing</h6>
+												<p class="mb-0 text-body small">
+													Transparent plans for every business size
+												</p>
+												<a href="services-grid.html" class="mega-link">Explore →</a>
+											</div>
+										</div>
+
+										<!-- RESOUCES -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-info-soft">
+													<i class="bi bi-hdd-network"></i>
+												</div>
+												<h6>Resources</h6>
+												<ul>
+													<li>Blogs</li>
+													<li>Case Studies</li>
+													<li>Videos</li>
+													<li>Learning Guides</li>
+													<li>FAQs</li>
+
+												</ul>
+												<a href="/services-main.html" class="mega-link">Explore →</a>
+											</div>
+										</div>
+
+										<!-- SECURITY AND COMPLIANCE -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-warning-soft">
+													<i class="bi bi-laptop"></i>
+												</div>
+												<h6>Security & Compliance</h6>
+												<ul>
+													<li>Data Protection</li>
+													<li>Privacy</li>
+													<li>T&C</li>
+													<li>Security Compliance</li>
+												</ul>
+												<a href="/hardware-service-single.html" class="mega-link">Explore →</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+							</li>
+
+
+							<!-- Nav item : EXPLORE --
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
+									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Explore
+								</a>
+
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
+									<div class="row row-cols-1 row-cols-md-3 pt-2">
+
+										<!-- ================= -->
+							<!-- PRICING -->
+							<!-- ================= --
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
+														<i class="bi bi-currency-rupee fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															Pricing
+														</p>
+														<p class="mb-0 text-body small">
+															Transparent plans for every business size
+														</p>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="pricing-v1.html">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+										<!-- ================= -->
+							<!-- RESOURCES -->
+							<!-- ================= --
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-success bg-opacity-15 text-success rounded flex-shrink-0">
+														<i class="bi bi-journal-text fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															Resources
+														</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#2DA9E1;
+														    ">
+															<li><b>Blogs</b></li>
+															<li><b>Case Studies</b></li>
+															<li><b>Videos</b></li>
+															<li><b>Learning Guides</b></li>
+															<li><b>FAQs</b></li>
+														</ul>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="/cms-service-single.html">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
+										<!-- ============================== -->
+							<!-- SECURITY & COMPLIANCE -->
+							<!-- ============================== --
+										<div class="col">
+											<div
+												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
+												<div class="d-flex">
+													<div
+														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
+														<i class="bi bi-shield-check fs-5"></i>
+													</div>
+													<div class="mx-3">
+														<p class="stretched-link heading-color fw-bold mb-0">
+															Security & Compliance
+														</p>
+														<ul class="mb-0 text-body small" style="
+														      list-style:none;
+														      padding:0;
+														      margin:0;
+														      display:flex;
+														      flex-direction:column;
+														      gap:6px;
+														      line-height:1.5;
+														      color:#2DA9E1;
+														    ">
+															<li><b>Data Protection</b></li>
+															<li><b>Privacy</b></li>
+															<li><b>T&C</b></li>
+															<li><b>Security Compliance</b></li>
+														</ul>
+													</div>
+												</div>
+												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
+													href="/cyber-service-single.html">
+													<i class="bi bi-chevron-right"></i>
+												</a>
+											</div>
+										</div>
+
 									</div>
 								</div>
 							</li>
-							<!-- SOLUTIONS -->
-							 <li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
-								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-3">
-									<div class="row g-3">
-										<!-- CMS -->
-										 <div class="col-md-4">
-											<div class="dropdown-card">
-												<div class="icon-md bg-primary bg-opacity-15 text-primary rounded">
-													<i class="bi bi-grid-1x2"></i>
-												</div>
-												<div class="content">
-													<p class="title">CMS Solutions</p>
-													<ul class="clean-list">
-														<li>CRM</li>
-														<li>HR-Payroll</li>
-														<li>Inventory</li>
-														<li>Finance</li>
-														<li>ERP</li>
-														<li>Automation</li>
-													</ul>
-												</div>
-												<a href="services-grid.html" class="arrow"><i class="bi bi-chevron-right"></i></a>
-											</div>
-										</div>
-										<!-- IT -->
-                                        <div class="col-md-4">
-                                          <div class="dropdown-card">
-                                              <div class="icon-md bg-info bg-opacity-15 text-info rounded">
-                                                  <i class="bi bi-hdd-network"></i>
-                                                </div>
-                                                <div class="content">
-                                                  <p class="title">IT Infrastructure & Services</p>
-                                                    <ul class="clean-list">
-                                                        <li>IT Infrastructure</li>
-                                                        <li>Networking</li>
-                                                        <li>Servers</li>
-                                                        <li>Web Development</li>
-                                                        <li>AMC-Packages</li>
-                                                        <li>ERP</li>
-                                                        <li>Cybersecurity</li>
-                                                    </ul>
-                                                </div>
-                                                    <a href="/services-main.html" class="arrow"><i class="bi bi-chevron-right"></i></a>
-                                            </div>
-                                        </div>
 
-          <!-- HARDWARE -->
-          <div class="col-md-4">
-            <div class="dropdown-card">
-              <div class="icon-md bg-warning bg-opacity-15 text-warning rounded">
-                <i class="bi bi-laptop"></i>
-              </div>
-              <div class="content">
-                <p class="title">Hardware Solutions</p>
-                <ul class="clean-list">
-                  <li>Laptops</li>
-                  <li>Macs</li>
-                  <li>Printers</li>
-                  <li>Networking & Peripherals</li>
-                </ul>
-              </div>
-              <a href="/hardware" class="arrow"><i class="bi bi-chevron-right"></i></a>
-            </div>
-          </div>
+							<!-- Nav item -->
+							<li class="nav-item"> <a class="nav-link" href="about-v1.html">About</a> </li>
 
-        </div>
-      </div>
-    </li>
 
-             <!-- EXPLORE -->
-             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Explore</a>
 
-               <div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-3">
-                 <div class="row g-3">
+							<!-- Nav item -->
+							<li class="nav-item"> <a class="nav-link" href="contact-us-v1.html">Contact us</a> </li>
 
-                   <div class="col-md-4">
-                     <div class="dropdown-card">
-                       <div class="icon-md bg-primary bg-opacity-15 text-primary rounded">
-                         <i class="bi bi-currency-rupee"></i>
-                       </div>
-                       <div class="content">
-                         <p class="title">Pricing</p>
-                         <p class="desc">Transparent plans for every business size</p>
-                       </div>
-                       <a href="pricing-v1.html" class="arrow"><i class="bi bi-chevron-right"></i></a>
-                     </div>
-                   </div>
+						</ul>
 
-                   <div class="col-md-4">
-                     <div class="dropdown-card">
-                       <div class="icon-md bg-success bg-opacity-15 text-success rounded">
-                         <i class="bi bi-journal-text"></i>
-                       </div>
-                       <div class="content">
-                         <p class="title">Resources</p>
-                         <ul class="clean-list">
-                           <li>Blogs</li>
-                           <li>Case Studies</li>
-                           <li>Videos</li>
-                           <li>Learning Guides</li>
-                           <li>FAQs</li>
-                         </ul>
-                       </div>
-                       <a href="/resources" class="arrow"><i class="bi bi-chevron-right"></i></a>
-                     </div>
-                   </div>
-
-                   <div class="col-md-4">
-                     <div class="dropdown-card">
-                       <div class="icon-md bg-warning bg-opacity-15 text-warning rounded">
-                         <i class="bi bi-shield-check"></i>
-                       </div>
-                       <div class="content">
-                         <p class="title">Security & Compliance</p>
-                         <ul class="clean-list">
-                           <li>Data Protection</li>
-                           <li>Privacy</li>
-                           <li>T&C</li>
-                           <li>Security Compliance</li>
-                         </ul>
-                       </div>
-                       <a href="/security-compliance" class="arrow"><i class="bi bi-chevron-right"></i></a>
-                     </div>
-                   </div>
-
-                 </div>
-               </div>
-            </li>
-			<li class="nav-item">
-
-			</li><a class="nav-link" href="contact-us-v1.html">Contact us</a>
-		</li>
-	</ul>
-</div>
-
+					</div>
 					<!-- Main navbar END -->
+
 
 					<!-- Buttons -->
 					<ul class="nav align-items-center dropdown-hover ms-sm-2">
@@ -403,7 +555,7 @@ GLOBAL RESPONSIVE RESET
 						<li class="nav-item ms-2 d-none d-sm-block">
 							<a href="#" class="btn btn-sm mb-0" data-bs-toggle="offcanvas"
 								data-bs-target="#scheduleCall" aria-controls="scheduleCall" style="
-						      background: linear-gradient(135deg, #3B82F6, #38BDF8);
+						      background: linear-gradient(135deg, #2DA9E1, #38BDF8);
 						      color:#fff;
 						      border:none;
 						      padding:8px 16px;
@@ -554,7 +706,7 @@ HERO RESPONSIVE
 						    border:1.5px solid #2DA9E1;
 						    color:#2DA9E1;
 						    background:transparent;
-						    padding:8px 16px;
+						    padding:13px 16px;
 							justify-content: center;
 						    transition:all 0.3s ease;
 						  " onmouseover="
@@ -606,9 +758,12 @@ HERO RESPONSIVE
 
 				</div>
 				<!-- Moving Earth -->
-				 <div class="earth-wrapper">
-					<div class="earth"></div>
+				<div class="earth-right">
+					<video autoplay loop muted playsinline>
+						<source src="assets/images/earth.mp4" type="video/mp4">
+					</video>
 				</div>
+
 
 			</div>
 		</section>
@@ -633,19 +788,19 @@ Image and client START -->
 					<img src="assets/images/elements/grad-shape/blur-decoration-2.svg" class="opacity-2 blur-8"
 						alt="Grad shape">
 				</div> -->
-                 
+
 				<!-- Image -->
 				<!-- <div
 					class="bg-body bg-opacity-10 bg-blur border border-white border-opacity-25 position-relative rounded-4 shadow-primary-lg p-4">
 					 Dots -->
-					<!-- <span class="text-purple">
+				<!-- <span class="text-purple">
 						
-					</span> --> 
+					</span> -->
 
-					<!-- Images content -->
-					<!-- <div class="row rounded-4 overflow-hidden g-0"> -->
-						<!-- Call image -->
-						<!-- <div class="col-sm-5">
+				<!-- Images content -->
+				<!-- <div class="row rounded-4 overflow-hidden g-0"> -->
+				<!-- Call image -->
+				<!-- <div class="col-sm-5">
 							<div class="card card-body p-0 h-100">
 								
 								<img src="assets/images/bg/02.jpg" alt="">
@@ -672,13 +827,13 @@ Image and client START -->
 							</div>
 						</div> -->
 
-						<!-- Code image -->
-						<!-- <div class="col-sm-7">
+				<!-- Code image -->
+				<!-- <div class="col-sm-7">
 							<div class="h-100"
 								style="background:url(assets/images/bg/code.jpg) no-repeat; background-size:cover; background-position:left top;">
 							</div>
 						</div> -->
-					<!-- </div> -->
+				<!-- </div> -->
 				<!-- </div> -->
 
 				<div class="inner-container-small text-center mb-6 mb-lg-7">
@@ -688,9 +843,9 @@ Image and client START -->
 					    line-height:1.25;
 					    background:linear-gradient(
 					      90deg,
-					      #0f172a 0%,
+					      #2DA9E1 0%,
 					      #2DA9E1 40%,
-					      #0f172a 80%
+					      #2DA9E1 80%
 					    );
 					    background-size:200% 100%;
 					    background-position:0% 50%;
@@ -706,6 +861,8 @@ Image and client START -->
 						Our Trusted Partners
 
 					</h2>
+					<p class="text-muted mb-4">Partnering with industry leaders to deliver reliable, scalable, and
+						innovative solutions.</p>
 
 				</div>
 
@@ -725,157 +882,82 @@ Image and client START -->
 						<!-- Image -->
 						<div class="swiper-slide">
 							<div class="swap-logo">
-								<img src="assets/images/client/logo-dark/JAKSON-T5NSfTH-.png" alt="client-img">
-								<div class="swap-item">
-									<img src="assets/images/client/logo-dark/JAKSON-T5NSfTH-.png" class="dark-mode-item"
-										alt="client logo">
-									<img src="assets/images/client/logo-dark/JAKSON-T5NSfTH-.png"
-										class="light-mode-item" alt="client logo">
-								</div>
+								<img src="assets/images/client/logo-dark/JAKSON-T5NSfTH-.png" alt="client logo">
+							</div>
+						</div>
+
+						<!-- Image -->
+						<div class="swiper-slide">
+							<div class="swap-logo">
+								<img src="assets/images/client/logo-dark/VAIDIC-SRIJAN-BSqzRd3g.png" alt="client logo">
+
 							</div>
 						</div>
 						<!-- Image -->
 						<div class="swiper-slide">
 							<div class="swap-logo">
-								<img src="assets/images/client/logo-dark/VAIDIC-SRIJAN-BSqzRd3g.png" alt="client-img">
-								<div class="swap-item">
-									<img src="assets/images/client/logo-dark/VAIDIC-SRIJAN-BSqzRd3g.png"
-										class="dark-mode-item" alt="client logo">
-									<img src="assets/images/client/logo-dark/VAIDIC-SRIJAN-BSqzRd3g.png"
-										class="light-mode-item" alt="client logo">
-								</div>
+								<img src="assets/images/client/logo-dark/wipro-DhgFwhPp.png" alt="client logo">
 							</div>
 						</div>
 						<!-- Image -->
 						<div class="swiper-slide">
 							<div class="swap-logo">
-								<img src="assets/images/client/logo-dark/wipro-DhgFwhPp.png" alt="client-img">
-								<div class="swap-item">
-									<img src="assets/images/client/logo-dark/wipro-DhgFwhPp.png" class="dark-mode-item"
-										alt="client logo">
-									<img src="assets/images/client/logo-dark/wipro-DhgFwhPp.png" class="light-mode-item"
-										alt="client logo">
-								</div>
+								<img src="assets/images/client/logo-dark/axiom-mQS4rbxM.png" alt="client logo">
 							</div>
 						</div>
 						<!-- Image -->
 						<div class="swiper-slide">
 							<div class="swap-logo">
-								<img src="assets/images/client/logo-dark/axiom-mQS4rbxM.png" alt="client-img">
-								<div class="swap-item">
-									<img src="assets/images/client/logo-dark/axiom-mQS4rbxM.png" class="dark-mode-item"
-										alt="client logo">
-									<img src="assets/images/client/logo-dark/axiom-mQS4rbxM.png" class="light-mode-item"
-										alt="client logo">
-								</div>
+								<img src="assets/images/client/logo-dark/almonds-BoaRI-IP.png" alt="client logo">
 							</div>
 						</div>
 						<!-- Image -->
 						<div class="swiper-slide">
 							<div class="swap-logo">
-								<img src="assets/images/client/logo-dark/almonds-BoaRI-IP.png" alt="client-img">
-								<div class="swap-item">
-									<img src="assets/images/client/logo-dark/almonds-BoaRI-IP.png"
-										class="dark-mode-item" alt="client logo">
-									<img src="assets/images/client/logo-dark/almonds-BoaRI-IP.png"
-										class="light-mode-item" alt="client logo">
-								</div>
+								<img src="assets/images/client/logo-dark/Atechnos-logo-B5G0xdh8.png" alt="client logo">
 							</div>
 						</div>
 						<!-- Image -->
 						<div class="swiper-slide">
 							<div class="swap-logo">
-								<img src="assets/images/client/logo-dark/Atechnos-logo-B5G0xdh8.png" alt="client-img">
-								<div class="swap-item">
-									<img src="assets/images/client/logo-dark/Atechnos-logo-B5G0xdh8.png"
-										class="dark-mode-item" alt="client logo">
-									<img src="assets/images/client/logo-dark/Atechnos-logo-B5G0xdh8.png"
-										class="light-mode-item" alt="client logo">
-								</div>
+								<img src="assets/images/client/logo-dark/narashri-BdKbnVxe.png" alt="client logo">
 							</div>
 						</div>
 						<!-- Image -->
 						<div class="swiper-slide">
 							<div class="swap-logo">
-								<img src="assets/images/client/logo-dark/narashri-BdKbnVxe.png" alt="client-img">
-								<div class="swap-item">
-									<img src="assets/images/client/logo-dark/narashri-BdKbnVxe.png"
-										class="dark-mode-item" alt="client logo">
-									<img src="assets/images/client/logo-dark/narashri-BdKbnVxe.png"
-										class="light-mode-item" alt="client logo">
-								</div>
+								<img src="assets/images/client/logo-light/ontic_light.svg" alt="client logo">
+
 							</div>
 						</div>
 						<!-- Image -->
 						<div class="swiper-slide">
 							<div class="swap-logo">
-								<img src="assets/images/client/logo-dark/ontic-logo.svg" alt="client-img">
-								<div class="swap-item">
-									<img src="assets/images/client/logo-dark/ontic-logo.svg" class="dark-mode-item"
-										alt="client logo">
-									<img src="assets/images/client/logo-light/ontic_light.svg" class="light-mode-item"
-										alt="client logo">
-								</div>
+								<img src="assets/images/client/logo-dark/BTG-BK4vfSqE.png" alt="client logo">
 							</div>
 						</div>
 						<!-- Image -->
 						<div class="swiper-slide">
 							<div class="swap-logo">
-								<img src="assets/images/client/logo-dark/BTG-BK4vfSqE.png" alt="client-img">
-								<div class="swap-item">
-									<img src="assets/images/client/logo-dark/BTG-BK4vfSqE.png" class="dark-mode-item"
-										alt="client logo">
-									<img src="assets/images/client/logo-dark/BTG-BK4vfSqE.png" class="light-mode-item"
-										alt="client logo">
-								</div>
+								<img src="assets/images/client/logo-dark/ncc-DMFbuuQm.png" alt="client logo">
 							</div>
 						</div>
 						<!-- Image -->
 						<div class="swiper-slide">
 							<div class="swap-logo">
-								<img src="assets/images/client/logo-dark/ncc-DMFbuuQm.png" alt="client-img">
-								<div class="swap-item">
-									<img src="assets/images/client/logo-dark/ncc-DMFbuuQm.png" class="dark-mode-item"
-										alt="client logo">
-									<img src="assets/images/client/logo-dark/ncc-DMFbuuQm.png" class="light-mode-item"
-										alt="client logo">
-								</div>
+								<img src="assets/images/client/logo-dark/quadrafort-Cc5GNjux.png" alt="client logo">
 							</div>
 						</div>
 						<!-- Image -->
 						<div class="swiper-slide">
 							<div class="swap-logo">
-								<img src="assets/images/client/logo-dark/quadrafort-Cc5GNjux.png" alt="client-img">
-								<div class="swap-item">
-									<img src="assets/images/client/logo-dark/quadrafort-Cc5GNjux.png"
-										class="dark-mode-item" alt="client logo">
-									<img src="assets/images/client/logo-dark/quadrafort-Cc5GNjux.png"
-										class="light-mode-item" alt="client logo">
-								</div>
+								<img src="assets/images/client/logo-dark/marswell-BOH3Y-if.png" alt="client logo">
 							</div>
 						</div>
 						<!-- Image -->
 						<div class="swiper-slide">
 							<div class="swap-logo">
-								<img src="assets/images/client/logo-dark/marswell-BOH3Y-if.png" alt="client-img">
-								<div class="swap-item">
-									<img src="assets/images/client/logo-dark/marswell-BOH3Y-if.png"
-										class="dark-mode-item" alt="client logo">
-									<img src="assets/images/client/logo-dark/marswell-BOH3Y-if.png"
-										class="light-mode-item" alt="client logo">
-								</div>
-							</div>
-						</div>
-						<!-- Image -->
-						<div class="swiper-slide">
-							<div class="swap-logo">
-								<img src="assets/images/client/logo-dark/arya-B7TvlRXs.png" alt="client-img">
-								<div class="swap-item">
-									<img src="assets/images/client/logo-dark/arya-B7TvlRXs.png" class="dark-mode-item"
-										alt="client logo">
-									<img src="assets/images/client/logo-dark/arya-B7TvlRXs.png" class="light-mode-item"
-										alt="client logo">
-								</div>
+								<img src="assets/images/client/logo-dark/arya-B7TvlRXs.png" alt="client logo">
 							</div>
 						</div>
 					</div>
@@ -904,9 +986,9 @@ About START -->
 						    line-height:1.25;
 						    background:linear-gradient(
 						      90deg,
-						      #0f172a 0%,
+						      #2DA9E1 0%,
 						      #2DA9E1 40%,
-						      #0f172a 80%
+						      #2DA9E1 80%
 						    );
 						    background-size:200% 100%;
 						    background-position:0% 50%;
@@ -954,10 +1036,10 @@ About START -->
 
 						<!-- Buttons -->
 						<div class="d-flex gap-3 flex-wrap">
-							<a href="/demo" class="btn btn-sm mb-0" style="background: linear-gradient(135deg, #3B82F6, #38BDF8);
+							<a href="/demo" class="btn btn-sm mb-0" style="background: linear-gradient(135deg, #2DA9E1, #38BDF8);
     								color:#fff;
     								border:none;
-    								padding:10px 20px;
+    								padding:20px 20px;
     								font-weight:700;
     								transition:all 0.3s ease;
   									" onmouseover="
@@ -1109,9 +1191,9 @@ Services START -->
 					    line-height:1.25;
 					    background:linear-gradient(
 					      90deg,
-					      #0f172a 0%,
+					      #2DA9E1 0%,
 					      #2DA9E1 40%,
-					      #0f172a 80%
+					      #2DA9E1 80%
 					    );
 					    background-size:200% 100%;
 					    background-position:0% 50%;
@@ -1265,7 +1347,7 @@ Services START -->
 							<p>Not satisfied yet?</p>
 							<a href="#" class="btn btn-sm mb-0" data-bs-toggle="offcanvas"
 								data-bs-target="#scheduleCall" aria-controls="scheduleCall" style="
-						      background: linear-gradient(135deg, #3B82F6, #38BDF8);
+						      background: linear-gradient(135deg, #2DA9E1, #38BDF8);
 						      color:#fff;
 						      border:none;
 						      padding:8px 16px;
@@ -1312,9 +1394,9 @@ Testimonials START -->
 						    line-height:1.25;
 						    background:linear-gradient(
 						      90deg,
-						      #0f172a 0%,
+						      #2DA9E1 0%,
 						      #2DA9E1 40%,
-						      #0f172a 80%
+						      #2DA9E1 80%
 						    );
 						    background-size:200% 100%;
 						    background-position:0% 50%;
@@ -1384,7 +1466,11 @@ Testimonials START -->
 								</ul>
 								<!-- Testimonials text -->
 								<blockquote>
-									<p class="heading-color mb-0">As CEO & Director of BTGES IT Support, I highly appreciate Mirohub’s dedication and expertise. Their innovative solutions and timely support have played a crucial role in enhancing our IT operations and service delivery. Mirohub’s commitment to quality and partnership makes them an invaluable ally in our business growth.</p>
+									<p class="heading-color mb-0">As CEO & Director of BTGES IT Support, I highly
+										appreciate Mirohub’s dedication and expertise. Their innovative solutions and
+										timely support have played a crucial role in enhancing our IT operations and
+										service delivery. Mirohub’s commitment to quality and partnership makes them an
+										invaluable ally in our business growth.</p>
 								</blockquote>
 							</div>
 							<!-- Card footer -->
@@ -1392,8 +1478,7 @@ Testimonials START -->
 								<!-- Testimonials info -->
 								<div class="d-flex align-items-center">
 									<div class="avatar flex-shrink-0">
-										<img src="assets/images/client/logo-dark/BTG-BK4vfSqE.png"
-											alt="avatar">
+										<img src="assets/images/client/logo-dark/BTG-BK4vfSqE.png" alt="avatar">
 									</div>
 									<div class="ms-3">
 										<p class="lead heading-color fw-semibold mb-0">Mr. Anoop Kumar Sharma</p>
@@ -1424,7 +1509,12 @@ Testimonials START -->
 								</ul>
 								<!-- Testimonials text -->
 								<blockquote>
-									<p class="heading-color mb-0">As Manager at Arya.ag, I have witnessed firsthand the outstanding support and innovative solutions Mirohub delivers. Their commitment to understanding our unique needs and providing tailored technology solutions has greatly enhanced our operational efficiency and business growth. Mirohub is a reliable partner that consistently goes above and beyond to help us succeed.</p>
+									<p class="heading-color mb-0">As Manager at Arya.ag, I have witnessed firsthand the
+										outstanding support and innovative solutions Mirohub delivers. Their commitment
+										to understanding our unique needs and providing tailored technology solutions
+										has greatly enhanced our operational efficiency and business growth. Mirohub is
+										a reliable partner that consistently goes above and beyond to help us succeed.
+									</p>
 								</blockquote>
 							</div>
 							<!-- Card footer -->
@@ -1432,8 +1522,7 @@ Testimonials START -->
 								<!-- Testimonials info -->
 								<div class="d-flex align-items-center">
 									<div class="avatar flex-shrink-0">
-										<img src="assets/images/client/logo-dark/arya-B7TvlRXs.png"
-											alt="avatar">
+										<img src="assets/images/client/logo-dark/arya-B7TvlRXs.png" alt="avatar">
 									</div>
 									<div class="ms-3">
 										<p class="lead heading-color fw-semibold mb-0">Sunny Dangi</p>
@@ -1464,7 +1553,11 @@ Testimonials START -->
 								</ul>
 								<!-- Testimonials text -->
 								<blockquote>
-									<p class="heading-color mb-0">As Product Manager at Atechno, I have been impressed with Mirohub's innovative solutions and responsive service. Their deep understanding of our product needs and proactive collaboration have significantly contributed to our project success. Mirohub is a trusted partner that delivers consistent value and drives results.</p>
+									<p class="heading-color mb-0">As Product Manager at Atechno, I have been impressed
+										with Mirohub's innovative solutions and responsive service. Their deep
+										understanding of our product needs and proactive collaboration have
+										significantly contributed to our project success. Mirohub is a trusted partner
+										that delivers consistent value and drives results.</p>
 								</blockquote>
 							</div>
 							<!-- Card footer -->
@@ -1504,7 +1597,11 @@ Testimonials START -->
 								</ul>
 								<!-- Testimonials text -->
 								<blockquote>
-									<p class="heading-color mb-0">Mirohub has been an invaluable partner to Axiom Technologies. Their expertise and proactive approach have consistently helped us streamline operations and deliver exceptional value to our clients. I highly recommend Mirohub for any organization seeking a trusted, results-driven technology partner.</p>
+									<p class="heading-color mb-0">Mirohub has been an invaluable partner to Axiom
+										Technologies. Their expertise and proactive approach have consistently helped us
+										streamline operations and deliver exceptional value to our clients. I highly
+										recommend Mirohub for any organization seeking a trusted, results-driven
+										technology partner.</p>
 								</blockquote>
 							</div>
 							<!-- Card footer -->
@@ -1512,8 +1609,7 @@ Testimonials START -->
 								<!-- Testimonials info -->
 								<div class="d-flex align-items-center">
 									<div class="avatar flex-shrink-0">
-										<img src="assets/images/client/logo-dark/axiom-mQS4rbxM.png"
-											alt="avatar">
+										<img src="assets/images/client/logo-dark/axiom-mQS4rbxM.png" alt="avatar">
 									</div>
 									<div class="ms-3">
 										<p class="lead heading-color fw-semibold mb-0">Shashank Kumar Singh</p>
@@ -1554,9 +1650,9 @@ Pricing START -->
           line-height:1.25;
           background:linear-gradient(
             90deg,
-            #0f172a 0%,
+            #2DA9E1 0%,
             #2DA9E1 40%,
-            #0f172a 80%
+            #2DA9E1 80%
           );
           background-size:200% 100%;
           background-position:0% 50%;
@@ -1578,7 +1674,7 @@ Pricing START -->
 
 						<a href="#" class="btn btn-sm mb-0" data-bs-toggle="offcanvas" data-bs-target="#scheduleCall"
 							aria-controls="scheduleCall" style="
-            background: linear-gradient(135deg, #3B82F6, #38BDF8);
+            background: linear-gradient(135deg, #2DA9E1, #38BDF8);
             color:#fff;
             border:none;
             padding:8px 16px;
@@ -1751,370 +1847,377 @@ Pricing END -->
 
 
 
+		<!-- =======================-->
 		<!-- =======================
-<!-- =======================
 FAQ START
 ======================= -->
 
-<style>
-  @keyframes floatShape {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    50% { transform: translate(18px, -22px) rotate(2deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
-  }
-</style>
+		<style>
+			@keyframes floatShape {
+				0% {
+					transform: translate(0, 0) rotate(0deg);
+				}
 
-<section class="bg-secondary position-relative overflow-hidden py-5" style="background:#EEF2FF;">
+				50% {
+					transform: translate(18px, -22px) rotate(2deg);
+				}
 
-  <div class="container position-relative" style="z-index:5;">
-    <div class="row align-items-start g-4">
-
-      <!-- ================= FAQ LEFT ================= -->
-      <div class="col-lg-7">
-
-        <div class="mb-4">
-          <h2 style="
-            font-weight:600;
-            background:linear-gradient(90deg,#0f172a,#2DA9E1);
-            -webkit-background-clip:text;
-            -webkit-text-fill-color:transparent;">
-            Got questions? We’ve got answers.
-          </h2>
-          <p class="text-muted mt-2">
-            Everything you need to know about Microhub CMS, IT services, and hardware solutions.
-          </p>
-        </div>
-
-        <div class="accordion" id="accordionFaq">
-
-          <!-- FAQ ITEM -->
-          <div class="accordion-item mb-3" style="
-            border-radius:14px;
-            border:none;
-            background:#fff;
-            box-shadow:0 6px 20px rgba(15,23,42,0.08);">
-            <h2 class="accordion-header">
-              <button class="accordion-button fw-semibold" type="button"
-                data-bs-toggle="collapse" data-bs-target="#faq1"
-                style="padding:14px 18px;color:#2DAAE1;">
-                How does Microhub CMS help my business?
-              </button>
-            </h2>
-            <div id="faq1" class="accordion-collapse collapse show">
-              <div class="accordion-body">
-                Microhub CMS unifies CRM, ticketing, HR & payroll, attendance, inventory,
-                finance, and ERP into one powerful platform.
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ ITEM -->
-          <div class="accordion-item mb-3" style="
-            border-radius:14px;
-            border:none;
-            background:#fff;
-            box-shadow:0 6px 20px rgba(15,23,42,0.08);">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold" type="button"
-                data-bs-toggle="collapse" data-bs-target="#faq2"
-                style="padding:14px 18px;color:#2DAAE1;">
-                Can I start with one module and expand later?
-              </button>
-            </h2>
-            <div id="faq2" class="accordion-collapse collapse">
-              <div class="accordion-body">
-                Yes. Microhub CMS is modular and scalable as your business grows.
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ ITEM -->
-          <div class="accordion-item mb-3" style="
-            border-radius:14px;
-            border:none;
-            background:#fff;
-            box-shadow:0 6px 20px rgba(15,23,42,0.08);">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed fw-semibold" type="button"
-                data-bs-toggle="collapse" data-bs-target="#faq3"
-                style="padding:14px 18px;color:#2DAAE1;">
-                Do you provide IT infrastructure and support?
-              </button>
-            </h2>
-            <div id="faq3" class="accordion-collapse collapse">
-              <div class="accordion-body">
-                Yes, we offer end-to-end IT infrastructure and 24/7 support.
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- ================= CTA RIGHT ================= -->
-      <div class="col-lg-5">
-
-        <div class="position-sticky" style="top:100px;">
-          <div class="position-relative" style="
-            background:linear-gradient(135deg,#2DAAE1,#1E40AF);
-            border-radius:20px;
-            padding:36px;
-            box-shadow:0 24px 60px rgba(45,170,225,0.35);
-            overflow:hidden;">
-
-            <div class="text-white">
-              <h3 class="fw-bold mb-3">
-                Stay connected<br>with us
-              </h3>
-
-              <div class="input-group mb-3">
-                <input type="email" class="form-control"
-                  placeholder="Enter your email"
-                  style="border:none;border-radius:10px;padding:12px 16px;">
-                <button class="btn"
-                  onclick="launchRocket()"
-                  style="background:#0F172A;color:#fff;border-radius:10px;">
-                  <i class="bi bi-send-fill"></i>
-                </button>
-              </div>
-
-              <p class="small mb-4">No Spam — We Promise!</p>
-            </div>
-
-            <!-- Rocket -->
-            <div class="text-end d-none d-md-block">
-              <img id="ctaRocket"
-                src="assets/images/elements/rocket-02.png"
-                style="width:160px;animation:rocketFloat 3.5s ease-in-out infinite;">
-              <div id="rocketSmoke" style="display:none;"></div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-	<!-- =======================
-Footer START -->
-	<style>
-		/* =========================
-   GRAD SHAPE FLOAT EFFECT
-========================= */
-
-		.grad-float {
-			animation:
-				gradFloat 10s ease-in-out infinite,
-				gradRotate 22s linear infinite;
-			transform-origin: center;
-			opacity: 0.9;
-			filter: blur(0.3px);
-		}
-
-		/* Vertical floating */
-		@keyframes gradFloat {
-			0% {
-				transform: translateY(0);
+				100% {
+					transform: translate(0, 0) rotate(0deg);
+				}
 			}
+		</style>
 
-			50% {
-				transform: translateY(18px);
-			}
+		<section class="bg-secondary position-relative overflow-hidden py-5" style="background:#EEF2FF;">
 
-			100% {
-				transform: translateY(0);
-			}
-		}
+			<div class="container position-relative" style="z-index:5;">
 
-		/* Very slow rotation */
-		@keyframes gradRotate {
-			from {
-				rotate: 0deg;
-			}
+				<!-- ================= FAQ TOP ================= -->
+				<div class="mb-8">
 
-			to {
-				rotate: 360deg;
-			}
-		}
+					<div class="mb-4">
+						<h2 style="
+          font-weight:600;
+          background:linear-gradient(90deg,#2DA9E1,#2DA9E1);
+          -webkit-background-clip:text;
+          -webkit-text-fill-color:transparent;">
+							Got questions? We’ve got answers.
+						</h2>
+						<p class="text-muted mt-2">
+							Everything you need to know about Microhub CMS, IT services, and hardware solutions.
+						</p>
+					</div>
 
-		/* Accessibility */
-		@media (prefers-reduced-motion: reduce) {
-			.grad-float {
-				animation: none;
-			}
-		}
+					<div class="accordion" id="accordionFaq">
 
-		.grad-float img {
-			filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.25));
-		}
-	</style>
-	<footer class="bg-dark position-relative pt-6 pt-lg-8" data-bs-theme="dark">
-		<div class="container position-relative">
-
-			<!-- Link widgets -->
-			<div class="row g-4">
-
-				<!-- Brand / About -->
-				<div class="col-md-6 col-xl-4">
-					<a href="index.html">
-						<img class="h-40px" src="assets/images/microhub-white-logo-BbBXVK-M.svg" alt="logo">
-					</a>
-
-					<p class="my-3 my-lg-4">
-						Intelligent CMS, IT infrastructure, and enterprise technology solutions.
-					</p>
-
-					<ul class="list-inline mb-0">
-						<li class="list-inline-item">
-							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
-									class="bi bi-facebook lh-base"></i></a>
-						</li>
-						<li class="list-inline-item">
-							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
-									class="bi bi-instagram lh-base"></i></a>
-						</li>
-						<li class="list-inline-item">
-							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
-									class="bi bi-twitter-x lh-base"></i></a>
-						</li>
-						<li class="list-inline-item">
-							<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
-									class="bi bi-linkedin lh-base"></i></a>
-						</li>
-					</ul>
-				</div>
-
-				<!-- Links section -->
-				<div class="col-xl-8">
-					<div class="row g-4">
-
-						<!-- Company -->
-						<div class="col-6 col-lg-4">
-							<h6 class="mb-3 mb-sm-4">Company</h6>
-							<ul class="nav flex-column gap-1">
-								<li class="nav-item"><a class="nav-link pt-0" href="about-v1.html">About Microhub</a>
-								</li>
-								<li class="nav-item"><a class="nav-link" href="service-v1.html">Our Services</a></li>
-								<li class="nav-item"><a class="nav-link" href="pricing-v1.html">Pricing</a></li>
-								<li class="nav-item"><a class="nav-link" href="career.html">Careers</a></li>
-								<li class="nav-item"><a class="nav-link" href="contact-us-v1.html">Contact Us</a></li>
-							</ul>
+						<!-- FAQ ITEM -->
+						<div class="accordion-item mb-3" style="
+          border-radius:14px;
+          border:none;
+          background:#fff;
+          box-shadow:0 6px 20px rgba(15,23,42,0.08);">
+							<h2 class="accordion-header">
+								<button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse"
+									data-bs-target="#faq1" style="padding:14px 18px;color:#2DAAE1;">
+									How does Microhub CMS help my business?
+								</button>
+							</h2>
+							<div id="faq1" class="accordion-collapse collapse show">
+								<div class="accordion-body">
+									Microhub CMS unifies CRM, ticketing, HR & payroll, attendance, inventory,
+									finance, and ERP into one powerful platform.
+								</div>
+							</div>
 						</div>
 
-						<!-- Resources -->
-						<div class="col-6 col-lg-4">
-							<h6 class="mb-3 mb-sm-4">Resources</h6>
-							<ul class="nav flex-column gap-1">
-								<li class="nav-item"><a class="nav-link pt-0" href="#">CMS Features</a></li>
-								<li class="nav-item"><a class="nav-link" href="#">IT Infrastructure</a></li>
-								<li class="nav-item"><a class="nav-link" href="#">Hardware Solutions</a></li>
-								<li class="nav-item"><a class="nav-link" href="blog-minimal.html">Blogs & Insights</a>
-								</li>
-								<li class="nav-item"><a class="nav-link" href="#">Client Success Stories</a></li>
-							</ul>
+						<!-- FAQ ITEM -->
+						<div class="accordion-item mb-3" style="
+          border-radius:14px;
+          border:none;
+          background:#fff;
+          box-shadow:0 6px 20px rgba(15,23,42,0.08);">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed fw-semibold" type="button"
+									data-bs-toggle="collapse" data-bs-target="#faq2"
+									style="padding:14px 18px;color:#2DAAE1;">
+									Can I start with one module and expand later?
+								</button>
+							</h2>
+							<div id="faq2" class="accordion-collapse collapse">
+								<div class="accordion-body">
+									Yes. Microhub CMS is modular and scalable as your business grows.
+								</div>
+							</div>
 						</div>
 
-						<!-- Contact Us -->
-						<div class="col-12 col-lg-4">
-							<h6 class="mb-3 mb-sm-4">Contact Us</h6>
-
-							<ul class="nav flex-column gap-2 small text-body-secondary">
-								<li class="d-flex align-items-start gap-2">
-									<i class="bi bi-geo-alt text-primary-grad mt-1"></i>
-									<span>
-										Unit No-484, Tower-C,<br>
-										Bhutani Alphathum,<br>
-										Sector-90, Noida UP – 201305
-									</span>
-								</li>
-
-								<li class="d-flex align-items-center gap-2">
-									<i class="bi bi-envelope text-primary-grad"></i>
-									<a href="mailto:sales@microhub.co.in" class="nav-link p-0">
-										sales@microhub.co.in
-									</a>
-								</li>
-
-								<li class="d-flex align-items-center gap-2">
-									<i class="bi bi-telephone text-primary-grad"></i>
-									<a href="tel:+917368007363" class="nav-link p-0">
-										+91 73680 07363
-									</a>
-								</li>
-							</ul>
-
-							<ul class="list-inline mt-3 mb-0">
-								<li class="list-inline-item">
-									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
-											class="bi bi-facebook lh-base"></i></a>
-								</li>
-								<li class="list-inline-item">
-									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
-											class="bi bi-linkedin lh-base"></i></a>
-								</li>
-								<li class="list-inline-item">
-									<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
-											class="bi bi-instagram lh-base"></i></a>
-								</li>
-							</ul>
+						<!-- FAQ ITEM -->
+						<div class="accordion-item" style="
+          border-radius:14px;
+          border:none;
+          background:#fff;
+          box-shadow:0 6px 20px rgba(15,23,42,0.08);">
+							<h2 class="accordion-header">
+								<button class="accordion-button collapsed fw-semibold" type="button"
+									data-bs-toggle="collapse" data-bs-target="#faq3"
+									style="padding:14px 18px;color:#2DAAE1;">
+									Do you provide IT infrastructure and support?
+								</button>
+							</h2>
+							<div id="faq3" class="accordion-collapse collapse">
+								<div class="accordion-body">
+									Yes, we offer end-to-end IT infrastructure and 24/7 support.
+								</div>
+							</div>
 						</div>
 
 					</div>
 				</div>
-			</div>
 
-			<!-- Divider -->
-			<hr class="mt-xl-5 mb-0 opacity-1">
+				<!-- ================= CTA BOTTOM ================= -->
+				<div class="container my-5">
+					<div class="cta-card mx-auto">
+						<div class="row align-items-center">
 
-			<!-- Bottom footer -->
-			<div class="d-md-flex justify-content-between align-items-center text-center text-lg-start py-4">
-				<div class="text-body small mb-3 mb-md-0">
-					Copyright ©2024 Microhub.
-					Built by <a href="#" class="text-body text-primary-hover hover-underline-animation">Microhub</a>.
+							<!-- Text Content -->
+							<div class="col-md-7 text-white">
+								<h3 class="fw-bold mb-2">
+									Stay connected<br>with us
+								</h3>
+								<p class="small opacity-75 mb-3">
+									Get updates, insights and useful resources.
+								</p>
+
+								<div class="d-flex gap-2">
+									<input type="email" class="form-control cta-input" placeholder="Enter your email">
+
+									<button class="btn cta-btn" onclick="launchRocket()">
+										<i class="bi bi-send-fill"></i>
+									</button>
+								</div>
+
+								<p class="small mt-2 mb-0 opacity-75">
+									No Spam — We Promise!
+								</p>
+							</div>
+
+							<!-- Rocket -->
+							<div class="col-md-5 text-end d-none d-md-block">
+								<img id="ctaRocket" src="assets/images/elements/rocket-02.png" class="cta-rocket">
+							</div>
+
+						</div>
+					</div>
 				</div>
 
-				<ul class="nav justify-content-center gap-1 mb-0">
-					<li class="nav-item"><a class="nav-link small py-0" href="#">Privacy policy</a></li>
-					<li class="nav-item"><a class="nav-link small py-0 pe-0" href="#">Terms & conditions</a></li>
-				</ul>
 			</div>
 
+			</div>
+		</section>
+
+
+
+
+		<!-- =======================
+Footer START -->
+		<style>
+			/* =========================
+   GRAD SHAPE FLOAT EFFECT
+========================= */
+
+			.grad-float {
+				animation:
+					gradFloat 10s ease-in-out infinite,
+					gradRotate 22s linear infinite;
+				transform-origin: center;
+				opacity: 0.9;
+				filter: blur(0.3px);
+			}
+
+			/* Vertical floating */
+			@keyframes gradFloat {
+				0% {
+					transform: translateY(0);
+				}
+
+				50% {
+					transform: translateY(18px);
+				}
+
+				100% {
+					transform: translateY(0);
+				}
+			}
+
+			/* Very slow rotation */
+			@keyframes gradRotate {
+				from {
+					rotate: 0deg;
+				}
+
+				to {
+					rotate: 360deg;
+				}
+			}
+
+			/* Accessibility */
+			@media (prefers-reduced-motion: reduce) {
+				.grad-float {
+					animation: none;
+				}
+			}
+
+			.grad-float img {
+				filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.25));
+			}
+		</style>
+		<footer class="bg-dark position-relative pt-6 pt-lg-8" data-bs-theme="dark">
+			<div class="container position-relative">
+
+				<!-- Link widgets -->
+				<div class="row g-4">
+
+					<!-- Brand / About -->
+					<div class="col-md-6 col-xl-4">
+						<a href="index.html">
+							<img class="h-40px" src="assets/images/microhub-white-logo-BbBXVK-M.svg" alt="logo">
+						</a>
+
+						<p class="my-3 my-lg-4">
+							Intelligent CMS, IT infrastructure, and enterprise technology solutions.
+						</p>
+
+						<ul class="list-inline mb-0">
+							<li class="list-inline-item">
+								<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+										class="bi bi-facebook lh-base"></i></a>
+							</li>
+							<li class="list-inline-item">
+								<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+										class="bi bi-instagram lh-base"></i></a>
+							</li>
+							<li class="list-inline-item">
+								<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+										class="bi bi-twitter-x lh-base"></i></a>
+							</li>
+							<li class="list-inline-item">
+								<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+										class="bi bi-linkedin lh-base"></i></a>
+							</li>
+						</ul>
+					</div>
+
+					<!-- Links section -->
+					<div class="col-xl-8">
+						<div class="row g-4">
+
+							<!-- Company -->
+							<div class="col-6 col-lg-4">
+								<h6 class="mb-3 mb-sm-4">Company</h6>
+								<ul class="nav flex-column gap-1">
+									<li class="nav-item"><a class="nav-link pt-0" href="about-v1.html">About
+											Microhub</a>
+									</li>
+									<li class="nav-item"><a class="nav-link" href="service-v1.html">Our Services</a>
+									</li>
+									<li class="nav-item"><a class="nav-link" href="pricing-v1.html">Pricing</a></li>
+									<li class="nav-item"><a class="nav-link" href="career.html">Careers</a></li>
+									<li class="nav-item"><a class="nav-link" href="contact-us-v1.html">Contact Us</a>
+									</li>
+								</ul>
+							</div>
+
+							<!-- Resources -->
+							<div class="col-6 col-lg-4">
+								<h6 class="mb-3 mb-sm-4">Resources</h6>
+								<ul class="nav flex-column gap-1">
+									<li class="nav-item"><a class="nav-link pt-0" href="#">CMS Features</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">IT Infrastructure</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Hardware Solutions</a></li>
+									<li class="nav-item"><a class="nav-link" href="blog-minimal.html">Blogs &
+											Insights</a>
+									</li>
+									<li class="nav-item"><a class="nav-link" href="#">Client Success Stories</a></li>
+								</ul>
+							</div>
+
+							<!-- Contact Us -->
+							<div class="col-12 col-lg-4">
+								<h6 class="mb-3 mb-sm-4">Contact Us</h6>
+
+								<ul class="nav flex-column gap-2 small text-body-secondary">
+									<li class="d-flex align-items-start gap-2">
+										<i class="bi bi-geo-alt text-primary-grad mt-1"></i>
+										<span>
+											Unit No-484, Tower-C,<br>
+											Bhutani Alphathum,<br>
+											Sector-90, Noida UP – 201305
+										</span>
+									</li>
+
+									<li class="d-flex align-items-center gap-2">
+										<i class="bi bi-envelope text-primary-grad"></i>
+										<a href="mailto:sales@microhub.co.in" class="nav-link p-0">
+											sales@microhub.co.in
+										</a>
+									</li>
+
+									<li class="d-flex align-items-center gap-2">
+										<i class="bi bi-telephone text-primary-grad"></i>
+										<a href="tel:+917368007363" class="nav-link p-0">
+											+91 73680 07363
+										</a>
+									</li>
+								</ul>
+
+								<ul class="list-inline mt-3 mb-0">
+									<li class="list-inline-item">
+										<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+												class="bi bi-facebook lh-base"></i></a>
+									</li>
+									<li class="list-inline-item">
+										<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+												class="bi bi-linkedin lh-base"></i></a>
+									</li>
+									<li class="list-inline-item">
+										<a class="btn btn-xs btn-icon btn-secondary" href="#"><i
+												class="bi bi-instagram lh-base"></i></a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- Divider -->
+				<hr class="mt-xl-5 mb-0 opacity-1">
+
+				<!-- Bottom footer -->
+				<div class="d-md-flex justify-content-between align-items-center text-center text-lg-start py-4">
+					<div class="text-body small mb-3 mb-md-0">
+						Copyright ©2024 Microhub.
+						Built by <a href="#"
+							class="text-body text-primary-hover hover-underline-animation">Microhub</a>.
+					</div>
+
+					<ul class="nav justify-content-center gap-1 mb-0">
+						<li class="nav-item"><a class="nav-link small py-0" href="#">Privacy policy</a></li>
+						<li class="nav-item"><a class="nav-link small py-0 pe-0" href="#">Terms & conditions</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</footer>
+
+		<!-- =======================
+Footer END -->
+
+		<!-- =======================
+Footer END -->
+		<!-- Cookie message -->
+		<div class="alert alert-secondary alert-dismissible fade show position-fixed bottom-0 start-50 translate-middle-x z-index-99 rounded-3 d-none d-md-flex justify-content-between align-items-center shadow px-3 py-2"
+			role="alert">
+			<p class="heading-color fw-semibold mb-md-0">🍪 The website uses cookies to improve your web experience.</p>
+			<a href="#" class="bg-success text-success bg-opacity-10 rounded-pill py-1 px-3 mb-0 ms-md-2"
+				data-bs-dismiss="alert" aria-label="Close">Accept
+			</a>
 		</div>
-	</footer>
 
-	<!-- =======================
-Footer END -->
+		<!-- Back to top -->
+		<div class="back-top"></div>
 
-	<!-- =======================
-Footer END -->
-	<!-- Cookie message -->
-	<div class="alert alert-secondary alert-dismissible fade show position-fixed bottom-0 start-50 translate-middle-x z-index-99 rounded-3 d-none d-md-flex justify-content-between align-items-center shadow px-3 py-2"
-		role="alert">
-		<p class="heading-color fw-semibold mb-md-0">🍪 The website uses cookies to improve your web experience.</p>
-		<a href="#" class="bg-success text-success bg-opacity-10 rounded-pill py-1 px-3 mb-0 ms-md-2"
-			data-bs-dismiss="alert" aria-label="Close">Accept
-		</a>
-	</div>
+		<!-- Bootstrap JS -->
+		<script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-	<!-- Back to top -->
-	<div class="back-top"></div>
+		<!--Vendors-->
+		<script src="./assets/vendor/ityped/index.js"></script>
+		<script src="./assets/vendor/jarallax/jarallax.min.js"></script>
+		<script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+		<script src="./assets/vendor/glightbox/js/glightbox.js"></script>
+		<script src="./assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
 
-	<!-- Bootstrap JS -->
-	<script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
-	<!--Vendors-->
-	<script src="./assets/vendor/ityped/index.js"></script>
-	<script src="./assets/vendor/jarallax/jarallax.min.js"></script>
-	<script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
-	<script src="./assets/vendor/glightbox/js/glightbox.js"></script>
-	<script src="./assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
-
-	<!-- Theme Functions -->
-	<script src="./assets/js/functions.js"></script>
+		<!-- Theme Functions -->
+		<script src="./assets/js/functions.js"></script>
 
 </body>
 

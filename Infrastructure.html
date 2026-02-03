@@ -3,7 +3,7 @@
 
 
 <head>
-	
+
 	<title>MicroHub-Infrastructure & IT Solution</title>
 
 	<!-- Meta Tags -->
@@ -15,7 +15,7 @@
 	<!-- Dark mode -->
 	<script>
 		const storedTheme = localStorage.getItem('theme')
- 
+
 		const getPreferredTheme = () => {
 			if (storedTheme) {
 				return storedTheme
@@ -34,42 +34,42 @@
 		setTheme(getPreferredTheme())
 
 		window.addEventListener('DOMContentLoaded', () => {
-		    var el = document.querySelector('.theme-icon-active');
-			if(el != 'undefined' && el != null) {
+			var el = document.querySelector('.theme-icon-active');
+			if (el != 'undefined' && el != null) {
 				const showActiveTheme = theme => {
-				const activeThemeIcon = document.querySelector('.theme-icon-active use')
-				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+					const activeThemeIcon = document.querySelector('.theme-icon-active use')
+					const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+					const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
 
-				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-					element.classList.remove('active')
-				})
-
-				btnToActive.classList.add('active')
-				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-			}
-
-			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-				if (storedTheme !== 'light' && storedTheme !== 'dark') {
-					setTheme(getPreferredTheme())
-				}
-			})
-
-			showActiveTheme(getPreferredTheme())
-
-			document.querySelectorAll('[data-bs-theme-value]')
-				.forEach(toggle => {
-					toggle.addEventListener('click', () => {
-						const theme = toggle.getAttribute('data-bs-theme-value')
-						localStorage.setItem('theme', theme)
-						setTheme(theme)
-						showActiveTheme(theme)
+					document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+						element.classList.remove('active')
 					})
+
+					btnToActive.classList.add('active')
+					activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+				}
+
+				window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+					if (storedTheme !== 'light' && storedTheme !== 'dark') {
+						setTheme(getPreferredTheme())
+					}
 				})
+
+				showActiveTheme(getPreferredTheme())
+
+				document.querySelectorAll('[data-bs-theme-value]')
+					.forEach(toggle => {
+						toggle.addEventListener('click', () => {
+							const theme = toggle.getAttribute('data-bs-theme-value')
+							localStorage.setItem('theme', theme)
+							setTheme(theme)
+							showActiveTheme(theme)
+						})
+					})
 
 			}
 		})
-		
+
 	</script>
 
 	<!-- Favicon -->
@@ -78,7 +78,9 @@
 	<!-- Google Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
 	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+		rel="stylesheet">
 
 	<!-- Plugins CSS -->
 	<link rel="stylesheet" type="text/css" href="./assets/vendor/bootstrap-icons/bootstrap-icons.css">
@@ -91,7 +93,7 @@
 </head>
 
 <body>
-<!-- Header START -->
+	<!-- Header START -->
 	<div class="header-absolute">
 		<!-- Top header -->
 		<div class="alert fade show border-0 rounded-0 text-center overflow-hidden z-index-9 py-2 m-0 d-none d-lg-block"
@@ -140,33 +142,35 @@
 					<div class="navbar-collapse collapse" id="navbarCollapse">
 						<ul class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto">
 
+							<li class="nav-item"> <a class="nav-link" href="index.html">Home</a> </li>
 
 
-							<!-- Nav item -->
+
+							<!-- Nav item --
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
 									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
 								<div class="dropdown-menu dropdown-menu-size-md dropdown-menu-center p-xl-3">
 									<div class="row row-cols-1 row-cols-md-1 pt-1">
-										<!-- Doc menu -->
+										<!-- Doc menu --
 										<div class="col">
 											<div
 												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3">
 												<div class="d-flex">
-													<!-- Icon -->
+													<!-- Icon --
 													<div
 														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
 														<i class="bi bi-info-circle fs-6"></i>
 
 													</div>
-													<!-- Content -->
+													<!-- Content --
 													<div class="mx-3">
 														<p class="stretched-link heading-color fw-bold mb-0">About</p>
 														<p class="mb-0 text-body small">Our story, vision, and what
 															drives us</p>
 													</div>
 												</div>
-												<!-- Button -->
+												<!-- Button --
 												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
 													href="about-v1.html" target="_blank"><i
 														class="bi bi-chevron-right"></i> </a>
@@ -184,133 +188,69 @@
 									Solutions
 								</a>
 
-								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
-									<div class="row row-cols-1 row-cols-md-3 pt-2">
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-4 mega-menu">
+									<div class="row g-4">
 
 										<!-- CMS SOLUTIONS -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
-														<i class="bi bi-grid-1x2 fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">CMS
-															Solutions</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#475569;
-														    ">
-
-															<li><b>CRM</b></li>
-															<li><b>HR-Payroll</b></li>
-															<li><b>Inventory</b></li>
-															<li><b>Finance</b></li>
-															<li><b>ERP</b></li>
-															<li><b>Automation</b></li>
-
-														</ul>
-
-													</div>
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-primary-soft">
+													<i class="bi bi-grid-1x2"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="services-grid.html">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>CMS Solutions</h6>
+												<ul>
+													<li>CRM</li>
+													<li>HR-Payroll</li>
+													<li>Inventory</li>
+													<li>Finance</li>
+													<li>ERP</li>
+													<li>Automation</li>
+												</ul>
+												<a href="services-grid.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
-										<!-- IT INFRASTRUCTURE -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-info bg-opacity-15 text-info rounded flex-shrink-0">
-														<i class="bi bi-hdd-network fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															IT Infrastructure & Services
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#475569;
-														    ">
-															<li><b>IT Infrastructure</b></li>
-															<li><b>Networking</b></li>
-															<li><b>Servers</b></li>
-															<li><b>Web Development</b></li>
-															<li><b>AMC-Packages</b></li>
-															<li><b>ERP</b></li>
-															<li><b>Cybersecurity</b></li>
-															
-														</ul>
-													</div>
+										<!-- IT INFRA -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-info-soft">
+													<i class="bi bi-hdd-network"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/services-main.html">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>IT Infrastructure & Services</h6>
+												<ul>
+													<li>IT Infrastructure</li>
+													<li>Networking</li>
+													<li>Servers</li>
+													<li>Web Development</li>
+													<li>AMC-Packages</li>
+													<li>ERP</li>
+													<li>Cybersecurity</li>
+												</ul>
+												<a href="/services-main.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
 										<!-- HARDWARE -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
-														<i class="bi bi-laptop fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Hardware Solutions
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#693aea;
-														    ">
-															<li><b>Laptops</b></li>
-															<li><b>Macs</b></li>
-															<li><b>Printers</b></li>
-															<li><b>Networking & Peripherals</b></li>
-														</ul>
-													</div>
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-warning-soft">
+													<i class="bi bi-laptop"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/hardware">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Hardware Solutions</h6>
+												<ul>
+													<li>Laptops</li>
+													<li>Macs</li>
+													<li>Printers</li>
+													<li>Networking & Peripherals</li>
+												</ul>
+												<a href="/hardware-service-single.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
 									</div>
 								</div>
+
 							</li>
-
-
 							<!-- Nav item : EXPLORE -->
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside"
@@ -318,118 +258,65 @@
 									Explore
 								</a>
 
-								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3">
-									<div class="row row-cols-1 row-cols-md-3 pt-2">
+								<div class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-4 mega-menu">
+									<div class="row g-4">
 
-										<!-- ================= -->
 										<!-- PRICING -->
-										<!-- ================= -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0">
-														<i class="bi bi-currency-rupee fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Pricing
-														</p>
-														<p class="mb-0 text-body small">
-															Transparent plans for every business size
-														</p>
-													</div>
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-primary-soft">
+													<i class="bi bi-grid-1x2"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="pricing-v1.html">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Pricing</h6>
+												<p class="mb-0 text-body small">
+													Transparent plans for every business size
+												</p>
+												<a href="services-grid.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
-										<!-- ================= -->
-										<!-- RESOURCES -->
-										<!-- ================= -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-success bg-opacity-15 text-success rounded flex-shrink-0">
-														<i class="bi bi-journal-text fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Resources
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#693aea;
-														    ">
-															<li><b>Blogs</b></li>
-															<li><b>Case Studies</b></li>
-															<li><b>Videos</b></li>
-															<li><b>Learning Guides</b></li>
-															<li><b>FAQs</b></li>
-														</ul>
-													</div>
+										<!-- RESOUCES -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-info-soft">
+													<i class="bi bi-hdd-network"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/resources">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Resources</h6>
+												<ul>
+													<li>Blogs</li>
+													<li>Case Studies</li>
+													<li>Videos</li>
+													<li>Learning Guides</li>
+													<li>FAQs</li>
+
+												</ul>
+												<a href="/services-main.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
-										<!-- ============================== -->
-										<!-- SECURITY & COMPLIANCE -->
-										<!-- ============================== -->
-										<div class="col">
-											<div
-												class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative py-4 text-wrap">
-												<div class="d-flex">
-													<div
-														class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0">
-														<i class="bi bi-shield-check fs-5"></i>
-													</div>
-													<div class="mx-3">
-														<p class="stretched-link heading-color fw-bold mb-0">
-															Security & Compliance
-														</p>
-														<ul class="mb-0 text-body small" style="
-														      list-style:none;
-														      padding:0;
-														      margin:0;
-														      display:flex;
-														      flex-direction:column;
-														      gap:6px;
-														      line-height:1.5;
-														      color:#693aea;
-														    ">
-															<li><b>Data Protection</b></li>
-															<li><b>Privacy</b></li>
-															<li><b>T&C</b></li>
-															<li><b>Security Compliance</b></li>
-														</ul>
-													</div>
+										<!-- SECURITY AND COMPLIANCE -->
+										<div class="col-md-4">
+											<div class="mega-card">
+												<div class="mega-icon bg-warning-soft">
+													<i class="bi bi-laptop"></i>
 												</div>
-												<a class="icon-link icon-link-hover text-primary-hover stretched-link"
-													href="/security-compliance">
-													<i class="bi bi-chevron-right"></i>
-												</a>
+												<h6>Security & Compliance</h6>
+												<ul>
+													<li>Data Protection</li>
+													<li>Privacy</li>
+													<li>T&C</li>
+													<li>Security Compliance</li>
+												</ul>
+												<a href="/hardware-service-single.html" class="mega-link">Explore →</a>
 											</div>
 										</div>
 
 									</div>
 								</div>
+
 							</li>
+
+							<li class="nav-item"> <a class="nav-link" href="about-v1.html">About</a> </li>
 
 
 
@@ -540,533 +427,579 @@
 	</div>
 	<!-- Header END -->
 
-<!-- **************** MAIN CONTENT START **************** -->
-<main>
+	<!-- **************** MAIN CONTENT START **************** -->
+	<main>
 
-<!-- =======================
+		<!-- =======================
 Hero START -->
-<section class="bg-secondary position-relative pt-xl-8">
-	<!-- Decoration START -->
-	<!-- Grad blur -->
-	<div class="position-absolute top-0 start-0 mt-n9 ms-n5">
-		<img src="assets/images/elements/grad-shape/blur-decoration.svg" class="blur-7 opacity-2" alt="Grad shape">
-	</div>
-
-	<!-- Grad blur -->
-	<div class="position-absolute top-0 start-50 mt-n9 ms-n9">
-		<img src="assets/images/elements/grad-shape/blur-decoration.svg" class="blur-8 opacity-1" alt="Grad shape">
-	</div>
-	<!-- Decoration START -->
-	
-	<div class="container position-relative pt-4 pt-sm-5">
-
-		<!-- Clay decoration -->
-		<div class="position-absolute top-50 start-0 translate-middle mt-5">
-			<img src="assets/images/elements/clay-decoration.png" alt="Clay-decoration">
-		</div>
-
-		<!-- Title and buttons START -->
-		<div class="inner-container text-center align-items-center mb-5 mb-md-7">
-			<!-- Breadcrumb -->
-			
-
-			<!-- Title -->
-			<h1 class="display-5 mb-4">Infrastructure <span class="text-primary-grad">& </span> IT Services</h1>
-			
-			<!-- Buttons -->
-			<div class="d-md-flex justify-content-center align-items-center py-2">
-				<a href="services-grid.html" class="btn btn-white-shadow mb-4 mb-md-0">Explore our services</a>
-				<!-- Video button -->
-				<div class="d-flex align-items-center justify-content-center text-start ms-0 ms-md-4">
-					<a data-glightbox data-gallery="office-tour" href="https://www.youtube.com/embed/tXHviS-4ygo" class="btn btn-lg btn-round btn-dark mb-0 flex-shrink-0 stretched-link"> 
-						<i class="bi bi-play-fill fs-5"></i>
-					</a>
-					<p class="mb-0 ms-3 heading-color" style="max-width: 13rem;">Learn about our journey and growth</p>
-				</div>
+		<section class="bg-secondary position-relative pt-xl-8">
+			<!-- Decoration START -->
+			<!-- Grad blur -->
+			<div class="position-absolute top-0 start-0 mt-n9 ms-n5">
+				<img src="assets/images/elements/grad-shape/blur-decoration.svg" class="blur-7 opacity-2"
+					alt="Grad shape">
 			</div>
-		</div>
-		<!-- Title and buttons END -->
 
-		<!-- Skill sets START -->
-		<div class="row position-relative g-4 g-lg-5">
-			<!-- Item -->
-			<div class="col-sm-6 col-xl-3">
-  <div class="card bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-3">
-    
-    <!-- Card header -->
-    <div class="card-header bg-transparent mb-2 ">
-      <p class="heading-color fw-semibold mb-1">Reliable IT Services</p>
-      <small class="text-muted">
-        End-to-end IT infrastructure designed for performance, security & scalability.
-      </small>
-    </div>
+			<!-- Grad blur -->
+			<div class="position-absolute top-0 start-50 mt-n9 ms-n9">
+				<img src="assets/images/elements/grad-shape/blur-decoration.svg" class="blur-8 opacity-1"
+					alt="Grad shape">
+			</div>
+			<!-- Decoration START -->
 
-    <!-- Card body -->
-    <div class="card-body pt-0">
-      <ul class="list-unstyled small mb-0">
-        <li>• Office IT & Network Setup</li>
-        <li>• Server & Hardware Deployment</li>
-        <li>• Secure & Scalable Architecture</li>
-      </ul>
-    </div>
+			<div class="container position-relative pt-4 pt-sm-5">
 
-    <!-- Card footer -->
-    <div class="card-footer bg-transparent d-flex mt-auto pt-3">
-      <h6 class="mb-0 text-primary">Stable • Secure • Scalable</h6>
-    </div>
+				<!-- Clay decoration -->
+				<div class="position-absolute top-50 start-0 translate-middle mt-5">
+					<img src="assets/images/elements/clay-decoration.png" alt="Clay-decoration">
+				</div>
 
-  </div>
-</div>
+				<!-- Title and buttons START -->
+				<div class="inner-container text-center align-items-center mb-5 mb-md-7">
+					<!-- Breadcrumb -->
 
 
-			<!-- Item -->
-			<div class="col-sm-6 col-xl-3">
-  <div class="card bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-3">
-    
-    <!-- Card header -->
-    <div class="card-header bg-transparent mb-2">
-      <p class="heading-color fw-semibold mb-1">Enterprise Networking</p>
-      <small class="text-muted">
-        Secure, high-performance networking built for growing organizations.
-      </small>
-    </div>
+					<!-- Title -->
+					<h1 class="display-5 mb-4">Infrastructure <span class="text-primary-grad">& </span> IT Services</h1>
 
-    <!-- Card body -->
-    <div class="card-body pt-0">
-      <ul class="list-unstyled small mb-0">
-        <li>• LAN & WAN Network Design</li>
-        <li>• Firewall & Router Configuration</li>
-        <li>• Secure Wi-Fi & VPN Setup</li>
-      </ul>
-    </div>
+					<!-- Buttons -->
+					<div class="d-md-flex justify-content-center align-items-center py-2">
+						<a href="services-grid.html" class="btn btn-white-shadow mb-4 mb-md-0">Explore our services</a>
+						<!-- Video button -->
+						<div class="d-flex align-items-center justify-content-center text-start ms-0 ms-md-4">
+							<a data-glightbox data-gallery="office-tour"
+								href="https://www.youtube.com/embed/tXHviS-4ygo"
+								class="btn btn-lg btn-round btn-dark mb-0 flex-shrink-0 stretched-link">
+								<i class="bi bi-play-fill fs-5"></i>
+							</a>
+							<p class="mb-0 ms-3 heading-color" style="max-width: 13rem;">Learn about our journey and
+								growth</p>
+						</div>
+					</div>
+				</div>
+				<!-- Title and buttons END -->
 
-    <!-- Card footer -->
-    <div class="card-footer bg-transparent d-flex mt-auto pt-3">
-      <h6 class="mb-0 text-primary">Fast • Secure • Reliable</h6>
-    </div>
+				<!-- Skill sets START -->
+				<div class="row position-relative g-4 g-lg-5">
+					<!-- Item -->
+					<div class="col-sm-6 col-xl-3">
+						<div class="card bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-3">
 
-  </div>
-</div>
+							<!-- Card header -->
+							<div class="card-header bg-transparent mb-2 ">
+								<p class="heading-color fw-semibold mb-1">Reliable IT Services</p>
+								<small class="text-muted">
+									End-to-end IT infrastructure designed for performance, security & scalability.
+								</small>
+							</div>
 
+							<!-- Card body -->
+							<div class="card-body pt-0">
+								<ul class="list-unstyled small mb-0">
+									<li>• Office IT & Network Setup</li>
+									<li>• Server & Hardware Deployment</li>
+									<li>• Secure & Scalable Architecture</li>
+								</ul>
+							</div>
 
-			<!-- Item -->
-			<div class="col-sm-6 col-xl-3">
-  <div class="card bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-3">
-    
-    <!-- Card header -->
-    <div class="card-header bg-transparent mb-2">
-      <p class="heading-color fw-semibold mb-1">Server Setup & Maintenance</p>
-      <small class="text-muted">
-        Reliable server infrastructure for on-premise and cloud environments.
-      </small>
-    </div>
+							<!-- Card footer -->
+							<div class="card-footer bg-transparent d-flex mt-auto pt-3">
+								<h6 class="mb-0 text-primary">Stable • Secure • Scalable</h6>
+							</div>
 
-    <!-- Card body -->
-    <div class="card-body pt-0">
-      <ul class="list-unstyled small mb-0">
-        <li>• On-Prem & Cloud Server Setup</li>
-        <li>• Backup & Disaster Recovery</li>
-        <li>• Performance Monitoring</li>
-      </ul>
-    </div>
-
-    <!-- Card footer -->
-    <div class="card-footer bg-transparent d-flex mt-auto pt-3">
-      <h6 class="mb-0 text-primary">Stable • Scalable • Secure</h6>
-    </div>
-
-  </div>
-</div>
+						</div>
+					</div>
 
 
-			<!-- Item -->
-			<div class="col-sm-6 col-xl-3">
-  <div class="card bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-3">
-    
-    <!-- Card header -->
-    <div class="card-header bg-transparent mb-2">
-      <p class="heading-color fw-semibold mb-1">Cybersecurity Services</p>
-      <small class="text-muted">
-        Protect your systems, data, and network from modern cyber threats.
-      </small>
-    </div>
+					<!-- Item -->
+					<div class="col-sm-6 col-xl-3">
+						<div class="card bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-3">
 
-    <!-- Card body -->
-    <div class="card-body pt-0">
-      <ul class="list-unstyled small mb-0">
-        <li>• Firewall & Endpoint Security</li>
-        <li>• Data Protection & Access Control</li>
-        <li>• Threat Monitoring & Audits</li>
-      </ul>
-    </div>
+							<!-- Card header -->
+							<div class="card-header bg-transparent mb-2">
+								<p class="heading-color fw-semibold mb-1">Enterprise Networking</p>
+								<small class="text-muted">
+									Secure, high-performance networking built for growing organizations.
+								</small>
+							</div>
 
-    <!-- Card footer -->
-    <div class="card-footer bg-transparent d-flex mt-auto pt-3">
-      <h6 class="mb-0 text-primary">Protected • Monitored • Compliant</h6>
-    </div>
+							<!-- Card body -->
+							<div class="card-body pt-0">
+								<ul class="list-unstyled small mb-0">
+									<li>• LAN & WAN Network Design</li>
+									<li>• Firewall & Router Configuration</li>
+									<li>• Secure Wi-Fi & VPN Setup</li>
+								</ul>
+							</div>
 
-  </div>
-</div>
+							<!-- Card footer -->
+							<div class="card-footer bg-transparent d-flex mt-auto pt-3">
+								<h6 class="mb-0 text-primary">Fast • Secure • Reliable</h6>
+							</div>
 
-		</div>
-		<!-- Skill sets END -->
-	</div>
-</section>
-<!-- =======================
+						</div>
+					</div>
+
+
+					<!-- Item -->
+					<div class="col-sm-6 col-xl-3">
+						<div class="card bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-3">
+
+							<!-- Card header -->
+							<div class="card-header bg-transparent mb-2">
+								<p class="heading-color fw-semibold mb-1">Server Setup & Maintenance</p>
+								<small class="text-muted">
+									Reliable server infrastructure for on-premise and cloud environments.
+								</small>
+							</div>
+
+							<!-- Card body -->
+							<div class="card-body pt-0">
+								<ul class="list-unstyled small mb-0">
+									<li>• On-Prem & Cloud Server Setup</li>
+									<li>• Backup & Disaster Recovery</li>
+									<li>• Performance Monitoring</li>
+								</ul>
+							</div>
+
+							<!-- Card footer -->
+							<div class="card-footer bg-transparent d-flex mt-auto pt-3">
+								<h6 class="mb-0 text-primary">Stable • Scalable • Secure</h6>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- Item -->
+					<div class="col-sm-6 col-xl-3">
+						<div class="card bg-body bg-opacity-50 bg-blur rounded-4 h-100 p-3">
+
+							<!-- Card header -->
+							<div class="card-header bg-transparent mb-2">
+								<p class="heading-color fw-semibold mb-1">Cybersecurity Services</p>
+								<small class="text-muted">
+									Protect your systems, data, and network from modern cyber threats.
+								</small>
+							</div>
+
+							<!-- Card body -->
+							<div class="card-body pt-0">
+								<ul class="list-unstyled small mb-0">
+									<li>• Firewall & Endpoint Security</li>
+									<li>• Data Protection & Access Control</li>
+									<li>• Threat Monitoring & Audits</li>
+								</ul>
+							</div>
+
+							<!-- Card footer -->
+							<div class="card-footer bg-transparent d-flex mt-auto pt-3">
+								<h6 class="mb-0 text-primary">Protected • Monitored • Compliant</h6>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+				<!-- Skill sets END -->
+			</div>
+		</section>
+		<!-- =======================
 Hero END -->
 
-<!-- =======================
+		<!-- =======================
 About START -->
-<section class="bg-secondary pt-0">
-	<div class="container">
-		<div class="row">
-			<div class="col-xl-10 mx-auto">
-				<!-- About content START -->
-				<div class="row g-4 g-lg-6 mb-6 mb-md-8">
-					<!-- Images -->
-					<div class="col-md-7 position-relative">
-						<!-- vector blur decoration -->
-						<div class="position-absolute bottom-0 start-50 translate-middle-x ms-n5">
-							<img src="assets/images/elements/grad-shape/11.png" class="blur-2" alt="Decoration shape">
-						</div>
-						<!-- Blur decoration -->
-						<div class="position-absolute top-0 start-50 translate-middle-x ms-7">
-							<img src="assets/images/elements/grad-shape/blur-decoration.svg" class="opacity-3 blur-8" alt="Grad shape">
-						</div>
-						<!-- Images -->
-						<div class="row position-relative">
-							<div class="col-sm-6">
-								<img src="assets/images/about/08.jpg" class="rounded-4" alt="">
+		<section class="bg-secondary pt-0">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-10 mx-auto">
+						<!-- About content START -->
+						<div class="row g-4 g-lg-6 mb-6 mb-md-8">
+							<!-- Images -->
+							<div class="col-md-7 position-relative">
+								<!-- vector blur decoration -->
+								<div class="position-absolute bottom-0 start-50 translate-middle-x ms-n5">
+									<img src="assets/images/elements/grad-shape/11.png" class="blur-2"
+										alt="Decoration shape">
+								</div>
+								<!-- Blur decoration -->
+								<div class="position-absolute top-0 start-50 translate-middle-x ms-7">
+									<img src="assets/images/elements/grad-shape/blur-decoration.svg"
+										class="opacity-3 blur-8" alt="Grad shape">
+								</div>
+								<!-- Images -->
+								<div class="row position-relative">
+									<div class="col-sm-6">
+										<img src="assets/images/about/08.jpg" class="rounded-4" alt="">
+									</div>
+									<div class="col-sm-6 mt-5 mt-sm-8">
+										<img src="assets/images/about/09.jpg" class="rounded-4" alt="">
+									</div>
+								</div>
 							</div>
-							<div class="col-sm-6 mt-5 mt-sm-8">
-								<img src="assets/images/about/09.jpg" class="rounded-4" alt="">
-							</div>
-						</div>
-					</div>
 
-					<!-- Content -->
-					<div class="col-md-5">
-						<h2 class="mb-3">Building Reliable IT Foundations for Growing Businesses</h2>
-						<p>
-							Microhub delivers <b>end-to-end IT infrastructure, enterprise software, and managed services</b> that help businesses operate securely, efficiently, and without disruption.
-						</p>
-						<p>
-							Our in-house developed <b>Microhub CMS</b>, combined with robust IT infrastructure, networking, servers, and ongoing support, ensures your business systems work seamlessly together.
-						</p>
-						<p>
-							From setup to security and long-term maintenance, we become your trusted IT partner.
-						</p>
-						<a class="btn btn-primary icon-link icon-link-hover mt-3" href="infrastructure-services.html">
-							Explore our services<i class="bi bi-arrow-right"></i>
-						</a>
-					</div>	
-				</div> 
-				<!-- About content END -->
-
-				<!-- Features START -->
-				 <div class="row g-4 g-lg-5">
-					<!-- Feature item -->
-					<div class="col-md-4">
-						<h6 class="mb-2">
-							<i class="bi bi-lightning-charge-fill text-success me-2"></i>
-							Our Mission
-						</h6>
-						<p>
-							To simplify business operations by delivering reliable IT infrastructure and intelligent CMS solutions that drive productivity and growth.
-						</p>
-					</div>
-
-					<!-- Feature item -->
-					<div class="col-md-4">
-						<h6 class="mb-2">
-							<i class="bi bi-rocket-takeoff-fill text-pink me-2"></i>
-							Our Vision
-						</h6>
-						<p>
-							To become a trusted technology partner for businesses across India by unifying software, hardware, and IT services under one ecosystem.
-						</p>
-					</div>
-
-					<!-- Feature item -->
-					<div class="col-md-4">
-						<h6 class="mb-2">
-							<i class="bi bi-bullseye text-warning me-2"></i>
-							Our Goal
-						</h6>
-						<p>
-							To deliver secure, scalable, and cost-effective IT solutions that reduce complexity, downtime, and operational risk for our clients.
-						</p>
-					</div>
-				 </div>
-				<!-- Features END -->
-			</div>
-		</div> <!-- Row END -->
-	</div>
-</section>
-
-<!-- =======================
-About END -->
-
-<!-- =======================
-Team START -->
-<section class="bg-secondary position-relative overflow-hidden py-0">
-	<!-- Curve bg -->
-	<span class="position-absolute start-0 bottom-0 mb-n1">
-		<svg class="fill-body" width="1950" height="237" viewBox="0 0 1950 237" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M0 236.442H1949.5V72.4424C1232.3 -58.7576 351 17.7757 0 72.4424V236.442Z"/>
-		</svg>
-	</span> 
-
-	<div class="container-fluid position-relative">
-		<!-- Rocket vector -->
-		<div class="position-absolute end-0 bottom-0 me-6 z-index-9 d-none d-lg-block">
-			<img src="assets/images/elements/rocket-03.png" class="h-200px" alt="rocket image">
-		</div>
-
-		<div class="max-width-1550 bg-dark position-relative rounded-4 overflow-hidden py-5 py-sm-6 py-lg-8" data-bs-theme="dark">
-			<!-- Blur decoration -->
-			<div class="position-absolute top-0 start-50 translate-middle">
-				<img src="assets/images/elements/grad-shape/blur-decoration-2.svg" class="opacity-2 blur-9" alt="Grad shape">
-			</div>
-
-			<!-- Blur decoration -->
-			<div class="position-absolute bottom-0 start-0 mb-n8 ms-n5">
-				<img src="assets/images/elements/grad-shape/blur-decoration.svg" class="blur-7 opacity-2" alt="Grad shape">
-			</div>
-
-			<div class="container position-relative">
-				<!-- Title -->
-				<h2 class="text-center mb-4 mb-md-6">Meet our creative team</h2>
-
-				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center">
-					<!-- Team item -->
-					<div class="col">
-						<div class="card card-body bg-transparent text-center p-0">
-							<!-- Image -->
-							<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
-								<img class="avatar-img rounded-circle" src="assets/images/team/01.jpg" alt="avatar">
-							</div>
-		
 							<!-- Content -->
-							<h6 class="mb-1"><a href="#">Emma Watson</a></h6>
-							<small>Co-Founder / CEO</small>
-		
-							<!-- Social button -->
-							<ul class="list-inline mb-0 mt-2">
-								<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-facebook" href="#"><i class="bi bi-facebook lh-base"></i></a> </li>
-								<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-white" href="#"><i class="bi bi-twitter-x lh-base"></i></a> </li>
-								<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-instagram-gradient" href="#"><i class="bi bi-instagram lh-base"></i></a> </li>
-							</ul>
-						</div>
-					</div>
-
-					<!-- Team item -->
-					<div class="col">
-						<div class="card card-body bg-transparent text-center p-0">
-							<!-- Image -->
-							<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
-								<img class="avatar-img rounded-circle" src="assets/images/team/02.jpg" alt="avatar">
+							<div class="col-md-5">
+								<h2 class="mb-3">Building Reliable IT Foundations for Growing Businesses</h2>
+								<p>
+									Microhub delivers <b>end-to-end IT infrastructure, enterprise software, and managed
+										services</b> that help businesses operate securely, efficiently, and without
+									disruption.
+								</p>
+								<p>
+									Our in-house developed <b>Microhub CMS</b>, combined with robust IT infrastructure,
+									networking, servers, and ongoing support, ensures your business systems work
+									seamlessly together.
+								</p>
+								<p>
+									From setup to security and long-term maintenance, we become your trusted IT partner.
+								</p>
+								<a class="btn btn-primary icon-link icon-link-hover mt-3"
+									href="infrastructure-services.html">
+									Explore our services<i class="bi bi-arrow-right"></i>
+								</a>
 							</div>
-		
-							<!-- Content -->
-							<h6 class="mb-1"><a href="#">Allen Smith</a></h6>
-							<small>Finance</small>
-		
-							<!-- Social button -->
-							<ul class="list-inline mb-0 mt-2">
-								<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-facebook" href="#"><i class="bi bi-facebook lh-base"></i></a> </li>
-								<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-white" href="#"><i class="bi bi-twitter-x lh-base"></i></a> </li>
-								<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-instagram-gradient" href="#"><i class="bi bi-instagram lh-base"></i></a> </li>
-							</ul>
 						</div>
-					</div>
+						<!-- About content END -->
 
-					<!-- Team item -->
-					<div class="col">
-						<div class="card card-body bg-transparent text-center p-0">
-							<!-- Image -->
-							<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
-								<img class="avatar-img rounded-circle" src="assets/images/team/04.jpg" alt="avatar">
+						<!-- Features START -->
+						<div class="row g-4 g-lg-5">
+							<!-- Feature item -->
+							<div class="col-md-4">
+								<h6 class="mb-2">
+									<i class="bi bi-lightning-charge-fill text-success me-2"></i>
+									Our Mission
+								</h6>
+								<p>
+									To simplify business operations by delivering reliable IT infrastructure and
+									intelligent CMS solutions that drive productivity and growth.
+								</p>
 							</div>
-		
-							<!-- Content -->
-							<h6 class="mb-1"><a href="#">Louis Ferguson</a></h6>
-							<small>Recruiting</small>
-		
-							<!-- Social button -->
-							<ul class="list-inline mb-0 mt-2">
-								<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-facebook" href="#"><i class="bi bi-facebook lh-base"></i></a> </li>
-								<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-white" href="#"><i class="bi bi-twitter-x lh-base"></i></a> </li>
-							</ul>
-						</div>
-					</div>
 
-					<!-- Team item -->
-					<div class="col">
-						<div class="card card-body bg-transparent text-center p-0">
-							<!-- Image -->
-							<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
-								<img class="avatar-img rounded-circle" src="assets/images/team/03.jpg" alt="avatar">
+							<!-- Feature item -->
+							<div class="col-md-4">
+								<h6 class="mb-2">
+									<i class="bi bi-rocket-takeoff-fill text-pink me-2"></i>
+									Our Vision
+								</h6>
+								<p>
+									To become a trusted technology partner for businesses across India by unifying
+									software, hardware, and IT services under one ecosystem.
+								</p>
 							</div>
-		
-							<!-- Content -->
-							<h6 class="mb-1"><a href="#">Frances Guerrero</a></h6>
-							<small>Product Manager</small>
-		
-							<!-- Social button -->
-							<ul class="list-inline mb-0 mt-2">
-								<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-facebook" href="#"><i class="bi bi-facebook lh-base"></i></a> </li>
-								<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-instagram-gradient" href="#"><i class="bi bi-instagram lh-base"></i></a> </li>
-							</ul>
-						</div>
-					</div>
 
-					<!-- Team item -->
-					<div class="col">
-						<div class="card card-body bg-transparent text-center p-0">
-							<!-- Image -->
-							<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
-								<img class="avatar-img rounded-circle" src="assets/images/team/05.jpg" alt="avatar">
+							<!-- Feature item -->
+							<div class="col-md-4">
+								<h6 class="mb-2">
+									<i class="bi bi-bullseye text-warning me-2"></i>
+									Our Goal
+								</h6>
+								<p>
+									To deliver secure, scalable, and cost-effective IT solutions that reduce complexity,
+									downtime, and operational risk for our clients.
+								</p>
 							</div>
-		
-							<!-- Content -->
-							<h6 class="mb-1"><a href="#">Amanda Reed</a></h6>
-							<small>Solution Engineer</small>
-		
-							<!-- Social button -->
-							<ul class="list-inline mb-0 mt-2">
-								<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-white" href="#"><i class="bi bi-twitter-x lh-base"></i></a> </li>
-								<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-instagram-gradient" href="#"><i class="bi bi-instagram lh-base"></i></a> </li>
-							</ul>
 						</div>
+						<!-- Features END -->
 					</div>
 				</div> <!-- Row END -->
-
-				<!-- Buttons -->
-			
-
 			</div>
-		</div>
-	</div>		
-</section>
-<!-- =======================
+		</section>
+
+		<!-- =======================
+About END -->
+
+		<!-- =======================
+Team START -->
+		<section class="bg-secondary position-relative overflow-hidden py-0">
+			<!-- Curve bg -->
+			<span class="position-absolute start-0 bottom-0 mb-n1">
+				<svg class="fill-body" width="1950" height="237" viewBox="0 0 1950 237" fill="none"
+					xmlns="http://www.w3.org/2000/svg">
+					<path d="M0 236.442H1949.5V72.4424C1232.3 -58.7576 351 17.7757 0 72.4424V236.442Z" />
+				</svg>
+			</span>
+
+			<div class="container-fluid position-relative">
+				<!-- Rocket vector -->
+				<div class="position-absolute end-0 bottom-0 me-6 z-index-9 d-none d-lg-block">
+					<img src="assets/images/elements/rocket-03.png" class="h-200px" alt="rocket image">
+				</div>
+
+				<div class="max-width-1550 bg-dark position-relative rounded-4 overflow-hidden py-5 py-sm-6 py-lg-8"
+					data-bs-theme="dark">
+					<!-- Blur decoration -->
+					<div class="position-absolute top-0 start-50 translate-middle">
+						<img src="assets/images/elements/grad-shape/blur-decoration-2.svg" class="opacity-2 blur-9"
+							alt="Grad shape">
+					</div>
+
+					<!-- Blur decoration -->
+					<div class="position-absolute bottom-0 start-0 mb-n8 ms-n5">
+						<img src="assets/images/elements/grad-shape/blur-decoration.svg" class="blur-7 opacity-2"
+							alt="Grad shape">
+					</div>
+
+					<div class="container position-relative">
+						<!-- Title -->
+						<h2 class="text-center mb-4 mb-md-6">Meet our creative team</h2>
+
+						<div
+							class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center">
+							<!-- Team item -->
+							<div class="col">
+								<div class="card card-body bg-transparent text-center p-0">
+									<!-- Image -->
+									<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+										<img class="avatar-img rounded-circle" src="assets/images/team/01.jpg"
+											alt="avatar">
+									</div>
+
+									<!-- Content -->
+									<h6 class="mb-1"><a href="#">Emma Watson</a></h6>
+									<small>Co-Founder / CEO</small>
+
+									<!-- Social button -->
+									<ul class="list-inline mb-0 mt-2">
+										<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-facebook"
+												href="#"><i class="bi bi-facebook lh-base"></i></a> </li>
+										<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-white"
+												href="#"><i class="bi bi-twitter-x lh-base"></i></a> </li>
+										<li class="list-inline-item"> <a
+												class="btn btn-icon w-auto lead text-instagram-gradient" href="#"><i
+													class="bi bi-instagram lh-base"></i></a> </li>
+									</ul>
+								</div>
+							</div>
+
+							<!-- Team item -->
+							<div class="col">
+								<div class="card card-body bg-transparent text-center p-0">
+									<!-- Image -->
+									<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+										<img class="avatar-img rounded-circle" src="assets/images/team/02.jpg"
+											alt="avatar">
+									</div>
+
+									<!-- Content -->
+									<h6 class="mb-1"><a href="#">Allen Smith</a></h6>
+									<small>Finance</small>
+
+									<!-- Social button -->
+									<ul class="list-inline mb-0 mt-2">
+										<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-facebook"
+												href="#"><i class="bi bi-facebook lh-base"></i></a> </li>
+										<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-white"
+												href="#"><i class="bi bi-twitter-x lh-base"></i></a> </li>
+										<li class="list-inline-item"> <a
+												class="btn btn-icon w-auto lead text-instagram-gradient" href="#"><i
+													class="bi bi-instagram lh-base"></i></a> </li>
+									</ul>
+								</div>
+							</div>
+
+							<!-- Team item -->
+							<div class="col">
+								<div class="card card-body bg-transparent text-center p-0">
+									<!-- Image -->
+									<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+										<img class="avatar-img rounded-circle" src="assets/images/team/04.jpg"
+											alt="avatar">
+									</div>
+
+									<!-- Content -->
+									<h6 class="mb-1"><a href="#">Louis Ferguson</a></h6>
+									<small>Recruiting</small>
+
+									<!-- Social button -->
+									<ul class="list-inline mb-0 mt-2">
+										<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-facebook"
+												href="#"><i class="bi bi-facebook lh-base"></i></a> </li>
+										<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-white"
+												href="#"><i class="bi bi-twitter-x lh-base"></i></a> </li>
+									</ul>
+								</div>
+							</div>
+
+							<!-- Team item -->
+							<div class="col">
+								<div class="card card-body bg-transparent text-center p-0">
+									<!-- Image -->
+									<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+										<img class="avatar-img rounded-circle" src="assets/images/team/03.jpg"
+											alt="avatar">
+									</div>
+
+									<!-- Content -->
+									<h6 class="mb-1"><a href="#">Frances Guerrero</a></h6>
+									<small>Product Manager</small>
+
+									<!-- Social button -->
+									<ul class="list-inline mb-0 mt-2">
+										<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-facebook"
+												href="#"><i class="bi bi-facebook lh-base"></i></a> </li>
+										<li class="list-inline-item"> <a
+												class="btn btn-icon w-auto lead text-instagram-gradient" href="#"><i
+													class="bi bi-instagram lh-base"></i></a> </li>
+									</ul>
+								</div>
+							</div>
+
+							<!-- Team item -->
+							<div class="col">
+								<div class="card card-body bg-transparent text-center p-0">
+									<!-- Image -->
+									<div class="avatar avatar-xxl mx-auto flex-shrink-0 mb-3">
+										<img class="avatar-img rounded-circle" src="assets/images/team/05.jpg"
+											alt="avatar">
+									</div>
+
+									<!-- Content -->
+									<h6 class="mb-1"><a href="#">Amanda Reed</a></h6>
+									<small>Solution Engineer</small>
+
+									<!-- Social button -->
+									<ul class="list-inline mb-0 mt-2">
+										<li class="list-inline-item"> <a class="btn btn-icon w-auto lead text-white"
+												href="#"><i class="bi bi-twitter-x lh-base"></i></a> </li>
+										<li class="list-inline-item"> <a
+												class="btn btn-icon w-auto lead text-instagram-gradient" href="#"><i
+													class="bi bi-instagram lh-base"></i></a> </li>
+									</ul>
+								</div>
+							</div>
+						</div> <!-- Row END -->
+
+						<!-- Buttons -->
+
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- =======================
 Team END -->
 
-<!-- =======================
+		<!-- =======================
 Clients START -->
-<section>
-	<div class="container">
-		<div class="row g-4 align-items-center">
-			<!-- Title -->
-			<div class="col-md-3">
-				<h6 class="text-center text-md-start mb-0">
-					Trusted by businesses across World for CMS, IT & Infrastructure
-				</h6>
+		<section>
+			<div class="container">
+				<div class="row g-4 align-items-center">
+					<!-- Title -->
+					<div class="col-md-3">
+						<h6 class="text-center text-md-start mb-0">
+							Trusted by businesses across World for CMS, IT & Infrastructure
+						</h6>
+					</div>
+
+					<!-- Clients -->
+					<div class="col-md-9 col-xxl-7 ms-auto">
+						<ul
+							class="list-inline d-flex justify-content-center justify-content-md-end flex-wrap gap-3 gap-lg-5">
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/08.svg" class="h-40px" alt="Enterprise Client">
+								</a>
+							</li>
+
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/04.svg" class="h-40px"
+										alt="IT Services Client">
+								</a>
+							</li>
+
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/12.svg" class="h-40px" alt="Corporate Client">
+								</a>
+							</li>
+
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/09.svg" class="h-40px"
+										alt="Manufacturing Client">
+								</a>
+							</li>
+
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/05.svg" class="h-40px" alt="Retail Client">
+								</a>
+							</li>
+
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/03.svg" class="h-40px" alt="SME Client">
+								</a>
+							</li>
+
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/02.svg" class="h-40px" alt="Startup Client">
+								</a>
+							</li>
+
+							<!-- Logo item -->
+							<li class="list-inline-item me-0">
+								<a href="#" class="btn-transition d-flex">
+									<img src="assets/images/client/icons/10.svg" class="h-40px"
+										alt="Enterprise Partner">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
+		</section>
 
-			<!-- Clients -->
-			<div class="col-md-9 col-xxl-7 ms-auto">
-				<ul class="list-inline d-flex justify-content-center justify-content-md-end flex-wrap gap-3 gap-lg-5">
-					<!-- Logo item -->
-					<li class="list-inline-item me-0">
-						<a href="#" class="btn-transition d-flex">
-							<img src="assets/images/client/icons/08.svg" class="h-40px" alt="Enterprise Client">
-						</a>
-					</li>
-
-					<!-- Logo item -->
-					<li class="list-inline-item me-0">
-						<a href="#" class="btn-transition d-flex">
-							<img src="assets/images/client/icons/04.svg" class="h-40px" alt="IT Services Client">
-						</a>
-					</li>
-
-					<!-- Logo item -->
-					<li class="list-inline-item me-0">
-						<a href="#" class="btn-transition d-flex">
-							<img src="assets/images/client/icons/12.svg" class="h-40px" alt="Corporate Client">
-						</a>
-					</li>
-
-					<!-- Logo item -->
-					<li class="list-inline-item me-0">
-						<a href="#" class="btn-transition d-flex">
-							<img src="assets/images/client/icons/09.svg" class="h-40px" alt="Manufacturing Client">
-						</a>
-					</li>
-
-					<!-- Logo item -->
-					<li class="list-inline-item me-0">
-						<a href="#" class="btn-transition d-flex">
-							<img src="assets/images/client/icons/05.svg" class="h-40px" alt="Retail Client">
-						</a>
-					</li>
-
-					<!-- Logo item -->
-					<li class="list-inline-item me-0">
-						<a href="#" class="btn-transition d-flex">
-							<img src="assets/images/client/icons/03.svg" class="h-40px" alt="SME Client">
-						</a>
-					</li>
-
-					<!-- Logo item -->
-					<li class="list-inline-item me-0">
-						<a href="#" class="btn-transition d-flex">
-							<img src="assets/images/client/icons/02.svg" class="h-40px" alt="Startup Client">
-						</a>
-					</li>
-
-					<!-- Logo item -->
-					<li class="list-inline-item me-0">
-						<a href="#" class="btn-transition d-flex">
-							<img src="assets/images/client/icons/10.svg" class="h-40px" alt="Enterprise Partner">
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</section>
-
-<!-- =======================
+		<!-- =======================
 Clients END -->
 
-<!-- =======================
+		<!-- =======================
 Gallery START -->
-<section class="pt-0">
-	<div class="container">
-		<div class="row g-lg-5">
-			<!-- Image item -->
-			<div class="col-md-7 mb-5 mb-md-0">
-				<img src="assets/images/about/10.jpg" class="rounded-4 mb-5" alt="office image">
-				<img src="assets/images/about/11.jpg" class="rounded-4 w-75 d-flex ms-auto me-md-5" alt="office image">
-			</div>
+		<section class="pt-0">
+			<div class="container">
+				<div class="row g-lg-5">
+					<!-- Image item -->
+					<div class="col-md-7 mb-5 mb-md-0">
+						<img src="assets/images/about/10.jpg" class="rounded-4 mb-5" alt="office image">
+						<img src="assets/images/about/11.jpg" class="rounded-4 w-75 d-flex ms-auto me-md-5"
+							alt="office image">
+					</div>
 
-			<div class="col-md-4 ms-auto">
-				<!-- Year text -->
-				<div class="text-end mb-5 mb-md-6">
-					<h6 class="mb-0">Since</h6>
-					<span class="display-2 text-primary-grad">2002</span>
-				</div>
-				<!-- Image -->
-				<img src="assets/images/about/12.jpg" class="rounded-4" alt="office image">
+					<div class="col-md-4 ms-auto">
+						<!-- Year text -->
+						<div class="text-end mb-5 mb-md-6">
+							<h6 class="mb-0">Since</h6>
+							<span class="display-2 text-primary-grad">2002</span>
+						</div>
+						<!-- Image -->
+						<img src="assets/images/about/12.jpg" class="rounded-4" alt="office image">
+					</div>
+				</div> <!-- Row END -->
 			</div>
-		</div> <!-- Row END -->
-	</div>
-</section>
-<!-- =======================
+		</section>
+		<!-- =======================
 Gallery END -->
 
-<!-- =======================
+		<!-- =======================
 CTA START -->
 
-<!-- =======================
+		<!-- =======================
 CTA END -->
 
-</main>
-<!-- **************** MAIN CONTENT END **************** -->
+	</main>
+	<!-- **************** MAIN CONTENT END **************** -->
 
-<!-- =======================
+	<!-- =======================
 Footer START -->
 	<style>
 		/* =========================
@@ -1256,14 +1189,14 @@ Footer START -->
 	<!-- =======================
 Footer END -->
 
-<!-- Back to top -->
-<div class="back-top"></div>
+	<!-- Back to top -->
+	<div class="back-top"></div>
 
-<!-- Bootstrap JS -->
-<script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-<!--Vendors-->
-<!-- Theme Functions -->
+	<!--Vendors-->
+	<!-- Theme Functions -->
 
 </body>
 
