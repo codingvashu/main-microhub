@@ -27,6 +27,10 @@ Table Of Content
 16 SWIPER SLIDER
 17 PURECOUNTER
 ====================== */
+const toggleDarkMode = () => {
+  document.body.classList.toggle("dark-mode");
+};
+
 
 "use strict";
 !function () {
@@ -518,6 +522,7 @@ var e = {
         }
     },
     // END: Isotope
+    
 
   // START: 16 Swiper slider
   /* @required https://github.com/nolimits4web/Swiper */

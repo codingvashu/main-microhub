@@ -21867,6 +21867,90 @@ MOVING EARTH
 
 
 
+/* ===============================
+   MEGA MENU – DARK MODE
+   Bootstrap data-bs-theme="dark"
+   =============================== */
+
+html[data-bs-theme="dark"] .mega-menu {
+  background-color: #121212;
+  border: 1px solid #2a2a2a;
+}
+
+html[data-bs-theme="dark"] .mega-card {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+html[data-bs-theme="dark"] .mega-card:hover {
+  background-color: #222;
+}
+
+/* Headings */
+html[data-bs-theme="dark"] .mega-card h6 {
+  color: #ffffff;
+  margin-top: 12px;
+}
+
+/* Paragraph */
+html[data-bs-theme="dark"] .mega-card p {
+  color: #cfcfcf;
+}
+
+/* Lists */
+html[data-bs-theme="dark"] .mega-card ul {
+  padding-left: 18px;
+}
+
+html[data-bs-theme="dark"] .mega-card ul li {
+  color: #bdbdbd;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/* Links */
+html[data-bs-theme="dark"] .mega-link {
+  color: #4dabf7;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+html[data-bs-theme="dark"] .mega-link:hover {
+  color: #74c0fc;
+  text-decoration: underline;
+}
+
+/* Icons */
+html[data-bs-theme="dark"] .mega-icon {
+  background-color: #2b2b2b !important;
+}
+
+html[data-bs-theme="dark"] .mega-icon i {
+  color: #ffffff;
+}
+
+/* Dropdown shadow */
+html[data-bs-theme="dark"] .dropdown-menu {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Navbar links */
+html[data-bs-theme="dark"] .nav-link {
+  color: #f1f1f1 !important;
+}
+
+html[data-bs-theme="dark"] .nav-link:hover {
+  color: #4dabf7 !important;
+}
+
+html[data-bs-theme="dark"].bg-primary-soft { background: rgba(45,170,225,.15); color:#2DA9E1; }
+html[data-bs-theme="dark"].bg-info-soft { background: rgba(13,202,240,.15); color:#0dcaf0; }
+html[data-bs-theme="dark"].bg-warning-soft { background: rgba(255,193,7,.18); color:#ffc107; }
+
+
 
 
 
