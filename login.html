@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background: #ffffff;
+            padding: 30px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #243b55;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background: #243b55;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .login-btn:hover {
+            background: #141e30;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .footer-text {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer-text a {
+            color: #243b55;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Login</h2>
+
+    <!-- ✅ FORM ID ADDED -->
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="email">Email ID</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+
+        <!-- ✅ ERROR MESSAGE -->
+        <p id="error" class="error"></p>
+
+        <button type="submit" class="login-btn">Login</button>
+    </form>
+
+    <div class="footer-text">
+        Don’t have an account?
+        <a href="signup.html">Sign Up</a>
+    </div>
+</div>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const error = document.getElementById("error");
+
+        // ✅ Mandatory check
+        if (!email || !password) {
+            error.innerText = "All fields are mandatory!";
+            return;
+        }
+
+        // 🔐 Get saved user
+        const savedEmail = localStorage.getItem("userEmail");
+        const savedPassword = localStorage.getItem("userPassword");
+
+        // ❌ Invalid credentials
+        if (email !== savedEmail || password !== savedPassword) {
+            error.innerText = "Invalid email or password!";
+            return;
+        }
+
+        // ✅ Login success
+        error.innerText = "";
+        localStorage.setItem("isLoggedIn", "true");
+
+        // 👉 Redirect to HOME page
+        window.location.href = "index.html";
+    });
+</script>
+
+</body>
+</html>
