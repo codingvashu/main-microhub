@@ -5519,6 +5519,7 @@ textarea.form-control-lg {
 
 .accordion-header {
   margin-bottom: 0;
+  margin-left: 15px;
 }
 
 .accordion-item {
@@ -21752,7 +21753,7 @@ MOVING EARTH
   max-width: 1000px;
   padding: 40px;
   border-radius: 24px;
-  background: linear-gradient(120deg, #1e3c72, #2a5298);
+  background: linear-gradient(120deg, #207eb4, #207eb4);
   box-shadow: 0 30px 80px rgba(30, 60, 114, 0.35);
   position: relative;
   overflow: hidden;
@@ -22038,6 +22039,7 @@ section.pt-0 {
   line-height: 1.7;
   color: #4b5563;
   padding: 0 24px 24px;
+  margin-left: 15px;
 }
 
 /* Mobile Responsive */
